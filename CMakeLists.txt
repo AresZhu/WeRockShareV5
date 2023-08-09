@@ -49,6 +49,11 @@ else()
         FILES_MATCHING
         PATTERN
         "*.h")
+
+    install(
+        EXPORT ${PROJECT_NAME}-targets
+        NAMESPACE ::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 endif()
 
 
