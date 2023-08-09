@@ -1,0 +1,168 @@
+include "Shared.fbs";
+include "DataHub.fbs";
+
+namespace WeRock.Share;
+
+attribute "fs_serializer";
+
+table ScheduleSession {
+    start_time: uint32;
+    duration: uint32;
+}
+
+table MarketMakingStrategyParameters {
+    /*
+    * Main
+    */
+    primary_listing_id: long;
+    pricing_basket_id: long;
+    intraday_hedging_basket_id: long;
+    eod_hedging_basket_id: long;
+        
+    schedule_sessions: [ScheduleSession];
+    
+    /*
+    * Margin
+    */
+    mode: MarginMode;
+    bid_quoting_size: double;
+    ask_quoting_size: double;
+    max_long_notional: int;
+    max_short_notional: int;
+    
+    min_bid_margin: double;
+    max_ask_margin: double;
+    
+    man_bid_margin: double;
+    man_ask_margin: double;
+    
+    max_margin_spread_bps: double;
+    
+    move_back_on_fills: double;
+    move_forward_to_unwind: double;
+
+    ticks_in_front_buy: double;
+    unwind_bid_margin: double;
+    unwind_ask_margin: double;
+    ticks_in_front_sell: double;
+
+    ticks_in_front_mm_buy: double;
+    mm_bid_margin: double;
+    mm_ask_margin: double;
+    ticks_in_front_mm_sell: double;
+
+    mm_position_limit: double;
+
+    ticks_in_front_build_buy: double;
+    build_bid_margin: double;
+    build_ask_margin: double;
+    ticks_in_front_build_sell: double;
+
+    calibration_bid_size: double;
+    calibration_ask_size: double;
+    mm_build_long_size: double;
+    mm_build_short_size: double;
+    
+    /*
+    * Execution
+    */
+    max_price_levels: byte;
+    max_pending_levels: byte;
+    max_orders_per_level: byte;
+    max_order_size: int;
+    max_away_ticks: byte;
+    
+    passive_move_bps: double;
+    
+    execution_gateway_name: string;
+    position_effect: PositionEffect;
+    min_qty_change_fraction: double;
+    
+    /*
+    * Risk
+    */
+    back_off_tick_multiplier: double;
+    fill_window_secs: int;
+    stop_quote_size_factor: double;
+    back_off_quote_size_factor: double;
+}
+
+table MarketMakingStrategyDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    state: StrategyState;
+    type: StrategyType;
+    bid_nav: double;
+    ask_nav: double;
+    our_bid: double;
+    our_bid_raw: double;
+    our_ask: double;
+    our_ask_raw: double;
+    mm_bid: double;
+    mm_ask: double;
+    mm_bid_plus: double;
+    mm_ask_plus: double;
+    primary_pos: double;
+    primary_notional: long;
+    delta: long;
+    gearing: double;
+    pnl_daily: double;
+}
+
+table MarketMakingStrategyDtoList(fs_serializer) {
+    items: [MarketMakingStrategyDto];
+}
+
+table FuturesHedgingStrategyParameters {
+    schedule_sessions: [ScheduleSession];
+
+    primary_listing_id: long;
+    max_contract_delta: double;
+    max_order_size: double;
+    cross_multiple: double;
+    pay_through_ticks: int;
+    execution_gateway_name: string;
+    position_effect: PositionEffect;
+}
+
+table FuturesHedgingStrategyDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    state: StrategyState;
+    type: StrategyType;
+    volatility: double;
+    primary_pos: double;
+    primary_notional: long;
+    delta: double;
+    contract_delta: double;
+    volume_exponent: byte;
+    pnl_daily: double;
+}
+
+table FuturesHedgingStrategyDtoList(fs_serializer) {
+    items: [FuturesHedgingStrategyDto];
+}
+
+
+table EtfMmStrategyParameters {
+    primary_listing: long;
+
+    schedule_sessions: [ScheduleSession];
+}
+
+table EtfMmStrategyDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    state: StrategyState;
+}
+
+table EtfMmStrategyDtoList(fs_serializer) {
+    items: [EtfMmStrategyDto];
+}
+

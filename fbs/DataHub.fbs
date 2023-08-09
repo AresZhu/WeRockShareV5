@@ -1,0 +1,987 @@
+include "Shared.fbs";
+
+namespace WeRock.Share;
+
+attribute "fs_serializer";
+
+// For DataHub Only
+enum TaskStatus : byte {
+    UNKNOWN = 0,
+    RUNNING,
+    SUCCESS,
+    FAILED
+}
+
+enum BasketType : byte {
+    OFFICIAL,
+    CREATE,
+    REDEEM,
+    TRACKING,
+    CUSTOM,
+}
+
+enum Region: byte {
+    GLOBAL,
+    ASIA,
+    EMEA,
+    AMERICAS
+}
+
+enum ReferencePriceType: byte {
+    USCashClose,
+    CNCashClose,
+    HKCashClose,
+    JPCashClose,
+    AUCashClose
+}
+
+table ReferencePrice(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    security_listing_id: long;
+    type: ReferencePriceType;
+    trading_date: int;
+    price: double;
+}
+
+table ReferencePriceList(fs_serializer) {
+    items: [ReferencePrice];
+}
+
+table ExecutionGateway(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    type: GatewayType;
+    name: string(required);
+    state: ConnectionState;
+}
+
+table ExecutionGatewayList(fs_serializer) {
+    items: [ExecutionGateway];
+}
+
+
+table TickSizeRule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_type: SecurityType;
+    exchange: string(required);
+    trading_symbol_regex: string(required);
+    rules: string(required);
+}
+
+table TickSizeRuleList(fs_serializer) {
+    items: [TickSizeRule];
+}
+
+table LotSizeRule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_type: SecurityType;
+    exchange: string(required);
+    trading_symbol_regex: string(required);
+    rules: string(required);
+}
+
+table LotSizeRuleList(fs_serializer) {
+    items: [LotSizeRule];
+}
+
+table SizeRule(fs_serializer) {
+    from: int;
+    to: int;
+    step: int;
+}
+
+table TickSizeTable(fs_serializer) {
+    id: long;
+    exponent: ubyte;
+    rules: [SizeRule];
+}
+
+table TickSizeTableList(fs_serializer) {
+    items: [TickSizeTable];
+}
+
+table LotSizeTable(fs_serializer) {
+    id: long;
+    exponent: ubyte;
+    rules: [SizeRule];
+}
+
+table LotSizeTableList(fs_serializer) {
+    items: [LotSizeTable];
+}
+
+table TradingCalendar(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    market: Market;
+    exchange: string(required);
+    observed_date: int;
+    description: string(required);
+}
+
+table TradingCalendars(fs_serializer) {
+    items: [TradingCalendar];
+}
+
+table Security(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    symbol: string(required);
+    name: string(required);
+    stem: string(required);
+    type: SecurityType;
+    market: Market;
+}
+
+table SecurityList(fs_serializer) {
+    items: [Security];
+}
+
+table FutureSecurity(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    contract_size: double;
+    expired_date: int;
+}
+
+table FutureSecurityList(fs_serializer) {
+    items: [FutureSecurity];
+}
+
+table EtfSecurity(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    name: string;
+    creation_unit_size: int;
+}
+
+table EtfSecurityList(fs_serializer) {
+    items: [EtfSecurity];
+}
+
+table EtfPerformance(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;                                                                                                                                                     
+    
+    security_id: long;
+    trading_date: int;
+    nav: double;
+    outstanding_shares: double;
+}
+
+table EtfPerformanceList(fs_serializer) {
+    items: [EtfPerformance];
+}
+
+
+table SecurityListing(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    is_primary: bool;
+    exchange: string(required);
+    trading_symbol: string(required);
+    ric: string(required);
+    currency: Currency;
+    fixed_tick_size: double;
+    fixed_lot_size: double;
+}
+
+table SecurityListingList(fs_serializer) {
+    items: [SecurityListing];
+}
+
+table Instrument(fs_serializer) {
+    id: long;
+    
+    security_id: long;
+    security_type: SecurityType;
+    market: Market;
+    is_primary: bool;
+    stem: string(required);
+    name: string(required);
+    trading_symbol: string(required);
+    ric: string(required);
+    currency: Currency;
+    exchange: string(required);
+    contract_size: double;
+    fixed_tick_size: double;
+    fixed_lot_size: double;
+    tick_size_table_id: ushort;
+    lot_size_table_id: ushort;
+    price_exponent: ubyte;
+    volume_exponent: ubyte;
+}
+
+table InstrumentList(fs_serializer) {
+    items: [Instrument];
+}
+
+table CorporateAction(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    type: CorporateActionType;
+    announcement_id: long;
+    announcement_notes: string;
+    announcement_date: int;
+    currency: string;
+    dividend_ex_date: int;
+    dividend_pay_date: int;
+    dividend_rate: double;
+    adjustment_factor: double;
+    actual_adjustment_factor: double;
+}
+
+table CorporateActionList(fs_serializer) {
+    items: [CorporateAction];
+}
+
+enum EntityEventType: byte {
+    SNAPSHOT = 0,
+    ADDED,
+    UPDATED,
+    REMOVED
+}
+
+table Node {
+    id: long;
+    last_updated: long;
+    
+    name: string;
+    role: NodeRole;
+    online: bool;
+}
+
+table NodeList {
+    items: [Node];
+}
+
+enum SettingScope: byte {
+    GLOBAL,
+    USER_DEFINED
+}
+
+table Setting(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+
+    scope: SettingScope;
+    key: string;
+    value: string;
+}
+
+table SettingList(fs_serializer) {
+    items: [Setting];
+}
+
+table User(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string;
+    password: string;
+    enabled: bool;
+}
+
+table UserList(fs_serializer) {
+    items: [User];
+}
+
+table AuctionPrice(fs_serializer) {
+    listing_id: ushort;
+    status: TradingStatus;
+    iap: double;
+    iav: double;
+}
+
+table TickPrice(fs_serializer) {
+    listing_id: ushort;
+    bid: double;
+    ask: double;
+    bid_volume: double;
+    ask_volume: double;
+}
+
+table MarketTrade(fs_serializer) {
+    listing_id: ushort;
+    price: double;
+    volume: double;
+}
+
+
+table PriceEntry(fs_serializer) {
+    price: double;
+    volume: double;
+}
+
+table DepthPrice(fs_serializer) {
+    listing_id: ushort;
+    bids: [PriceEntry];
+    asks: [PriceEntry];
+}
+
+table MarketEvent(fs_serializer) {
+    listing_id: ushort;
+    status: TradingStatus;
+}
+
+table MarketPrice(fs_serializer) {
+    id: long;
+    last_updated: long;
+
+    status: TradingStatus;
+
+    last_price: double;
+    last_volume: double;
+    volume: double;
+    turnover: double;
+    bid: double;
+    bid_volume: double;
+    ask: double;
+    ask_volume: double;
+    open: double;
+    high: double;
+    low: double;
+    close: double;
+    iap: double;
+    iav: double;
+    fair_value: double;
+    
+    price_format: string;
+    volume_format: string;
+
+    bids: [PriceEntry];
+    asks: [PriceEntry];
+}
+
+table MarketPriceList(fs_serializer) {
+    items: [MarketPrice];
+}
+
+table FuturesBasis(fs_serializer) {
+    id: long;
+    last_updated: long;
+    listing_id: long;
+    basis: double;
+    effective_date: int;
+}
+
+table FuturesBasisList(fs_serializer) {
+    items: [FuturesBasis];
+}
+
+table StrategyOrderMessage(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    order_id: long;
+    submit_time: long;
+    type: OrderMessageType;
+    source: OrderMessageSource;
+    price: double;
+    quantity: double;
+    message: string;
+    internal_id: uint32;
+    external_id: string;
+}
+
+table StrategyOrderMessageList(fs_serializer) {
+    items: [StrategyOrderMessage];
+}
+
+table StrategyOrder(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    listing_id: long;
+    strategy_id: long;
+    strategy_type: StrategyType;
+    trading_symbol: string(required);
+    exchange: string(required);
+    currency: Currency;
+    
+    trading_date: int;
+    
+    submit_time: long;
+    end_time: long;
+    
+    status: OrderStatus;
+    last_message_type: OrderMessageType;
+    
+    price: double;
+    quantity: double;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    instruction: OrderInstruction;
+    
+    exchange_price: double;
+    exchange_volume: double;
+        
+    filled_size: double;
+    remaining_size: double;
+    
+    average_price: double;
+    
+    internal_id: uint32;
+    internal_id_on_market: uint32;
+    external_id: string;
+    execution_gateway: string;
+}
+
+table StrategyOrderList(fs_serializer) {
+    items: [StrategyOrder];
+}
+
+table ActiveStrategyOrder(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    security_id: long;
+    listing_id: long;
+    strategy_id: long;
+    strategy_type: StrategyType;
+    strategy_name: string;
+    trading_symbol: string(required);
+    exchange: string(required);
+    currency: Currency;
+    
+    trading_date: int;
+    
+    submit_time: long;
+    end_time: long;
+    
+    status: OrderStatus;
+    last_message_type: OrderMessageType;
+    
+    price: double;
+    quantity: double;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    instruction: OrderInstruction;
+    
+    exchange_price: double;
+    exchange_volume: double;
+        
+    filled_size: double;
+    remaining_size: double;
+    
+    average_price: double;
+    
+    internal_id_on_market: uint32;
+    external_id: string;
+    
+    execution_gateway: string;
+}
+
+table ActiveStrategyOrderList(fs_serializer) {
+    items: [ActiveStrategyOrder];
+}
+
+table Trade(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    type: TradeType;
+    strategy_type: StrategyType;
+    
+    security_id: long;
+    listing_id: long;
+    order_id: long;
+    strategy_id: long;
+    strategy_name: string;
+    exec_id: string;
+    
+    trading_symbol: string(required);
+    currency: Currency;
+    exchange: string(required);
+    
+    position_effect: PositionEffect;
+    
+    side: Side;
+    price: double;
+    quantity: double;
+}
+
+table TradeList(fs_serializer) {
+    items: [Trade];
+}
+
+table FuturesProduct(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+
+    identifier: string;
+    name: string;
+    type: SecurityType;
+    region: Region;
+    ric_stem: string;
+    bbg_stem: string;
+    active_listing_id: long;
+}
+
+table FuturesProductList(fs_serializer) {
+    items: [FuturesProduct];
+}
+
+table Position(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    security_id: long;
+    strategy_type: StrategyType;
+    strategy_id: long;
+    yst_long_open: double;
+    yst_short_open: double;
+    yst_long_close: double;
+    yst_short_close: double;
+    intraday_long_open: double;
+    intraday_long_close: double;
+    intraday_short_open: double;
+    intraday_short_close: double;
+    day_buy: double;
+    day_buy_avg: double;
+    day_sell: double;
+    day_sell_avg: double;
+    yst_booking: double;
+    booking: double;
+    yst_marked_price: double;
+    marked_price: double;
+    pnl_daily: double;
+    pnl_mtd: double;
+    pnl_ytd: double;
+    pnl_total: double;
+}
+
+table PositionList(fs_serializer) {
+    items: [Position];
+}
+
+table LivePosition(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    security_id: long;
+    symbol: string;
+    primary_listing_id: long;
+    contract_size: double;
+    currency: Currency;
+    strategy_type: StrategyType;
+    strategy_id: long;
+    strategy_name: string;
+    yst_long_open: double;
+    yst_short_open: double;
+    yst_long_close: double;
+    yst_short_close: double;
+    intraday_long_open: double;
+    intraday_long_close: double;
+    intraday_short_open: double;
+    intraday_short_close: double;
+    day_buy: double;
+    day_buy_avg: double;
+    day_sell: double;
+    day_sell_avg: double;
+    yst_booking: double;
+    booking: double;
+    
+    yst_marked_price: double;
+    live_price: double;
+    pnl_daily: double;
+    pnl_mtd: double;
+    pnl_ytd: double;
+    pnl_total: double;
+}
+
+table PositionSummary {
+    trading_date: int;
+    total_notional_long: long;
+    total_notional_short: long;
+    delta: long;
+
+    turnover: long;
+    commission: long;
+    nti: double;
+    pnl_daily: long;
+    pnl_mtd: long;
+    pnl_ytd: long;
+}
+
+table LivePositionList(fs_serializer) {
+    items: [LivePosition];
+}
+
+
+table StartupStrategy(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    type: StrategyType;
+    tag: string;
+    display_name: string(required);
+    auto_start: bool;
+    
+    terminated: bool;
+    parameters: string(required);
+    node_id: ubyte;
+}
+
+table StartupStrategyList(fs_serializer) {
+    items: [StartupStrategy];
+}
+
+table Basket(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    creation_redemption_unit: int;
+    type: BasketType;
+    tag: string;
+}
+
+table BasketList(fs_serializer) {
+    items: [Basket];
+}
+
+table BasketHistory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    basket_id: long;
+    trading_date: int;
+    valuation_date: int;
+    constituents: string;
+}
+
+table BasketHistoryList(fs_serializer) {
+    items: [BasketHistory];
+}
+
+table BasketEntry(fs_serializer) {
+    resolved_listing_id: long;
+    ref_symbol: string;
+    ref_exchange: string;
+    ref_security_type: SecurityType;
+    quantity: double;
+}
+
+table BasketCash(fs_serializer) {
+    currency: Currency;
+    amount: double;
+}
+
+table ResolvedBasket(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+        
+    history_id: long;
+    security_id: long;
+    security_type: SecurityType;
+    security_symbol: string;
+    creation_redemption_unit: int;
+    type: BasketType;
+    tag: string;
+    display_name: string;
+    
+    ref_listing_id: long;
+    
+    trading_date: int;
+    valuation_date: int;
+    
+    cashes: [BasketCash];
+    entries: [BasketEntry];
+}
+
+table ResolvedBasketList(fs_serializer) {
+    items: [ResolvedBasket];
+}
+
+table PricingEntry(fs_serializer) {
+    listing_id: long;
+    quantity: double;
+    base_price: double;
+    price_offset: double;
+}
+
+enum PriceInputMode: byte {
+    IMBALANCE = 0,
+    BID_OFFER,
+    MID_PRICE
+}
+
+table PricingBasket(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+        
+    security_id: long;    
+    ref_listing_id: long;
+    
+    currency: Currency;
+    scaling: double;
+    price_offset: double;
+    
+    cashes: [BasketCash];
+    entries: [PricingEntry];
+}
+
+table PricingBasketList(fs_serializer) {
+    items: [PricingBasket];
+}
+
+table HistoricalPrice {
+    pre_close: double;
+    close: double;
+    mid: double;
+    fair_value: double;
+}
+
+table PriceHistory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+
+    trading_date: int;
+    listing_id: long;
+
+    value: string;
+}
+
+table PriceHistoryList(fs_serializer) {
+    items: [PriceHistory];
+}
+
+enum ScheduleTaskType : byte {
+    XsheEtfLoader,
+    PriceSnapper,
+    PnlMarker,
+    PositionSummaryUpdater,
+}
+
+enum TaskRunType: byte {
+    SCHEDULED = 0,
+    MANUAL
+}
+
+table ScheduleTask(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    type: ScheduleTaskType;
+    name: string(required);
+    cron: string;
+    enabled: bool;
+    parameters: string(required);
+}
+
+table ScheduleTaskList(fs_serializer) {
+    items: [ScheduleTask];
+}
+
+table ScheduleTaskHistory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    task_id: long;
+    start_time: long;
+    end_time: long;
+    task_name: string(required);
+    task_type: ScheduleTaskType;
+    run_type: TaskRunType;
+    parameters: string(required);
+    status: TaskStatus;
+    message: string;
+}
+
+table ScheduleTaskHistoryList(fs_serializer) {
+    items: [ScheduleTaskHistory];
+}
+
+
+
+table LongValue(fs_serializer) {
+    value: int64;
+}
+
+table LongValueList(fs_serializer) {
+    items: [LongValue];
+}
+
+// for rpc_service
+enum CmdType: byte {
+    PING = 0,
+    LOGON,
+    MARKET_SUBSCRIPTION,
+    NEW_ORDER,
+    CANCEL_ORDERS,
+    TERMINATE_ORDERS,
+    START_STRATEGIES,
+    STOP_STRATEGIES,
+    REDUCE_RISK,
+    TERMINATE_STRATEGY,
+    TERMINATE_ORDERS_IN_STRATEGY,
+    UPDATE_STRATEGY,
+    MANUAL_TRADE,
+    RUN_TASK,
+    CREATE_TASK,
+    REMOVE_TASK,
+    UPDATE_BASKET,
+    REMOVE_BASKET,
+    RECALCULATE_LIVE_POSITION,
+}
+
+enum ErrorCode: short {
+    SUCCESS = 0,
+    UNKNOWN_ERROR,
+    USER_NOT_FOUND,
+    PASSWORD_INVALID,
+    USER_DISABLED
+}
+
+table NewOrder(fs_serializer) {
+    id: long;
+    listing_id: long;
+    strategy_id: long;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    price: double;
+    quantity: double;
+    instruction: OrderInstruction;
+    execution_gateway_id: long;
+}
+
+table CmdRequest(fs_serializer) {
+    type: CmdType;
+    data: [ubyte];
+}
+
+table CmdReply(fs_serializer) {
+    code: ErrorCode;
+    data: [ubyte];
+}
+
+enum EntityType : byte {
+    UNKNOWN = 0,
+    HEART_BEAT,
+    USER,
+    EXECUTION_GATEWAY,
+    MARKET_PRICE,
+    SECURITY,
+    ETF_SECURITY,
+    FUTURE_SECURITY,
+    SECURITY_LISTING,
+    ETF_PERFORMANCE,
+    INSTRUMENT,
+    TICK_SIZE_RULE,
+    LOT_SIZE_RULE,
+    TICK_SIZE_TABLE,
+    LOT_SIZE_TABLE,
+    STARTUP_STRATEGY,
+    FUTURES,
+    OPTION,
+    STRATEGY_ORDER,
+    ACTIVE_STRATEGY_ORDER,
+    TRADE,
+    POSITION,
+    LIVE_POSITION,
+    ETF_MM_STRATEGY_DTO,
+    MM_STRATEGY_DTO,
+    FH_STRATEGY_DTO,
+    RESOLVED_BASKET,
+    PRICING_BASKET,
+    PRICE_HISTORY,
+    SCHEDULE_TASK,
+    SCHEDULE_TASK_HISTORY,
+    SETTING,
+    FUTURES_PRODUCT,
+    CORPORATE_ACTION,
+}
+
+enum SubType : byte {
+    UNKNOWN = 0,
+    SUBSCRIBE,
+    UNSUBSCRIBE,
+    HEART_BEAT,
+}
+
+table SubRequest(fs_serializer) {
+    type: SubType;
+}
+
+table SubResponse(fs_serializer) {
+    entity_type: EntityType;
+    event_type: EntityEventType;
+    entity_id: long;
+    data: [ubyte];
+}
+
+table LoginRequest(fs_serializer) {
+    user_name: string;
+    password: string;
+    client_version: string;
+}
+
+table ManualTrade(fs_serializer) {
+    listing_id: long;
+    security_id: long;
+    strategy_id: long;
+    side: Side;
+    price: double;
+    quantity: double;
+    type: TradeType;
+    position_effect: PositionEffect;
+    reference_info: string;
+}
+
+rpc_service RpcService {
+  Command(CmdRequest): CmdReply;
+  Subscribe(SubRequest): SubResponse (streaming: "duplex");
+}
+
+
+
