@@ -16,7 +16,7 @@ add_custom_command(
 
         COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml sbe.stub
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
-        COMMENT "Generating Sbe...")
+        COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe)
 
 message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe")
