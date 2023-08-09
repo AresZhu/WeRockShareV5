@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbe:messageSchema xmlns:sbe="http://fixprotocol.io/2016/sbe"
+                   xmlns:xi="http://www.w3.org/2001/XInclude"
+                   package="WeRock.Share.Sbe"
+                   id="1"
+                   version="0"
+                   semanticVersion="0"
+                   byteOrder="littleEndian">
+    <types>
+        <composite name="messageHeader" description="Message identifiers and length of message root.">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="templateId" primitiveType="uint16"/>
+            <type name="schemaId" primitiveType="uint16"/>
+            <type name="version" primitiveType="uint16"/>
+        </composite>
+        <composite name="groupSizeEncoding" description="Repeating group dimensions.">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="numInGroup" primitiveType="uint16"/>
+        </composite>
+        <composite name="varStringEncoding" description="Variable length UTF-8 String.">
+            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
+            <type name="varData" primitiveType="uint8" length="0" characterEncoding="UTF-8"/>
+        </composite>
+        <composite name="varAsciiEncoding" description="Variable length ASCII String.">
+            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
+            <type name="varData" primitiveType="uint8" length="0" characterEncoding="ASCII"/>
+        </composite>
+        <composite name="varDataEncoding" description="Variable length binary blob.">
+            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
+            <type name="varData" primitiveType="uint8" length="0"/>
+        </composite>
+        <type name="String16" description="String with length of 16" presence="optional" length="16" primitiveType="char" semanticType="String"/>
+        <type name="String32" description="String with length of 32" presence="optional" length="32" primitiveType="char" semanticType="String"/>
+        <type name="String64" description="String with length of 64" presence="optional" length="64" primitiveType="char" semanticType="String"/>
+        <type name="String512" description="String with length of 512" presence="optional" length="512" primitiveType="char" semanticType="String"/>
+        <type name="String1024" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
+        <type name="String1792" description="String with length of 1792" presence="optional" length="1792" primitiveType="char" semanticType="String"/>
+    </types>
+    <sbe:message name="NodeLogonSbe" id="1">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="uint8" name="Role" />
+        <field id="3" type="int64" name="Timestamp" />
+        <field id="4" type="String64" name="Name" />
+    </sbe:message>
+    <sbe:message name="NodeHeartbeatSbe" id="2">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="int64" name="Timestamp" />
+    </sbe:message>
+
+    <sbe:message name="NodeSettingSbe" id="3">
+        <field id="1" type="uint8" name="NodeId" />
+        <field name="Setting" id="2" type="String1024" />
+    </sbe:message>
+
+    <sbe:message name="ExecutionGatewaySbe" id="5">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="uint8" name="Id" />
+        <field id="3" type="String32" name="Name" />
+    </sbe:message>
+    <sbe:message name="MarketDataGatewayStateSbe" id="6">
+        <field id="1" type="uint16" name="GatewayId" />
+        <field id="2" type="uint8" name="State" />
+    </sbe:message>
+    <sbe:message name="ExecutionGatewayStateSbe" id="7">
+        <field id="1" type="uint16" name="GatewayId" />
+        <field id="2" type="uint8" name="State" />
+    </sbe:message>
+    <sbe:message name="MarketDataSubscriptionSbe" id="8">
+        <field id="1" type="uint16" name="ListingId" />
+    </sbe:message>
+    <sbe:message name="MarketDataSubscriptionAckSbe" id="9">
+        <field id="1" type="uint16" name="ListingId" />
+    </sbe:message>
+
+    <sbe:message name="BboSbe" id="10">
+        <field id="1" type="uint16" name="ListingId" />
+        <field id="2" type="int32" name="bid" />
+        <field id="3" type="uint32" name="bidSize" />
+        <field id="4" type="int32" name="ask" />
+        <field id="5" type="uint32" name="askSize" />
+        <field id="6" type="uint64" name="volume" />
+        <field id="7" type="uint64" name="turnover" />
+    </sbe:message>
+
+    <sbe:message name="MarketDepthSbe" id="11">
+        <field id="1" type="uint16" name="ListingId" />
+        <group name="bids" id="5" dimensionType="groupSizeEncoding">
+            <field name="price" id="6" type="int32"/>
+            <field name="volume" id="7" type="uint32"/>
+        </group>
+        <group name="asks" id="8" dimensionType="groupSizeEncoding">
+            <field name="price" id="9" type="int32"/>
+            <field name="volume" id="10" type="uint32"/>
+        </group>
+    </sbe:message>
+
+    <sbe:message name="TickSizeTableSbe" id="15">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="uint16" name="Id" />
+        <field id="3" type="uint8" name="Exponent" />
+        <group name="Rules" id="4" dimensionType="groupSizeEncoding">
+            <field name="from" id="5" type="int32"/>
+            <field name="to" id="6" type="int32"/>
+            <field name="step" id="7" type="int32"/>
+        </group>
+    </sbe:message>
+    <sbe:message name="LotSizeTableSbe" id="16">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="uint16" name="Id" />
+        <field id="3" type="uint8" name="Exponent" />
+        <group name="Rules" id="4" dimensionType="groupSizeEncoding">
+            <field name="from" id="5" type="int32"/>
+            <field name="to" id="6" type="int32"/>
+            <field name="step" id="7" type="int32"/>
+        </group>
+    </sbe:message>
+    <sbe:message name="InstrumentSbe" id="17">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="uint16" name="Id" />
+        <field id="3" type="uint16" name="SecurityId" />
+        <field id="4" type="uint8" name="SecurityType" />
+        <field id="5" type="uint8" name="Market" />
+        <field id="6" type="uint8" name="IsPrimary" />
+        <field id="7" type="String16" name="TradingSymbol" />
+        <field id="8" type="String16" name="Ric" />
+        <field id="9" type="uint8" name="TradingCurrency" />
+        <field id="10" type="int32" name="OrderBookId" />
+        <field id="11" type="String16" name="Exchange" />
+        <field id="12" type="uint32" name="ContractSize" />
+        <field id="13" type="uint8" name="ContractSizeExponent" />
+        <field id="14" type="uint16" name="TickSizeTableId" />
+        <field id="15" type="uint16" name="LotSizeTableId" />
+        <field id="16" type="uint8" name="PriceExponent" />
+        <field id="17" type="uint8" name="VolumeExponent" />
+        <field id="21" type="uint32" name="FixedTickSize" />
+        <field id="22" type="uint32" name="FixedLotSize" />
+    </sbe:message>
+    <sbe:message name="NewOrderSbe" id="21">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="int64" name="OrderId" />
+        <field id="3" type="uint16" name="StrategyId" />
+        <field id="4" type="uint16" name="ListingId" />
+        <field id="5" type="uint8" name="Side" />
+        <field id="6" type="uint8" name="TimeInForce" />
+        <field id="7" type="uint8" name="PositionEffect" />
+        <field id="8" type="uint8" name="Instruction" />
+        <field id="9" type="int64" name="Price" />
+        <field id="10" type="int32" name="Quantity" />
+        <field id="11" type="uint8" name="ExecutionGatewayId" />
+        <field id="12" type="int64" name="SubmitTime" />
+    </sbe:message>
+    <sbe:message name="CancelOrderSbe" id="22">
+        <field id="1" type="uint8" name="NodeId" />
+        <field id="2" type="int64" name="OrderId" />
+        <field id="3" type="uint8" name="ExecutionGatewayId" />
+    </sbe:message>
+    <sbe:message name="ActiveOrderSbe" id="23">
+        <field id="1" type="uint8" name="NodeId"/>
+        <field id="2" type="int64" name="OrderId"/>
+        <field id="3" type="uint16" name="ListingId"/>
+        <field id="4" type="uint16" name="StrategyId"/>
+        <field id="5" type="uint8" name="Side"/>
+        <field id="6" type="uint8" name="PositionEffect"/>
+        <field id="7" type="int64" name="Price"/>
+        <field id="8" type="int32" name="Quantity"/>
+        <field id="9" type="uint8" name="ExecutionGatewayId"/>
+        <field id="10" type="uint32" name="InternalId"/>
+        <field id="11" type="String32" name="ExternalId"/>
+    </sbe:message>
+    <sbe:message name="OrderMessageSbe" id="24">
+        <field id="1" type="int64" name="OrderId"/>
+        <field id="2" type="uint16" name="StrategyId"/>
+        <field id="3" type="uint16" name="SecurityId"/>
+        <field id="4" type="uint8" name="Type"/>
+        <field id="5" type="uint8" name="Source"/>
+        <field id="6" type="int32" name="Quantity"/>
+        <field id="7" type="int64" name="Price"/>
+        <field id="8" type="uint32" name="InternalId"/>
+        <field id="9" type="String32" name="ExternalId"/>
+        <field id="10" type="int32" name="TradingDate"/>
+        <field id="11" type="uint8" name="Side"/>
+        <field id="12" type="uint16" name="ListingId"/>
+        <field id="13" type="uint8" name="PositionEffect"/>
+    </sbe:message>
+    <sbe:message name="StartupStrategySbe" id="25">
+        <field id="1" type="uint8" name="NodeId"/>
+        <field id="2" type="uint16" name="StrategyId"/>
+        <field id="3" type="uint8" name="Type"/>
+        <field id="4" type="uint8" name="AutoStart"/>
+        <field id="5" type="int64" name="CurrentOrderId"/>
+        <field id="6" type="String1792" name="Parameters"/>
+    </sbe:message>
+    <sbe:message name="StrategyParameterSbe" id="26">
+        <field id="1" type="uint8" name="NodeId"/>
+        <field id="2" type="uint16" name="StrategyId"/>
+        <field id="3" type="String1792" name="Parameters"/>
+    </sbe:message>
+    <sbe:message name="MarketPriceSbe" id="27">
+        <field id="1" type="uint16" name="InstrumentId"/>
+        <field id="2" type="double" name="Bid"/>
+        <field id="3" type="double" name="BidVolume"/>
+        <field id="4" type="double" name="Ask"/>
+        <field id="5" type="double" name="AskVolume"/>
+        <field id="6" type="double" name="Volume"/>
+        <field id="7" type="double" name="Turnover"/>
+        <field id="9" type="double" name="LastPrice"/>
+        <field id="10" type="double" name="Open"/>
+        <field id="12" type="double" name="PreClose"/>
+        <field id="13" type="double" name="High"/>
+        <field id="14" type="double" name="Low"/>
+        <field id="15" type="double" name="Iap"/>
+        <field id="16" type="double" name="Iav"/>
+        <field id="17" type="uint8" name="TradingStatus"/>
+        <field id="18" type="uint8" name="TradingPeriod"/>
+        <group name="Bids" id="20" dimensionType="groupSizeEncoding">
+            <field name="Price" id="21" type="double"/>
+            <field name="Volume" id="22" type="double"/>
+        </group>
+        <group name="Asks" id="24" dimensionType="groupSizeEncoding">
+            <field name="Price" id="25" type="double"/>
+            <field name="Volume" id="26" type="double"/>
+        </group>
+    </sbe:message>
+    <sbe:message name="TerminateOrderSbe" id="28">
+        <field id="1" type="int64" name="OrderId" />
+        <field id="2" type="uint16" name="StrategyId" />
+        <field id="3" type="uint8" name="ExecutionGatewayId" />
+    </sbe:message>
+    <sbe:message name="StrategyPositionSbe" id="29">
+        <field id="1" name="NodeId" type="uint8"/>
+        <field id="2" name="StrategyId" type="uint16"/>
+        <field id="3" name="SecurityId" type="uint16"/>
+        <field id="4" name="YstLongOpen" type="double"/>
+        <field id="5" name="YstShortOpen" type="double"/>
+        <field id="6" name="YstLongClose" type="double"/>
+        <field id="7" name="YstShortClose" type="double"/>
+        <field id="8" name="IntradayLongOpen" type="double"/>
+        <field id="9" name="IntradayLongClose" type="double"/>
+        <field id="10" name="IntradayShortOpen" type="double"/>
+        <field id="11" name="IntradayShortClose" type="double"/>
+        <field id="12" name="Booking" type="double"/>
+    </sbe:message>
+    <sbe:message name="ManualTradeSbe" id="33">
+        <field id="1" name="NodeId" type="uint8"/>
+        <field id="2" name="ListingId" type="uint16"/>
+        <field id="3" name="SecurityId" type="uint16"/>
+        <field id="4" name="StrategyId" type="uint16"/>
+        <field id="5" name="Side" type="uint8"/>
+        <field id="6" name="Price" type="double"/>
+        <field id="7" name="Quantity" type="double"/>
+        <field id="8" name="PositionEffect" type="uint8"/>
+        <field id="9" name="Type" type="uint8"/>
+    </sbe:message>
+    <sbe:message name="TickPriceSbe" id="35">
+        <field id="1" type="uint16" name="InstrumentId"/>
+        <field id="2" type="double" name="Bid"/>
+        <field id="3" type="double" name="BidVolume"/>
+        <field id="4" type="double" name="Ask"/>
+        <field id="5" type="double" name="AskVolume"/>
+        <field id="6" type="double" name="LastPrice"/>
+    </sbe:message>
+    <sbe:message name="TimerSbe" id="36">
+        <field id="1" type="uint8" name="GroupId"/>
+        <field id="2" type="uint16" name="StrategyId"/>
+        <field id="3" type="uint32" name="Token"/>
+    </sbe:message>
+    <sbe:message name="StrategyActionSbe" id="37">
+        <field id="1" type="uint8" name="NodeId"/>
+        <field id="2" type="uint16" name="StrategyId"/>
+        <field id="3" type="uint8" name="Type"/>
+    </sbe:message>
+    <sbe:message name="StrategyTerminatedSbe" id="44">
+        <field id="1" name="StrategyId" type="uint16"/>
+    </sbe:message>
+</sbe:messageSchema>
