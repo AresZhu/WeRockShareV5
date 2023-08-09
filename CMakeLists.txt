@@ -19,4 +19,6 @@ add_custom_command(
         COMMENT "Generating Sbe...")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe)
 
+message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe")
+
 add_custom_target(werock-codecs DEPENDS sbe.stub)
