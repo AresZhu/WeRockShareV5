@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(werock-codecs LANGUAGES CXX)
+project(werock_codecs LANGUAGES CXX)
 
 message(STATUS "Build werockshare...")
 
@@ -17,8 +17,7 @@ add_custom_command(
         COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml sbe.stub
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
         COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe)
 
-message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe")
+add_custom_target(${PROJECT_NAME} DEPENDS sbe.stub)
 
-add_custom_target(werock-codecs DEPENDS sbe.stub)
+target_include_directories(${PROJECT_NAME} INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe")
