@@ -20,6 +20,7 @@ add_custom_command(
 
 #add_custom_target(${PROJECT_NAME} DEPENDS sbe.stub)
 add_library(${PROJECT_NAME} INTERFACE)
+add_dependencies(${PROJECT_NAME} sbe.stub)
 #target_include_directories(${PROJECT_NAME} SYSTEM INTERFACE  ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe)
 target_include_directories(
         ${PROJECT_NAME}
