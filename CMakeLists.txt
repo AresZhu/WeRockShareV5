@@ -38,6 +38,10 @@ else()
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe>
     $<INSTALL_INTERFACE:include>)
 
+    message("Installing WeRockCodecs")
+
+    include(GNUInstallDirs)
+
     install(
             TARGETS ${PROJECT_NAME}
             EXPORT ${PROJECT_NAME}-targets
