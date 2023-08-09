@@ -18,6 +18,12 @@ add_custom_command(
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
         COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_custom_target(${PROJECT_NAME} DEPENDS sbe.stub)
-
-target_include_directories(${PROJECT_NAME} INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe")
+#add_custom_target(${PROJECT_NAME} DEPENDS sbe.stub)
+add_library(${PROJECT_NAME} INTERFACE)
+#target_include_directories(${PROJECT_NAME} SYSTEM INTERFACE  ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe)
+target_include_directories(
+        ${PROJECT_NAME}
+        SYSTEM INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe>
+        $<INSTALL_INTERFACE:include>
+)
