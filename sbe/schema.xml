@@ -78,12 +78,11 @@
         <field id="10" type="int32" name="orderBookId" />
         <field id="11" type="string16" name="exchange" />
         <field id="12" type="uint32" name="contractSize" />
-        <field id="13" type="uint32" name="contractSizeDenominator" />
-        <field id="14" type="uint16" name="tickSizeTableId" />
-        <field id="15" type="uint16" name="lotSizeTableId" />
-        <field id="16" type="uint32" name="priceDenominator" />
-        <field id="17" type="uint32" name="volumeDenominator" />
-        <field id="21" type="uint32" name="fixedTickSize" />
-        <field id="22" type="uint32" name="fixedLotSize" />
+        <field id="13" type="uint16" name="tickSizeTableId" />
+        <field id="14" type="uint16" name="lotSizeTableId" />
+        <field id="15" type="uint32" name="priceDenominator" />
+        <field id="16" type="uint32" name="volumeDenominator" />
+        <field id="17" type="uint32" name="fixedTickSize" />
+        <field id="18" type="uint32" name="fixedLotSize" />
     </sbe:message>
 </sbe:messageSchema>
