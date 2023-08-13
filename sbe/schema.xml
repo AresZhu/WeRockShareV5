@@ -54,7 +54,7 @@
             <field name="step" id="7" type="int32"/>
         </group>
     </sbe:message>
-    <sbe:message name="LotSizeTableSbe" id="12">
+    <sbe:message name="lotSizeTableSbe" id="12">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="uint16" name="id" />
         <field id="3" type="uint32" name="denominator" />
@@ -65,25 +65,25 @@
         </group>
     </sbe:message>
 
-    <sbe:message name="InstrumentSbe" id="13">
-        <field id="1" type="uint8" name="NodeId" />
-        <field id="2" type="uint16" name="Id" />
-        <field id="3" type="uint16" name="SecurityId" />
-        <field id="4" type="uint8" name="SecurityType" />
-        <field id="5" type="uint8" name="Market" />
-        <field id="6" type="uint8" name="IsPrimary" />
-        <field id="7" type="String16" name="TradingSymbol" />
-        <field id="8" type="String16" name="Ric" />
-        <field id="9" type="uint8" name="TradingCurrency" />
-        <field id="10" type="int32" name="OrderBookId" />
-        <field id="11" type="String16" name="Exchange" />
-        <field id="12" type="uint32" name="ContractSize" />
-        <field id="13" type="uint32" name="ContractSizeDenominator" />
-        <field id="14" type="uint16" name="TickSizeTableId" />
-        <field id="15" type="uint16" name="LotSizeTableId" />
-        <field id="16" type="uint32" name="PriceDenominator" />
-        <field id="17" type="uint32" name="VolumeDenominator" />
-        <field id="21" type="uint32" name="FixedTickSize" />
-        <field id="22" type="uint32" name="FixedLotSize" />
+    <sbe:message name="instrumentSbe" id="13">
+        <field id="1" type="uint8" name="nodeId" />
+        <field id="2" type="uint16" name="id" />
+        <field id="3" type="uint16" name="securityId" />
+        <field id="4" type="uint8" name="securityType" />
+        <field id="5" type="uint8" name="market" />
+        <field id="6" type="uint8" name="isPrimary" />
+        <field id="7" type="String16" name="tradingSymbol" />
+        <field id="8" type="String16" name="ric" />
+        <field id="9" type="uint8" name="tradingCurrency" />
+        <field id="10" type="int32" name="orderBookId" />
+        <field id="11" type="String16" name="exchange" />
+        <field id="12" type="uint32" name="contractSize" />
+        <field id="13" type="uint32" name="contractSizeDenominator" />
+        <field id="14" type="uint16" name="tickSizeTableId" />
+        <field id="15" type="uint16" name="lotSizeTableId" />
+        <field id="16" type="uint32" name="priceDenominator" />
+        <field id="17" type="uint32" name="volumeDenominator" />
+        <field id="21" type="uint32" name="fixedTickSize" />
+        <field id="22" type="uint32" name="fixedLotSize" />
     </sbe:message>
 </sbe:messageSchema>
