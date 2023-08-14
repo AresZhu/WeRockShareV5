@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="sbe-tool" Version="1.23.1.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Remove="CMakeLists.txt" />
+    </ItemGroup>
+    
+    
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+      <Exec Command="java -Dsbe.target.language=uk.co.real_logic.sbe.generation.csharp.CSharp -Dsbe.errorLog=yes -Dsbe.output.dir=. -jar sbe\sbe-all-1.29.0.jar sbe\schema.xml" />
+    </Target>
+</Project>

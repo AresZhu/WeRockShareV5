@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "WeRockShare/1.0.0": {
+        "dependencies": {
+          "sbe-tool": "1.23.1.1"
+        },
+        "runtime": {
+          "WeRockShare.dll": {}
+        }
+      },
+      "sbe-tool/1.23.1.1": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SBE.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.Memory/4.5.3": {}
+    }
+  },
+  "libraries": {
+    "WeRockShare/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "sbe-tool/1.23.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UduWx6vOLyXSYCfl/L/ZskVUfz7BKgnw4rILjOUU/GjShUxsXAbW95a47TGbk+IsDYcQsvOd9m2SN/PDgJU3aQ==",
+      "path": "sbe-tool/1.23.1.1",
+      "hashPath": "sbe-tool.1.23.1.1.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+    }
+  }
+}

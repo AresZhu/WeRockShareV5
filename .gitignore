@@ -17,13 +17,16 @@ moc*.cpp
 
 Makefile*
 *.exe
+*.dll
+*.pdb
 
 *.user*
 
 *.*ebug
 *.*lease
-
+obj/
 /gen/
 /old*/
 /*build*/
 /.idea/
+/WeRock_Share_Sbe/
