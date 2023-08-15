@@ -1,0 +1,298 @@
+namespace WeRock.Share;
+
+attribute "fs_serializer";
+
+enum ThreadingMode : byte {
+    SHARED = 0,
+    DEDICATED
+}
+
+enum ExchangeMic: byte {
+    ALL = 0,
+    XDCE,
+    XZCE,
+    XSGE,
+    XSHG,
+    XSHE
+}
+
+enum PublicationType : byte {
+    UNKNOWN = 0,
+    DATA_HUB,
+    DATA_NODE,
+    MARKET_DATA,
+    MARKET_SUBSCRIPTION,
+    ORDER_INSTRUCTION,
+    ORDER_MESSAGE,
+    INTER_STRATEGY_MESSAGE
+}
+
+enum NodeRole : byte {
+    UNKNOWN = 0,
+    DATA_HUB,
+    GUI_CLIENT,
+    API_CLIENT,
+    AERON_MEDIA_DRIVER,
+    MARKET_DATA,
+    ORDER_EXECUTION,
+    TRADING
+}
+
+enum Currency : byte {
+    NONE = 0,
+    CNY,
+    USD,
+    AUD
+}
+
+enum Market : byte {
+    Global = 0,
+    CN,
+    US,
+    AU
+}
+
+enum SecurityType : byte {
+    ALL = 0,
+    CURRENCY_PAIR,
+    INDEX,
+    STOCK,
+    ETF,
+    FUTURES,
+    CRYPTO_SPOT,
+    CRYPTO_FUTURES,
+    INDEX_FUTURES,
+    STOCK_FUTURES,
+    ETF_FUTURES
+}
+
+enum Side : byte {
+    UNKNOWN = 0,
+    BUY,
+    SELL
+}
+
+enum OrderType : byte {
+    UNKNOWN = 0,
+    MARKET,
+    LIMIT,
+    STOP,
+    MIDPOINT_PEG
+}
+
+enum PositionEffect : byte {
+    OPEN = 0,
+    CLOSE,
+    CLOSE_TODAY,
+    CLOSE_YESTERDAY,
+
+    AUTO,
+    NOT_CLOSE_TODAY,
+    CLOSE_TODAY_FIRST
+}
+
+enum TimeInForce : byte {
+    DAY = 0,
+    IMMEDIATE_OR_CANCEL,
+    FILL_OR_KILL
+}
+
+enum OrderMessageType : byte {
+    UNKNOWN = 0,
+    NEW,
+    NEW_ACCEPT,
+    NEW_REJECT,
+    CANCEL,
+    CANCELLED,
+    CANCEL_REJECT,
+    REPLACE,
+    REPLACED,
+    REPLACE_REJECT,
+    FILL,
+    FILLED,
+    CLOSED
+}
+
+enum OrderStatus: byte {
+   UNKNOWN = 0,
+   NEW,
+   REJECTED,
+   OPEN,
+   PARTIALLY_FILLED,
+   FILLED,
+   CANCELLED,
+   CLOSED
+ }
+
+enum OrderMessageSource: byte {
+    INTERNAL = 0,
+    EXTERNAL
+}
+
+enum TradingStatus : byte {
+    UNKNOWN = 0,
+    PRE_OPEN_AUCTION,
+    OPEN,
+    PRE_CLOSE_AUCTION,
+    CLOSE
+}
+
+enum OrderInstruction: byte {
+    MANUAL = 0,
+    MM,
+    RISK,
+    SCRATCH,
+    B2B,
+    HEDGING,
+    SNIPING
+}
+
+enum TradeType : byte {
+    MARKET = 0,
+    BOOKING = 1
+}
+
+enum ConnectionState : byte {
+    UNKNOWN = 0,
+    CONNECTING,
+    CONNECTED,
+    DISCONNECTED,
+    ERROR
+}
+
+enum OrderState : short {
+    NONE = 0,
+    ACCEPTED = 1,
+    PENDING_CANCEL = 2,
+    PENDING_REPLACE = 4,
+    REPLACED = 8,
+    REJECTED = 16,
+    CANCELLED = 32,
+    PARTIALLY_FILLED = 64,
+    FILLED = 128,
+    RESERVED1 = 256,
+    RESERVED2 = 512,
+    TERMINATED = 1024
+}
+
+enum PricingMode : byte {
+    IMBALANCE = 0,
+    MID,
+    BID_OFFER
+}
+
+enum PricerType : byte {
+    UNKNOWN = 0,
+    FUTURES_IMBALANCE,
+    STOCK_IMBALANCE,
+    MID,
+    BID_OFFER
+}
+
+enum GatewayType : byte {
+    UNKNOWN = 0,
+    SIM,
+    CTP,
+    FIX42,
+    OES,
+    GTP
+}
+
+enum StrategyType: byte {
+    MANUAL = 0,
+    MARKET_MAKING,
+    CRYPTO_MARKET_MAKING,
+    FUTURES_HEDGING
+}
+
+enum StrategyState : byte {
+    UNKNOWN = 0,
+    INITIALIZING,
+    WAITING,
+    STARTED,
+    STOPPING,
+    STOPPED,
+    RISK,
+    TERMINATED
+}
+
+enum StrategyActionType : byte {
+    UNKNOWN = 0,
+    START,
+    STOP,
+    RISK_MODE,
+    TERMINATE,
+    TERMINATE_ORDERS,
+}
+
+enum MarginMode : byte {
+    AUTO = 0,
+    MANUAL = 1
+}
+
+enum CorporateActionType: byte {
+    UNKNOWN = 0,
+}
+
+
+
+enum TaskStatus : byte {
+    UNKNOWN = 0,
+    RUNNING,
+    SUCCESS,
+    FAILED
+}
+
+enum BasketType : byte {
+    OFFICIAL,
+    CREATE,
+    REDEEM,
+    TRACKING,
+    CUSTOM,
+}
+
+enum Region: byte {
+    GLOBAL,
+    ASIA,
+    EMEA,
+    AMERICAS
+}
+
+enum ReferencePriceType: byte {
+    USCashClose,
+    CNCashClose,
+    HKCashClose,
+    JPCashClose,
+    AUCashClose
+}
+
+enum EntityEventType: byte {
+    SNAPSHOT = 0,
+    ADDED,
+    UPDATED,
+    REMOVED
+}
+
+enum SettingScope: byte {
+    GLOBAL,
+    USER_DEFINED
+}
+
+enum PriceInputMode: byte {
+    IMBALANCE = 0,
+    BID_OFFER,
+    MID_PRICE
+}
+
+
+enum ScheduleTaskType : byte {
+    XsheEtfLoader,
+    PriceSnapper,
+    PnlMarker,
+    PositionSummaryUpdater,
+}
+
+enum TaskRunType: byte {
+    SCHEDULED = 0,
+    MANUAL
+}

@@ -1,5 +1,5 @@
+include "Enum.fbs";
 include "Shared.fbs";
-include "DataHub.fbs";
 
 namespace WeRock.Share;
 

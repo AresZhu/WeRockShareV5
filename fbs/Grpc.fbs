@@ -1,0 +1,145 @@
+include "Enum.fbs";
+
+namespace WeRock.Share;
+
+attribute "fs_serializer";
+
+enum CmdType: byte {
+    PING = 0,
+    LOGON,
+    MARKET_SUBSCRIPTION,
+    NEW_ORDER,
+    CANCEL_ORDERS,
+    TERMINATE_ORDERS,
+    START_STRATEGIES,
+    STOP_STRATEGIES,
+    REDUCE_RISK,
+    TERMINATE_STRATEGY,
+    TERMINATE_ORDERS_IN_STRATEGY,
+    UPDATE_STRATEGY,
+    MANUAL_TRADE,
+    RUN_TASK,
+    CREATE_TASK,
+    REMOVE_TASK,
+    UPDATE_BASKET,
+    REMOVE_BASKET,
+    RECALCULATE_LIVE_POSITION,
+}
+
+enum ErrorCode: short {
+    SUCCESS = 0,
+    UNKNOWN_ERROR,
+    USER_NOT_FOUND,
+    PASSWORD_INVALID,
+    USER_DISABLED
+}
+
+enum EntityType : byte {
+    UNKNOWN = 0,
+    HEART_BEAT,
+    USER,
+    EXECUTION_GATEWAY,
+    MARKET_PRICE,
+    SECURITY,
+    ETF_SECURITY,
+    FUTURE_SECURITY,
+    SECURITY_LISTING,
+    ETF_PERFORMANCE,
+    INSTRUMENT,
+    TICK_SIZE_RULE,
+    LOT_SIZE_RULE,
+    TICK_SIZE_TABLE,
+    LOT_SIZE_TABLE,
+    STARTUP_STRATEGY,
+    FUTURES,
+    OPTION,
+    STRATEGY_ORDER,
+    ACTIVE_STRATEGY_ORDER,
+    TRADE,
+    POSITION,
+    LIVE_POSITION,
+    ETF_MM_STRATEGY_DTO,
+    MM_STRATEGY_DTO,
+    FH_STRATEGY_DTO,
+    RESOLVED_BASKET,
+    PRICING_BASKET,
+    PRICE_HISTORY,
+    SCHEDULE_TASK,
+    SCHEDULE_TASK_HISTORY,
+    SETTING,
+    FUTURES_PRODUCT,
+    CORPORATE_ACTION,
+}
+
+enum SubType : byte {
+    UNKNOWN = 0,
+    SUBSCRIBE,
+    UNSUBSCRIBE,
+    HEART_BEAT,
+}
+
+table LongValue(fs_serializer) {
+    value: int64;
+}
+
+table LongValueList(fs_serializer) {
+    items: [LongValue];
+}
+
+table NewOrder(fs_serializer) {
+    id: long;
+    listing_id: long;
+    strategy_id: long;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    price: double;
+    quantity: double;
+    instruction: OrderInstruction;
+    execution_gateway_id: long;
+}
+
+table CmdRequest(fs_serializer) {
+    type: CmdType;
+    data: [ubyte];
+}
+
+table CmdReply(fs_serializer) {
+    code: ErrorCode;
+    data: [ubyte];
+}
+
+table SubRequest(fs_serializer) {
+    type: SubType;
+}
+
+table SubResponse(fs_serializer) {
+    entity_type: EntityType;
+    event_type: EntityEventType;
+    entity_id: long;
+    data: [ubyte];
+}
+
+table LoginRequest(fs_serializer) {
+    user_name: string;
+    password: string;
+    client_version: string;
+}
+
+table ManualTrade(fs_serializer) {
+    listing_id: long;
+    security_id: long;
+    strategy_id: long;
+    side: Side;
+    price: double;
+    quantity: double;
+    type: TradeType;
+    position_effect: PositionEffect;
+    reference_info: string;
+}
+
+rpc_service RpcService {
+  Command(CmdRequest): CmdReply;
+  Subscribe(SubRequest): SubResponse (streaming: "duplex");
+}
+
