@@ -27,16 +27,6 @@ enum PublicationType : byte {
     INTER_STRATEGY_MESSAGE
 }
 
-enum NodeRole : byte {
-    UNKNOWN = 0,
-    DATA_HUB,
-    GUI_CLIENT,
-    API_CLIENT,
-    AERON_MEDIA_DRIVER,
-    MARKET_DATA,
-    ORDER_EXECUTION,
-    TRADING
-}
 
 enum Currency : byte {
     NONE = 0,

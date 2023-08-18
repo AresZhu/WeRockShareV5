@@ -237,8 +237,10 @@ table Node {
     last_updated: long;
     
     name: string;
-    role: NodeRole;
+    host: string;
+    description: string;
     online: bool;
+    heartbeat: long;
 }
 
 table NodeList {

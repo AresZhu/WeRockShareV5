@@ -41,7 +41,6 @@
     </sbe:message>
     <sbe:message name="NodeLogonSbe" id="2">
         <field id="1" type="uint8" name="nodeId" />
-        <field id="2" type="string16" name="hostname" />
     </sbe:message>
 
     <sbe:message name="TickSizeTableSbe" id="11">
