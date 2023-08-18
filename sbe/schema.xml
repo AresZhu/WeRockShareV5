@@ -53,7 +53,7 @@
             <field name="step" id="7" type="int32"/>
         </group>
     </sbe:message>
-    <sbe:message name="lotSizeTableSbe" id="12">
+    <sbe:message name="LotSizeTableSbe" id="12">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="uint16" name="id" />
         <field id="3" type="uint32" name="denominator" />
@@ -64,7 +64,7 @@
         </group>
     </sbe:message>
 
-    <sbe:message name="instrumentSbe" id="13">
+    <sbe:message name="InstrumentSbe" id="13">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="uint16" name="id" />
         <field id="3" type="uint16" name="securityId" />
@@ -83,5 +83,9 @@
         <field id="16" type="uint32" name="volumeDenominator" />
         <field id="17" type="uint32" name="fixedTickSize" />
         <field id="18" type="uint32" name="fixedLotSize" />
+    </sbe:message>
+
+    <sbe:message name="NewOrderSbe" id="14">
+        <field id="1" type="int64" name="orderId" />
     </sbe:message>
 </sbe:messageSchema>
