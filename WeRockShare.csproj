@@ -17,16 +17,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <FlatSharpSchema Include="fbs\Shared.fbs" />
-        <FlatSharpSchema Include="fbs\Strategy.fbs" />
-        <None Remove="fbs\Enum.fbs" />
         <FlatSharpSchema Include="fbs\Enum.fbs" />
-        <None Remove="fbs\Grpc.fbs" />
-        <FlatSharpSchema Include="fbs\Grpc.fbs" />
-        <None Remove="fbs\Shared.fbs" />
         <FlatSharpSchema Include="fbs\Shared.fbs" />
-        <None Remove="fbs\Strategy.fbs" />
         <FlatSharpSchema Include="fbs\Strategy.fbs" />
+        <FlatSharpSchema Include="fbs\Grpc.fbs" />
     </ItemGroup>
     
     <ItemGroup>
