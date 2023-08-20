@@ -73,16 +73,17 @@
         <field id="6" type="uint8" name="isPrimary" />
         <field id="7" type="string16" name="tradingSymbol" />
         <field id="8" type="string16" name="ric" />
-        <field id="9" type="uint8" name="tradingCurrency" />
-        <field id="10" type="int32" name="orderBookId" />
-        <field id="11" type="string16" name="exchange" />
-        <field id="12" type="uint32" name="contractSize" />
-        <field id="13" type="uint16" name="tickSizeTableId" />
-        <field id="14" type="uint16" name="lotSizeTableId" />
-        <field id="15" type="uint32" name="priceDenominator" />
-        <field id="16" type="uint32" name="volumeDenominator" />
-        <field id="17" type="uint32" name="fixedTickSize" />
-        <field id="18" type="uint32" name="fixedLotSize" />
+        <field id="9" type="string32" name="bbg" />
+        <field id="10" type="uint8" name="tradingCurrency" />
+        <field id="11" type="int32" name="orderBookId" />
+        <field id="12" type="string16" name="exchange" />
+        <field id="13" type="uint32" name="contractSize" />
+        <field id="14" type="uint16" name="tickSizeTableId" />
+        <field id="15" type="uint16" name="lotSizeTableId" />
+        <field id="16" type="uint32" name="priceDenominator" />
+        <field id="17" type="uint32" name="volumeDenominator" />
+        <field id="18" type="uint32" name="fixedTickSize" />
+        <field id="19" type="uint32" name="fixedLotSize" />
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">

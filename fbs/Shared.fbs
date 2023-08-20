@@ -70,7 +70,7 @@ table SizeRule(fs_serializer) {
 
 table TickSizeTable(fs_serializer) {
     id: long;
-    exponent: ubyte;
+    denominator: uint;
     rules: [SizeRule];
 }
 
@@ -80,7 +80,7 @@ table TickSizeTableList(fs_serializer) {
 
 table LotSizeTable(fs_serializer) {
     id: long;
-    exponent: ubyte;
+    denominator: uint;
     rules: [SizeRule];
 }
 
@@ -109,8 +109,10 @@ table Security(fs_serializer) {
     last_updated: long;
     
     symbol: string(required);
+    isin: string(required);
+    sedol: string(required);
     name: string(required);
-    stem: string(required);
+    product_stem: string(required);
     type: SecurityType;
     market: Market;
 }
@@ -119,7 +121,7 @@ table SecurityList(fs_serializer) {
     items: [Security];
 }
 
-table FutureSecurity(fs_serializer) {
+table FuturesSecurity(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -129,8 +131,8 @@ table FutureSecurity(fs_serializer) {
     expired_date: int;
 }
 
-table FutureSecurityList(fs_serializer) {
-    items: [FutureSecurity];
+table FuturesSecurityList(fs_serializer) {
+    items: [FuturesSecurity];
 }
 
 table EtfSecurity(fs_serializer) {
@@ -173,6 +175,7 @@ table SecurityListing(fs_serializer) {
     exchange: string(required);
     trading_symbol: string(required);
     ric: string(required);
+    bbg: string(required);
     currency: Currency;
     fixed_tick_size: double;
     fixed_lot_size: double;
@@ -185,23 +188,28 @@ table SecurityListingList(fs_serializer) {
 table Instrument(fs_serializer) {
     id: long;
     
+    resolving_flags: int;
     security_id: long;
     security_type: SecurityType;
     market: Market;
     is_primary: bool;
-    stem: string(required);
+    product_stem: string(required);
     name: string(required);
     trading_symbol: string(required);
+    bbg: string(required);
+    isin: string(required);
+    sedol: string(required);
     ric: string(required);
-    currency: Currency;
+    trading_currency: Currency;
     exchange: string(required);
-    contract_size: double;
-    fixed_tick_size: double;
-    fixed_lot_size: double;
+    order_book_id: int;
+    contract_size: uint;
+    fixed_tick_size: uint;
+    fixed_lot_size: uint;
     tick_size_table_id: ushort;
     lot_size_table_id: ushort;
-    price_exponent: ubyte;
-    volume_exponent: ubyte;
+    price_denominator: uint;
+    volume_denominator: uint;
 }
 
 table InstrumentList(fs_serializer) {
@@ -229,8 +237,6 @@ table CorporateAction(fs_serializer) {
 table CorporateActionList(fs_serializer) {
     items: [CorporateAction];
 }
-
-
 
 table Node {
     id: long;

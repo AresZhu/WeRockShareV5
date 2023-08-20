@@ -150,6 +150,12 @@ enum ConnectionState : byte {
     ERROR
 }
 
+enum InstrumentResolvingFlags : int {
+    SUCCESS = 0,
+    FAILED_GET_TICK_SIZE_TABLE = 1,
+    FAILED_GET_LOT_SIZE_TABLE = 2
+}
+
 enum OrderState : short {
     NONE = 0,
     ACCEPTED = 1,
