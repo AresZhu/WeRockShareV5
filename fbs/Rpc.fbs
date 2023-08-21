@@ -6,7 +6,7 @@ attribute "fs_serializer";
 
 enum CmdType: byte {
     PING = 0,
-    LOGON,
+    LOGIN,
     MARKET_SUBSCRIPTION,
     NEW_ORDER,
     CANCEL_ORDERS,
@@ -28,10 +28,9 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     SUCCESS = 0,
+    INVALID_REQUEST,
+    INVALID_USER,
     UNKNOWN_ERROR,
-    USER_NOT_FOUND,
-    PASSWORD_INVALID,
-    USER_DISABLED
 }
 
 enum EntityType : byte {
