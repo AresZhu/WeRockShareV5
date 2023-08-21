@@ -266,7 +266,8 @@ enum EntityEventType: byte {
     SNAPSHOT = 0,
     ADDED,
     UPDATED,
-    REMOVED
+    REMOVED,
+    PURGED
 }
 
 enum SettingScope: byte {
