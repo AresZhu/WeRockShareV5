@@ -137,9 +137,3 @@ table ManualTrade(fs_serializer) {
     position_effect: PositionEffect;
     reference_info: string;
 }
-
-rpc_service RpcService {
-  Command(CmdRequest): CmdReply;
-  Subscribe(SubRequest): SubResponse (streaming: "duplex");
-}
-

@@ -20,7 +20,7 @@
         <FlatSharpSchema Include="fbs\Enum.fbs" />
         <FlatSharpSchema Include="fbs\Shared.fbs" />
         <FlatSharpSchema Include="fbs\Strategy.fbs" />
-        <FlatSharpSchema Include="fbs\Grpc.fbs" />
+        <FlatSharpSchema Include="fbs\Rpc.fbs" />
     </ItemGroup>
     
     <ItemGroup>
