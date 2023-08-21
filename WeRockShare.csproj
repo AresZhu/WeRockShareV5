@@ -27,9 +27,6 @@
       <None Remove="CMakeLists.txt" />
     </ItemGroup>
     
-    <ItemGroup>
-      <Folder Include="Utils\" />
-    </ItemGroup>
     
     
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
