@@ -29,6 +29,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     SUCCESS = 0,
+    LOADING_SNAPSHOT,
     SNAPSHOT_LOADED,
     INVALID_REQUEST,
     INVALID_USER,

@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "WeRockShare/1.0.0": {
         "dependencies": {
-          "FlatSharp.Compiler": "7.2.1",
-          "FlatSharp.Runtime": "7.2.1",
+          "FlatSharp.Compiler": "7.2.3",
+          "FlatSharp.Runtime": "7.2.3",
           "Grpc.Core": "2.46.6",
           "sbe-tool": "1.23.1.1"
         },
@@ -17,15 +17,15 @@
           "WeRockShare.dll": {}
         }
       },
-      "FlatSharp.Compiler/7.2.1": {},
-      "FlatSharp.Runtime/7.2.1": {
+      "FlatSharp.Compiler/7.2.3": {},
+      "FlatSharp.Runtime/7.2.3": {
         "dependencies": {
           "System.Memory": "4.5.5"
         },
         "runtime": {
           "lib/net7.0/FlatSharp.Runtime.dll": {
-            "assemblyVersion": "7.2.1.0",
-            "fileVersion": "7.2.1.0"
+            "assemblyVersion": "7.2.3.0",
+            "fileVersion": "7.2.3.0"
           }
         }
       },
@@ -99,19 +99,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FlatSharp.Compiler/7.2.1": {
+    "FlatSharp.Compiler/7.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YJpA91WY8DvoYK8zHW+cpkEQFW/yRFRrGkz7WYTzDhP2Egm3J+2tY1jgnKt+ElEfkqBRkx2m1O4vx5pQCiVlwA==",
-      "path": "flatsharp.compiler/7.2.1",
-      "hashPath": "flatsharp.compiler.7.2.1.nupkg.sha512"
+      "sha512": "sha512-ea8BklNlrVuAXBsDUfE1mf9wJXB33YW49HzAPwqkQGxEjL+mkT9Ova/afm9WwXDQcfV4whHki/1m+iQ/x7es1Q==",
+      "path": "flatsharp.compiler/7.2.3",
+      "hashPath": "flatsharp.compiler.7.2.3.nupkg.sha512"
     },
-    "FlatSharp.Runtime/7.2.1": {
+    "FlatSharp.Runtime/7.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YHhsVdS9TX0HampZeE9TDDNMbd/bLk/iplpPMqEfm1pRWpYNH83+nTD+DRbAfFHr4MBDMW+uIRXKpsF5PFB9jw==",
-      "path": "flatsharp.runtime/7.2.1",
-      "hashPath": "flatsharp.runtime.7.2.1.nupkg.sha512"
+      "sha512": "sha512-A/IR9xpm2SdiXo+nzRfPp0aoqQFNaZOkdjnPFxp2B0QbmlFS6U55ShFMsDbkLkcGqq3LYtszcfgRFxh9HeKzsA==",
+      "path": "flatsharp.runtime/7.2.3",
+      "hashPath": "flatsharp.runtime.7.2.3.nupkg.sha512"
     },
     "Grpc.Core/2.46.6": {
       "type": "package",
