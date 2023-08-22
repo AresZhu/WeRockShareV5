@@ -7,6 +7,7 @@ attribute "fs_serializer";
 enum CmdType: byte {
     PING = 0,
     LOGIN,
+    LOAD_SNAPSHOTS,
     MARKET_SUBSCRIPTION,
     NEW_ORDER,
     CANCEL_ORDERS,
@@ -28,6 +29,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     SUCCESS = 0,
+    SNAPSHOT_LOADED,
     INVALID_REQUEST,
     INVALID_USER,
     UNKNOWN_ERROR,
@@ -99,11 +101,13 @@ table NewOrder(fs_serializer) {
 }
 
 table CmdRequest(fs_serializer) {
+    id: int;
     type: CmdType;
     data: [ubyte];
 }
 
 table CmdReply(fs_serializer) {
+    id: int;
     code: ErrorCode;
     data: [ubyte];
 }
