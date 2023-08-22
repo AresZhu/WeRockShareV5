@@ -114,12 +114,7 @@ table CmdReply(fs_serializer) {
     data: [ubyte];
 }
 
-table SubRequest(fs_serializer) {
-    type: SubType;
-}
-
 table SubResponse(fs_serializer) {
-    entity_type: EntityType;
     event_type: EntityEventType;
     entity_id: long;
     data: [ubyte];
