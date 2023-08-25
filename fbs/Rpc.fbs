@@ -122,7 +122,7 @@ table SubResponse(fs_serializer) {
 }
 
 table LoginRequest(fs_serializer) {
-    user_name: string;
+    account: string;
     password: string;
     client_version: string;
 }
