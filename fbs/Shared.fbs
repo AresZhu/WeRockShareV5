@@ -274,8 +274,9 @@ table User(fs_serializer) {
     version: int;
     last_updated: long;
     
-    name: string;
+    account: string;
     password: string;
+    fullname: string;
     enabled: bool;
 }
 
