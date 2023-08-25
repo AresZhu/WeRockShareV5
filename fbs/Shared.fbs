@@ -112,7 +112,7 @@ table Security(fs_serializer) {
     isin: string(required);
     sedol: string(required);
     name: string(required);
-    product_stem: string(required);
+    product: string(required);
     type: SecurityType;
     market: Market;
 }
@@ -193,7 +193,7 @@ table Instrument(fs_serializer) {
     security_type: SecurityType;
     market: Market;
     is_primary: bool;
-    product_stem: string(required);
+    product: string(required);
     name: string(required);
     trading_symbol: string(required);
     bbg: string(required);
@@ -509,24 +509,6 @@ table Trade(fs_serializer) {
 
 table TradeList(fs_serializer) {
     items: [Trade];
-}
-
-table FuturesProduct(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-
-    identifier: string;
-    name: string;
-    type: SecurityType;
-    region: Region;
-    ric_stem: string;
-    bbg_stem: string;
-    active_listing_id: long;
-}
-
-table FuturesProductList(fs_serializer) {
-    items: [FuturesProduct];
 }
 
 table Position(fs_serializer) {
