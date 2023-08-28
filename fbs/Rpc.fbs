@@ -8,6 +8,7 @@ enum CmdType: byte {
     PING = 0,
     LOGIN,
     LOAD_SNAPSHOT,
+    ADD_UPDATE_INSTRUMENT,
     MARKET_SUBSCRIPTION,
     NEW_ORDER,
     CANCEL_ORDERS,
