@@ -1,4 +1,5 @@
 include "Enum.fbs";
+include "Shared.fbs";
 
 namespace WeRock.Share;
 
@@ -141,7 +142,7 @@ table ManualTrade(fs_serializer) {
 }
 
 table AddOrUpdateInstrumentRequest(fs_serializer) {
-    Security: Security;
-    SecurityListings: [SecurityListing];
-    FuturesSecurity: FuturesSecurity;
+    security: Security;
+    security_listings: [SecurityListing];
+    futures_security: FuturesSecurity;
 }
