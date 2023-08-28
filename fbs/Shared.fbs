@@ -108,10 +108,10 @@ table Security(fs_serializer) {
     version: int;
     last_updated: long;
     
-    symbol: string(required);
+    primary_identifier: string(required);
+    description: string(required);
     isin: string(required);
     sedol: string(required);
-    name: string(required);
     product: string(required);
     type: SecurityType;
     market: Market;
@@ -191,10 +191,11 @@ table Instrument(fs_serializer) {
     resolving_flags: int;
     security_id: long;
     security_type: SecurityType;
+    primary_identifier: string(required);
+    description: string(required);
     market: Market;
     is_primary: bool;
     product: string(required);
-    name: string(required);
     trading_symbol: string(required);
     bbg: string(required);
     isin: string(required);
