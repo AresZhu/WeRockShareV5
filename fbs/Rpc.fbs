@@ -138,3 +138,9 @@ table ManualTrade(fs_serializer) {
     position_effect: PositionEffect;
     reference_info: string;
 }
+
+table AddOrUpdateInstrumentRequest(fs_serializer) {
+    Security: Security;
+    SecurityListings: [SecurityListing];
+    FuturesSecurity: FuturesSecurity;
+}
