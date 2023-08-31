@@ -37,6 +37,7 @@ enum ErrorCode: short {
     SNAPSHOT_LOADED,
     INVALID_REQUEST,
     INVALID_USER,
+    DUPLICATE_SECURITY,
     UNKNOWN_ERROR,
 }
 
