@@ -63,29 +63,18 @@ table LotSizeRuleList(fs_serializer) {
 }
 
 table SizeRule(fs_serializer) {
-    from: int;
-    to: int;
-    step: int;
+    from: double;
+    to: double;
+    step: double;
 }
 
 table TickSizeTable(fs_serializer) {
     id: long;
-    denominator: uint;
     rules: [SizeRule];
 }
 
 table TickSizeTableList(fs_serializer) {
     items: [TickSizeTable];
-}
-
-table LotSizeTable(fs_serializer) {
-    id: long;
-    denominator: uint;
-    rules: [SizeRule];
-}
-
-table LotSizeTableList(fs_serializer) {
-    items: [LotSizeTable];
 }
 
 table TradingCalendar(fs_serializer) {
