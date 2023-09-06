@@ -171,6 +171,11 @@ enum OrderState : short {
     TERMINATED = 1024
 }
 
+enum InstrumentFlags : int {
+    NONE = 0,
+    TOPIX_500 = 1
+}
+
 enum PricingMode : byte {
     IMBALANCE = 0,
     MID,
