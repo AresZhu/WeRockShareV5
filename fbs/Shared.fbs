@@ -101,7 +101,6 @@ table Security(fs_serializer) {
     description: string(required);
     sedol: string(required);
     isin: string(required);
-    product: string(required);
     type: SecurityType;
     market: Market;
 }
@@ -184,7 +183,6 @@ table Instrument(fs_serializer) {
     description: string(required);
     market: Market;
     is_primary: bool;
-    product: string(required);
     trading_symbol: string(required);
     bbg: string(required);
     isin: string(required);
