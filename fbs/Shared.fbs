@@ -99,6 +99,7 @@ table Security(fs_serializer) {
     
     primary_identifier: string(required);
     description: string(required);
+    sedol: string(required);
     isin: string(required);
     product: string(required);
     type: SecurityType;
@@ -162,7 +163,6 @@ table SecurityListing(fs_serializer) {
     is_primary: bool;
     exchange: string(required);
     trading_symbol: string(required);
-    sedol: string(required);
     ric: string(required);
     bbg: string(required);
     currency: Currency;
