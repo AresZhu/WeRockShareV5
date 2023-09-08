@@ -56,7 +56,7 @@ table LotSizeRule(fs_serializer) {
     security_type: SecurityType;
     exchange: string(required);
     trading_symbol_regex: string(required);
-    rules: string(required);
+    lot_size: double;
 }
 
 table LotSizeRuleList(fs_serializer) {
@@ -166,8 +166,6 @@ table SecurityListing(fs_serializer) {
     ric: string(required);
     bbg: string(required);
     currency: Currency;
-    tick_size: double;
-    lot_size: double;
 }
 
 table SecurityListingList(fs_serializer) {
