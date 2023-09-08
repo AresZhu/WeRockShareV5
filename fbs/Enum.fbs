@@ -298,3 +298,8 @@ enum TaskRunType: byte {
     SCHEDULED = 0,
     MANUAL
 }
+
+enum TickSizeType: byte {
+    CONST = 0,
+    DYNAMIC = 1,
+}

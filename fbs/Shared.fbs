@@ -166,8 +166,8 @@ table SecurityListing(fs_serializer) {
     ric: string(required);
     bbg: string(required);
     currency: Currency;
-    fixed_tick_size: double;
-    fixed_lot_size: double;
+    tick_size: double;
+    lot_size: double;
 }
 
 table SecurityListingList(fs_serializer) {
@@ -180,6 +180,7 @@ table Instrument(fs_serializer) {
     resolving_flags: int;
     security_id: long;
     security_type: SecurityType;
+    expired_date: int;
     primary_identifier: string(required);
     description: string(required);
     market: Market;
@@ -191,14 +192,11 @@ table Instrument(fs_serializer) {
     ric: string(required);
     trading_currency: Currency;
     exchange: string(required);
-    order_book_id: int;
-    contract_size: uint;
-    fixed_tick_size: uint;
-    fixed_lot_size: uint;
+    contract_size: double;
+    lot_size: double;
+    tick_size: double;
     tick_size_table_id: ushort;
-    lot_size_table_id: ushort;
-    price_denominator: uint;
-    volume_denominator: uint;
+    tick_size_description: string;
 }
 
 table InstrumentList(fs_serializer) {
