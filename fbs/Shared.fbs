@@ -223,22 +223,31 @@ table CorporateActionList(fs_serializer) {
     items: [CorporateAction];
 }
 
-table Node {
+table Node(fs_serializer) {
     id: long;
     last_updated: long;
     
-    name: string;
-    host: string;
-    description: string;
-    online: bool;
-    heartbeat: long;
+    name: string(required);
+    enabled: bool;
+    settings: string(required);
 }
 
-table NodeList {
+table NodeList(fs_serializer) {
     items: [Node];
 }
 
+table NodeStatus {
+    id: long;
+    last_updated: long;
+    
+    node: Node(required);
+    host: string;
+    online: bool;
+}
 
+table NodeStatusList {
+    items: [NodeStatus];
+}
 
 table Setting(fs_serializer) {
     id: long;

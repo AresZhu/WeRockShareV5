@@ -81,6 +81,7 @@ enum EntityType : byte {
     SETTING,
     FUTURES_PRODUCT,
     CORPORATE_ACTION,
+    NODE,
 }
 
 enum SubType : byte {
