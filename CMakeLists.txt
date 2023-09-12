@@ -28,13 +28,8 @@ add_custom_command(
 
 add_custom_command(
         OUTPUT flatbuffers.stub
-        COMMAND flatc
-        ARGS
-        --cpp
-        "${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs"
-		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Shared.fbs"
-		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Strategy.fbs"
-		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Rpc.fbs"
+		COMMAND cd "${CMAKE_CURRENT_SOURCE_DIR}/fbs"
+		COMMAND flatc --cpp Enum.fbs Shared.fbs Strategy.fbs Rpc.fbs
 
         COMMENT "Generating Fbs...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
