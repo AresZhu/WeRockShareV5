@@ -34,7 +34,7 @@ add_custom_command(
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Shared.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Strategy.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Rpc.fbs"
-
+		COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs flatbuffers.stub
         COMMENT "Generating Fbs...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_library(${PROJECT_NAME} INTERFACE sbe.stub flatbuffers.stub)
