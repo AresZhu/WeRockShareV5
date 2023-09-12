@@ -25,10 +25,6 @@ add_custom_command(
         COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml sbe.stub
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
         COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
-#add_custom_target(${PROJECT_NAME} DEPENDS sbe.stub)
-
-add_library(${PROJECT_NAME} INTERFACE sbe.stub)
-
 
 add_custom_command(
         OUTPUT flatbuffers.stub
@@ -42,7 +38,7 @@ add_custom_command(
 
         COMMENT "Generating Fbs...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_library(${PROJECT_NAME} INTERFACE flatbuffers.stub)
+add_library(${PROJECT_NAME} INTERFACE sbe.stub flatbuffers.stub)
 
 
 if (STANDALONE_PROJECT)
