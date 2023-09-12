@@ -26,11 +26,11 @@ add_custom_command(
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
         COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-file(MAKE_DIRECTORY fbs-headers)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers)
 
 add_custom_command(
         OUTPUT flatbuffers.stub
-        COMMAND flatc --cpp -o fbs-headers "${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs"
+        COMMAND flatc --cpp -o ${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers "${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Shared.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Strategy.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Rpc.fbs"
