@@ -46,8 +46,14 @@ else()
     ${PROJECT_NAME}
     SYSTEM INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe>
-	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers>
     $<INSTALL_INTERFACE:include>)
+	
+	target_include_directories(
+    ${PROJECT_NAME}
+    SYSTEM INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers>
+    $<INSTALL_INTERFACE:include>)
+	
 
     message("Installing WeRockCodecs")
 
