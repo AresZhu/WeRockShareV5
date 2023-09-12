@@ -45,7 +45,7 @@ else()
     target_include_directories(
     ${PROJECT_NAME}
     SYSTEM INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe:${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers>
     $<INSTALL_INTERFACE:include>)
 
     message("Installing WeRockCodecs")
@@ -59,6 +59,13 @@ else()
 
     install(
         DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/WeRock_Share_Sbe
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        FILES_MATCHING
+        PATTERN
+        "*.h")
+		
+	install(
+        DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
         FILES_MATCHING
         PATTERN
