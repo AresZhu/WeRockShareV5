@@ -30,6 +30,21 @@ add_custom_command(
 add_library(${PROJECT_NAME} INTERFACE sbe.stub)
 
 
+add_custom_command(
+        OUTPUT flatbuffers.stub
+        COMMAND flatc
+        ARGS
+        --cpp
+        "${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs"
+		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/SHared.fbs"
+		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Strategy.fbs"
+		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Roc.fbs"
+
+        COMMENT "Generating Fbs...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
+
+add_library(${PROJECT_NAME} INTERFACE flatbuffers.stub)
+
+
 if (STANDALONE_PROJECT)
 else()
     target_include_directories(
