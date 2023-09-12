@@ -32,9 +32,9 @@ add_custom_command(
         ARGS
         --cpp
         "${CMAKE_CURRENT_SOURCE_DIR}/fbs/Enum.fbs"
-		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/SHared.fbs"
+		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Shared.fbs"
 		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Strategy.fbs"
-		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Roc.fbs"
+		"${CMAKE_CURRENT_SOURCE_DIR}/fbs/Rpc.fbs"
 
         COMMENT "Generating Fbs...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
