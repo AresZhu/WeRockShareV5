@@ -275,11 +275,6 @@ enum EntityEventType: byte {
     PURGED
 }
 
-enum SettingScope: byte {
-    GLOBAL,
-    USER_DEFINED
-}
-
 enum PriceInputMode: byte {
     IMBALANCE = 0,
     BID_OFFER,

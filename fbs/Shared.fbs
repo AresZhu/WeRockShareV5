@@ -243,6 +243,7 @@ table NodeStatus {
     node: Node(required);
     host: string;
     online: bool;
+    online_time: long;
 }
 
 table NodeStatusList {
@@ -254,8 +255,8 @@ table Setting(fs_serializer) {
     version: int;
     last_updated: long;
 
-    scope: SettingScope;
-    key: string;
+    scope: string;
+    name: string;
     value: string;
 }
 
