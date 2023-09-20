@@ -36,6 +36,8 @@ enum CmdType: byte {
     UPDATE_BASKET,
     REMOVE_BASKET,
     RECALCULATE_LIVE_POSITION,
+    ADD_UPDATE_NODE,
+    REMOVE_NODE,
 }
 
 enum ErrorCode: short {
