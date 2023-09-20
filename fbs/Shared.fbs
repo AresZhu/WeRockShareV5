@@ -236,7 +236,7 @@ table NodeList(fs_serializer) {
     items: [Node];
 }
 
-table NodeStatus {
+table NodeStatus(fs_serializer) {
     id: long;
     last_updated: long;
     
@@ -246,7 +246,7 @@ table NodeStatus {
     online_time: long;
 }
 
-table NodeStatusList {
+table NodeStatusList(fs_serializer) {
     items: [NodeStatus];
 }
 
