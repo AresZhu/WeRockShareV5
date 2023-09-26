@@ -122,8 +122,10 @@ enum OrderMessageSource: byte {
 enum TradingStatus : byte {
     UNKNOWN = 0,
     PRE_OPEN_AUCTION,
+    PRE_OPEN_CLOSING_AUCTION,
     OPEN,
     PRE_CLOSE_AUCTION,
+    PRE_CLOSE_CLOSING_AUCTION,
     CLOSE
 }
 
