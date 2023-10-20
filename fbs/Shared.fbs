@@ -177,6 +177,7 @@ table Instrument(fs_serializer) {
     
     resolving_flags: int;
     security_id: long;
+    listing_id: long;
     security_type: SecurityType;
     expired_date: int;
     primary_identifier: string(required);
