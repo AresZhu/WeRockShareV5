@@ -611,6 +611,7 @@ table StartupStrategy(fs_serializer) {
     terminated: bool;
     parameters: string(required);
     node_id: ubyte;
+    group_id: ubyte;
 }
 
 table StartupStrategyList(fs_serializer) {
