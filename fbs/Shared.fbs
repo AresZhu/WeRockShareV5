@@ -607,7 +607,7 @@ table StartupStrategy(fs_serializer) {
     tag: string;
     display_name: string(required);
     auto_start: bool;
-    
+    schedules: string(required);
     terminated: bool;
     parameters: string(required);
     node_id: ubyte;

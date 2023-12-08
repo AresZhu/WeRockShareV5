@@ -300,3 +300,10 @@ enum TickSizeType: byte {
     CONST = 0,
     DYNAMIC = 1,
 }
+
+enum StrategyFlags: int {
+    NONE = 0,
+    INVALID_PARAMETERS = 1,
+    INVALID_PRICING_BASKET = 2,
+    INVALID_HEDGING_BASKET = 4,
+}
