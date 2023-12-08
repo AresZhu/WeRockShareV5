@@ -597,6 +597,18 @@ table LivePositionList(fs_serializer) {
     items: [LivePosition];
 }
 
+table StrategySchedule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+    sessions: string(required);
+}
+
+table StrategyScheduleList(fs_serializer) {
+    items: [StrategySchedule];
+}
 
 table StartupStrategy(fs_serializer) {
     id: long;

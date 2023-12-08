@@ -68,6 +68,7 @@ enum EntityType : byte {
     LOT_SIZE_RULE,
     TICK_SIZE_TABLE,
     LOT_SIZE_TABLE,
+    STRATEGY_SCHEDULE,
     STARTUP_STRATEGY,
     FUTURES,
     OPTION,
