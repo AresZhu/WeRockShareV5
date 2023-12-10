@@ -307,3 +307,9 @@ enum StrategyFlags: int {
     INVALID_PRICING_BASKET = 2,
     INVALID_HEDGING_BASKET = 4,
 }
+
+enum QuotingInstructionType: byte {
+    NEW = 0,
+    REPLACE = 1,
+    CANCEL = 2,
+}
