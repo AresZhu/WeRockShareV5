@@ -740,9 +740,12 @@ table PriceHistory(fs_serializer) {
     last_updated: long;
 
     trading_date: int;
+    utc_time: int;
+    security_id: long;
     listing_id: long;
-
-    value: string;
+    reference_name: string;
+    price: double;
+    source: string;
 }
 
 table PriceHistoryList(fs_serializer) {
