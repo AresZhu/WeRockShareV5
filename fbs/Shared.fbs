@@ -752,6 +752,27 @@ table PriceHistoryList(fs_serializer) {
     items: [PriceHistory];
 }
 
+table ReferencePricePoint(fs_serializer) {
+    utc_time: int;
+    reference_name: string;
+    price: double;
+}
+
+table SecurityPriceHistory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+        
+    trading_date: int;
+    security_id: long;
+    listing_id: long;
+    price_points: [ReferencePricePoint];  
+}
+
+table SecurityPriceHistoryList(fs_serializer) {
+    items: [SecurityPriceHistory];
+}
+
 
 table ScheduleTask(fs_serializer) {
     id: long;
