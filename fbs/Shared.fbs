@@ -104,38 +104,12 @@ table Security(fs_serializer) {
     isin: string(required);
     type: SecurityType;
     market: Market;
-}
-
-table SecurityList(fs_serializer) {
-    items: [Security];
-}
-
-table FuturesSecurity(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    security_id: long;
     contract_size: double;
     expired_date: int;
 }
 
-table FuturesSecurityList(fs_serializer) {
-    items: [FuturesSecurity];
-}
-
-table EtfSecurity(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    security_id: long;
-    name: string;
-    creation_unit_size: int;
-}
-
-table EtfSecurityList(fs_serializer) {
-    items: [EtfSecurity];
+table SecurityList(fs_serializer) {
+    items: [Security];
 }
 
 table EtfPerformance(fs_serializer) {
@@ -177,7 +151,6 @@ table Instrument(fs_serializer) {
     
     resolving_flags: int;
     security_id: long;
-    listing_id: long;
     security_type: SecurityType;
     expired_date: int;
     primary_identifier: string(required);

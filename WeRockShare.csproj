@@ -13,7 +13,6 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="FlatSharp.Runtime" Version="7.4.0" />
-        <PackageReference Include="Grpc.Core" Version="2.46.6" />
     </ItemGroup>
 
     <ItemGroup>

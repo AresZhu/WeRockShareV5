@@ -60,8 +60,6 @@ enum EntityType : byte {
     EXECUTION_GATEWAY,
     MARKET_PRICE,
     SECURITY,
-    ETF_SECURITY,
-    FUTURES_SECURITY,
     SECURITY_LISTING,
     ETF_PERFORMANCE,
     INSTRUMENT,
@@ -161,5 +159,4 @@ table ManualTrade(fs_serializer) {
 table AddOrUpdateInstrumentRequest(fs_serializer) {
     security: Security;
     security_listings: [SecurityListing];
-    futures_security: FuturesSecurity;
 }
