@@ -25,6 +25,7 @@ table ExecutionGateway(fs_serializer) {
     type: GatewayType;
     name: string(required);
     state: ConnectionState;
+    settings: string(required);
 }
 
 table ExecutionGatewayList(fs_serializer) {
