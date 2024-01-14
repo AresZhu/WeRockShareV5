@@ -397,7 +397,8 @@ table StrategyOrder(fs_serializer) {
     internal_id: uint32;
     internal_id_on_market: uint32;
     external_id: string;
-    execution_gateway: string;
+    execution_gateway_id: uint32;
+    execution_gateway_name: string;
 }
 
 table StrategyOrderList(fs_serializer) {
