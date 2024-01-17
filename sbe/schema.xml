@@ -42,7 +42,7 @@
         <field id="3" type="int64" name="listingId" />
         <field id="4" type="int32" name="strategyId" />
         <field id="5" type="double" name="price" />
-        <field id="6" type="double" name="quantity" />
+        <field id="6" type="uint32" name="quantity" />
         <field id="7" type="uint8" name="side" />
         <field id="8" type="uint8" name="instruction" />
         <field id="9" type="uint8" name="positionEffect" />
