@@ -119,7 +119,7 @@ table NewOrder(fs_serializer) {
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     price: double;
-    quantity: double;
+    quantity: uint32;
     instruction: OrderInstruction;
     execution_gateway_id: long;
 }

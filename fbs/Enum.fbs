@@ -198,7 +198,8 @@ enum GatewayType : byte {
     CTP,
     FIX42,
     OES,
-    GTP
+    GTP,
+    TEST,
 }
 
 enum StrategyType: byte {
