@@ -546,7 +546,11 @@ table LivePosition(fs_serializer) {
     yst_booking: double;
     booking: double;
     
+    open_buy_orders_notional: double;
+    open_sell_orders_notional: double;
+    
     yst_marked_price: double;
+    marked_price: double;
     live_price: double;
     pnl_daily: double;
     pnl_mtd: double;
