@@ -352,6 +352,9 @@ table StrategyOrderMessage(fs_serializer) {
     message: string;
     internal_id: uint32;
     external_id: string;
+    security_id: uint32;
+    strategy_id: uint32;
+    strategy_type: StrategyType;
 }
 
 table StrategyOrderMessageList(fs_serializer) {
