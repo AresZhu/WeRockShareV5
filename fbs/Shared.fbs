@@ -352,8 +352,8 @@ table StrategyOrderMessage(fs_serializer) {
     message: string;
     internal_id: uint32;
     external_id: string;
-    security_id: uint32;
-    strategy_id: uint32;
+    security_id: long;
+    strategy_id: long;
     strategy_type: StrategyType;
 }
 
@@ -525,7 +525,6 @@ table LivePosition(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
     security_id: long;
     symbol: string;
     primary_listing_id: long;
@@ -559,6 +558,16 @@ table LivePosition(fs_serializer) {
     pnl_mtd: double;
     pnl_ytd: double;
     pnl_total: double;
+    to_usd_rate: double;
+    
+    day_bot_notional_usd: double;
+    day_sld_notional_usd: double;
+    open_buy_orders_notional_usd: double;
+    open_sell_orders_notional_usd: double;
+    pnl_daily_usd: double;
+    pnl_mtd_usd: double;
+    pnl_ytd_usd: double;
+    pnl_total_usd: double;
 }
 
 table PositionSummary {
