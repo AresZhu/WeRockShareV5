@@ -355,6 +355,7 @@ table StrategyOrderMessage(fs_serializer) {
     security_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
+    side: Side;
 }
 
 table StrategyOrderMessageList(fs_serializer) {
@@ -524,42 +525,20 @@ table LivePosition(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
+    position: Position;
     
-    security_id: long;
     symbol: string;
     primary_listing_id: long;
     contract_size: double;
     currency: Currency;
-    strategy_type: StrategyType;
-    strategy_id: long;
     strategy_name: string;
-    yst_long_open: double;
-    yst_short_open: double;
-    yst_long_close: double;
-    yst_short_close: double;
-    intraday_long_open: double;
-    intraday_long_close: double;
-    intraday_short_open: double;
-    intraday_short_close: double;
-    day_buy: double;
-    day_buy_avg: double;
-    day_sell: double;
-    day_sell_avg: double;
-    yst_booking: double;
-    booking: double;
     
     open_buy_orders_notional: double;
     open_sell_orders_notional: double;
-    
-    yst_marked_price: double;
-    marked_price: double;
+
     live_price: double;
-    pnl_daily: double;
-    pnl_mtd: double;
-    pnl_ytd: double;
-    pnl_total: double;
-    to_usd_rate: double;
     
+    to_usd_rate: double;    
     day_bot_notional_usd: double;
     day_sld_notional_usd: double;
     open_buy_orders_notional_usd: double;
