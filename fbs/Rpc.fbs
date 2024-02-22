@@ -41,6 +41,7 @@ enum CmdType: byte {
     ADD_UPDATE_NODE,
     REMOVE_NODE,
     UPLOAD_PRICE_HISTORIES,
+    SUBSCRIBE_MARKET_DATA,
 }
 
 enum ErrorCode: short {
