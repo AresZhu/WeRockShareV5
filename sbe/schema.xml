@@ -40,7 +40,7 @@
     <sbe:message name="MarketPriceSbe" id="5">
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="uint8" name="tradingStatus" />
-        <field id="3" type="dobule" name="bid" />
+        <field id="3" type="double" name="bid" />
         <field id="4" type="uint32" name="bidSize" />
         <field id="5" type="double" name="ask" />
         <field id="6" type="uint32" name="askSize" />
@@ -48,14 +48,14 @@
     </sbe:message>
     <sbe:message name="MarketStatisticSbe" id="6">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="dobule" name="preClose" />
-        <field id="3" type="dobule" name="preSettlementPrice" />
-        <field id="4" type="dobule" name="high" />
+        <field id="2" type="double" name="preClose" />
+        <field id="3" type="double" name="preSettlementPrice" />
+        <field id="4" type="double" name="high" />
         <field id="5" type="double" name="low" />
-        <field id="6" type="dobule" name="limitUp" />
+        <field id="6" type="double" name="limitUp" />
         <field id="7" type="double" name="limitDown" />
-        <field id="7" type="uint64" name="volume" />
-        <field id="7" type="double" name="turnover" />
+        <field id="8" type="uint64" name="volume" />
+        <field id="9" type="double" name="turnover" />
     </sbe:message>
     
     <sbe:message name="NewOrderSbe" id="14">
