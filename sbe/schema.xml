@@ -38,10 +38,6 @@
     </types>
     <sbe:message name="MarketPriceSubscriptionSbe" id="4">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="string32" name="tradingSymbol" />
-        <field id="3" type="string32" name="ric" />
-        <field id="4" type="string32" name="bbg" />
-        <field id="5" type="string16" name="exchange" />
     </sbe:message>
     <sbe:message name="MarketPriceSbe" id="5">
         <field id="1" type="uint32" name="instrumentId" />
