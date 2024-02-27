@@ -254,42 +254,10 @@ table UserList(fs_serializer) {
     items: [User];
 }
 
-table AuctionPrice(fs_serializer) {
-    listing_id: ushort;
-    status: TradingStatus;
-    iap: double;
-    iav: double;
-}
-
-table TickPrice(fs_serializer) {
-    listing_id: ushort;
-    bid: double;
-    ask: double;
-    bid_volume: double;
-    ask_volume: double;
-}
-
-table MarketTrade(fs_serializer) {
-    listing_id: ushort;
-    price: double;
-    volume: double;
-}
-
 
 table PriceEntry(fs_serializer) {
     price: double;
-    volume: double;
-}
-
-table DepthPrice(fs_serializer) {
-    listing_id: ushort;
-    bids: [PriceEntry];
-    asks: [PriceEntry];
-}
-
-table MarketEvent(fs_serializer) {
-    listing_id: ushort;
-    status: TradingStatus;
+    quantity: double;
 }
 
 table MarketPrice(fs_serializer) {
@@ -297,14 +265,14 @@ table MarketPrice(fs_serializer) {
     last_updated: long;
 
     status: TradingStatus;
-
-    last_price: double;
+    
+    bid: double;
+    bid_size: double;
+    ask: double;
+    ask_size: double;
+    last: double;
     volume: double;
     turnover: double;
-    bid: double;
-    bid_volume: double;
-    ask: double;
-    ask_volume: double;
 
     bids: [PriceEntry];
     asks: [PriceEntry];
@@ -324,8 +292,8 @@ table MarketStatistic(fs_serializer) {
     low: double;
     close: double;
     
-    limitUp: double;
-    limitDown: double;
+    limit_up: double;
+    limit_down: double;
 }
 
 table MarketStatisticList(fs_serializer) {
