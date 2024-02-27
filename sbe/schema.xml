@@ -29,6 +29,10 @@
             <type name="length" primitiveType="uint32" maxValue="1073741824"/>
             <type name="varData" primitiveType="uint8" length="0"/>
         </composite>
+        <composite name="PricePoint">
+            <type name="price" primitiveType="double"/>
+            <type name="quantity" primitiveType="double"/>
+        </composite>
         <type name="string16" description="String with length of 16" presence="optional" length="16" primitiveType="char" semanticType="String"/>
         <type name="string32" description="String with length of 32" presence="optional" length="32" primitiveType="char" semanticType="String"/>
         <type name="string64" description="String with length of 64" presence="optional" length="64" primitiveType="char" semanticType="String"/>
@@ -47,17 +51,27 @@
         <field id="5" type="double" name="ask" />
         <field id="6" type="uint32" name="askSize" />
         <field id="7" type="double" name="last" />
+        <field id="8" type="uint64" name="volume" />
+        <field id="9" type="double" name="turnover" />
+
+        <group id="10" name="bids" dimensionType="groupSizeEncoding">
+            <field id="11" type="PricePoint" name="level"/>
+        </group>
+        <group id="12" name="asks" dimensionType="groupSizeEncoding">
+            <field id="13" type="PricePoint" name="level"/>
+        </group>
     </sbe:message>
+    
     <sbe:message name="MarketStatisticSbe" id="6">
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="double" name="preClose" />
         <field id="3" type="double" name="preSettlementPrice" />
-        <field id="4" type="double" name="high" />
-        <field id="5" type="double" name="low" />
-        <field id="6" type="double" name="limitUp" />
-        <field id="7" type="double" name="limitDown" />
-        <field id="8" type="uint64" name="volume" />
-        <field id="9" type="double" name="turnover" />
+        <field id="4" type="double" name="open" />
+        <field id="5" type="double" name="high" />
+        <field id="6" type="double" name="low" />
+        <field id="7" type="double" name="close" />
+        <field id="8" type="double" name="limitUp" />
+        <field id="9" type="double" name="limitDown" />
     </sbe:message>
     
     <sbe:message name="NewOrderSbe" id="14">
