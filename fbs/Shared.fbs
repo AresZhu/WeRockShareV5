@@ -300,7 +300,7 @@ table MarketStatisticList(fs_serializer) {
     items: [MarketStatistic];
 }
 
-table AuctionInformation(fs_serializer) {
+table AuctionPrice(fs_serializer) {
     id: long;
     last_updated: long;
     
@@ -308,8 +308,8 @@ table AuctionInformation(fs_serializer) {
     iav: double;
 }
 
-table AuctionInformationList(fs_serializer) {
-    items: [AuctionInformation];
+table AuctionPriceList(fs_serializer) {
+    items: [AuctionPrice];
 }
 
 table FuturesBasis(fs_serializer) {

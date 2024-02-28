@@ -75,6 +75,11 @@
         <field id="8" type="double" name="limitUp" />
         <field id="9" type="double" name="limitDown" />
     </sbe:message>
+    <sbe:message name="AuctionPriceSbe" id="7">
+        <field id="1" type="uint32" name="instrumentId" />
+        <field id="2" type="double" name="iap" />
+        <field id="3" type="double" name="iav" />
+    </sbe:message>
     
     <sbe:message name="NewOrderSbe" id="14">
         <field id="1" type="uint8" name="executionGatewayId" />
