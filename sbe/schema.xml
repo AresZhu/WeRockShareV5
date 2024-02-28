@@ -43,7 +43,7 @@
     <sbe:message name="MarketPriceSubscriptionSbe" id="4">
         <field id="1" type="uint32" name="instrumentId" />
     </sbe:message>
-    <sbe:message name="MarketPriceSbe" id="5">
+    <sbe:message name="TickPriceSbe" id="5">
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="uint8" name="tradingStatus" />
         <field id="3" type="double" name="bid" />
@@ -53,15 +53,6 @@
         <field id="7" type="double" name="last" />
         <field id="8" type="uint64" name="volume" />
         <field id="9" type="double" name="turnover" />
-
-        <group name="bids" id="10" dimensionType="groupSizeEncoding">
-            <field name="price" id="11" type="int32"/>
-            <field name="volume" id="12" type="uint32"/>
-        </group>
-        <group name="asks" id="13" dimensionType="groupSizeEncoding">
-            <field name="price" id="14" type="int32"/>
-            <field name="volume" id="15" type="uint32"/>
-        </group>
     </sbe:message>
     
     <sbe:message name="MarketStatisticSbe" id="6">
@@ -79,6 +70,17 @@
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="double" name="iap" />
         <field id="3" type="double" name="iav" />
+    </sbe:message>
+    <sbe:message name="MarketDepthSbe" id="8">
+        <field id="1" type="uint32" name="instrumentId" />
+        <group name="bids" id="2" dimensionType="groupSizeEncoding">
+            <field name="price" id="3" type="int32"/>
+            <field name="volume" id="4" type="uint32"/>
+        </group>
+        <group name="asks" id="5" dimensionType="groupSizeEncoding">
+            <field name="price" id="6" type="int32"/>
+            <field name="volume" id="7" type="uint32"/>
+        </group>
     </sbe:message>
     
     <sbe:message name="NewOrderSbe" id="14">

@@ -260,7 +260,7 @@ table PriceEntry(fs_serializer) {
     quantity: double;
 }
 
-table MarketPrice(fs_serializer) {
+table TickPrice(fs_serializer) {
     id: long;
     last_updated: long;
 
@@ -272,14 +272,23 @@ table MarketPrice(fs_serializer) {
     ask_size: double;
     last: double;
     volume: double;
-    turnover: double;
-
-    bids: [PriceEntry];
-    asks: [PriceEntry];
+    turnover: double;   
 }
 
-table MarketPriceList(fs_serializer) {
-    items: [MarketPrice];
+table TickPriceList(fs_serializer) {
+    items: [TickPrice];
+}
+
+table MarketDepth(fs_serializer) {
+     id: long;
+     last_updated: long;
+     
+     bids: [PriceEntry];
+     asks: [PriceEntry];
+}
+
+table MarketDepthList(fs_serializer) {
+    items: [MarketDepth];
 }
 
 table MarketStatistic(fs_serializer) {
@@ -310,6 +319,35 @@ table AuctionPrice(fs_serializer) {
 
 table AuctionPriceList(fs_serializer) {
     items: [AuctionPrice];
+}
+
+table MarketPrice(fs_serializer) {
+    id: long;
+    last_updated: long;
+
+    status: TradingStatus;
+    iap: double;
+    iav: double;
+    bid: double;
+    bid_size: double;
+    ask: double;
+    ask_size: double;
+    last: double;
+    volume: double;
+    turnover: double; 
+    
+    preClose: double;
+    preSettlementPrice: double;
+    open: double;
+    high: double;
+    low: double;
+    close: double;
+    
+    limit_up: double;
+    limit_down: double;
+    
+    bids: [PriceEntry];
+    asks: [PriceEntry];
 }
 
 table FuturesBasis(fs_serializer) {
