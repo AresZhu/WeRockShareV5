@@ -312,7 +312,7 @@ table MarketStatisticList(fs_serializer) {
 table AuctionPrice(fs_serializer) {
     id: long;
     last_updated: long;
-    
+    status: TradingStatus;
     iap: double;
     iav: double;
 }

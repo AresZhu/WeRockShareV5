@@ -68,8 +68,9 @@
     </sbe:message>
     <sbe:message name="AuctionPriceSbe" id="7">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="double" name="iap" />
-        <field id="3" type="double" name="iav" />
+        <field id="2" type="uint8" name="tradingStatus" />
+        <field id="3" type="double" name="iap" />
+        <field id="4" type="double" name="iav" />
     </sbe:message>
     <sbe:message name="MarketDepthSbe" id="8">
         <field id="1" type="uint32" name="instrumentId" />
