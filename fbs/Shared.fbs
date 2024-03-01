@@ -321,6 +321,36 @@ table AuctionPriceList(fs_serializer) {
     items: [AuctionPrice];
 }
 
+table MarketPrice {
+    id: long;
+    last_updated: long;
+    
+    status: TradingStatus;
+    iap: double;
+    iav: double;
+    
+    bid: double;
+    bid_size: double;
+    ask: double;
+    ask_size: double;
+    last: double;
+    volume: double;
+    turnover: double;
+    
+    preClose: double;
+    preSettlementPrice: double;
+    open: double;
+    high: double;
+    low: double;
+    close: double;
+    
+    limit_up: double;
+    limit_down: double;
+    
+    bids: [PriceEntry];
+    asks: [PriceEntry];
+}
+
 table FuturesBasis(fs_serializer) {
     id: long;
     last_updated: long;
