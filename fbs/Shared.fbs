@@ -575,6 +575,10 @@ table LivePosition(fs_serializer) {
     pnl_total_usd: double;
 }
 
+table LivePositionList(fs_serializer) {
+    items: [LivePosition];
+}
+
 table PositionSummary {
     trading_date: int;
     total_notional_long: long;
@@ -587,10 +591,6 @@ table PositionSummary {
     pnl_daily: long;
     pnl_mtd: long;
     pnl_ytd: long;
-}
-
-table LivePositionList(fs_serializer) {
-    items: [LivePosition];
 }
 
 table StrategySchedule(fs_serializer) {
