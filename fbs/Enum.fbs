@@ -214,7 +214,8 @@ enum StrategyType: byte {
     MANUAL = 0,
     MARKET_MAKING,
     CRYPTO_MARKET_MAKING,
-    FUTURES_HEDGING
+    FUTURES_HEDGING,
+    TEST
 }
 
 enum StrategyState : byte {
