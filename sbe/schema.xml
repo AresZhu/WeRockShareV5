@@ -132,9 +132,9 @@
         <field id="2" type="int32" name="strategyId" />
         <field id="3" type="string4k" name="value" />
     </sbe:message>
-    <sbe:message name="StrategyScheduleSbe" id="71">
+    <sbe:message name="StrategyActionSbe" id="71">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="int32" name="strategyId" />
-        <field id="3" type="string512" name="value" />
+        <field id="3" type="uint8" name="action" />
     </sbe:message>
 </sbe:messageSchema>

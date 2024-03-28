@@ -236,6 +236,7 @@ enum StrategyActionType : byte {
     RISK_MODE,
     TERMINATE,
     TERMINATE_ORDERS,
+    CANCEL_ORDERS,
 }
 
 enum MarginMode : byte {
