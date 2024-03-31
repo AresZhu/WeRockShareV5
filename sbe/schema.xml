@@ -138,8 +138,8 @@
         <field id="3" type="uint8" name="action" />
     </sbe:message>
     <sbe:message name="StrategyScheduleEventSbe" id="72">
-        <field id="1" type="int32" name="strategyId" />
+        <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="uint8" name="eventType" />
-        <field id="3" type="int32" name="token" />
+        <field id="3" type="uint32" name="token" />
     </sbe:message>
 </sbe:messageSchema>
