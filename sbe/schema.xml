@@ -134,7 +134,6 @@
         <field id="4" type="uint8" name="strategyType" />
         <field id="5" type="uint8" name="groupId" />
         <field id="6" type="string512" name="schedules" />
-        <field id="7" type="string4k" name="parameters" />
     </sbe:message>
     <sbe:message name="StrategyParameterSbe" id="70">
         <field id="1" type="uint8" name="nodeId" />
