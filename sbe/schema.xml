@@ -150,4 +150,18 @@
         <field id="2" type="uint8" name="eventType" />
         <field id="3" type="uint32" name="token" />
     </sbe:message>
+    <sbe:message name="StrategyPositionSbe" id="73">
+        <field id="1" type="uint8" name="nodeId" />
+        <field id="2" type="int32" name="strategyId" />
+        <field id="3" type="int32" name="securityId" />
+        <field id="4" type="double" name="ystLongOpen" />
+        <field id="5" type="double" name="ystLongClose" />
+        <field id="6" type="double" name="ystShortOpen" />
+        <field id="7" type="double" name="ystShortClose" />
+        <field id="8" type="double" name="intradayLongOpen" />
+        <field id="9" type="double" name="intradayLongClose" />
+        <field id="10" type="double" name="intradayShortOpen" />
+        <field id="11" type="double" name="intradayShortClose" />
+        <field id="12" type="double" name="booking" />
+    </sbe:message>
 </sbe:messageSchema>
