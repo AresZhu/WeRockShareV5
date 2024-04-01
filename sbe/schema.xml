@@ -37,8 +37,8 @@
         <type name="string32" description="String with length of 32" presence="optional" length="32" primitiveType="char" semanticType="String"/>
         <type name="string64" description="String with length of 64" presence="optional" length="64" primitiveType="char" semanticType="String"/>
         <type name="string512" description="String with length of 512" presence="optional" length="512" primitiveType="char" semanticType="String"/>
-        <type name="string1024" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
-        <type name="string1792" description="String with length of 1792" presence="optional" length="1792" primitiveType="char" semanticType="String"/>
+        <type name="string1K" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
+        <type name="string2K" description="String with length of 2048" presence="optional" length="2048" primitiveType="char" semanticType="String"/>
         <type name="string4k" description="String with length of 4K" presence="optional" length="4096" primitiveType="char" semanticType="String"/>
     </types>
     <sbe:message name="MarketPriceSubscriptionSbe" id="4">
@@ -126,6 +126,15 @@
         <field id="6" type="uint8" name="side" />
         <field id="7" type="uint8" name="instructionType" />
         <field id="8" type="uint8" name="positionEffect" />
+    </sbe:message>
+    <sbe:message name="StartupStrategySbe" id = "69">
+        <field id="1" type="uint8" name="nodeId" />
+        <field id="2" type="int32" name="strategyId" />
+        <field id="3" type="string32" name="name" />
+        <field id="4" type="uint8" name="strategyType" />
+        <field id="5" type="uint8" name="groupId" />
+        <field id="6" type="string512" name="schedules" />
+        <field id="7" type="string4k" name="parameters" />
     </sbe:message>
     <sbe:message name="StrategyParameterSbe" id="70">
         <field id="1" type="uint8" name="nodeId" />
