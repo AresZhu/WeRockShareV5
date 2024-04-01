@@ -9,6 +9,7 @@ enum CmdType: byte {
     PING = 0,
     LOGIN,
     NODE_LOGON,
+    NODE_READY,
     NODE_HEARTBEAT,
     LOAD_SNAPSHOT,
     UPDATE_SECURITY,
