@@ -39,7 +39,7 @@
         <type name="string512" description="String with length of 512" presence="optional" length="512" primitiveType="char" semanticType="String"/>
         <type name="string1K" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
         <type name="string2K" description="String with length of 2048" presence="optional" length="2048" primitiveType="char" semanticType="String"/>
-        <type name="string4k" description="String with length of 4K" presence="optional" length="4096" primitiveType="char" semanticType="String"/>
+        <type name="string4k" description="String with length of 4K" presence="optional" length="4000" primitiveType="char" semanticType="String"/>
     </types>
     <sbe:message name="MarketPriceSubscriptionSbe" id="4">
         <field id="1" type="uint32" name="instrumentId" />
