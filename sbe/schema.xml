@@ -165,4 +165,18 @@
         <field id="11" type="double" name="intradayShortClose" />
         <field id="12" type="double" name="booking" />
     </sbe:message>
+    <sbe:message name="ManualTradeSbe" id="74">
+        <field id="1" type="uint8" name="nodeId" />
+        <field id="2" type="int32" name="strategyId" />
+        <field id="3" type="int32" name="securityId" />
+        <field id="4" type="double" name="price" />
+        <field id="5" type="double" name="quantity" />
+        <field id="6" type="uint8" name="side" />
+        <field id="7" type="uint8" name="positionEffect" />
+        <field id="8" type="uint8" name="tradeType" />
+    </sbe:message>
+    <sbe:message name="SaveStrategyParameterSbe" id="75">
+        <field id="1" type="int32" name="strategyId" />
+        <field id="2" type="string4k" name="value" />
+    </sbe:message>
 </sbe:messageSchema>
