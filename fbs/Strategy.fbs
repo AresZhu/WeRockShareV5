@@ -57,3 +57,16 @@ table FuturesHedgingStrategyDto(fs_serializer) {
 table FuturesHedgingStrategyDtoList(fs_serializer) {
     items: [FuturesHedgingStrategyDto];
 }
+
+table TestStrategyDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    state: StrategyState;
+    type: StrategyType;
+}
+
+table TestStrategyDtoList(fs_serializer) {
+    items: [TestStrategyDto];
+}
