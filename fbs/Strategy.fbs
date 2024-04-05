@@ -71,7 +71,7 @@ table TestStrategyDtoList(fs_serializer) {
     items: [TestStrategyDto];
 }
 
-table HedgingStrategyDto {
+table HedgingStrategyDto(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -85,6 +85,6 @@ table HedgingStrategyDto {
     position_notional: long;
 }
 
-table HedgingStrategyDtoList {
+table HedgingStrategyDtoList(fs_serializer) {
     items: [HedgingStrategyDto];
 }
