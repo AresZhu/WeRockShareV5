@@ -215,6 +215,7 @@ enum StrategyType: byte {
     MARKET_MAKING,
     CRYPTO_MARKET_MAKING,
     FUTURES_HEDGING,
+    HEDGING,
     TEST
 }
 

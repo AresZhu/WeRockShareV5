@@ -70,3 +70,21 @@ table TestStrategyDto(fs_serializer) {
 table TestStrategyDtoList(fs_serializer) {
     items: [TestStrategyDto];
 }
+
+table HedgingStrategyDto {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    state: StrategyState;
+    type: StrategyType;
+    
+    delta_in_size: double;
+    delta_in_notional: double;
+    position: double;
+    position_notional: long;
+}
+
+table HedgingStrategyDtoList {
+    items: [HedgingStrategyDto];
+}
