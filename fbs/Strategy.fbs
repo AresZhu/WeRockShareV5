@@ -79,8 +79,8 @@ table HedgingStrategyDto {
     state: StrategyState;
     type: StrategyType;
     
-    delta_in_size: double;
-    delta_in_notional: double;
+    contract_delta: double;
+    delta: double;
     position: double;
     position_notional: long;
 }
