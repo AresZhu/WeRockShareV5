@@ -80,7 +80,7 @@ table HedgingStrategyDto {
     type: StrategyType;
     
     contract_delta: double;
-    delta: double;
+    delta_notional: double;
     position: double;
     position_notional: long;
 }
