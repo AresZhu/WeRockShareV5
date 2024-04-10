@@ -39,7 +39,9 @@ enum Market : byte {
     Global = 0,
     CN,
     US,
-    AU
+    AU,
+    HK,
+    JP
 }
 
 enum SecurityType : byte {
