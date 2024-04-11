@@ -41,7 +41,7 @@ table TickSizeRule(fs_serializer) {
     name: string(required);
     security_type: SecurityType;
     exchange: string(required);
-    trading_symbol_regex: string(required);
+    primary_identifier_regex: string(required);
     rules: string(required);
 }
 
