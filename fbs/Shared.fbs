@@ -56,7 +56,7 @@ table LotSizeRule(fs_serializer) {
     
     security_type: SecurityType;
     exchange: string(required);
-    trading_symbol_regex: string(required);
+    primary_identifier_regex: string(required);
     lot_size: double;
 }
 
