@@ -32,7 +32,11 @@ enum Currency : byte {
     NONE = 0,
     CNY,
     USD,
-    AUD
+    AUD,
+    CNH,
+    HKD,
+    JPY,
+    EUR,
 }
 
 enum Market : byte {
