@@ -302,14 +302,6 @@ enum PriceInputMode: byte {
     MID_PRICE
 }
 
-
-enum ScheduleTaskType : byte {
-    XsheEtfLoader,
-    PriceSnapper,
-    PnlMarker,
-    PositionSummaryUpdater,
-}
-
 enum TaskRunType: byte {
     SCHEDULED = 0,
     MANUAL
