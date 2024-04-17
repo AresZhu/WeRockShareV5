@@ -806,7 +806,23 @@ table ScheduleTaskHistoryList(fs_serializer) {
 }
 
 
+table AlertEvent(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
 
+    trading_date: int;    
+    classification: AlertClassification;
+    severity: AlertSeverity;
+    message: string(required);
+    source: string(required);
+    hostname: string(required);
+    strategy_id: long;
+    acked: bool;
+    acked_time: long;
+    acked_user: string;
+}
 
-
-
+table AlertEventList(fs_serializer) {
+    items: [AlertEvent];
+}

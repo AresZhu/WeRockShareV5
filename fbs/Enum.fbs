@@ -324,3 +324,24 @@ enum QuotingInstructionType: byte {
     REPLACE = 1,
     CANCEL = 2,
 }
+
+
+enum AlertSeverity : byte {
+    INFO = 0,
+    CRITICAL,
+}
+
+enum AlertClassification: byte {
+    UNKNOWN = 0,
+    SYSTEM,
+    STRATEGY,
+    MARKET,
+    ORDER,
+    RISK,
+    CONNECTION,
+    DATA,
+    ACCOUNT,
+    INSTRUMENT,
+    BASKET,
+    TASK
+}
