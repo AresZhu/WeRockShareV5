@@ -104,6 +104,7 @@ enum EntityType : byte {
     NODE_STATUS,
     TEST_STRATEGY_DTO,
     HEDGING_STRATEGY_DTO,
+    ALERT_EVENT,
 }
 
 enum SubType : byte {
