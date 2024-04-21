@@ -123,7 +123,7 @@ table LongValueList(fs_serializer) {
 }
 
 table NewOrder(fs_serializer) {
-    id: long;
+    ephemeral_id: long;
     listing_id: long;
     strategy_id: long;
     side: Side;
