@@ -345,3 +345,11 @@ enum AlertClassification: byte {
     BASKET,
     TASK
 }
+
+enum RejectLevel: byte {
+    NONE = 0,
+    BENIGN,
+    KNOWN,
+    CRITICAL,
+    FATAL    
+}
