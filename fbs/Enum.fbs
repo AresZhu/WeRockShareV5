@@ -346,6 +346,11 @@ enum AlertClassification: byte {
     TASK
 }
 
+enum RiskRuleType: byte {
+    NONE = 0,
+    MaxOrderValue = 1,
+}
+
 enum RejectLevel: byte {
     NONE = 0,
     BENIGN,
