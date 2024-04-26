@@ -120,11 +120,6 @@ enum OrderStatus: byte {
    CLOSED
  }
 
-enum OrderMessageSource: byte {
-    INTERNAL = 0,
-    EXTERNAL
-}
-
 enum TradingStatus : byte {
     UNKNOWN = 0,
     PRE_OPEN_AUCTION,
