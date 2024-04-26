@@ -36,6 +36,7 @@
         <type name="string16" description="String with length of 16" presence="optional" length="16" primitiveType="char" semanticType="String"/>
         <type name="string32" description="String with length of 32" presence="optional" length="32" primitiveType="char" semanticType="String"/>
         <type name="string64" description="String with length of 64" presence="optional" length="64" primitiveType="char" semanticType="String"/>
+        <type name="string256" description="String with length of 256" presence="optional" length="256" primitiveType="char" semanticType="String"/>
         <type name="string512" description="String with length of 512" presence="optional" length="512" primitiveType="char" semanticType="String"/>
         <type name="string1K" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
         <type name="string2K" description="String with length of 2048" presence="optional" length="2048" primitiveType="char" semanticType="String"/>
@@ -104,14 +105,15 @@
         <field id="4" type="int32" name="strategyId" />
     </sbe:message>
     <sbe:message name="OrderMessageSbe" id="16">
-        <field id="1" type="int64" name="orderId" />
+        <field id="1" type="uint64" name="orderId" />
         <field id="2" type="int32" name="strategyId" />
         <field id="3" type="int32" name="securityId" />
         <field id="4" type="uint32" name="internalId" />
         <field id="5" type="uint8" name="type" />
-        <field id="6" type="uint8" name="source" />
-        <field id="7" type="double" name="price" />
-        <field id="8" type="uint32" name="quantity" />
+        <field id="6" type="double" name="price" />
+        <field id="7" type="double" name="quantity" />
+        <field id="8" type="uint8" name="rejectLevel" />
+        <field id="11" type="string256" name="message" />
     </sbe:message>
     <sbe:message name="ExecutionGatewayStateSbe" id="17">
         <field id="1" type="uint8" name="gatewayId" />
