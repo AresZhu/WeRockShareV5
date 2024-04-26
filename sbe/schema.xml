@@ -105,14 +105,15 @@
         <field id="4" type="int32" name="strategyId" />
     </sbe:message>
     <sbe:message name="OrderMessageSbe" id="16">
-        <field id="1" type="uint64" name="orderId" />
-        <field id="2" type="int32" name="strategyId" />
-        <field id="3" type="int32" name="securityId" />
-        <field id="4" type="uint32" name="internalId" />
-        <field id="5" type="uint8" name="type" />
-        <field id="6" type="double" name="price" />
-        <field id="7" type="double" name="quantity" />
-        <field id="8" type="uint8" name="rejectLevel" />
+        <field id="1" type="uint8" name="type" />
+        <field id="2" type="uint64" name="orderId" />
+        <field id="3" type="int32" name="strategyId" />
+        <field id="4" type="int32" name="securityId" />
+        <field id="5" type="uint32" name="internalId" />
+        <field id="6" type="uint32" name="externalId" />
+        <field id="7" type="double" name="price" />
+        <field id="8" type="double" name="quantity" />
+        <field id="9" type="uint8" name="rejectLevel" />
         <field id="11" type="string256" name="message" />
     </sbe:message>
     <sbe:message name="ExecutionGatewayStateSbe" id="17">
