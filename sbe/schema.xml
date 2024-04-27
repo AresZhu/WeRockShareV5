@@ -87,9 +87,9 @@
     </sbe:message>
     
     <sbe:message name="NewOrderSbe" id="14">
-        <field id="1" type="uint8" name="routeId" />
+        <field id="1" type="uint16" name="routeId" />
         <field id="2" type="uint64" name="orderId" />
-        <field id="3" type="uint16" name="listingId" />
+        <field id="3" type="uint32" name="listingId" />
         <field id="4" type="uint16" name="strategyId" />
         <field id="5" type="uint8" name="strategyType" />
         <field id="6" type="double" name="price" />
@@ -106,8 +106,8 @@
     <sbe:message name="OrderMessageSbe" id="16">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint64" name="orderId" />
-        <field id="3" type="int32" name="strategyId" />
-        <field id="4" type="int32" name="securityId" />
+        <field id="3" type="uint16" name="strategyId" />
+        <field id="4" type="uint32" name="securityId" />
         <field id="5" type="uint32" name="internalId" />
         <field id="6" type="uint32" name="externalId" />
         <field id="7" type="double" name="price" />
