@@ -44,7 +44,11 @@ enum CmdType: byte {
     ADD_UPDATE_NODE,
     REMOVE_NODE,
     UPLOAD_PRICE_HISTORIES,
-    SUBSCRIBE_MARKET_DATA
+    SUBSCRIBE_MARKET_DATA,
+    UPDATE_RISK_RULE,
+    REMOVE_RISK_RULE,
+    UPDATE_ORDER_ROUTER,
+    REMOVE_ORDER_ROUTER,
 }
 
 enum ErrorCode: short {
@@ -105,6 +109,8 @@ enum EntityType : byte {
     TEST_STRATEGY_DTO,
     HEDGING_STRATEGY_DTO,
     ALERT_EVENT,
+    RISK_RULE,
+    ORDER_ROUTER,
 }
 
 enum SubType : byte {

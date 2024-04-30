@@ -825,3 +825,31 @@ table AlertEvent(fs_serializer) {
 table AlertEventList(fs_serializer) {
     items: [AlertEvent];
 }
+
+table RiskRule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    order_router_id: long;
+    name: string(required);
+    type: RiskRuleType;
+    parameters: string(required);
+}
+
+table RiskRuleList(fs_serializer) {
+    items: [RiskRule];
+}
+
+table OrderRouter(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+    underline_gateway_id: int;
+}
+
+table OrderRouterList(fs_serializer) {
+    items: [OrderRouter];
+}
