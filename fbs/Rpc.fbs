@@ -49,6 +49,8 @@ enum CmdType: byte {
     REMOVE_RISK_RULE,
     UPDATE_ORDER_ROUTER,
     REMOVE_ORDER_ROUTER,
+    UPDATE_EXECUTION_GATEWAY,
+    REMOVE_EXECUTION_GATEWAY,
 }
 
 enum ErrorCode: short {
@@ -111,6 +113,8 @@ enum EntityType : byte {
     ALERT_EVENT,
     RISK_RULE,
     ORDER_ROUTER,
+    EXECUTUION_GATEWAY,
+    EXECUTION_GATEWAY_STATE,
 }
 
 enum SubType : byte {

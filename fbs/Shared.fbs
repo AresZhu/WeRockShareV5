@@ -24,12 +24,23 @@ table ExecutionGateway(fs_serializer) {
     
     type: GatewayType;
     name: string(required);
-    state: ConnectionState;
     settings: string(required);
 }
 
 table ExecutionGatewayList(fs_serializer) {
     items: [ExecutionGateway];
+}
+
+table ExecutionGatewayState(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    name: string(required);
+    state: ConnectionState;
+}
+
+table ExecutionGatewayStateList(fs_serializer) {
+    items: [ExecutionGatewayState];
 }
 
 
@@ -847,7 +858,11 @@ table OrderRouter(fs_serializer) {
     last_updated: long;
     
     name: string(required);
-    underline_gateway_id: int;
+    execution_gateway_id: int;
+    
+    precedent: int;
+    primary_identifier_regex: string(required);
+    exchange_regex: string(required);
 }
 
 table OrderRouterList(fs_serializer) {
