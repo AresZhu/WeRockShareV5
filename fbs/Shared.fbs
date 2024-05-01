@@ -842,7 +842,7 @@ table RiskRule(fs_serializer) {
     version: int;
     last_updated: long;
     
-    order_router_id: long;
+    order_router_id: int;
     name: string(required);
     type: RiskRuleType;
     parameters: string(required);
