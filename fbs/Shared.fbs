@@ -387,7 +387,7 @@ table StrategyOrderMessage(fs_serializer) {
     quantity: double;
     message: string;
     internal_id: uint32;
-    external_id: string;
+    external_id: uint32;
     security_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
@@ -436,9 +436,12 @@ table StrategyOrder(fs_serializer) {
     
     internal_id: uint32;
     internal_id_on_market: uint32;
-    external_id: string;
+    external_id: uint32;
+    
+    order_router_id: uint32;
+    order_router_name: string(required);
     execution_gateway_id: uint32;
-    execution_gateway_name: string;
+    execution_gateway_name: string(required);
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -482,9 +485,10 @@ table ActiveStrategyOrder(fs_serializer) {
     average_price: double;
     
     internal_id_on_market: uint32;
-    external_id: string;
+    external_id: uint32;
     
-    execution_gateway: string;
+    execution_gateway_name: string;
+    order_router_name: string;
 }
 
 table ActiveStrategyOrderList(fs_serializer) {
@@ -505,7 +509,7 @@ table Trade(fs_serializer) {
     order_id: long;
     strategy_id: long;
     strategy_name: string;
-    exec_id: string;
+    exec_id: uint32;
     
     trading_symbol: string(required);
     currency: Currency;

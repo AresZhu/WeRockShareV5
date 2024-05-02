@@ -106,7 +106,10 @@ enum OrderMessageType : byte {
     REPLACE_REJECT,
     FILL,
     FILLED,
-    CLOSED
+    CLOSED,
+    GATEWAY_CONNECTING,
+    GATEWAY_CONNECTED,
+    GATEWAY_DISCONNECTED,
 }
 
 enum OrderStatus: byte {
