@@ -51,6 +51,7 @@ enum CmdType: byte {
     REMOVE_ORDER_ROUTER,
     UPDATE_EXECUTION_GATEWAY,
     REMOVE_EXECUTION_GATEWAY,
+    LOAD_OPEN_ORDERS,
 }
 
 enum ErrorCode: short {
