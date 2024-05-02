@@ -115,10 +115,6 @@
         <field id="9" type="uint8" name="rejectLevel" />
         <field id="11" type="string256" name="message" />
     </sbe:message>
-    <sbe:message name="ExecutionGatewayStateSbe" id="17">
-        <field id="1" type="uint8" name="gatewayId" />
-        <field id="2" type="uint8" name="state" />
-    </sbe:message>
     <sbe:message name="QuotingInstructionSbe" id="61">
         <field id="1" type="uint8" name="execution" />
         <field id="2" type="int64" name="orderId" />
