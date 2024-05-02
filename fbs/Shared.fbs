@@ -31,19 +31,6 @@ table ExecutionGatewayList(fs_serializer) {
     items: [ExecutionGateway];
 }
 
-table ExecutionGatewayState(fs_serializer) {
-    id: long;
-    last_updated: long;
-    
-    name: string(required);
-    state: ConnectionState;
-}
-
-table ExecutionGatewayStateList(fs_serializer) {
-    items: [ExecutionGatewayState];
-}
-
-
 table TickSizeRule(fs_serializer) {
     id: long;
     version: int;
@@ -871,4 +858,19 @@ table OrderRouter(fs_serializer) {
 
 table OrderRouterList(fs_serializer) {
     items: [OrderRouter];
+}
+
+
+table OrderRouterState(fs_serializer) {
+    id: long;
+    last_updated: long;
+   
+    name: string(required);
+    state: ConnectionState;
+    execution_gateway_id: int;
+    execution_gateway_name: string;
+}
+
+table OrderRouterStateList(fs_serializer) {
+    items: [OrderRouterState];
 }

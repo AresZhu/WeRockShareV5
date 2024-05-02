@@ -114,7 +114,7 @@ enum EntityType : byte {
     RISK_RULE,
     ORDER_ROUTER,
     EXECUTUION_GATEWAY,
-    EXECUTION_GATEWAY_STATE,
+    ORDER_ROUTER_STATE,
 }
 
 enum SubType : byte {
