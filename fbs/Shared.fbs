@@ -476,6 +476,10 @@ table ActiveStrategyOrder(fs_serializer) {
     
     execution_gateway_name: string;
     order_router_name: string;
+    
+    execution_gateway_id: uint;
+    order_router_id: uint;
+    ephemeral_id: ulong;
 }
 
 table ActiveStrategyOrderList(fs_serializer) {
