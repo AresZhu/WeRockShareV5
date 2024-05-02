@@ -135,7 +135,7 @@ table LongValueList(fs_serializer) {
 table NewOrder(fs_serializer) {
     ephemeral_id: ulong;
     listing_id: uint;
-    strategy_id: ulong;
+    strategy_id: long;
     strategy_type: StrategyType;
     side: Side;
     position_effect: PositionEffect;
