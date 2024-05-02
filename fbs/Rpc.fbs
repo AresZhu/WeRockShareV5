@@ -134,7 +134,7 @@ table LongValueList(fs_serializer) {
 
 table NewOrder(fs_serializer) {
     ephemeral_id: ulong;
-    listing_id: uint;
+    listing_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
     side: Side;
@@ -143,7 +143,7 @@ table NewOrder(fs_serializer) {
     price: double;
     quantity: double;
     instruction: OrderInstruction;
-    route_id: ushort;
+    route_id: long;
 }
 
 table CmdRequest(fs_serializer) {
