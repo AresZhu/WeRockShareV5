@@ -389,7 +389,7 @@ table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    ephemeral_id: long;
+    ephemeral_id: ulong;
     security_id: long;
     listing_id: long;
     strategy_id: long;

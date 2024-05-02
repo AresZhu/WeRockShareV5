@@ -146,6 +146,11 @@ table NewOrder(fs_serializer) {
     route_id: long;
 }
 
+table CancelOrder {
+    ephemeral_id: ulong;
+    internal_id: uint;
+}
+
 table CmdRequest(fs_serializer) {
     id: int;
     type: CmdType;
