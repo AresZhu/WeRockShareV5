@@ -198,6 +198,7 @@ table ExecutionOrder(fs_serializer) {
     listing_id: uint;
     strategy_id: ushort;
     strategy_type: StrategyType;
+    route_id: ushort;
     internal_id: uint;
     internal_id_on_market: uint32;
     external_id: uint32;
