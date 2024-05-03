@@ -192,3 +192,24 @@ table AddOrUpdateInstrumentRequest(fs_serializer) {
     security: Security;
     security_listings: [SecurityListing];
 }
+
+table ExecutionOrder(fs_serializer) {
+    id: ulong;
+    listing_id: uint;
+    strategy_id: ushort;
+    strategy_type: StrategyType;
+    internal_id: uint;
+    internal_id_on_market: uint32;
+    external_id: uint32;
+    price: double;
+    quantity: double;
+    quantity_filled: double;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    instruction: OrderInstruction;
+}
+
+table ExecutionOrderList(fs_serializer) {
+    items: [ExecutionOrder];
+}
