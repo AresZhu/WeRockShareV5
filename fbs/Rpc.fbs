@@ -222,6 +222,7 @@ table ExecutionOrderList(fs_serializer) {
 
 table BasketHistoryEx(fs_serializer) {
     id: long;   
+    security_id: long;
     basket_id: long;
     basket_type: BasketType;
     basket_tag: string;
