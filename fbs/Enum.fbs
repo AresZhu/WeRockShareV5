@@ -265,9 +265,8 @@ enum TaskStatus : byte {
 }
 
 enum BasketType : byte {
-    OFFICIAL,
-    CREATE,
-    REDEEM,
+    CREATION,
+    REDEMPTION,
     TRACKING,
     CUSTOM,
 }
