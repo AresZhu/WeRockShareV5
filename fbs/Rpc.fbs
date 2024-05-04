@@ -218,3 +218,15 @@ table ExecutionOrder(fs_serializer) {
 table ExecutionOrderList(fs_serializer) {
     items: [ExecutionOrder];
 }
+
+
+table BasketHistoryEx(fs_serializer) {
+    id: long;   
+    basket_id: long;
+    basket_type: BasketType;
+    basket_tag: string;
+    creation_redemption_unit: int;
+    trading_date: int;
+    valuation_date: int;
+    constituents: string;
+}
