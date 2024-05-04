@@ -637,7 +637,6 @@ table Basket(fs_serializer) {
     last_updated: long;
     
     security_id: long;
-    creation_redemption_unit: int;
     type: BasketType;
     tag: string;
 }
@@ -652,6 +651,7 @@ table BasketHistory(fs_serializer) {
     last_updated: long;
     
     basket_id: long;
+    creation_redemption_unit: int;
     trading_date: int;
     valuation_date: int;
     constituents: string;
@@ -662,10 +662,14 @@ table BasketHistoryList(fs_serializer) {
 }
 
 table BasketEntry(fs_serializer) {
-    resolved_listing_id: long;
-    ref_symbol: string;
-    ref_exchange: string;
-    ref_security_type: SecurityType;
+    securityt_id_resolved: long;
+    listing_id_resolved: long;
+    primary_identifier_resolved: string;
+    trding_symbol: string;
+    exchange: string;
+    security_type: SecurityType;
+    sedol: string;
+    isin: string;
     quantity: double;
 }
 
