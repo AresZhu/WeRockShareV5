@@ -116,6 +116,8 @@ enum EntityType : byte {
     ORDER_ROUTER,
     EXECUTUION_GATEWAY,
     ORDER_ROUTER_STATE,
+    BASKET,
+    BASKET_HISTORY,
 }
 
 enum SubType : byte {
