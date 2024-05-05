@@ -655,7 +655,7 @@ table BasketHistory(fs_serializer) {
     trading_date: int;
     valuation_date: int;
     cahses: string;
-    constituents: string;
+    entries: string;
 }
 
 table BasketHistoryList(fs_serializer) {
@@ -676,7 +676,8 @@ table BasketEntry(fs_serializer) {
 
 table BasketCash(fs_serializer) {
     currency: Currency;
-    amount: double;
+    total_amount: double;
+    estimated_amount: double;
 }
 
 table ResolvedBasket(fs_serializer) {

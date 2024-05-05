@@ -229,6 +229,6 @@ table BasketHistoryEx(fs_serializer) {
     creation_redemption_unit: int;
     trading_date: int;
     valuation_date: int;
-    cashes: string;
-    constituents: string;
+    cashes: [BasketCash];
+    entries: [BasketEntry];
 }
