@@ -666,7 +666,7 @@ table BasketEntry(fs_serializer) {
     resolved_securityt_id: long;
     resolved_listing_id: long;
     resolved_primary_identifier: string;
-    trding_symbol: string;
+    trading_symbol: string;
     exchange: string;
     security_type: SecurityType;
     sedol: string;
