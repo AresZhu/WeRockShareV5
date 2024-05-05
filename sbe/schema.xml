@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <sbe:messageSchema xmlns:sbe="http://fixprotocol.io/2016/sbe"
                    xmlns:xi="http://www.w3.org/2001/XInclude"
                    package="WeRock.Share.Sbe"
@@ -8,39 +9,47 @@
                    byteOrder="littleEndian">
     <types>
         <composite name="messageHeader" description="Message identifiers and length of message root.">
-            <type name="blockLength" primitiveType="uint16"/>
-            <type name="templateId" primitiveType="uint16"/>
-            <type name="schemaId" primitiveType="uint16"/>
-            <type name="version" primitiveType="uint16"/>
+            <type name="blockLength" primitiveType="uint16" />
+            <type name="templateId" primitiveType="uint16" />
+            <type name="schemaId" primitiveType="uint16" />
+            <type name="version" primitiveType="uint16" />
         </composite>
         <composite name="groupSizeEncoding" description="Repeating group dimensions.">
-            <type name="blockLength" primitiveType="uint16"/>
-            <type name="numInGroup" primitiveType="uint16"/>
+            <type name="blockLength" primitiveType="uint16" />
+            <type name="numInGroup" primitiveType="uint16" />
         </composite>
         <composite name="varStringEncoding" description="Variable length UTF-8 String.">
-            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
-            <type name="varData" primitiveType="uint8" length="0" characterEncoding="UTF-8"/>
+            <type name="length" primitiveType="uint32" maxValue="1073741824" />
+            <type name="varData" primitiveType="uint8" length="0" characterEncoding="UTF-8" />
         </composite>
         <composite name="varAsciiEncoding" description="Variable length ASCII String.">
-            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
-            <type name="varData" primitiveType="uint8" length="0" characterEncoding="ASCII"/>
+            <type name="length" primitiveType="uint32" maxValue="1073741824" />
+            <type name="varData" primitiveType="uint8" length="0" characterEncoding="ASCII" />
         </composite>
         <composite name="varDataEncoding" description="Variable length binary blob.">
-            <type name="length" primitiveType="uint32" maxValue="1073741824"/>
-            <type name="varData" primitiveType="uint8" length="0"/>
+            <type name="length" primitiveType="uint32" maxValue="1073741824" />
+            <type name="varData" primitiveType="uint8" length="0" />
         </composite>
         <composite name="PricePoint">
-            <type name="price" primitiveType="double"/>
-            <type name="quantity" primitiveType="double"/>
+            <type name="price" primitiveType="double" />
+            <type name="quantity" primitiveType="double" />
         </composite>
-        <type name="string16" description="String with length of 16" presence="optional" length="16" primitiveType="char" semanticType="String"/>
-        <type name="string32" description="String with length of 32" presence="optional" length="32" primitiveType="char" semanticType="String"/>
-        <type name="string64" description="String with length of 64" presence="optional" length="64" primitiveType="char" semanticType="String"/>
-        <type name="string256" description="String with length of 256" presence="optional" length="256" primitiveType="char" semanticType="String"/>
-        <type name="string512" description="String with length of 512" presence="optional" length="512" primitiveType="char" semanticType="String"/>
-        <type name="string1K" description="String with length of 1024" presence="optional" length="1024" primitiveType="char" semanticType="String"/>
-        <type name="string2K" description="String with length of 2048" presence="optional" length="2048" primitiveType="char" semanticType="String"/>
-        <type name="string4k" description="String with length of 4K" presence="optional" length="4000" primitiveType="char" semanticType="String"/>
+        <type name="string16" description="String with length of 16" presence="optional" length="16"
+              primitiveType="char" semanticType="String" />
+        <type name="string32" description="String with length of 32" presence="optional" length="32"
+              primitiveType="char" semanticType="String" />
+        <type name="string64" description="String with length of 64" presence="optional" length="64"
+              primitiveType="char" semanticType="String" />
+        <type name="string256" description="String with length of 256" presence="optional" length="256"
+              primitiveType="char" semanticType="String" />
+        <type name="string512" description="String with length of 512" presence="optional" length="512"
+              primitiveType="char" semanticType="String" />
+        <type name="string1K" description="String with length of 1024" presence="optional" length="1024"
+              primitiveType="char" semanticType="String" />
+        <type name="string2K" description="String with length of 2048" presence="optional" length="2048"
+              primitiveType="char" semanticType="String" />
+        <type name="string4k" description="String with length of 4K" presence="optional" length="4000"
+              primitiveType="char" semanticType="String" />
     </types>
     <sbe:message name="MarketPriceSubscriptionSbe" id="4">
         <field id="1" type="uint32" name="instrumentId" />
@@ -56,7 +65,7 @@
         <field id="8" type="uint64" name="volume" />
         <field id="9" type="double" name="turnover" />
     </sbe:message>
-    
+
     <sbe:message name="MarketStatisticSbe" id="6">
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="double" name="preClose" />
@@ -77,15 +86,15 @@
     <sbe:message name="MarketDepthSbe" id="8">
         <field id="1" type="uint32" name="instrumentId" />
         <group name="bids" id="2" dimensionType="groupSizeEncoding">
-            <field name="price" id="3" type="double"/>
-            <field name="volume" id="4" type="uint32"/>
+            <field name="price" id="3" type="double" />
+            <field name="volume" id="4" type="uint32" />
         </group>
         <group name="asks" id="5" dimensionType="groupSizeEncoding">
-            <field name="price" id="6" type="double"/>
-            <field name="volume" id="7" type="uint32"/>
+            <field name="price" id="6" type="double" />
+            <field name="volume" id="7" type="uint32" />
         </group>
     </sbe:message>
-    
+
     <sbe:message name="NewOrderSbe" id="14">
         <field id="1" type="uint16" name="routeId" />
         <field id="2" type="uint64" name="orderId" />
@@ -125,7 +134,7 @@
         <field id="7" type="uint8" name="instructionType" />
         <field id="8" type="uint8" name="positionEffect" />
     </sbe:message>
-    <sbe:message name="StartupStrategySbe" id = "69">
+    <sbe:message name="StartupStrategySbe" id="69">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="int32" name="strategyId" />
         <field id="3" type="string32" name="name" />
