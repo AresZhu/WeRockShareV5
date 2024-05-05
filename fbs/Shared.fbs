@@ -654,6 +654,7 @@ table BasketHistory(fs_serializer) {
     creation_redemption_unit: int;
     trading_date: int;
     valuation_date: int;
+    cahses: string;
     constituents: string;
 }
 
@@ -662,9 +663,9 @@ table BasketHistoryList(fs_serializer) {
 }
 
 table BasketEntry(fs_serializer) {
-    securityt_id_resolved: long;
-    listing_id_resolved: long;
-    primary_identifier_resolved: string;
+    resolved_securityt_id: long;
+    resolved_listing_id: long;
+    resolved_primary_identifier: string;
     trding_symbol: string;
     exchange: string;
     security_type: SecurityType;
