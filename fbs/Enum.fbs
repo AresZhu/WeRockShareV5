@@ -356,3 +356,10 @@ enum RejectLevel: byte {
     CRITICAL,
     FATAL    
 }
+
+enum BasketPricingMethod: byte {
+    UNKNOWN = 0,
+    MARKET,
+    MID,
+    BID_OFFER
+}
