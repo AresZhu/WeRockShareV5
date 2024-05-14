@@ -500,7 +500,7 @@ table Trade(fs_serializer) {
     order_id: long;
     strategy_id: long;
     strategy_name: string;
-    exec_id: uint32;
+    exec_id: string;
     
     trading_symbol: string(required);
     currency: Currency;
