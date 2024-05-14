@@ -205,7 +205,7 @@ table ExecutionOrder(fs_serializer) {
     route_id: ushort;
     internal_id: uint;
     internal_id_on_market: uint32;
-    external_id: uint32;
+    external_id: string;
     price: double;
     quantity: double;
     quantity_filled: double;
