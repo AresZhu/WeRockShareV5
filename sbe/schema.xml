@@ -100,19 +100,30 @@
         <field id="2" type="uint64" name="orderId" />
         <field id="3" type="uint32" name="listingId" />
         <field id="4" type="uint16" name="strategyId" />
-        <field id="5" type="uint8" name="strategyType" />
-        <field id="6" type="double" name="price" />
-        <field id="7" type="double" name="quantity" />
-        <field id="8" type="uint8" name="side" />
-        <field id="9" type="uint8" name="instruction" />
+        <field id="5" type="uint16" name="tacticCode" />
+        <field id="6" type="uint8" name="strategyType" />
+        <field id="7" type="double" name="price" />
+        <field id="8" type="double" name="quantity" />
+        <field id="9" type="uint8" name="side" />
         <field id="10" type="uint8" name="positionEffect" />
         <field id="11" type="uint8" name="timeInForce" />
+        <field id="12" type="uint8" name="instruction" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
-        <field id="1" type="uint32" name="internalId" />
-        <field id="2" type="uint64" name="orderId" />
+        <field id="1" type="uint16" name="routeId" />
+        <field id="2" type="uint32" name="internalId" />
+        <field id="3" type="uint64" name="orderId" />
     </sbe:message>
-    <sbe:message name="OrderMessageSbe" id="16">
+    <sbe:message name="ReplaceOrderSbe" id="16">
+        <field id="1" type="uint16" name="routeId" />
+        <field id="2" type="uint64" name="orderId" />
+        <field id="3" type="uint64" name="parentOrderId" />
+        <field id="4" type="uint16" name="strategyId" />
+        <field id="5" type="uint16" name="tacticCode" />
+        <field id="6" type="double" name="price" />
+        <field id="7" type="double" name="quantity" />
+    </sbe:message>
+    <sbe:message name="OrderMessageSbe" id="17">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint64" name="orderId" />
         <field id="3" type="uint16" name="strategyId" />
