@@ -111,8 +111,9 @@
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
         <field id="1" type="uint16" name="routeId" />
-        <field id="2" type="uint32" name="internalId" />
-        <field id="3" type="uint64" name="orderId" />
+        <field id="2" type="uint64" name="orderId" />
+        <field id="3" type="uint16" name="strategyId" />
+        <field id="4" type="uint32" name="internalId" />
     </sbe:message>
     <sbe:message name="ReplaceOrderSbe" id="16">
         <field id="1" type="uint16" name="routeId" />
