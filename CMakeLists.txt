@@ -23,7 +23,6 @@ add_custom_command(
         "${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml"
 
         COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml sbe.stub
-        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml
         COMMENT "Generating Sbe...current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/fbs-headers)
