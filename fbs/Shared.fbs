@@ -894,3 +894,7 @@ table NodeCommand(fs_serializer) {
     parameters: string(required);
     user: string;
 }
+
+table NodeCommandList(fs_serializer) {
+    items: [NodeCommand];
+}
