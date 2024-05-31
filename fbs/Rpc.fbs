@@ -54,6 +54,7 @@ enum CmdType: byte {
     UPDATE_EXECUTION_GATEWAY,
     REMOVE_EXECUTION_GATEWAY,
     LOAD_OPEN_ORDERS,
+    SEND_NODE_COMMAND,
 }
 
 enum ErrorCode: short {
@@ -68,6 +69,7 @@ enum ErrorCode: short {
     DUPLICATE_SECURITY,
     FAILED_TO_ROUTE_ORDER,
     GATEWAY_NOT_CONNECTED,
+    NODE_IS_OFFLINE,
     UNKNOWN_ERROR,
 }
 
