@@ -120,6 +120,7 @@ enum EntityType : byte {
     ORDER_ROUTER_STATE,
     BASKET,
     BASKET_HISTORY,
+    NODE_COMMAND,
 }
 
 enum SubType : byte {

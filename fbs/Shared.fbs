@@ -884,3 +884,13 @@ table OrderRouterState(fs_serializer) {
 table OrderRouterStateList(fs_serializer) {
     items: [OrderRouterState];
 }
+
+table NodeCommand(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    node_id: short;
+    cmd_type: CommandType;
+    parameters: string(required);
+    user: string;
+}

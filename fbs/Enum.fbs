@@ -363,3 +363,12 @@ enum BasketPricingMethod: byte {
     MID,
     BID_OFFER
 }
+
+enum CommandType : byte {
+    IDLE = 0,
+    UPDATE_NODE_SETTINGS,
+    START_STRATEGY,
+    STOP_STRATEGY,
+    SET_STRATEGY_PARAMETERS,
+    SET_STRATEGY_TO_RISK_MODE,
+}
