@@ -208,6 +208,9 @@
         <field id="2" type="int32" name="strategyId" />
         <field id="3" type="string64" name="name" />
     </sbe:message>
+    <sbe:message name="StrategyTerminatedSbe" id="78">   
+        <field id="1" type="int32" name="strategyId" />
+    </sbe:message>
     <sbe:message name="TestStrategyDtoSbe" id="80">
         <field id="1" type="int32" name="strategyId" />
         <field id="2" type="uint8" name="state" />
