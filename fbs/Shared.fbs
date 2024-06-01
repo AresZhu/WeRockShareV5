@@ -890,7 +890,7 @@ table NodeCommand(fs_serializer) {
     last_updated: long;
     
     node_id: short;
-    cmd_type: CommandType;
+    cmd_type: NodeCommandType;
     data: string(required);
     user: string;
 }

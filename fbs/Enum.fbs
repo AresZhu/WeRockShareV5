@@ -364,7 +364,7 @@ enum BasketPricingMethod: byte {
     BID_OFFER
 }
 
-enum CommandType : byte {
+enum NodeCommandType : byte {
     IDLE = 0,
     UPDATE_NODE_SETTINGS,
     CREATE_STRATEGY,
@@ -375,4 +375,9 @@ enum CommandType : byte {
     SET_STRATEGY_SCHEDULES,
     SET_STRATEGY_PARAMETERS,
     SET_STRATEGIES_TO_RISK_MODE,
+    BOOK_TRADE,
+    SEND_NEW_ORDER,
+    SEND_REPLACE_ORDER,
+    SEND_CANCEL_ORDERS,    
+    TERMINATE_ORDERS,
 }
