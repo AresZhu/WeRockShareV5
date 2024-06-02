@@ -51,19 +51,13 @@
         <type name="string4k" description="String with length of 4K" presence="optional" length="4000"
               primitiveType="char" semanticType="String" />
     </types>
-    <sbe:message name="MarketPriceSubscriptionSbe" id="4">
-        <field id="1" type="uint32" name="instrumentId" />
-    </sbe:message>
     <sbe:message name="TickPriceSbe" id="5">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="uint8" name="tradingStatus" />
+        <field id="2" type="double" name="last" />
         <field id="3" type="double" name="bid" />
-        <field id="4" type="uint32" name="bidSize" />
-        <field id="5" type="double" name="ask" />
+        <field id="4" type="double" name="ask" />
+        <field id="5" type="uint32" name="bidSize" />
         <field id="6" type="uint32" name="askSize" />
-        <field id="7" type="double" name="last" />
-        <field id="8" type="uint64" name="volume" />
-        <field id="9" type="double" name="turnover" />
     </sbe:message>
 
     <sbe:message name="MarketStatisticSbe" id="6">
@@ -74,14 +68,16 @@
         <field id="5" type="double" name="high" />
         <field id="6" type="double" name="low" />
         <field id="7" type="double" name="close" />
-        <field id="8" type="double" name="limitUp" />
-        <field id="9" type="double" name="limitDown" />
+        <field id="8" type="uint64" name="volume" />
+        <field id="9" type="double" name="limitUp" />
+        <field id="10" type="double" name="limitDown" />
     </sbe:message>
     <sbe:message name="AuctionPriceSbe" id="7">
         <field id="1" type="uint32" name="instrumentId" />
         <field id="2" type="uint8" name="tradingStatus" />
         <field id="3" type="double" name="iap" />
-        <field id="4" type="double" name="iav" />
+        <field id="4" type="uint32" name="iav" />
+        <field id="5" type="int32" name="imbalanceSize" />
     </sbe:message>
     <sbe:message name="MarketDepthSbe" id="8">
         <field id="1" type="uint32" name="instrumentId" />
