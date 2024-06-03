@@ -363,19 +363,27 @@ table StrategyOrderMessage(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
-    order_id: long;
-    submit_time: long;
     type: OrderMessageType;
-    price: double;
-    quantity: double;
-    message: string;
-    internal_id: uint32;
-    external_id: string;
-    security_id: long;
+    reject_level: RejectLevel;
     strategy_id: long;
-    strategy_type: StrategyType;
+    ephemeral_id: long;
+    security_id: long;
+    instrument_id: long;
     side: Side;
+    price: double;
+    quantity: uint;
+    
+    gateway_id: uint;
+    router_id: uint;
+    
+    tactic_code: ushort;
+    tactic_index: ushort;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    instruction: OrderInstruction;
+    internal_id: uint;
+    external_id: string;
+    message: string;
 }
 
 table StrategyOrderMessageList(fs_serializer) {
@@ -386,11 +394,16 @@ table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    ephemeral_id: ulong;
+    ephemeral_id: long;
     security_id: long;
     listing_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
+    
+    tatic_code: ushort;
+    tatic_index: ushort;
+    
+    primary_identifier: string(required);
     trading_symbol: string(required);
     exchange: string(required);
     currency: Currency;
@@ -404,17 +417,17 @@ table StrategyOrder(fs_serializer) {
     last_message_type: OrderMessageType;
     
     price: double;
-    quantity: double;
+    quantity: uint32;
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     instruction: OrderInstruction;
     
     exchange_price: double;
-    exchange_volume: double;
+    exchange_volume: uint32;
         
     filled_size: double;
-    remaining_size: double;
+    remaining_size: uint32;
     
     average_price: double;
     
@@ -422,10 +435,10 @@ table StrategyOrder(fs_serializer) {
     internal_id_on_market: uint32;
     external_id: string;
     
-    order_router_id: uint32;
-    order_router_name: string(required);
-    execution_gateway_id: uint32;
-    execution_gateway_name: string(required);
+    router_id: uint32;
+    router_name: string(required);
+    gateway_id: uint32;
+    gateway_name: string(required);
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -435,12 +448,12 @@ table StrategyOrderList(fs_serializer) {
 table ActiveStrategyOrder(fs_serializer) {
     id: long;
     last_updated: long;
-    
-    security_id: long;
-    listing_id: long;
-    strategy_id: long;
+
     strategy_type: StrategyType;
     strategy_name: string;
+    tactic_code: ushort;
+    tactic_index: ushort;
+    primary_identifier: string(required);
     trading_symbol: string(required);
     exchange: string(required);
     currency: Currency;
@@ -452,31 +465,28 @@ table ActiveStrategyOrder(fs_serializer) {
     
     status: OrderStatus;
     last_message_type: OrderMessageType;
+    last_message: string;
     
     price: double;
-    quantity: double;
+    quantity: uint32;
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     instruction: OrderInstruction;
     
     exchange_price: double;
-    exchange_volume: double;
+    exchange_volume: uint32;
         
     filled_size: double;
-    remaining_size: double;
+    remaining_size: uint32;
     
     average_price: double;
     
     internal_id_on_market: uint32;
     external_id: string;
     
-    execution_gateway_name: string;
-    order_router_name: string;
-    
-    execution_gateway_id: uint;
-    order_router_id: uint;
-    ephemeral_id: ulong;
+    gateway_name: string;
+    router_name: string;
 }
 
 table ActiveStrategyOrderList(fs_serializer) {
