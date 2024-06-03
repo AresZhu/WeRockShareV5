@@ -97,13 +97,14 @@
         <field id="3" type="uint64" name="ephemeralId" />
         <field id="4" type="uint32" name="instrumentId" />
         <field id="5" type="uint16" name="strategyId" />
-        <field id="6" type="uint16" name="tacticCode" />
-        <field id="8" type="double" name="price" />
-        <field id="9" type="uint32" name="quantity" />
-        <field id="10" type="uint8" name="side" />
-        <field id="11" type="uint8" name="positionEffect" />
-        <field id="12" type="uint8" name="timeInForce" />
-        <field id="13" type="uint8" name="instruction" />
+        <field id="6" type="uint8" name="side" />
+        <field id="7" type="double" name="price" />
+        <field id="8" type="uint32" name="quantity" />        
+        <field id="9" type="uint8" name="positionEffect" />
+        <field id="10" type="uint8" name="timeInForce" />
+        <field id="11" type="uint8" name="instruction" />
+        <field id="12" type="uint16" name="tacticCode" />
+        <field id="13" type="uint16" name="tacticIndex" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
         <field id="1" type="uint16" name="gatewayId" />
