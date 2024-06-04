@@ -107,10 +107,6 @@ enum OrderMessageType : byte {
     FILL,
     FILLED,
     CLOSED,
-    GATEWAY_MESSAGE,
-    GATEWAY_CONNECTING,
-    GATEWAY_CONNECTED,
-    GATEWAY_DISCONNECTED,
 }
 
 enum OrderStatus: byte {
