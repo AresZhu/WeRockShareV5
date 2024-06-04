@@ -127,11 +127,12 @@
         <field id="2" type="uint8" name="rejectLevel" />
         <field id="3" type="uint16" name="strategyId" />
         <field id="4" type="uint64" name="ephemeralId" />
-        <field id="5" type="uint32" name="securityId" />
-        <field id="6" type="uint32" name="instrumentId" />
-        <field id="7" type="uint8" name="side" />
-        <field id="8" type="double" name="price" />
-        <field id="9" type="uint32" name="quantity" />
+        <field id="5" type="uint32" name="internalId" />
+        <field id="6" type="uint32" name="securityId" />
+        <field id="7" type="uint32" name="instrumentId" />
+        <field id="8" type="uint8" name="side" />
+        <field id="9" type="double" name="price" />
+        <field id="10" type="uint32" name="quantity" />
 
         <field id="15" type="uint16" name="gatewayId" />
         <field id="16" type="uint16" name="routerId" />
@@ -142,7 +143,6 @@
         <field id="19" type="uint8" name="positionEffect" />
         <field id="20" type="uint8" name="timeInForce" />
         <field id="21" type="uint8" name="instruction" />
-        <field id="22" type="uint32" name="internalId" />
         <field id="23" type="string16" name="externalId" />
         <field id="24" type="string256" name="message" />
     </sbe:message>
