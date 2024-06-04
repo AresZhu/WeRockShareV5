@@ -149,14 +149,30 @@ table NewOrder(fs_serializer) {
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     price: double;
-    quantity: double;
+    quantity: uint;
     instruction: OrderInstruction;
     route_id: long;
 }
 
-table CancelOrder {
-    ephemeral_id: ulong;
+table ReplaceOrder(fs_serializer) {
     internal_id: uint;
+    ephemeral_id: ulong;
+    parent_ephemeral_id: ulong;
+    strategy_id: long;
+    price: double;
+    quantity: uint;
+}
+
+table CancelOrder {
+    internal_id: uint;
+    ephemeral_id: ulong;
+    strategy_id: long;
+}
+
+table TerminateOrder {
+    internal_id: uint;
+    ephemeral_id: ulong;
+    strategy_id: long;
 }
 
 table CmdRequest(fs_serializer) {

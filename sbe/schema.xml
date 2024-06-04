@@ -92,37 +92,38 @@
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
-        <field id="1" type="uint16" name="gatewayId" />
-        <field id="2" type="uint16" name="routeId" />
-        <field id="3" type="uint64" name="ephemeralId" />
-        <field id="4" type="uint32" name="instrumentId" />
-        <field id="5" type="uint16" name="strategyId" />
-        <field id="6" type="uint8" name="side" />
-        <field id="7" type="double" name="price" />
-        <field id="8" type="uint32" name="quantity" />        
-        <field id="9" type="uint8" name="positionEffect" />
-        <field id="10" type="uint8" name="timeInForce" />
-        <field id="11" type="uint8" name="instruction" />
-        <field id="12" type="uint16" name="tacticCode" />
-        <field id="13" type="uint16" name="tacticIndex" />
+        <field id="1" type="uint16" name="routeId" />
+        <field id="2" type="uint64" name="ephemeralId" />
+        <field id="3" type="uint32" name="instrumentId" />
+        <field id="4" type="uint16" name="strategyId" />
+        <field id="5" type="uint8" name="side" />
+        <field id="6" type="double" name="price" />
+        <field id="7" type="uint32" name="quantity" />        
+        <field id="8" type="uint8" name="positionEffect" />
+        <field id="9" type="uint8" name="timeInForce" />
+        <field id="10" type="uint8" name="instruction" />
+        <field id="11" type="uint16" name="tacticCode" />
+        <field id="12" type="uint16" name="tacticIndex" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
-        <field id="1" type="uint16" name="gatewayId" />
-        <field id="2" type="uint16" name="routeId" />
-        <field id="3" type="uint64" name="ephemeralId" />
-        <field id="4" type="uint32" name="internalId" />
-        <field id="5" type="uint16" name="strategyId" />
+        <field id="1" type="uint32" name="internalId" />
+        <field id="2" type="uint64" name="ephemeralId" />
+        <field id="3" type="uint16" name="strategyId" />
     </sbe:message>
     <sbe:message name="ReplaceOrderSbe" id="16">
-        <field id="1" type="uint16" name="gatewayId" />
-        <field id="2" type="uint16" name="routeId" />
-        <field id="3" type="uint64" name="ephemeralId" />
-        <field id="4" type="uint64" name="parentEphemeralId" />
-        <field id="5" type="uint16" name="strategyId" />
-        <field id="6" type="double" name="price" />
-        <field id="7" type="uint32" name="quantity" />
+        <field id="1" type="uint32" name="internalId" />
+        <field id="2" type="uint64" name="ephemeralId" />
+        <field id="3" type="uint64" name="parentEphemeralId" />
+        <field id="4" type="uint16" name="strategyId" />
+        <field id="5" type="double" name="price" />
+        <field id="6" type="uint32" name="quantity" />
     </sbe:message>
-    <sbe:message name="OrderMessageSbe" id="17">
+    <sbe:message name="TerminateOrderSbe" id="17">
+        <field id="1" type="uint32" name="internalId" />
+        <field id="2" type="uint64" name="ephemeralId" />
+        <field id="3" type="uint16" name="strategyId" />
+    </sbe:message>
+    <sbe:message name="OrderMessageSbe" id="19">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint8" name="rejectLevel" />
         <field id="3" type="uint16" name="strategyId" />
@@ -146,7 +147,7 @@
         <field id="23" type="string16" name="externalId" />
         <field id="24" type="string256" name="message" />
     </sbe:message>
-    <sbe:message name="ExecutionGatewayStateSbe" id="18">
+    <sbe:message name="ExecutionGatewayStateSbe" id="20">
         <field id="1" type="uint16" name="gatewayId" />
         <field id="2" type="uint8" name="state" />
     </sbe:message>
