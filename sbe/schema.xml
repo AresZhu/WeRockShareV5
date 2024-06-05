@@ -141,11 +141,17 @@
         <field id="20" type="uint8" name="timeInForce" />
         <field id="21" type="uint8" name="instruction" />
         <field id="23" type="string16" name="externalId" />
-        <field id="24" type="string256" name="message" />
+        
     </sbe:message>
     <sbe:message name="ExecutionGatewayStateSbe" id="20">
         <field id="1" type="uint16" name="gatewayId" />
         <field id="2" type="uint8" name="state" />
+    </sbe:message>
+    <sbe:message name="OrderNotificationSbe" id="21">
+        <field id="1" type="uint8" name="type" />
+        <field id="2" type="uint8" name="rejectLevel" />
+        <field id="3" type="uint64" name="ephemeralId" />
+        <field id="4" type="string256" name="message" />
     </sbe:message>
     <sbe:message name="SaveStrategyParameterSbe" id="75">
         <field id="1" type="uint32" name="strategyId" />
