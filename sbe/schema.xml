@@ -106,22 +106,19 @@
         <field id="12" type="uint16" name="tacticIndex" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
-        <field id="1" type="uint32" name="internalId" />
-        <field id="2" type="uint64" name="ephemeralId" />
-        <field id="3" type="uint16" name="strategyId" />
+        <field id="1" type="uint64" name="ephemeralId" />
+        <field id="2" type="uint16" name="strategyId" />
     </sbe:message>
     <sbe:message name="ReplaceOrderSbe" id="16">
-        <field id="1" type="uint32" name="internalId" />
-        <field id="2" type="uint64" name="ephemeralId" />
-        <field id="3" type="uint64" name="parentEphemeralId" />
-        <field id="4" type="uint16" name="strategyId" />
-        <field id="5" type="double" name="price" />
-        <field id="6" type="uint32" name="quantity" />
+        <field id="1" type="uint64" name="ephemeralId" />
+        <field id="2" type="uint64" name="parentEphemeralId" />
+        <field id="3" type="uint16" name="strategyId" />
+        <field id="4" type="double" name="price" />
+        <field id="5" type="uint32" name="quantity" />
     </sbe:message>
     <sbe:message name="TerminateOrderSbe" id="17">
-        <field id="1" type="uint32" name="internalId" />
-        <field id="2" type="uint64" name="ephemeralId" />
-        <field id="3" type="uint16" name="strategyId" />
+        <field id="1" type="uint64" name="ephemeralId" />
+        <field id="2" type="uint16" name="strategyId" />
     </sbe:message>
     <sbe:message name="OrderMessageSbe" id="19">
         <field id="1" type="uint8" name="type" />
