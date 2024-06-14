@@ -487,6 +487,9 @@ table ActiveStrategyOrder(fs_serializer) {
     
     gateway_name: string;
     router_name: string;
+    
+    listing_id: long;
+    strategy_id: long;
 }
 
 table ActiveStrategyOrderList(fs_serializer) {
