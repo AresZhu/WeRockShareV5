@@ -155,7 +155,6 @@ table NewOrder(fs_serializer) {
 }
 
 table ReplaceOrder(fs_serializer) {
-    internal_id: uint;
     ephemeral_id: ulong;
     parent_ephemeral_id: ulong;
     strategy_id: long;
@@ -164,13 +163,11 @@ table ReplaceOrder(fs_serializer) {
 }
 
 table CancelOrder {
-    internal_id: uint;
     ephemeral_id: ulong;
     strategy_id: long;
 }
 
 table TerminateOrder {
-    internal_id: uint;
     ephemeral_id: ulong;
     strategy_id: long;
 }
