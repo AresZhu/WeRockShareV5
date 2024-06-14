@@ -255,7 +255,7 @@ table UserList(fs_serializer) {
 
 table PriceEntry(fs_serializer) {
     price: double;
-    quantity: double;
+    quantity: uint;
 }
 
 table TickPrice(fs_serializer) {
@@ -325,11 +325,11 @@ table MarketPrice {
     iav: double;
     
     bid: double;
-    bid_size: double;
+    bid_size: uint;
     ask: double;
-    ask_size: double;
+    ask_size: uint;
     last: double;
-    volume: double;
+    volume: ulong;
     turnover: double;
     
     preClose: double;
@@ -426,7 +426,7 @@ table StrategyOrder(fs_serializer) {
     exchange_price: double;
     exchange_volume: uint32;
         
-    filled_size: double;
+    filled_size: uint32;
     remaining_size: uint32;
     
     average_price: double;
@@ -477,7 +477,7 @@ table ActiveStrategyOrder(fs_serializer) {
     exchange_price: double;
     exchange_volume: uint32;
         
-    filled_size: double;
+    filled_size: uint32;
     remaining_size: uint32;
     
     average_price: double;
