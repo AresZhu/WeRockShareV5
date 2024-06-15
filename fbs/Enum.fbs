@@ -380,3 +380,10 @@ enum NodeCommandType : byte {
     SUBSCRIBE_MARKET_DATA,
     PUBLISH_GATEWAY_STATE,
 }
+
+enum TakticType : byte {
+    Maker = 0,
+    Taker = 1,
+    Sniper = 2,
+    Dimer = 3,
+}
