@@ -381,7 +381,7 @@ enum NodeCommandType : byte {
     PUBLISH_GATEWAY_STATE,
 }
 
-enum TakticType : byte {
+enum TacticType : byte {
     Maker = 0,
     Taker = 1,
     Sniper = 2,
