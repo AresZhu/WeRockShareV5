@@ -366,7 +366,8 @@ table StrategyOrderMessage(fs_serializer) {
     type: OrderMessageType;
     reject_level: RejectLevel;
     strategy_id: long;
-    ephemeral_id: long;
+    ephemeral_id: ulong;
+    parent_ephemeral_id: ulong;
     security_id: long;
     instrument_id: long;
     side: Side;
@@ -375,15 +376,13 @@ table StrategyOrderMessage(fs_serializer) {
     
     gateway_id: uint;
     router_id: uint;
-    
+    internal_id: uint;    
     tactic_code: ushort;
     tactic_index: ushort;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     instruction: OrderInstruction;
-    internal_id: uint;
     external_id: string;
-    message: string;
 }
 
 table StrategyOrderMessageList(fs_serializer) {
@@ -394,11 +393,12 @@ table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    ephemeral_id: long;
+    ephemeral_id: ulong;
     security_id: long;
     listing_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
+    strategy_name: string(required);
     
     tatic_code: ushort;
     tatic_index: ushort;
