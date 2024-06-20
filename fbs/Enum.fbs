@@ -7,6 +7,11 @@ enum ThreadingMode : byte {
     DEDICATED
 }
 
+enum Direction : byte {
+    UP = 0,
+    DOWN = 1,
+}
+
 enum ExchangeMic: byte {
     ALL = 0,
     XDCE,

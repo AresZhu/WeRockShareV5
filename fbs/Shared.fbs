@@ -20,6 +20,7 @@ table ReferencePriceList(fs_serializer) {
 
 table ExecutionGateway(fs_serializer) {
     id: long;
+    version: int;
     last_updated: long;
     
     type: GatewayType;

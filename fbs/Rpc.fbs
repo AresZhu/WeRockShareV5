@@ -24,7 +24,8 @@ enum CmdType: byte {
     REMOVE_SETTING,
     MARKET_SUBSCRIPTION,
     NEW_ORDER,
-    CANCEL_ORDERS,
+    CANCEL_ORDERS,    
+    AMEND_ORDER,
     TERMINATE_ORDERS,
     START_STRATEGIES,
     STOP_STRATEGIES,
@@ -158,6 +159,12 @@ table ReplaceOrder(fs_serializer) {
     ephemeral_id: ulong;
     parent_ephemeral_id: ulong;
     strategy_id: long;
+    price: double;
+    quantity: uint;
+}
+
+table AmendOrder(fs_serializer) {
+    order_id: ulong;
     price: double;
     quantity: uint;
 }
