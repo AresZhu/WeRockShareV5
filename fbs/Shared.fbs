@@ -634,7 +634,7 @@ table StartupStrategy(fs_serializer) {
     schedules: string(required);
     terminated: bool;
     parameters: string(required);
-    group: string(required);
+    group_name: string(required);
     owner: string(required);
     deploy_node_id: ubyte;
     deploy_group_id: ubyte;
