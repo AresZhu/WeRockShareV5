@@ -122,7 +122,6 @@ enum OrderStatus: byte {
    PARTIALLY_FILLED,
    FILLED,
    CANCELLED,
-   REPLACED,
    CLOSED
  }
 
