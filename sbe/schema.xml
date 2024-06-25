@@ -184,6 +184,6 @@
         <field id="3" type="uint8" name="classification" />
         <field id="4" type="uint8" name="severity" />
         <field id="5" type="string16" name="hostname" />
-        <field id="6" type="varStringEncoding" name="message" />
+        <data id="6" type="varStringEncoding" name="message" />
     </sbe:message>
 </sbe:messageSchema>
