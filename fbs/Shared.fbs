@@ -835,11 +835,11 @@ table AlertEvent(fs_serializer) {
     version: int;
     last_updated: long;
 
-    trading_date: int;    
+    trading_date: int;
+    node_id: short;
     classification: AlertClassification;
     severity: AlertSeverity;
     message: string(required);
-    source: string(required);
     hostname: string(required);
     strategy_id: long;
     acked: bool;
