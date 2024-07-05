@@ -723,7 +723,6 @@ table ResolvedBasketList(fs_serializer) {
 table PricingEntry(fs_serializer) {
     listing_id: long;
     quantity: double;
-    base_price: double;
     price_offset: double;
 }
 
