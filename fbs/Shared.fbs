@@ -731,11 +731,13 @@ table PricingBasket(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-        
-    security_id: long;    
-    ref_listing_id: long;
     
-    currency: Currency;
+    basket_history_id: long;
+    basket_type: BasketType;
+    basket_tag: string;
+        
+    security_id: long;
+    
     scaling: double;
     price_offset: double;
     
