@@ -401,6 +401,7 @@ enum PricingCheckType : byte {
 }
 
 enum BreachingType: byte {
-    Soft = 0,
-    Hard
+    None = 0,
+    Soft = 1,
+    Hard = 2
 }
