@@ -736,7 +736,6 @@ table PricingBasket(fs_serializer) {
     basket_tag: string;
         
     security_id: long;
-    security_primary_identifier: string(required);
     
     scaling: double;
     price_offset: double;
