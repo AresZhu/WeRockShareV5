@@ -693,33 +693,6 @@ table BasketCash(fs_serializer) {
     estimated_amount: double;
 }
 
-table ResolvedBasket(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-        
-    history_id: long;
-    security_id: long;
-    security_type: SecurityType;
-    security_symbol: string;
-    creation_redemption_unit: int;
-    type: BasketType;
-    tag: string;
-    display_name: string;
-    
-    ref_listing_id: long;
-    
-    trading_date: int;
-    valuation_date: int;
-    
-    cashes: [BasketCash];
-    entries: [BasketEntry];
-}
-
-table ResolvedBasketList(fs_serializer) {
-    items: [ResolvedBasket];
-}
-
 table PricingEntry(fs_serializer) {
     listing_id: long;
     quantity: double;
