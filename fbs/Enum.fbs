@@ -267,6 +267,7 @@ enum TaskStatus : byte {
 }
 
 enum BasketType : byte {
+    UNKNOWN = 0,
     CREATION,
     REDEMPTION,
     TRACKING,
