@@ -723,7 +723,6 @@ table ResolvedBasketList(fs_serializer) {
 table PricingEntry(fs_serializer) {
     listing_id: long;
     quantity: double;
-    price_offset: double;
 }
 
 table PricingBasket(fs_serializer) {
@@ -736,9 +735,6 @@ table PricingBasket(fs_serializer) {
     basket_tag: string;
         
     security_id: long;
-    
-    scaling: double;
-    price_offset: double;
     
     cashes: [BasketCash];
     entries: [PricingEntry];
