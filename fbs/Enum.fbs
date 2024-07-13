@@ -395,3 +395,13 @@ enum TacticType : byte {
     Sniper = 2,
     Dimer = 3,
 }
+
+enum PricingCheckType : byte {
+    
+}
+
+enum BreachingType: byte {
+    None = 0,
+    Soft = 1,
+    Hard = 2
+}

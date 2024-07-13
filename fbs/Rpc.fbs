@@ -124,6 +124,9 @@ enum EntityType : byte {
     BASKET,
     BASKET_HISTORY,
     NODE_COMMAND,
+    PRICING_CHECK_RULE,
+    PRICING_CHECK_RESULT,
+    PRICING_CHECK_STATISTIC,
 }
 
 enum SubType : byte {

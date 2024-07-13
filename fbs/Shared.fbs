@@ -912,3 +912,54 @@ table NodeCommand(fs_serializer) {
 table NodeCommandList(fs_serializer) {
     items: [NodeCommand];
 }
+
+table PricingCheckRule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+    type: PricingCheckType;
+    
+    strategy_group_regex: string(required);
+    strategy_name_regex: string(required);
+    
+    soft_limit: double;
+    hard_limit: double;
+}
+
+table PricingCheckRuleList(fs_serializer) {
+    items: [PricingCheckRule];
+}
+
+table PricingCheckResult(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    rule_id: long;
+    strategy_id: long;
+    breaching_type: BreachingType;
+    message: string;
+}
+
+table PricingCheckResultList(fs_serializer) {
+    items: [PricingCheckResult];
+}
+
+table PricingCheckStatistic(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    rule_id: long;
+    trading_date: int;
+    strategy_id: long;
+    soft_breached_count: int;
+    hard_breached_count: int;
+}
+
+table PricingCheckStatisticList(fs_serializer) {
+    items: [PricingCheckStatistic];
+}
