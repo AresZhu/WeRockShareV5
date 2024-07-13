@@ -361,8 +361,8 @@ enum RejectLevel: byte {
 }
 
 enum BasketPricingMethod: byte {
-    UNKNOWN = 0,
-    MARKET,
+    DEFAULT = 0,
+    NSP,
     MID,
     BID_OFFER
 }
