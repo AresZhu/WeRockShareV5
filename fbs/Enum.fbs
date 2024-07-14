@@ -398,6 +398,11 @@ enum TacticType : byte {
 }
 
 enum PricingCheckType : byte {
+    None,
+    MaxBid,
+    MinAsk,
+    BidMaxChg,
+    AskMaxChg
     
 }
 
