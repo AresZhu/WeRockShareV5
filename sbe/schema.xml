@@ -53,11 +53,12 @@
     </types>
     <sbe:message name="TickPriceSbe" id="5">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="double" name="last" />
-        <field id="3" type="double" name="bid" />
-        <field id="4" type="double" name="ask" />
-        <field id="5" type="uint32" name="bidSize" />
-        <field id="6" type="uint32" name="askSize" />
+        <field id="2" type="uint8" name="tradingStatus" />
+        <field id="3" type="double" name="last" />
+        <field id="4" type="double" name="bid" />
+        <field id="5" type="double" name="ask" />
+        <field id="6" type="uint32" name="bidSize" />
+        <field id="7" type="uint32" name="askSize" />
     </sbe:message>
 
     <sbe:message name="MarketStatisticSbe" id="6">
@@ -74,10 +75,9 @@
     </sbe:message>
     <sbe:message name="AuctionPriceSbe" id="7">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="uint8" name="tradingStatus" />
-        <field id="3" type="double" name="iap" />
-        <field id="4" type="uint32" name="iav" />
-        <field id="5" type="int32" name="imbalanceSize" />
+        <field id="2" type="double" name="iap" />
+        <field id="3" type="uint32" name="iav" />
+        <field id="4" type="int32" name="imbalanceSize" />
     </sbe:message>
     <sbe:message name="MarketDepthSbe" id="8">
         <field id="1" type="uint32" name="instrumentId" />

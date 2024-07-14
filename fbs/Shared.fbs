@@ -262,7 +262,7 @@ table PriceEntry(fs_serializer) {
 table TickPrice(fs_serializer) {
     id: long;
     last_updated: long;
-    
+    status: TradingStatus;
     last: double;
     bid: double;
     ask: double;
@@ -307,7 +307,6 @@ table MarketStatisticList(fs_serializer) {
 table AuctionPrice(fs_serializer) {
     id: long;
     last_updated: long;
-    status: TradingStatus;
     iap: double;
     iav: uint;
     imbalance_size: int;    
