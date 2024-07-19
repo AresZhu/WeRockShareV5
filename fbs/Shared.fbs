@@ -377,11 +377,10 @@ table StrategyOrderMessage(fs_serializer) {
     gateway_id: uint;
     router_id: uint;
     internal_id: uint;    
-    tactic_code: ushort;
+    tactic_type: TacticType;
     tactic_index: ushort;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    instruction: OrderInstruction;
     external_id: string;
 }
 
@@ -400,7 +399,7 @@ table StrategyOrder(fs_serializer) {
     strategy_type: StrategyType;
     strategy_name: string(required);
     
-    tatic_code: ushort;
+    tactic_type: TacticType;
     tatic_index: ushort;
     
     primary_identifier: string(required);
@@ -421,7 +420,6 @@ table StrategyOrder(fs_serializer) {
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    instruction: OrderInstruction;
     
     exchange_price: double;
     exchange_volume: uint32;
@@ -451,7 +449,7 @@ table ActiveStrategyOrder(fs_serializer) {
 
     strategy_type: StrategyType;
     strategy_name: string;
-    tactic_code: ushort;
+    tactic_type: TacticType;
     tactic_index: ushort;
     primary_identifier: string(required);
     trading_symbol: string(required);
@@ -472,7 +470,6 @@ table ActiveStrategyOrder(fs_serializer) {
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    instruction: OrderInstruction;
     
     exchange_price: double;
     exchange_volume: uint32;

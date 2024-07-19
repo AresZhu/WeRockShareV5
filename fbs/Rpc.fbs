@@ -154,7 +154,6 @@ table NewOrder(fs_serializer) {
     time_in_force: TimeInForce;
     price: double;
     quantity: uint;
-    instruction: OrderInstruction;
     route_id: long;
 }
 
@@ -238,7 +237,6 @@ table ExecutionOrder(fs_serializer) {
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    instruction: OrderInstruction;
 }
 
 table ExecutionOrderList(fs_serializer) {

@@ -135,16 +135,6 @@ enum TradingStatus : byte {
     CLOSE
 }
 
-enum OrderInstruction: byte {
-    MANUAL = 0,
-    MM,
-    RISK,
-    SCRATCH,
-    B2B,
-    HEDGING,
-    SNIPING
-}
-
 enum TradeType : byte {
     MARKET = 0,
     BOOKING = 1
@@ -391,10 +381,11 @@ enum NodeCommandType : byte {
 }
 
 enum TacticType : byte {
-    Maker = 0,
-    Taker = 1,
-    Sniper = 2,
-    Dimer = 3,
+    Manual = 0,
+    Maker = 1,
+    Taker = 2,
+    Sniper = 3,
+    Dimer = 4,
 }
 
 enum PricingCheckType : byte {
