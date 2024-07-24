@@ -685,7 +685,6 @@ table BasketEntry(fs_serializer) {
 
 table BasketCash(fs_serializer) {
     currency: Currency;
-    total_amount: double;
     estimated_amount: double;
 }
 
@@ -702,7 +701,6 @@ table PricingBasket(fs_serializer) {
     basket_history_id: long;
     basket_type: BasketType;
     basket_tag: string;
-        
     security_id: long;
     
     cashes: [BasketCash];
