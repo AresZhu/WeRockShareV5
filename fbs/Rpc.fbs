@@ -127,6 +127,7 @@ enum EntityType : byte {
     PRICING_CHECK_RULE,
     PRICING_CHECK_RESULT,
     PRICING_CHECK_STATISTIC,
+    STRATEGY_POSITION,
 }
 
 enum SubType : byte {
