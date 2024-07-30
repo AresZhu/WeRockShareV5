@@ -570,6 +570,7 @@ table StrategyPosition(fs_serializer) {
     
     security_id: long;
     strategy_id: long;
+    strategy_type: StrategyType;
     
     yst_long_open: double;
     yst_short_open: double;
