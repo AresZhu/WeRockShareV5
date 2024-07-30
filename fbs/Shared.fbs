@@ -106,7 +106,8 @@ table Security(fs_serializer) {
     market: Market;
     contract_size: double;
     expired_date: int;
-    intraday_sell_allowed: bool;
+    intraday_sell_prohibited: bool;
+    short_sell_exempted: bool;
 }
 
 table SecurityList(fs_serializer) {
@@ -154,7 +155,8 @@ table Instrument(fs_serializer) {
     security_id: long;
     security_type: SecurityType;
     expired_date: int;
-    intraday_sell_allowed: bool;
+    intraday_sell_prohibited: bool;
+    short_sell_exempted: bool;
     primary_identifier: string(required);
     description: string(required);
     market: Market;
