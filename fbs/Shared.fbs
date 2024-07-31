@@ -424,10 +424,7 @@ table StrategyOrder(fs_serializer) {
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    
-    exchange_price: double;
-    exchange_volume: uint32;
-        
+            
     filled_size: uint32;
     remaining_size: uint32;
     
@@ -497,6 +494,53 @@ table ActiveStrategyOrderList(fs_serializer) {
     items: [ActiveStrategyOrder];
 }
 
+table OpenOrder(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    strategy_order_id: long;
+
+    strategy_type: StrategyType;
+    strategy_name: string;
+    tactic_type: TacticType;
+    tactic_index: ushort;
+    primary_identifier: string(required);
+    exchange: string(required);
+    currency: Currency;
+    
+    submit_time: long;
+    
+    status: OrderStatus;
+    last_message_type: OrderMessageType;
+    last_message: string;
+    
+    price: double;
+    quantity: uint32;
+    side: Side;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+            
+    filled_size: uint32;
+    remaining_size: uint32;
+    
+    average_price: double;
+    
+    internal_id: uint32;
+    internal_id_on_market: uint32;
+    external_id: string;
+    
+    router_id: uint32;
+    router_name: string;
+    
+    security_id: long;
+    strategy_id: long;
+    listing_id: long;
+}
+
+table OpenOrderList(fs_serializer) {
+    items: [OpenOrder];
+}
+
 table Trade(fs_serializer) {
     id: long;
     version: int;
@@ -513,7 +557,7 @@ table Trade(fs_serializer) {
     strategy_name: string;
     exec_id: string;
     
-    trading_symbol: string(required);
+    primary_identifier: string(required);
     currency: Currency;
     exchange: string(required);
     
@@ -559,10 +603,6 @@ table Position(fs_serializer) {
     pnl_total: double;
 }
 
-table PositionList(fs_serializer) {
-    items: [Position];
-}
-
 table StrategyPosition(fs_serializer) {
     id: long;
     version: int;
@@ -588,50 +628,45 @@ table StrategyPositionList(fs_serializer) {
     items: [StrategyPosition];
 }
 
-table LivePosition(fs_serializer) {
+table OpenOrderSummary(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    position: Position;
     
-    symbol: string;
-    primary_listing_id: long;
-    contract_size: double;
-    currency: Currency;
-    strategy_name: string;
+    strategy_id: long;
+    security_id: long;
     
-    open_buy_orders_notional: double;
-    open_sell_orders_notional: double;
+    open_buy: double;
+    open_sell: double;
+    open_buy_notional: double;
+    open_sell_notional: double;
+}
 
+table OpenOrderSummaryList(fs_serializer) {
+    items: [OpenOrderSummary];
+}
+
+table PositionSummary(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    strategy_id: long;
+    security_id: long;
+    strategy_type: StrategyType;
+    
+    day_buy: double;
+    day_sell: double;
+    day_buy_avg: double;
+    day_sell_avg: double;
+    
+    marked_price: double;
     live_price: double;
-    
-    to_usd_rate: double;    
-    day_bot_notional_usd: double;
-    day_sld_notional_usd: double;
-    open_buy_orders_notional_usd: double;
-    open_sell_orders_notional_usd: double;
-    pnl_daily_usd: double;
-    pnl_mtd_usd: double;
-    pnl_ytd_usd: double;
-    pnl_total_usd: double;
+    pnl_daily: double;
 }
 
-table LivePositionList(fs_serializer) {
-    items: [LivePosition];
-}
-
-table PositionSummary {
-    trading_date: int;
-    total_notional_long: long;
-    total_notional_short: long;
-    delta: long;
-
-    turnover: long;
-    commission: long;
-    nti: double;
-    pnl_daily: long;
-    pnl_mtd: long;
-    pnl_ytd: long;
+table PositionSummaryList(fs_serializer) {
+    items: [PositionSummary];
 }
 
 table StrategySchedule(fs_serializer) {

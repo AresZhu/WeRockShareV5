@@ -97,9 +97,8 @@ enum EntityType : byte {
     OPTION,
     STRATEGY_ORDER,
     ACTIVE_STRATEGY_ORDER,
+    OPEN_ORDER,
     TRADE,
-    POSITION,
-    LIVE_POSITION,
     ETF_MM_STRATEGY_DTO,
     MM_STRATEGY_DTO,
     FH_STRATEGY_DTO,
@@ -128,6 +127,8 @@ enum EntityType : byte {
     PRICING_CHECK_RESULT,
     PRICING_CHECK_STATISTIC,
     STRATEGY_POSITION,
+    POSITION_SUMMARY,
+    OPEN_ORDER_SUMMARY,
 }
 
 enum SubType : byte {
