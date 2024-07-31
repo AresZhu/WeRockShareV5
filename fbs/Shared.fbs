@@ -482,6 +482,8 @@ table OpenOrder(fs_serializer) {
     router_id: uint32;
     router_name: string;
     
+    gateway_id: uint32;
+    
     security_id: long;
     strategy_id: long;
     listing_id: long;
