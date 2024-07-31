@@ -96,7 +96,6 @@ enum EntityType : byte {
     FUTURES,
     OPTION,
     STRATEGY_ORDER,
-    ACTIVE_STRATEGY_ORDER,
     OPEN_ORDER,
     TRADE,
     ETF_MM_STRATEGY_DTO,

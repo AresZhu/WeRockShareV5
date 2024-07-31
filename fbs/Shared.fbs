@@ -444,56 +444,6 @@ table StrategyOrderList(fs_serializer) {
     items: [StrategyOrder];
 }
 
-table ActiveStrategyOrder(fs_serializer) {
-    id: long;
-    last_updated: long;
-
-    strategy_type: StrategyType;
-    strategy_name: string;
-    tactic_type: TacticType;
-    tactic_index: ushort;
-    primary_identifier: string(required);
-    trading_symbol: string(required);
-    exchange: string(required);
-    currency: Currency;
-    
-    trading_date: int;
-    
-    submit_time: long;
-    end_time: long;
-    
-    status: OrderStatus;
-    last_message_type: OrderMessageType;
-    last_message: string;
-    
-    price: double;
-    quantity: uint32;
-    side: Side;
-    position_effect: PositionEffect;
-    time_in_force: TimeInForce;
-    
-    exchange_price: double;
-    exchange_volume: uint32;
-        
-    filled_size: uint32;
-    remaining_size: uint32;
-    
-    average_price: double;
-    
-    internal_id_on_market: uint32;
-    external_id: string;
-    
-    gateway_name: string;
-    router_name: string;
-    
-    listing_id: long;
-    strategy_id: long;
-}
-
-table ActiveStrategyOrderList(fs_serializer) {
-    items: [ActiveStrategyOrder];
-}
-
 table OpenOrder(fs_serializer) {
     id: long;
     last_updated: long;
