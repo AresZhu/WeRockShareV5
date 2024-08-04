@@ -378,6 +378,7 @@ enum NodeCommandType : byte {
     TERMINATE_ORDER,
     SUBSCRIBE_MARKET_DATA,
     PUBLISH_GATEWAY_STATE,
+    CREATE_MANUAL_TRADE,
 }
 
 enum TacticType : byte {
