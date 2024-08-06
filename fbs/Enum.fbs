@@ -403,3 +403,9 @@ enum BreachingType: byte {
     Soft = 1,
     Hard = 2
 }
+
+enum PositionSource: byte {
+    Strategy = 0,
+    Consolidated = 1,
+    ConsolidatedExcludeManual = 2
+}
