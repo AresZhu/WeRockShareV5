@@ -164,6 +164,15 @@
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="uint8" name="state" />
     </sbe:message>
+    <sbe:message name="MarketMakingPositionDtoSbe" id="81">
+        <field id="1" type="uint32" name="strategyId" />
+        <field id="2" type="double" name="primaryPosition" />
+        <field id="3" type="double" name="primaryNotional" />
+        <field id="4" type="double" name="consolidatedPosition" />
+        <field id="5" type="double" name="consolidatedPositionExcludeManual" />
+        <field id="6" type="double" name="delta" />
+        <field id="7" type="double" name="hedgingNotional" />
+    </sbe:message> 
     <sbe:message name="AlertEventSbe" id="90">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="int32" name="strategyId" />

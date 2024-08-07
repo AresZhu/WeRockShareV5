@@ -21,3 +21,21 @@ table StrategyDto(fs_serializer) {
 table StrategyDtoList(fs_serializer) {
     items: [StrategyDto];
 }
+
+table MarketMakingPositionDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    primary_position: double;
+    primary_notional: double;
+    
+    consolidated_position: double;
+    consolidated_position_exclude_manual: double;
+    delta: double;
+    hedging_notional: double;
+}
+
+table MarketMakingPositionDtoList(fs_serializer) {
+    items: [MarketMakingPositionDto];
+}
