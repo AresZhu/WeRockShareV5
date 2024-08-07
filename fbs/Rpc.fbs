@@ -126,6 +126,7 @@ enum EntityType : byte {
     POSITION_SUMMARY,
     OPEN_ORDER_SUMMARY,
     MM_POSITION_DTO,
+    MM_QUOTING_DTO,
 }
 
 enum SubType : byte {

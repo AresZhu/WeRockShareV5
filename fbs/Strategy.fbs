@@ -39,3 +39,22 @@ table MarketMakingPositionDto(fs_serializer) {
 table MarketMakingPositionDtoList(fs_serializer) {
     items: [MarketMakingPositionDto];
 }
+
+table MarketMakingQuotingDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    bid_nav: double;
+    ask_nav: double;
+    our_bid_margin: double;
+    our_ask_margin: double;
+    our_bid_price: double;
+    our_ask_price: double;
+    our_best_bid_size: double;
+    our_best_ask_size: double;
+}
+
+table MarketMakingQuotingDtoList(fs_serializer) {
+    items: [MarketMakingQuotingDto];
+}
