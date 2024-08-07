@@ -400,16 +400,9 @@ table StrategyOrder(fs_serializer) {
     security_id: long;
     listing_id: long;
     strategy_id: long;
-    strategy_type: StrategyType;
-    strategy_name: string(required);
     
     tactic_type: TacticType;
     tatic_index: ushort;
-    
-    primary_identifier: string(required);
-    trading_symbol: string(required);
-    exchange: string(required);
-    currency: Currency;
     
     trading_date: int;
     
@@ -435,9 +428,6 @@ table StrategyOrder(fs_serializer) {
     external_id: string;
     
     router_id: uint32;
-    router_name: string(required);
-    gateway_id: uint32;
-    gateway_name: string(required);
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -500,18 +490,12 @@ table Trade(fs_serializer) {
     
     trading_date: int;
     type: TradeType;
-    strategy_type: StrategyType;
-    
+        
     security_id: long;
     listing_id: long;
     order_id: long;
     strategy_id: long;
-    strategy_name: string;
-    exec_id: string;
-    
-    primary_identifier: string(required);
-    currency: Currency;
-    exchange: string(required);
+    exec_id: string; 
     
     position_effect: PositionEffect;
     
@@ -531,7 +515,6 @@ table Position(fs_serializer) {
     
     trading_date: int;
     security_id: long;
-    strategy_type: StrategyType;
     strategy_id: long;
     yst_long_open: double;
     yst_short_open: double;
@@ -562,7 +545,6 @@ table StrategyPosition(fs_serializer) {
     
     security_id: long;
     strategy_id: long;
-    strategy_type: StrategyType;
     
     yst_long_open: double;
     yst_short_open: double;
@@ -605,7 +587,6 @@ table PositionSummary(fs_serializer) {
     
     strategy_id: long;
     security_id: long;
-    strategy_type: StrategyType;
     
     day_buy: double;
     day_sell: double;
