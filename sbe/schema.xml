@@ -160,20 +160,8 @@
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="string32" name="last_user" />
     </sbe:message>
-    <sbe:message name="TestStrategyDtoSbe" id="80">
+    <sbe:message name="StrategyDtoSbe" id="80">
         <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint8" name="state" />
-    </sbe:message>
-    <sbe:message name="HedgingStrategyDtoSbe" id="81">
-        <field id="1" type="int32" name="strategyId" />
-        <field id="2" type="uint8" name="state" />
-        <field id="3" type="double" name="contractDelta" />
-        <field id="4" type="int64" name="deltaNotional" />
-        <field id="5" type="double" name="position" />
-        <field id="6" type="int64" name="positionNotional" />
-    </sbe:message>
-    <sbe:message name="MarketMakingStrategyDtoSbe" id="82">
-        <field id="1" type="int32" name="strategyId" />
         <field id="2" type="uint8" name="state" />
     </sbe:message>
     <sbe:message name="AlertEventSbe" id="90">
