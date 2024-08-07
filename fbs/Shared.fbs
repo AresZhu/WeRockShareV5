@@ -440,13 +440,8 @@ table OpenOrder(fs_serializer) {
     
     strategy_order_id: long;
 
-    strategy_type: StrategyType;
-    strategy_name: string;
     tactic_type: TacticType;
     tactic_index: ushort;
-    primary_identifier: string(required);
-    exchange: string(required);
-    currency: Currency;
     
     submit_time: long;
     
@@ -470,9 +465,6 @@ table OpenOrder(fs_serializer) {
     external_id: string;
     
     router_id: uint32;
-    router_name: string;
-    
-    gateway_id: uint32;
     
     security_id: long;
     strategy_id: long;
