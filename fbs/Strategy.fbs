@@ -10,81 +10,14 @@ table ScheduleSession {
     duration: uint32;
 }
 
-table MarketMakingStrategyDto(fs_serializer) {
+table StrategyDto(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
     
     state: StrategyState;
-    type: StrategyType;
-    bid_nav: double;
-    ask_nav: double;
-    our_bid: double;
-    our_bid_raw: double;
-    our_ask: double;
-    our_ask_raw: double;
-    mm_bid: double;
-    mm_ask: double;
-    mm_bid_plus: double;
-    mm_ask_plus: double;
-    primary_pos: double;
-    primary_notional: long;
-    delta: long;
-    gearing: double;
-    pnl_daily: double;
 }
 
-table MarketMakingStrategyDtoList(fs_serializer) {
-    items: [MarketMakingStrategyDto];
-}
-
-table FuturesHedgingStrategyDto(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    state: StrategyState;
-    type: StrategyType;
-    volatility: double;
-    primary_pos: double;
-    primary_notional: long;
-    delta: double;
-    contract_delta: double;
-    volume_exponent: byte;
-    pnl_daily: double;
-}
-
-table FuturesHedgingStrategyDtoList(fs_serializer) {
-    items: [FuturesHedgingStrategyDto];
-}
-
-table TestStrategyDto(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    state: StrategyState;
-    type: StrategyType;
-}
-
-table TestStrategyDtoList(fs_serializer) {
-    items: [TestStrategyDto];
-}
-
-table HedgingStrategyDto(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    state: StrategyState;
-    type: StrategyType;
-    
-    contract_delta: double;
-    delta_notional: double;
-    position: double;
-    position_notional: long;
-}
-
-table HedgingStrategyDtoList(fs_serializer) {
-    items: [HedgingStrategyDto];
+table StrategyDtoList(fs_serializer) {
+    items: [StrategyDto];
 }
