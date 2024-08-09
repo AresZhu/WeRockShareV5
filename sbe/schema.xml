@@ -172,17 +172,19 @@
         <field id="5" type="double" name="consolidatedPositionExcludeManual" />
         <field id="6" type="double" name="delta" />
         <field id="7" type="double" name="hedgingNotional" />
+        <field id="8" type="double" name="ourBidMargin" />
+        <field id="9" type="double" name="ourAskMargin" />
     </sbe:message> 
     <sbe:message name="MarketMakingQuotingDtoSbe" id="82">
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="double" name="bidNav" />
         <field id="3" type="double" name="askNav" />
-        <field id="4" type="double" name="ourBidMargin" />
-        <field id="5" type="double" name="ourAskMargin" />
-        <field id="6" type="double" name="ourBidPrice" />
-        <field id="7" type="double" name="ourAskPrice" />
-        <field id="8" type="double" name="ourBestBidSize" />
-        <field id="9" type="double" name="ourBestAskSize" />
+        <field id="4" type="double" name="ourBidRawPrice" />
+        <field id="5" type="double" name="ourAskRawPrice" />
+        <field id="6" type="double" name="makerBestBidPrice" />
+        <field id="7" type="double" name="makerBestAskPrice" />
+        <field id="8" type="double" name="makerBestBidSize" />
+        <field id="9" type="double" name="makerBestAskSize" />
     </sbe:message>
     <sbe:message name="AlertEventSbe" id="90">
         <field id="1" type="uint8" name="nodeId" />
