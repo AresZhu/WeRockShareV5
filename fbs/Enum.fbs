@@ -106,6 +106,7 @@ enum OrderMessageType : byte {
     CANCEL,
     CANCELLED,
     CANCEL_REJECT,
+    REJECT,
     REPLACE,
     REPLACED,
     REPLACE_REJECT,
