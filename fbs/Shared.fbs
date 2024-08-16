@@ -699,7 +699,8 @@ table PricingBasket(fs_serializer) {
     version: int;
     last_updated: long;
     
-    basket_history_id: long;
+    validation_result: BasketValidationResult;
+    
     basket_type: BasketType;
     basket_tag: string;
     security_id: long;
@@ -927,3 +928,46 @@ table PricingCheckStatistic(fs_serializer) {
 table PricingCheckStatisticList(fs_serializer) {
     items: [PricingCheckStatistic];
 }
+
+table BasketValidation(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    result: BasketValidationResult;
+    message: string;
+    nav_date: int;
+    official_nav: double;
+ }
+ 
+ table BasketValidationList(fs_serializer) {
+    items: [BasketValidation];
+ }
+ 
+ table BasketValidationRule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    primary_identifier_regex: string(required);
+    security_type: SecurityType;
+    parameters: string(required);
+ }
+ 
+ table BasketValidationRuleList(fs_serializer) {
+    items: [BasketValidationRule];
+ }
+ 
+ table NavHistory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    nav_date: int;
+    nav: double;
+ }
+ 
+ table NavHistoryList(fs_serializer) {
+    items: [NavHistory];
+ }

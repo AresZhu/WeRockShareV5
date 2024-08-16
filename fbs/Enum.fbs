@@ -248,8 +248,6 @@ enum CorporateActionType: byte {
     UNKNOWN = 0,
 }
 
-
-
 enum TaskStatus : byte {
     UNKNOWN = 0,
     RUNNING,
@@ -273,6 +271,7 @@ enum Region: byte {
 }
 
 enum ReferencePriceType: byte {
+    PnlDailyMarkPrice,
     USCashClose,
     CNCashClose,
     HKCashClose,
@@ -410,4 +409,10 @@ enum PositionSource: byte {
     Strategy = 0,
     Consolidated = 1,
     ConsolidatedExcludeManual = 2
+}
+
+enum BasketValidationResult: byte {
+    Success = 0,
+    Invalid = 1,
+    Accepted = 2
 }
