@@ -278,6 +278,18 @@ table TickPriceList(fs_serializer) {
     items: [TickPrice];
 }
 
+table FxRate(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    base_currency: Currency;
+    rate: double;
+}
+
+table FxRateList(fs_serializer) {
+    items: [FxRate];
+}
+
 table MarketDepth(fs_serializer) {
      id: long;
      last_updated: long;

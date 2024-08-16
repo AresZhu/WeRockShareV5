@@ -90,6 +90,10 @@
             <field name="volume" id="7" type="uint32" />
         </group>
     </sbe:message>
+    <sbe:message name="FxRateSbe" id="9">
+        <field id="1" type="uint8" name="currency" />
+        <field id="2" type="double" name="rate" />
+    </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
         <field id="1" type="uint16" name="routeId" />
