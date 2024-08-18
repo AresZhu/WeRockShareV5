@@ -130,6 +130,10 @@ enum EntityType : byte {
     FX_RATE,
     BASKET_VALIDATION,
     NAV_HISTORY,
+    FUTURE_PRODUCT,
+    BETA_MODEL,
+    BETA_MODEL_ENTRY,
+    RESOLVED_BETA_MODEL,
 }
 
 enum SubType : byte {

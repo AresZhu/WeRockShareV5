@@ -971,3 +971,72 @@ table BasketValidation(fs_serializer) {
  table NavHistoryList(fs_serializer) {
     items: [NavHistory];
  }
+ 
+ table FutureProduct(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    identifier: string(required);
+    name: string(required);
+    primary_identifier_stem: string(required);
+    region: string(required);   
+    
+    underlying_security_id: long;
+    current_contract_security_id: long;
+}
+
+table FutureProductList(fs_serializer) {
+    items: [FutureProduct];
+}
+
+table BetaModel(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+}
+
+table BetaModelList(fs_serializer) {
+    items: [BetaModel];
+}
+
+table BetaModelEntry(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    beta_model_id: long;
+    future_product_id: long;
+    beta: double;
+}
+
+table BetaModelEntryList(fs_serializer) {
+    items: [BetaModelEntry];
+}
+
+table ResolvedBetaModelEntry(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    beta_model_id: long;
+    future_product_id: long;
+    beta: double;
+    
+    listing_id: long;
+}
+
+table ResolvedBetaModel(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+    entries: [ResolvedBetaModelEntry];
+}
+
+table ResolvedBetaModelList(fs_serializer) {
+    items: [ResolvedBetaModel];
+}
