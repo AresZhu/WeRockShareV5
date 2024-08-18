@@ -128,6 +128,8 @@ enum EntityType : byte {
     MM_POSITION_DTO,
     MM_QUOTING_DTO,
     FX_RATE,
+    BASKET_VALIDATION,
+    NAV_HISTORY,
 }
 
 enum SubType : byte {
