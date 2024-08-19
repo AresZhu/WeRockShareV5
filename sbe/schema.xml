@@ -95,6 +95,23 @@
         <field id="2" type="double" name="rate" />
     </sbe:message>
 
+    <sbe:message name="HedgingRequestSbe" id="12">
+        <field id="1" type="uint64" name="hedgingId" />
+        <field id="2" type="uint32" name="fromStrategyId" />
+        <field id="3" type="uint32" name="listingId" />
+        <field id="4" type="int32" name="quantity" />
+        <field id="5" type="double" name="price" />
+    </sbe:message>
+
+    <sbe:message name="HedgingResponseSbe" id="13">
+        <field id="1" type="uint64" name="hedgingId" />
+        <field id="2" type="uint32" name="fromStrategyId" />
+        <field id="3" type="uint32" name="toStrategyId" />
+        <field id="4" type="uint32" name="listingId" />
+        <field id="5" type="int32" name="quantity" />
+        <field id="6" type="double" name="price" />
+    </sbe:message>
+
     <sbe:message name="NewOrderSbe" id="14">
         <field id="1" type="uint16" name="routeId" />
         <field id="2" type="uint64" name="ephemeralId" />
