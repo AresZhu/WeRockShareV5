@@ -1041,3 +1041,16 @@ table ResolvedBetaModel(fs_serializer) {
 table ResolvedBetaModelList(fs_serializer) {
     items: [ResolvedBetaModel];
 }
+
+table HedgingStrategyLocation(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    strategy_id: long;
+    started: bool;
+}
+
+table HedgingStrategyLocationList(fs_serializer) {
+    items: [HedgingStrategyLocation];
+}
