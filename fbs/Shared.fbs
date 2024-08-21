@@ -998,6 +998,7 @@ table BetaModel(fs_serializer) {
     last_updated: long;
     
     name: string(required);
+    deleted: bool;
 }
 
 table BetaModelList(fs_serializer) {
