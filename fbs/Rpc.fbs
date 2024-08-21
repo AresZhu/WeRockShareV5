@@ -57,6 +57,7 @@ enum CmdType: byte {
     REMOVE_EXECUTION_GATEWAY,
     LOAD_OPEN_ORDERS,
     SEND_NODE_COMMAND,
+    UPDATE_FUTURE_PRODUCTS,
 }
 
 enum ErrorCode: short {
