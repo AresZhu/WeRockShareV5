@@ -984,6 +984,8 @@ table BasketValidation(fs_serializer) {
     
     underlying_security_id: long;
     current_contract_security_id: long;
+
+    deleted: bool;
 }
 
 table FutureProductList(fs_serializer) {
