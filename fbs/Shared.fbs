@@ -1026,6 +1026,7 @@ table ResolvedBetaModelEntry(fs_serializer) {
     
     beta_model_id: long;
     future_product_id: long;
+    future_product_identifier: string;
     beta: double;
     
     security_id: long;
