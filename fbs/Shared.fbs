@@ -1031,6 +1031,7 @@ table ResolvedBetaModelEntry(fs_serializer) {
     
     security_id: long;
     listing_id: long;
+    security_primary_identifier: string;
 }
 
 table ResolvedBetaModel(fs_serializer) {
