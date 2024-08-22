@@ -58,6 +58,7 @@ enum CmdType: byte {
     LOAD_OPEN_ORDERS,
     SEND_NODE_COMMAND,
     UPDATE_FUTURE_PRODUCTS,
+    UPDATE_BETA_MODEL,
 }
 
 enum ErrorCode: short {
@@ -229,6 +230,11 @@ table ManualTrade(fs_serializer) {
 table AddOrUpdateInstrumentRequest(fs_serializer) {
     security: Security;
     security_listings: [SecurityListing];
+}
+
+table AddOrUpdateBetaModelRequest(fs_serializer) {
+    beta_model: BetaModel;
+    entries: [BetaModelEntry];
 }
 
 table ExecutionOrder(fs_serializer) {
