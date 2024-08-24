@@ -88,7 +88,7 @@
         <field id="1" type="uint64" name="hedgingId" />
         <field id="2" type="uint32" name="fromStrategyId" />
         <field id="3" type="uint32" name="listingId" />
-        <field id="4" type="int32" name="quantity" />
+        <field id="4" type="double" name="quantity" />
         <field id="5" type="double" name="price" />
     </sbe:message>
 
@@ -97,7 +97,7 @@
         <field id="2" type="uint32" name="fromStrategyId" />
         <field id="3" type="uint32" name="toStrategyId" />
         <field id="4" type="uint32" name="listingId" />
-        <field id="5" type="int32" name="quantity" />
+        <field id="5" type="double" name="quantity" />
         <field id="6" type="double" name="price" />
     </sbe:message>
 
@@ -108,7 +108,7 @@
         <field id="4" type="uint16" name="strategyId" />
         <field id="5" type="uint8" name="side" />
         <field id="6" type="double" name="price" />
-        <field id="7" type="uint32" name="quantity" />        
+        <field id="7" type="double" name="quantity" />        
         <field id="8" type="uint8" name="positionEffect" />
         <field id="9" type="uint8" name="timeInForce" />
         <field id="11" type="uint8" name="tacticType" />
@@ -123,7 +123,7 @@
         <field id="2" type="uint64" name="parentEphemeralId" />
         <field id="3" type="uint16" name="strategyId" />
         <field id="4" type="double" name="price" />
-        <field id="5" type="uint32" name="quantity" />
+        <field id="5" type="double" name="quantity" />
     </sbe:message>
     <sbe:message name="TerminateOrderSbe" id="17">
         <field id="1" type="uint64" name="ephemeralId" />
@@ -139,7 +139,7 @@
         <field id="7" type="uint32" name="instrumentId" />
         <field id="8" type="uint8" name="side" />
         <field id="9" type="double" name="price" />
-        <field id="10" type="uint32" name="quantity" />
+        <field id="10" type="double" name="quantity" />
 
         <field id="13" type="uint16" name="gatewayId" />
         <field id="14" type="uint16" name="routerId" />

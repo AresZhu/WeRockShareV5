@@ -337,7 +337,7 @@ table StrategyOrderMessage(fs_serializer) {
     instrument_id: long;
     side: Side;
     price: double;
-    quantity: uint;
+    quantity: double;
     
     gateway_id: uint;
     router_id: uint;
@@ -374,13 +374,13 @@ table StrategyOrder(fs_serializer) {
     last_message_type: OrderMessageType;
     
     price: double;
-    quantity: uint32;
+    quantity: double;
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
             
-    filled_size: uint32;
-    remaining_size: uint32;
+    filled_size: double;
+    remaining_size: double;
     
     average_price: double;
     
@@ -411,13 +411,13 @@ table OpenOrder(fs_serializer) {
     last_message: string;
     
     price: double;
-    quantity: uint32;
+    quantity: double;
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
             
-    filled_size: uint32;
-    remaining_size: uint32;
+    filled_size: double;
+    remaining_size: double;
     
     average_price: double;
     
