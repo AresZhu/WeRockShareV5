@@ -161,7 +161,7 @@ table NewOrder(fs_serializer) {
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     price: double;
-    quantity: uint;
+    quantity: double;
     route_id: long;
 }
 
