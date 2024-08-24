@@ -257,27 +257,6 @@ table UserList(fs_serializer) {
     items: [User];
 }
 
-
-table PriceEntry(fs_serializer) {
-    price: double;
-    quantity: uint;
-}
-
-table TickPrice(fs_serializer) {
-    id: long;
-    last_updated: long;
-    status: TradingStatus;
-    last: double;
-    bid: double;
-    ask: double;
-    bid_size: uint;
-    ask_size: uint;
-}
-
-table TickPriceList(fs_serializer) {
-    items: [TickPrice];
-}
-
 table FxRate(fs_serializer) {
     id: long;
     last_updated: long;
@@ -288,18 +267,6 @@ table FxRate(fs_serializer) {
 
 table FxRateList(fs_serializer) {
     items: [FxRate];
-}
-
-table MarketDepth(fs_serializer) {
-     id: long;
-     last_updated: long;
-     
-     bids: [PriceEntry];
-     asks: [PriceEntry];
-}
-
-table MarketDepthList(fs_serializer) {
-    items: [MarketDepth];
 }
 
 table MarketStatistic(fs_serializer) {
@@ -320,46 +287,28 @@ table MarketStatisticList(fs_serializer) {
     items: [MarketStatistic];
 }
 
-table AuctionPrice(fs_serializer) {
-    id: long;
-    last_updated: long;
-    iap: double;
-    iav: uint;
-    imbalance_size: int;    
+table PriceLevel(fs_serializer) {
+    bid_vol: uint32;
+    bid: int32;
+    ask: int32;
+    ask_vol: uint32;
 }
 
-table AuctionPriceList(fs_serializer) {
-    items: [AuctionPrice];
-}
-
-table MarketPrice {
+table MarketPrice(fs_serializer) {
     id: long;
     last_updated: long;
     
+    last: int32;
+    iap: int32;
+    iav: uint32;
+    price_multiplier: uint32;
+    volume_multiplier: uint32;
     status: TradingStatus;
-    iap: double;
-    iav: double;
-    
-    bid: double;
-    bid_size: uint;
-    ask: double;
-    ask_size: uint;
-    last: double;
-    volume: ulong;
-    turnover: double;
-    
-    preClose: double;
-    preSettlementPrice: double;
-    open: double;
-    high: double;
-    low: double;
-    close: double;
-    
-    limit_up: double;
-    limit_down: double;
-    
-    bids: [PriceEntry];
-    asks: [PriceEntry];
+    levels: [PriceLevel];
+}
+
+table MarketPriceList(fs_serializer) {
+    items: [MarketPrice];
 }
 
 table FuturesBasis(fs_serializer) {
