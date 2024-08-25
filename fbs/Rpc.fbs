@@ -170,13 +170,13 @@ table ReplaceOrder(fs_serializer) {
     parent_ephemeral_id: ulong;
     strategy_id: long;
     price: double;
-    quantity: uint;
+    quantity: double;
 }
 
 table AmendOrder(fs_serializer) {
     order_id: ulong;
     price: double;
-    quantity: uint;
+    quantity: double;
 }
 
 table CancelOrder {
