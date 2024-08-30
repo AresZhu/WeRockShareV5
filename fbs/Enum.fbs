@@ -320,6 +320,7 @@ enum QuotingInstructionType: byte {
 
 enum AlertSeverity : byte {
     INFO = 0,
+    WARNING,
     CRITICAL,
 }
 
