@@ -168,9 +168,11 @@ table Instrument(fs_serializer) {
     ric: string(required);
     trading_currency: Currency;
     exchange: string(required);
+    price_denominator: uint32;
+    quantity_denominator: uint32;
     contract_size: double;
-    lot_size: double;
-    tick_size: double;
+    lot_size: uint32;
+    tick_size: int32;
     tick_size_table_id: ushort;
     tick_size_description: string;
 }
