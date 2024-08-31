@@ -1004,7 +1004,7 @@ table HedgingStrategyLocation(fs_serializer) {
     last_updated: long;
     
     strategy_id: long;
-    started: bool;
+    state: StrategyState;
 }
 
 table HedgingStrategyLocationList(fs_serializer) {
