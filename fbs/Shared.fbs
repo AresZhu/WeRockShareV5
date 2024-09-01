@@ -173,8 +173,8 @@ table Instrument(fs_serializer) {
     tick_size: double;
     tick_size_table_id: ushort;
     tick_size_description: string;
-    price_denominator: uint32;
-    quantity_denominator: uint32;
+    price_scalar: uint32;
+    quantity_scalar: uint32;
     normalised_lot_size: uint32;
     normalised_tick_size: int32;
 }
@@ -305,8 +305,8 @@ table MarketPrice(fs_serializer) {
     last: int32;
     iap: int32;
     iav: uint32;
-    price_multiplier: uint32;
-    volume_multiplier: uint32;
+    price_scalar: uint32;
+    volume_scalar: uint32;
     status: TradingStatus;
     levels: [PriceLevel];
 }
