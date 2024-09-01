@@ -173,6 +173,10 @@ table Instrument(fs_serializer) {
     tick_size: double;
     tick_size_table_id: ushort;
     tick_size_description: string;
+    price_denominator: uint32;
+    quantity_denominator: uint32;
+    normalised_lot_size: uint32;
+    normalised_tick_size: int32;
 }
 
 table InstrumentList(fs_serializer) {

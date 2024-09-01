@@ -30,10 +30,6 @@
             <type name="length" primitiveType="uint32" maxValue="1073741824" />
             <type name="varData" primitiveType="uint8" length="0" />
         </composite>
-        <composite name="PricePoint">
-            <type name="price" primitiveType="double" />
-            <type name="quantity" primitiveType="double" />
-        </composite>
         <type name="string16" description="String with length of 16" presence="optional" length="16"
               primitiveType="char" semanticType="String" />
         <type name="string32" description="String with length of 32" presence="optional" length="32"
@@ -107,8 +103,8 @@
         <field id="3" type="uint32" name="instrumentId" />
         <field id="4" type="uint16" name="strategyId" />
         <field id="5" type="uint8" name="side" />
-        <field id="6" type="double" name="price" />
-        <field id="7" type="double" name="quantity" />        
+        <field id="6" type="int32" name="price" />
+        <field id="7" type="uint32" name="quantity" />        
         <field id="8" type="uint8" name="positionEffect" />
         <field id="9" type="uint8" name="timeInForce" />
         <field id="11" type="uint8" name="tacticType" />
@@ -122,8 +118,8 @@
         <field id="1" type="uint64" name="ephemeralId" />
         <field id="2" type="uint64" name="parentEphemeralId" />
         <field id="3" type="uint16" name="strategyId" />
-        <field id="4" type="double" name="price" />
-        <field id="5" type="double" name="quantity" />
+        <field id="4" type="int32" name="price" />
+        <field id="5" type="uint32" name="quantity" />
     </sbe:message>
     <sbe:message name="TerminateOrderSbe" id="17">
         <field id="1" type="uint64" name="ephemeralId" />
@@ -138,8 +134,8 @@
         <field id="6" type="uint32" name="securityId" />
         <field id="7" type="uint32" name="instrumentId" />
         <field id="8" type="uint8" name="side" />
-        <field id="9" type="double" name="price" />
-        <field id="10" type="double" name="quantity" />
+        <field id="9" type="int32" name="price" />
+        <field id="10" type="uint32" name="quantity" />
 
         <field id="13" type="uint16" name="gatewayId" />
         <field id="14" type="uint16" name="routerId" />
