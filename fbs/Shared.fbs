@@ -306,7 +306,7 @@ table MarketPrice(fs_serializer) {
     iap: int32;
     iav: uint32;
     price_scalar: uint32;
-    volume_scalar: uint32;
+    quantity_scalar: uint32;
     status: TradingStatus;
     levels: [PriceLevel];
 }
