@@ -52,8 +52,8 @@
         <field id="2" type="int32" name="last" />
         <field id="3" type="int32" name="iap" />
         <field id="4" type="uint32" name="iav" />
-        <field id="5" type="uint32" name="price_scalar" />
-        <field id="6" type="uint32" name="quantity_scalar" />
+        <field id="5" type="uint32" name="priceScalar" />
+        <field id="6" type="uint32" name="quantityScalar" />
         <field id="7" type="uint8" name="status" />
         <group id="8" name="levels" dimensionType="groupSizeEncoding">
             <field name="bidVol" id="9" type="uint32" />
