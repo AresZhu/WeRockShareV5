@@ -160,8 +160,10 @@ table NewOrder(fs_serializer) {
     side: Side;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
-    price: double;
-    quantity: double;
+    raw_price: double;
+    raw_quantity: double;
+    price: int;
+    quantity: uint;
     route_id: long;
 }
 
@@ -169,14 +171,18 @@ table ReplaceOrder(fs_serializer) {
     ephemeral_id: ulong;
     parent_ephemeral_id: ulong;
     strategy_id: long;
-    price: double;
-    quantity: double;
+    raw_price: double;
+    raw_quantity: double;
+    price: int;
+    quantity: uint;
 }
 
 table AmendOrder(fs_serializer) {
     order_id: ulong;
-    price: double;
-    quantity: double;
+    raw_price: double;
+    raw_quantity: double;
+    price: int;
+    quantity: uint;
 }
 
 table CancelOrder {
