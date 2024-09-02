@@ -276,8 +276,8 @@ table FxRateList(fs_serializer) {
 table MarketStatistic(fs_serializer) {
     id: long;
     last_updated: long;
-    preClose: double;
-    preSettlementPrice: double;
+    prev_close: double;
+    prev_settlement_price: double;
     open: double;
     high: double;
     low: double;
