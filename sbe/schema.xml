@@ -65,8 +65,8 @@
 
     <sbe:message name="MarketStatisticSbe" id="6">
         <field id="1" type="uint32" name="instrumentId" />
-        <field id="2" type="double" name="preClose" />
-        <field id="3" type="double" name="preSettlementPrice" />
+        <field id="2" type="double" name="prevClose" />
+        <field id="3" type="double" name="prevSettlementPrice" />
         <field id="4" type="double" name="open" />
         <field id="5" type="double" name="high" />
         <field id="6" type="double" name="low" />
