@@ -233,7 +233,6 @@ enum StrategyActionType : byte {
     START,
     STOP,
     PUT_ON_RISK,
-    PUT_ON_WAIT,
     REINITIALIZE,
     TERMINATE,
     TERMINATE_ORDERS,
