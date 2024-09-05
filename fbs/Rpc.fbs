@@ -59,6 +59,7 @@ enum CmdType: byte {
     SEND_NODE_COMMAND,
     UPDATE_FUTURE_PRODUCTS,
     UPDATE_BETA_MODEL,
+    UPDATE_SCHEDULE_TASK,
 }
 
 enum ErrorCode: short {
