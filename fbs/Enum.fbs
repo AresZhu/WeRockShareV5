@@ -32,7 +32,6 @@ enum PublicationType : byte {
     INTER_STRATEGY_MESSAGE
 }
 
-
 enum Currency : byte {
     NONE = 0,
     CNY,
