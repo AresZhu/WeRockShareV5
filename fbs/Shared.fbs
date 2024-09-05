@@ -722,6 +722,8 @@ table ScheduleTask(fs_serializer) {
     cron: string;
     enabled: bool;
     parameters: string(required);
+    last_run_time: long;
+    last_run_status: TaskStatus;
 }
 
 table ScheduleTaskList(fs_serializer) {
