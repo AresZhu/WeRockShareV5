@@ -738,10 +738,7 @@ table ScheduleTaskHistory(fs_serializer) {
     task_id: long;
     start_time: long;
     end_time: long;
-    task_name: string(required);
-    task_type: string(required);
     run_type: TaskRunType;
-    parameters: string(required);
     status: TaskStatus;
     message: string;
 }
