@@ -724,6 +724,7 @@ table ScheduleTask(fs_serializer) {
     parameters: string(required);
     last_run_time: long;
     last_run_status: TaskStatus;
+    last_run_message: string;
 }
 
 table ScheduleTaskList(fs_serializer) {
