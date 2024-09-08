@@ -53,6 +53,7 @@ table LotSizeRule(fs_serializer) {
     version: int;
     last_updated: long;
     
+    name: string(required);
     security_type: SecurityType;
     exchange: string(required);
     primary_identifier_regex: string(required);
@@ -177,6 +178,8 @@ table Instrument(fs_serializer) {
     tick_size: double;
     tick_size_table_id: ushort;
     tick_size_description: string;
+    tick_size_table_name: string;
+    lot_size_table_name: string;
     price_scalar: uint32;
     quantity_scalar: uint32;
     normalised_lot_size: uint32;
