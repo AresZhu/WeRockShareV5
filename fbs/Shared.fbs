@@ -99,9 +99,9 @@ table Security(fs_serializer) {
     last_updated: long;
     
     primary_identifier: string(required);
-    description: string(required);
-    sedol: string(required);
-    isin: string(required);
+    description: string;
+    sedol: string;
+    isin: string;
     type: SecurityType;
     market: Market;
     contract_size: double;
@@ -163,8 +163,8 @@ table Instrument(fs_serializer) {
     is_primary: bool;
     trading_symbol: string(required);
     bbg: string(required);
-    isin: string(required);
-    sedol: string(required);
+    isin: string;
+    sedol: string;
     ric: string(required);
     trading_currency: Currency;
     exchange: string(required);
