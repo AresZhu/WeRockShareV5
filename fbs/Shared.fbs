@@ -110,7 +110,7 @@ table Security(fs_serializer) {
     intraday_sell_prohibited: bool;
     short_sell_exempted: bool;
     tick_size_table_name: string;
-    log_size_table_name: string;
+    lot_size_table_name: string;
 }
 
 table SecurityList(fs_serializer) {
