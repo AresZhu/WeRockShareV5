@@ -99,6 +99,7 @@ table Security(fs_serializer) {
     last_updated: long;
     
     primary_identifier: string(required);
+    ticker: string;
     description: string;
     sedol: string;
     isin: string;
@@ -108,6 +109,8 @@ table Security(fs_serializer) {
     expired_date: int;
     intraday_sell_prohibited: bool;
     short_sell_exempted: bool;
+    tick_size_table_name: string;
+    log_size_table_name: string;
 }
 
 table SecurityList(fs_serializer) {
@@ -139,8 +142,8 @@ table SecurityListing(fs_serializer) {
     is_primary: bool;
     exchange: string(required);
     trading_symbol: string(required);
-    ric: string(required);
-    bbg: string(required);
+    ric: string;
+    bbg: string;
     currency: Currency;
 }
 
@@ -159,13 +162,14 @@ table Instrument(fs_serializer) {
     short_sell_exempted: bool;
     primary_identifier: string(required);
     description: string(required);
+    ticker: string;
     market: Market;
     is_primary: bool;
     trading_symbol: string(required);
-    bbg: string(required);
+    bbg: string;
     isin: string;
     sedol: string;
-    ric: string(required);
+    ric: string;
     trading_currency: Currency;
     exchange: string(required);
     contract_size: double;
