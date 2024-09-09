@@ -1019,3 +1019,16 @@ table HedgingStrategyLocation(fs_serializer) {
 table HedgingStrategyLocationList(fs_serializer) {
     items: [HedgingStrategyLocation];
 }
+
+table ScheduleTaskType(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string(required);
+    full_name: string(required);
+}
+
+table ScheduleTaskTypeList(fs_serializer) {
+    items: [ScheduleTaskType];
+}
