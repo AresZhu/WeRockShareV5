@@ -894,8 +894,10 @@ table BasketValidation(fs_serializer) {
     version: int;
     last_updated: long;
     
+    security_id: long;
     result: BasketValidationResult;
     message: string;
+    effective_date: int;
     nav_date: int;
     official_nav: double;
  }
