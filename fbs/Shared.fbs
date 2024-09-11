@@ -664,6 +664,8 @@ table PricingBasket(fs_serializer) {
     basket_type: BasketType;
     basket_tag: string;
     security_id: long;
+    valuation_date: int;
+    trading_date: int;
     
     cashes: [BasketCash];
     entries: [PricingEntry];
