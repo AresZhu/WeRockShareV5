@@ -124,7 +124,7 @@ table EtfPerformance(fs_serializer) {
     last_updated: long;                                                                                                                                                     
     
     security_id: long;
-    trading_date: int;
+    nav_date: int;
     nav: double;
     outstanding_shares: double;
 }
