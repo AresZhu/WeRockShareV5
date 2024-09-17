@@ -85,7 +85,8 @@ enum Market : byte {
     AU,
     HK,
     JP,
-    EU
+    EU,
+    KR
 }
 
 enum SecurityType : byte {
