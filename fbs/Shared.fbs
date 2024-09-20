@@ -1035,3 +1035,19 @@ table ScheduleTaskType(fs_serializer) {
 table ScheduleTaskTypeList(fs_serializer) {
     items: [ScheduleTaskType];
 }
+
+table StrategyAlertSummary(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    strategy_id: long;
+    
+    error_count: int;
+    warning_count: int;
+    info_count: int;
+}
+
+table StrategyAlertSummaryList(fs_serializer) {
+    items: [StrategyAlertSummary];
+}
