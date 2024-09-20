@@ -1041,8 +1041,6 @@ table StrategyAlertSummary(fs_serializer) {
     version: int;
     last_updated: long;
     
-    strategy_id: long;
-    
     error_count: int;
     warning_count: int;
     info_count: int;
