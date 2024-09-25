@@ -75,7 +75,7 @@
         <field id="9" type="double" name="limitUp" />
         <field id="10" type="double" name="limitDown" />
     </sbe:message>
-    <sbe:message name="FxRateSbe" id="9">
+    <sbe:message name="CurrencyRateSbe" id="9">
         <field id="1" type="uint8" name="currency" />
         <field id="2" type="double" name="rate" />
     </sbe:message>

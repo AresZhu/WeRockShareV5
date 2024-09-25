@@ -268,7 +268,7 @@ table UserList(fs_serializer) {
     items: [User];
 }
 
-table FxRate(fs_serializer) {
+table CurrencyRate(fs_serializer) {
     id: long;
     last_updated: long;
     
@@ -276,8 +276,8 @@ table FxRate(fs_serializer) {
     rate: double;
 }
 
-table FxRateList(fs_serializer) {
-    items: [FxRate];
+table CurrencyRateList(fs_serializer) {
+    items: [CurrencyRate];
 }
 
 table MarketStatistic(fs_serializer) {
