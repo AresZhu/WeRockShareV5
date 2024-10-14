@@ -19,7 +19,7 @@ add_custom_command(
         -Dsbe.target.language=Cpp
         -Dsbe.errorLog=yes
         -Dsbe.output.dir=${CMAKE_CURRENT_SOURCE_DIR}
-        -jar ${CMAKE_CURRENT_SOURCE_DIR}/sbe/sbe-all-1.33.0.jar
+        -jar ${CMAKE_CURRENT_SOURCE_DIR}/sbe/sbe-all-1.33.1.jar
         "${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml"
 
         COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/sbe/schema.xml sbe.stub
