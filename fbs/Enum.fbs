@@ -460,3 +460,8 @@ enum IntradayHedgingMethod: byte {
     BetaModel,
     Basket,
 }
+
+enum PriceSource: byte {
+    Market = 0,
+    Synthetic = 1,
+}
