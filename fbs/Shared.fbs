@@ -624,7 +624,7 @@ table BasketHistory(fs_serializer) {
     creation_redemption_unit: int;
     trading_date: int;
     valuation_date: int;
-    cahses: string;
+    cashes: string;
     constituents: string;
 }
 
