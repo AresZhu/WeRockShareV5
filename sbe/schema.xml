@@ -98,9 +98,10 @@
         <field id="1" type="uint64" name="hedgingId" />
         <field id="2" type="uint32" name="strategyId" />
         <field id="3" type="uint8" name="hedgingStrategyId" />
-        <field id="4" type="uint32" name="listingId" />
-        <field id="5" type="double" name="quantity" />
-        <field id="6" type="double" name="price" />
+        <field id="4" type="uint32" name="securityId" />
+        <field id="5" type="uint32" name="listingId" />
+        <field id="6" type="double" name="quantity" />
+        <field id="7" type="double" name="price" />
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
@@ -197,6 +198,13 @@
         <field id="7" type="double" name="makerBestAskPrice" />
         <field id="8" type="double" name="makerBestBidSize" />
         <field id="9" type="double" name="makerBestAskSize" />
+    </sbe:message>
+    <sbe:message name="HedgerPositionDtoSbe" id="85">
+        <field id="1" type="uint32" name="strategyId" />
+        <field id="2" type="double" name="primaryPosition" />
+        <field id="3" type="double" name="primaryNotional" />
+        <field id="4" type="double" name="exposurePosition" />
+        <field id="5" type="double" name="exposureNotional" />
     </sbe:message>
     <sbe:message name="AlertEventSbe" id="90">
         <field id="1" type="uint8" name="nodeId" />

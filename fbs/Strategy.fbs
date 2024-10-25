@@ -60,3 +60,19 @@ table MarketMakingQuotingDto(fs_serializer) {
 table MarketMakingQuotingDtoList(fs_serializer) {
     items: [MarketMakingQuotingDto];
 }
+
+table HedgerPositionDto(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    primary_position: double;
+    primary_notional: double;
+    
+    exposure_position: double;
+    exposure_notional: double;
+}
+
+table HedgerPositionDtoList(fs_serializer) {
+    items: [HedgerPositionDto];
+}
