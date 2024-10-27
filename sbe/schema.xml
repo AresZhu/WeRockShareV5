@@ -97,7 +97,7 @@
     <sbe:message name="HedgingResponseSbe" id="13">
         <field id="1" type="uint64" name="hedgingId" />
         <field id="2" type="uint32" name="strategyId" />
-        <field id="3" type="uint8" name="hedgingStrategyId" />
+        <field id="3" type="uint32" name="hedgingStrategyId" />
         <field id="4" type="uint32" name="securityId" />
         <field id="5" type="uint32" name="listingId" />
         <field id="6" type="double" name="quantity" />

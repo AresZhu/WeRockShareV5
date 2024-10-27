@@ -1036,3 +1036,13 @@ table StrategyAlertSummary(fs_serializer) {
 table StrategyAlertSummaryList(fs_serializer) {
     items: [StrategyAlertSummary];
 }
+
+table HedgingResponse {
+    id: long;
+    strategy_id: long;
+    hedging_strategy_id: long;
+    security_id: long;
+    listing_id: long;
+    quantity: double;
+    price: double;
+}
