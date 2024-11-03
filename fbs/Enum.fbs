@@ -377,6 +377,7 @@ enum AlertClassification: byte {
 enum RiskRuleType: byte {
     NONE = 0,
     MaxOrderValue = 1,
+    MessageRate = 2,
 }
 
 enum RejectLevel: byte {
