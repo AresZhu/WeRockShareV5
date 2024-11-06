@@ -378,6 +378,13 @@ enum RiskRuleType: byte {
     NONE = 0,
     MaxOrderValue = 1,
     MessageRate = 2,
+    Covot = 3,
+    HardReject = 4,
+    MaxOpenOrders = 5,
+    PriceTolerance = 6,
+    ConsecutiveRejects = 7,
+    PropCross = 8,
+    PortifolioLimit = 9,
 }
 
 enum RejectLevel: byte {
