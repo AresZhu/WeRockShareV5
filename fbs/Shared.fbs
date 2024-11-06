@@ -364,6 +364,13 @@ table StrategyOrderMessageList(fs_serializer) {
     items: [StrategyOrderMessage];
 }
 
+table OrderNotification {
+    id: long;
+    type: OrderMessageType;
+    reject_level: RejectLevel;
+    message: string;
+}
+
 table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
@@ -383,6 +390,7 @@ table StrategyOrder(fs_serializer) {
     
     status: OrderStatus;
     last_message_type: OrderMessageType;
+    last_message: string;
     
     price: double;
     quantity: double;
