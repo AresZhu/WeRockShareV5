@@ -385,6 +385,7 @@ enum RiskRuleType: byte {
     ConsecutiveReject = 7,
     PropCross = 8,
     PortfolioLimit = 9,
+    GlobalHardReject = 10,
 }
 
 enum RejectLevel: byte {
