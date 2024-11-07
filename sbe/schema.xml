@@ -80,6 +80,9 @@
         <field id="2" type="double" name="rate" />
     </sbe:message>
 
+    <sbe:message name="HedgingEnquiringSbe" id="10">
+        <field id="1" type="uint32" name="listingId" />
+    </sbe:message>
     <sbe:message name="HedgingLocationSbe" id="11">
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="uint32" name="listingId" />
