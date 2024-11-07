@@ -380,9 +380,9 @@ enum RiskRuleType: byte {
     MessageRate = 2,
     Covot = 3,
     HardReject = 4,
-    MaxOpenOrders = 5,
+    MaxOpenOrder = 5,
     PriceTolerance = 6,
-    ConsecutiveRejects = 7,
+    ConsecutiveReject = 7,
     PropCross = 8,
     PortifolioLimit = 9,
 }
