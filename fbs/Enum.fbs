@@ -384,7 +384,7 @@ enum RiskRuleType: byte {
     PriceTolerance = 6,
     ConsecutiveReject = 7,
     PropCross = 8,
-    PortifolioLimit = 9,
+    PortfolioLimit = 9,
 }
 
 enum RejectLevel: byte {
