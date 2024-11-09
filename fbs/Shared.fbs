@@ -768,7 +768,6 @@ table ScheduleTaskHistoryList(fs_serializer) {
     items: [ScheduleTaskHistory];
 }
 
-
 table AlertEvent(fs_serializer) {
     id: long;
     version: int;
@@ -1056,4 +1055,32 @@ table HedgingResponse {
     listing_id: long;
     quantity: double;
     price: double;
+}
+
+table StrategyComponentStatus {
+    name: string(required);
+    strategy_id: long;
+    healthy: bool;
+    description: string;
+}
+
+
+table ComponentStatus(fs_serializer) {
+    name: string(required);
+    healthy: bool;
+    last_updated: long;
+    description: string;
+}
+
+table StrategyStatus(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    strategy_id: long;
+    component_statuses: [ComponentStatus];
+}
+
+table StrategyStatusList(fs_serializer) {
+    items: [StrategyStatus];
 }

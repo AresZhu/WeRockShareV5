@@ -138,6 +138,7 @@ enum EntityType : byte {
     RESOLVED_BETA_MODEL,
     STRATEGY_ALERT_SUMMARY,
     HEDGER_POSITION_DTO,
+    STRATEGY_STATUS,
 }
 
 enum SubType : byte {
