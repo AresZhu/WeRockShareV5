@@ -1058,7 +1058,7 @@ table HedgingResponse {
 }
 
 table StrategyComponentStatus {
-    name: string(required);
+    component_type: StrategyComponentType;
     strategy_id: long;
     healthy: bool;
     description: string;
@@ -1066,21 +1066,21 @@ table StrategyComponentStatus {
 
 
 table ComponentStatus(fs_serializer) {
-    name: string(required);
+    component_type: StrategyComponentType;
     healthy: bool;
     last_updated: long;
     description: string;
 }
 
-table StrategyStatus(fs_serializer) {
+table StrategyStatusSummary(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
     
-    strategy_id: long;
+    healthy: bool;
     component_statuses: [ComponentStatus];
 }
 
-table StrategyStatusList(fs_serializer) {
-    items: [StrategyStatus];
+table StrategyStatusSummaryList(fs_serializer) {
+    items: [StrategyStatusSummary];
 }

@@ -474,3 +474,11 @@ enum PriceSource: byte {
     Market = 0,
     Synthetic = 1,
 }
+
+enum StrategyComponentType: byte {
+    None = 0,
+    MarketData = 1,
+    Pricing = 2,
+    Hedging = 3,
+    Quoting = 4,
+}

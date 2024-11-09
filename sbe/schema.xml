@@ -173,7 +173,7 @@
     </sbe:message>
     <sbe:message name="StrategyComponentStatusSbe" id="70">
         <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="string16" name="componentName" />
+        <field id="2" type="uint8" name="componentType" />
         <field id="3" type="uint8" name="healthy" />
         <field id="4" type="string2K" name="description" />
     </sbe:message>
