@@ -163,10 +163,13 @@
         <field id="2" type="uint8" name="state" />
     </sbe:message>
     <sbe:message name="OrderNotificationSbe" id="21">
-        <field id="1" type="uint8" name="type" />
-        <field id="2" type="uint8" name="rejectLevel" />
-        <field id="3" type="uint64" name="ephemeralId" />
-        <field id="4" type="string256" name="message" />
+        <field id="1" type="uint8" name="nodeId" />
+        <field id="2" type="uint8" name="type" />
+        <field id="3" type="uint8" name="rejectLevel" />
+        <field id="4" type="uint64" name="ephemeralId" />
+        <field id="5" type="uint32" name="strategyId" />
+        <field id="6" type="string16" name="hostname" />
+        <field id="7" type="string256" name="message" />
     </sbe:message>
     <sbe:message name="SaveStrategyParameterSbe" id="75">
         <field id="1" type="uint32" name="strategyId" />
