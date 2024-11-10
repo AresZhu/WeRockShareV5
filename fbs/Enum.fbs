@@ -482,3 +482,9 @@ enum StrategyComponentType: byte {
     Hedging = 3,
     Quoting = 4,
 }
+
+enum StrategyStatus: byte {
+    Green,
+    Yellow,
+    Red
+}
