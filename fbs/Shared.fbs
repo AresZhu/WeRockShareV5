@@ -1060,14 +1060,14 @@ table HedgingResponse {
 table StrategyComponentStatus {
     component_type: StrategyComponentType;
     strategy_id: long;
-    healthy: bool;
+    status: HealthStatus;
     description: string;
 }
 
 
 table ComponentStatus(fs_serializer) {
     component_type: StrategyComponentType;
-    healthy: bool;
+    status: HealthStatus;
     last_updated: long;
     description: string;
 }
@@ -1077,7 +1077,7 @@ table StrategyStatusSummary(fs_serializer) {
     version: int;
     last_updated: long;
     
-    healthy: bool;
+    status: HealthStatus;
     component_statuses: [ComponentStatus];
 }
 
