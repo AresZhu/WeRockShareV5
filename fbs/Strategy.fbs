@@ -49,6 +49,7 @@ table MarketMakingQuotingDto(fs_serializer) {
     
     bid_nav: double;
     ask_nav: double;
+    gearing: double;
     our_bid_raw_price: double;
     our_ask_raw_price: double;
     maker_best_bid_price: double;
