@@ -32,3 +32,4 @@ obj/
 /.idea/
 /WeRock_Share_Sbe/
 /fbs-headers/
+*.log
