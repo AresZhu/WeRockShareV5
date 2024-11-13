@@ -484,6 +484,7 @@ enum StrategyComponentType: byte {
 }
 
 enum HealthStatus: byte {
+    None = 0,
     Green,
     Yellow,
     Red

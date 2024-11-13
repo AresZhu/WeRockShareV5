@@ -1033,19 +1033,6 @@ table ScheduleTaskTypeList(fs_serializer) {
     items: [ScheduleTaskType];
 }
 
-table StrategyAlertSummary(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    error_count: int;
-    warning_count: int;
-    info_count: int;
-}
-
-table StrategyAlertSummaryList(fs_serializer) {
-    items: [StrategyAlertSummary];
-}
 
 table HedgingResponse {
     id: long;
@@ -1079,6 +1066,9 @@ table StrategyStatusSummary(fs_serializer) {
     
     status: HealthStatus;
     component_statuses: [ComponentStatus];
+    critical_alert_count: int;
+    warning_alert_count: int;
+    info_alert_count: int;
 }
 
 table StrategyStatusSummaryList(fs_serializer) {
