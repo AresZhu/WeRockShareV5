@@ -236,14 +236,6 @@ enum GatewayType : byte {
     TEST,
 }
 
-enum GatewayState : byte {
-    UNKNOWN = 0,
-    CONNECTED,
-    CONNECTING,
-    DISCONNECTED,
-    ERROR
-}
-
 enum StrategyType: byte {
     MANUAL = 0,
     MARKET_MAKING,
