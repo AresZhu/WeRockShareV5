@@ -470,6 +470,7 @@ enum PriceSource: byte {
 enum StrategyComponentType: byte {
     Parameter = 0,
     MarketData,
+    MarginCalculator,
     Position,
     Pricing,
     Hedging,
