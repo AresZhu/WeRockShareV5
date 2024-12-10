@@ -473,6 +473,7 @@ enum StrategyComponentType: byte {
     Pricing = 2,
     Hedging = 3,
     Quoting = 4,
+    Ordering = 5,
 }
 
 enum HealthStatus: byte {
