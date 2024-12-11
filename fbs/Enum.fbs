@@ -495,3 +495,37 @@ enum DataType : byte {
     UnsignedLong,
     String,
 }
+
+enum StrategyDataCounterId : byte {
+    None = 0,
+    State,
+    
+    ParameterStatus,
+    ParameterDescription,
+    MarketDataStatus,
+    MarketDataDescription,
+    MarginCalculatorStatus,
+    MarginCalculatorDescription,
+    TatcticStatus,
+    TatcticDescription,
+    PositionStatus,
+    PositionDescription,
+    PricingStatus,
+    PricingDescription,
+    HedgingStatus,
+    HedgingDescription,
+    QuotingStatus,
+    QuotingDescription,
+    OrderingStatus,
+    OrderingDescription,
+    
+    Position,
+    ConsolidatedPosition,
+    PositionExcludeManual,
+    
+    BidNav,
+    AskNav,
+    
+    BidMarginBps,
+    AskMarginBps,
+}
