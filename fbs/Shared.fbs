@@ -1044,33 +1044,17 @@ table HedgingResponse {
     price: double;
 }
 
-table StrategyComponentStatus {
+table StrategyComponentStatus(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
     component_type: StrategyComponentType;
     strategy_id: long;
     status: HealthStatus;
     description: string;
 }
 
-
-table ComponentStatus(fs_serializer) {
-    component_type: StrategyComponentType;
-    status: HealthStatus;
-    last_updated: long;
-    description: string;
-}
-
-table StrategyStatusSummary(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    status: HealthStatus;
-    component_statuses: [ComponentStatus];
-    critical_alert_count: int;
-    warning_alert_count: int;
-    info_alert_count: int;
-}
-
-table StrategyStatusSummaryList(fs_serializer) {
-    items: [StrategyStatusSummary];
+table StrategyComponentStatusList(fs_serializer) {
+    items: [StrategyComponentStatus];
 }
