@@ -485,3 +485,13 @@ enum HealthStatus: byte {
     Yellow,
     Red
 }
+
+enum DataType : byte {
+    Unknown = 0,
+    Double,
+    Int,
+    UnsignedInt,
+    Long,
+    UnsignedLong,
+    String,
+}
