@@ -185,40 +185,38 @@
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="string32" name="last_user" />
     </sbe:message>
-    <sbe:message name="StrategyDtoSbe" id="80">
+
+    <sbe:message name="StrategyDataCounterDoubleSbe" id="80">
         <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint8" name="state" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="double" name="value" />
     </sbe:message>
-    <sbe:message name="MarketMakingPositionDtoSbe" id="81">
+    <sbe:message name="StrategyDataCounterIntSbe" id="81">
         <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="double" name="primaryPosition" />
-        <field id="3" type="double" name="primaryNotional" />
-        <field id="4" type="double" name="consolidatedPosition" />
-        <field id="5" type="double" name="consolidatedPositionExcludeManual" />
-        <field id="6" type="double" name="delta" />
-        <field id="7" type="double" name="hedgingNotional" />
-        <field id="8" type="double" name="ourBidMargin" />
-        <field id="9" type="double" name="ourAskMargin" />
-    </sbe:message> 
-    <sbe:message name="MarketMakingQuotingDtoSbe" id="82">
-        <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="double" name="bidNav" />
-        <field id="3" type="double" name="askNav" />
-        <field id="4" type="double" name="gearing" />
-        <field id="5" type="double" name="ourBidRawPrice" />
-        <field id="6" type="double" name="ourAskRawPrice" />
-        <field id="7" type="double" name="makerBestBidPrice" />
-        <field id="8" type="double" name="makerBestAskPrice" />
-        <field id="9" type="double" name="makerBestBidSize" />
-        <field id="10" type="double" name="makerBestAskSize" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="int32" name="value" />
     </sbe:message>
-    <sbe:message name="HedgerPositionDtoSbe" id="85">
+    <sbe:message name="StrategyDataCounterUIntSbe" id="82">
         <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="double" name="primaryPosition" />
-        <field id="3" type="double" name="primaryNotional" />
-        <field id="4" type="double" name="exposurePosition" />
-        <field id="5" type="double" name="exposureNotional" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="uint32" name="value" />
     </sbe:message>
+    <sbe:message name="StrategyDataCounterLongSbe" id="83">
+        <field id="1" type="uint32" name="strategyId" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="int64" name="value" />
+    </sbe:message>
+    <sbe:message name="StrategyDataCounterULongSbe" id="84">
+        <field id="1" type="uint32" name="strategyId" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="uint64" name="value" />
+    </sbe:message>
+    <sbe:message name="StrategyDataCounterStringSbe" id="85">
+        <field id="1" type="uint32" name="strategyId" />
+        <field id="2" type="uint32" name="counter_id" />
+        <field id="3" type="string1K" name="value" />
+    </sbe:message>
+    
     <sbe:message name="AlertEventSbe" id="90">
         <field id="1" type="uint8" name="nodeId" />
         <field id="2" type="int32" name="strategyId" />
