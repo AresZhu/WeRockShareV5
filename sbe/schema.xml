@@ -171,12 +171,6 @@
         <field id="6" type="string16" name="hostname" />
         <field id="7" type="string256" name="message" />
     </sbe:message>
-    <sbe:message name="StrategyComponentStatusSbe" id="70">
-        <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint8" name="componentType" />
-        <field id="3" type="uint8" name="status" />
-        <field id="4" type="string2K" name="description" />
-    </sbe:message>
     <sbe:message name="SaveStrategyParameterSbe" id="75">
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="string4k" name="value" />

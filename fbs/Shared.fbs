@@ -1058,3 +1058,8 @@ table StrategyComponentStatus(fs_serializer) {
 table StrategyComponentStatusList(fs_serializer) {
     items: [StrategyComponentStatus];
 }
+
+table ScheduleSession {
+    start_time: uint32;
+    duration: uint32;
+}
