@@ -519,7 +519,8 @@ enum StrategyDataCounterId : byte {
     OrderingStatus,
     OrderingDescription,
     
-    Position,
+    PrimaryPosition,
+    PrimaryNotional,
     ConsolidatedPosition,
     PositionExcludeManual,
     
