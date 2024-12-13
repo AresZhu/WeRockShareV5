@@ -496,7 +496,7 @@ enum DataType : byte {
     String,
 }
 
-enum StrategyDataCounterId : byte {
+enum StrategyDataCounterId : uint16 {
     None = 0,
     State,
     
