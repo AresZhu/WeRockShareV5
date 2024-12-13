@@ -530,6 +530,17 @@ enum StrategyDataCounterId : uint16 {
     BidNav,
     AskNav,
     
+    Gearing,
+            
     BidMarginBps,
     AskMarginBps,
+    
+    OurBidRawPrice,
+    OurAskRawPrice,
+    
+    MakerBestBidPrice,
+    MakerBestAskPrice,
+    
+    MarkerBestBidSize,
+    MarkerBestAskSize,
 }
