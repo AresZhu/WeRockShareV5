@@ -541,6 +541,6 @@ enum StrategyDataCounterId : uint16 {
     MakerBestBidPrice,
     MakerBestAskPrice,
     
-    MarkerBestBidSize,
-    MarkerBestAskSize,
+    MakerBestBidSize,
+    MakerBestAskSize,
 }
