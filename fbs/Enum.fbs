@@ -523,7 +523,10 @@ enum StrategyDataCounterId : uint16 {
     PrimaryNotional,
     ConsolidatedPosition,
     PositionExcludeManual,
-    
+    Delta,
+    ExposurePosition,
+    ExposureNotional,
+        
     BidNav,
     AskNav,
     
