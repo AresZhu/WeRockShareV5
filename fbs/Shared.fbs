@@ -1078,34 +1078,6 @@ table StrategyDataCounterDoubleList(fs_serializer) {
     items: [StrategyDataCounterDouble];
 }
 
-table StrategyDataCounterInt(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    strategy_id: long;
-    counter_id: StrategyDataCounterId;
-    value: int;
-}
-
-table StrategyDataCounterIntList(fs_serializer) {
-    items: [StrategyDataCounterInt];
-}
-
-table StrategyDataCounterUInt(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    strategy_id: long;
-    counter_id: StrategyDataCounterId;
-    value: uint32;
-}
-
-table StrategyDataCounterUIntList(fs_serializer) {
-    items: [StrategyDataCounterUInt];
-}
-
 table StrategyDataCounterLong(fs_serializer) {
     id: long;
     version: int;
@@ -1118,20 +1090,6 @@ table StrategyDataCounterLong(fs_serializer) {
 
 table StrategyDataCounterLongList(fs_serializer) {
     items: [StrategyDataCounterLong];
-}
-
-table StrategyDataCounterULong(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    strategy_id: long;
-    counter_id: StrategyDataCounterId;
-    value: uint64;
-}
-
-table StrategyDataCounterULongList(fs_serializer) {
-    items: [StrategyDataCounterULong];
 }
 
 table StrategyDataCounterString(fs_serializer) {

@@ -185,27 +185,12 @@
         <field id="2" type="uint32" name="counterId" />
         <field id="3" type="double" name="value" />
     </sbe:message>
-    <sbe:message name="StrategyDataCounterIntSbe" id="81">
-        <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint32" name="counterId" />
-        <field id="3" type="int32" name="value" />
-    </sbe:message>
-    <sbe:message name="StrategyDataCounterUIntSbe" id="82">
-        <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint32" name="counterId" />
-        <field id="3" type="uint32" name="value" />
-    </sbe:message>
-    <sbe:message name="StrategyDataCounterLongSbe" id="83">
+    <sbe:message name="StrategyDataCounterLongSbe" id="81">
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="uint32" name="counterId" />
         <field id="3" type="int64" name="value" />
     </sbe:message>
-    <sbe:message name="StrategyDataCounterULongSbe" id="84">
-        <field id="1" type="uint32" name="strategyId" />
-        <field id="2" type="uint32" name="counterId" />
-        <field id="3" type="uint64" name="value" />
-    </sbe:message>
-    <sbe:message name="StrategyDataCounterStringSbe" id="85">
+    <sbe:message name="StrategyDataCounterStringSbe" id="82">
         <field id="1" type="uint32" name="strategyId" />
         <field id="2" type="uint32" name="counterId" />
         <field id="3" type="string1K" name="value" />

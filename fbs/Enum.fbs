@@ -489,10 +489,7 @@ enum HealthStatus: byte {
 enum DataType : byte {
     Unknown = 0,
     Double,
-    Int,
-    UInt,
     Long,
-    ULong,
     String,
 }
 
