@@ -145,6 +145,7 @@ table SecurityListing(fs_serializer) {
     trading_symbol: string(required);
     ric: string;
     bbg: string;
+    bbg_for_sub: string;
     currency: Currency;
 }
 
@@ -168,6 +169,7 @@ table Instrument(fs_serializer) {
     is_primary: bool;
     trading_symbol: string(required);
     bbg: string;
+    bbg_for_sub: string;
     isin: string;
     sedol: string;
     ric: string;
