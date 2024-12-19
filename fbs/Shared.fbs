@@ -182,8 +182,8 @@ table Instrument(fs_serializer) {
     tick_size_description: string;
     tick_size_table_name: string;
     lot_size_table_name: string;
-    price_scalar: uint32;
-    quantity_scalar: uint32;
+    price_scale: uint32;
+    quantity_scale: uint32;
     normalised_lot_size: uint32;
     normalised_tick_size: int32;
 }
@@ -314,8 +314,8 @@ table MarketPrice(fs_serializer) {
     last: int32;
     iap: int32;
     iav: uint32;
-    price_scalar: uint32;
-    quantity_scalar: uint32;
+    price_scale: uint32;
+    quantity_scale: uint32;
     status: TradingStatus;
     levels: [PriceLevel];
 }
