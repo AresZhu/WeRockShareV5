@@ -60,6 +60,7 @@ enum CmdType: byte {
     UPDATE_FUTURE_PRODUCTS,
     UPDATE_BETA_MODEL,
     UPDATE_SCHEDULE_TASK,
+    ACK_ALERT_EVENT,
 }
 
 enum ErrorCode: short {
