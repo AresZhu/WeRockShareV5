@@ -135,6 +135,7 @@
         <field id="1" type="uint64" name="ephemeralId" />
         <field id="2" type="uint16" name="strategyId" />
     </sbe:message>
+    <sbe:message name="CheckConnectionStateSbe" id="18" />
     <sbe:message name="OrderMessageSbe" id="19">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint8" name="rejectLevel" />
