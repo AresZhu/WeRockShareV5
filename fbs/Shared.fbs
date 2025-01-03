@@ -385,6 +385,10 @@ table StrategyOrder(fs_serializer) {
     listing_id: long;
     strategy_id: long;
     
+    primary_identifier: string(required);
+    trading_symbol: string(required);
+    exchange: string(required);
+    
     tactic_type: TacticType;
     tatic_index: ushort;
     
