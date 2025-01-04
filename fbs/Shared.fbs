@@ -608,8 +608,8 @@ table StartupStrategy(fs_serializer) {
     schedules: string(required);
     terminated: bool;
     parameters: string(required);
-    group_name: string(required);
-    owner: string(required);
+    group_name: string;
+    owner: string;
     execution_node_id: ubyte;
     execution_group_id: ubyte;
 }
