@@ -104,6 +104,7 @@
         <field id="5" type="uint32" name="listingId" />
         <field id="6" type="double" name="quantity" />
         <field id="7" type="double" name="price" />
+        <field id="7" type="double" name="notional_usd" />
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
