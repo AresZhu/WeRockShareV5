@@ -61,6 +61,7 @@ enum CmdType: byte {
     UPDATE_BETA_MODEL,
     UPDATE_SCHEDULE_TASK,
     ACK_ALERT_EVENT,
+    GET_ORDER_MESSAGES,
 }
 
 enum ErrorCode: short {

@@ -541,3 +541,10 @@ enum StrategyDataCounterId : uint16 {
     MakerBestBidSize,
     MakerBestAskSize,
 }
+
+enum OrderMessageSource : uint8 {
+    Unknown = 0,
+    RiskEngine,
+    Gateway,
+    Exchange
+}

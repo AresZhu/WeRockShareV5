@@ -341,20 +341,25 @@ table StrategyOrderMessage(fs_serializer) {
     version: int;
     last_updated: long;
     
+    trading_date: int;
+    
+    submitted_time: long;
+    
     type: OrderMessageType;
     reject_level: RejectLevel;
+    source: OrderMessageSource;
     strategy_id: long;
     ephemeral_id: ulong;
     parent_ephemeral_id: ulong;
     security_id: long;
-    instrument_id: long;
+    listing_id: long;
     side: Side;
     price: double;
     quantity: double;
     
     gateway_id: uint;
     router_id: uint;
-    internal_id: uint;    
+    internal_id: uint;
     tactic_type: TacticType;
     tactic_index: ushort;
     position_effect: PositionEffect;

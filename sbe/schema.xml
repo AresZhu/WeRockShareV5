@@ -147,6 +147,8 @@
         <field id="8" type="uint8" name="side" />
         <field id="9" type="int32" name="price" />
         <field id="10" type="uint32" name="quantity" />
+        <field id="11" type="uint8" name="source" />
+        <field id="12" type="uint64" name="timestamp" />
 
         <field id="13" type="uint16" name="gatewayId" />
         <field id="14" type="uint16" name="routerId" />
