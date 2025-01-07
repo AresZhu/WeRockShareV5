@@ -543,7 +543,8 @@ enum StrategyDataCounterId : uint16 {
 }
 
 enum OrderMessageSource : uint8 {
-    Unknown = 0,
+    DataHub = 0,
+    Strategy,
     RiskEngine,
     Gateway,
     Exchange
