@@ -545,6 +545,7 @@ enum StrategyDataCounterId : uint16 {
 enum OrderMessageSource : uint8 {
     DataHub = 0,
     Strategy,
+    System,
     RiskEngine,
     Gateway,
     Exchange
