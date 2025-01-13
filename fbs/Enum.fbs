@@ -212,16 +212,8 @@ enum InstrumentFlags : int {
 }
 
 enum EvaluationMode : byte {
-    IMBALANCE = 0,
-    MID,
-    BID_OFFER
-}
-
-enum PricerType : byte {
-    UNKNOWN = 0,
-    FUTURES_IMBALANCE,
-    STOCK_IMBALANCE,
-    MID,
+    DEFAULT = 0,
+    MID_PRICE,
     BID_OFFER
 }
 
