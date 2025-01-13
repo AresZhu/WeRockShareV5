@@ -211,7 +211,7 @@ enum InstrumentFlags : int {
     TOPIX_500 = 1
 }
 
-enum PricingMode : byte {
+enum EvaluationMode : byte {
     IMBALANCE = 0,
     MID,
     BID_OFFER
