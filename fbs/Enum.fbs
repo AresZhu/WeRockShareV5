@@ -213,6 +213,7 @@ enum InstrumentFlags : int {
 
 enum EvaluationMode : byte {
     DEFAULT = 0,
+    IMBALANCE = 1,
     MID_PRICE,
     BID_OFFER
 }
