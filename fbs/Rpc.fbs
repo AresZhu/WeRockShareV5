@@ -217,6 +217,10 @@ table SubResponse(fs_serializer) {
     data: [ubyte];
 }
 
+table SubResponseList(fs_serializer) {
+    items: [SubResponse];
+}
+
 table LoginRequest(fs_serializer) {
     account: string;
     password: string;
