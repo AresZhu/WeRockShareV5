@@ -412,6 +412,7 @@ enum NodeCommandType : byte {
     SUBSCRIBE_MARKET_DATA,
     PUBLISH_GATEWAY_STATE,
     CREATE_MANUAL_TRADE,
+    PUBLISH_FULL_STATE,
 }
 
 enum TacticType : byte {
