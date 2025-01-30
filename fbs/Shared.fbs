@@ -264,10 +264,25 @@ table User(fs_serializer) {
     password: string;
     fullname: string;
     enabled: bool;
+    roles: string;
 }
 
 table UserList(fs_serializer) {
     items: [User];
+}
+
+table Role(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    name: string;
+    description: string;
+    entitlements: string;
+}
+
+table RoleList(fs_serializer) {
+    items: [Role];
 }
 
 table CurrencyRate(fs_serializer) {
@@ -1115,4 +1130,8 @@ table StrategyDataCounterString(fs_serializer) {
 
 table StrategyDataCounterStringList(fs_serializer) {
     items: [StrategyDataCounterString];
+}
+
+table EntitlementList(fs_serializer) {
+    items: [Entitlement];
 }

@@ -62,6 +62,7 @@ enum CmdType: byte {
     UPDATE_SCHEDULE_TASK,
     ACK_ALERT_EVENT,
     GET_ORDER_MESSAGES,
+    GET_ENTITLEMENTS,
 }
 
 enum ErrorCode: short {
