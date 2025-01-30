@@ -545,6 +545,13 @@ enum OrderMessageSource : uint8 {
     Exchange
 }
 
+enum Role : uint8 {
+    None = 0,
+    Trader,
+    Support,
+    MiddleOffice,
+}
+
 enum Entitlement: uint16 {
     None = 0,
     Connect = 1,
