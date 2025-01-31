@@ -158,6 +158,14 @@ table LongValueList(fs_serializer) {
     items: [LongValue];
 }
 
+table StringValue(fs_serializer) {
+    value: string;
+}
+
+table StringValueList(fs_serializer) {
+    items: [StringValue];
+}
+
 table NewOrder(fs_serializer) {
     ephemeral_id: ulong;
     listing_id: long;
