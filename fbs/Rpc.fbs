@@ -67,6 +67,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     SUCCESS = 0,
+    ACCOUNT_DISABLED,
     START_SNAPSHOT,
     LOADING_SNAPSHOT,
     REQUEST_TIMEOUT,
