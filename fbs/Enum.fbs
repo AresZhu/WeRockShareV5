@@ -235,7 +235,9 @@ enum StrategyType: byte {
     CRYPTO_MARKET_MAKING,
     FUTURES_HEDGING,
     HEDGING,
-    TEST
+    TEST,
+    DELTA_ONE,
+    DELTA_HEDGER,
 }
 
 enum StrategyState : byte {
