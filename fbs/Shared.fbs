@@ -633,6 +633,7 @@ table Basket(fs_serializer) {
     security_id: long;
     type: BasketType;
     tag: string;
+    display_name: string(required);
 }
 
 table BasketList(fs_serializer) {
@@ -685,8 +686,7 @@ table PricingBasket(fs_serializer) {
     
     validation_result: BasketValidationResult;
     
-    basket_type: BasketType;
-    basket_tag: string;
+    display_name: string(required);
     security_id: long;
     valuation_date: int;
     trading_date: int;
