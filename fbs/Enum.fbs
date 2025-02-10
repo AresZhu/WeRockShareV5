@@ -453,7 +453,7 @@ enum BasketValidationResult: byte {
 }
 
 enum IntradayHedgingMethod: byte {
-    None = 0,
+    Disabled = 0,
     BetaModel,
     Basket,
 }
