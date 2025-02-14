@@ -236,8 +236,8 @@ enum StrategyType: byte {
     FUTURES_HEDGING,
     HEDGING,
     TEST,
-    DELTA_ONE,
-    DELTA_HEDGER,
+    DeltaOne,
+    DeltaHedger,
 }
 
 enum StrategyState : byte {
