@@ -363,7 +363,7 @@ table StrategyOrderMessage(fs_serializer) {
     router_id: uint;
     internal_id: uint;
     tactic_type: TacticType;
-    tactic_index: ushort;
+    tactic_code: ushort;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     external_id: string;
@@ -397,7 +397,7 @@ table StrategyOrder(fs_serializer) {
     exchange: string(required);
     
     tactic_type: TacticType;
-    tatic_index: ushort;
+    tactic_code: ushort;
     
     trading_date: int;
     
@@ -437,7 +437,7 @@ table OpenOrder(fs_serializer) {
     strategy_order_id: long;
 
     tactic_type: TacticType;
-    tactic_index: ushort;
+    tactic_code: ushort;
     
     submit_time: long;
     

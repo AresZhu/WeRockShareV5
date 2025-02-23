@@ -117,8 +117,7 @@
         <field id="7" type="uint32" name="quantity" />        
         <field id="8" type="uint8" name="positionEffect" />
         <field id="9" type="uint8" name="timeInForce" />
-        <field id="11" type="uint8" name="tacticType" />
-        <field id="12" type="uint16" name="tacticIndex" />
+        <field id="11" type="uint32" name="tacticId" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
         <field id="1" type="uint64" name="ephemeralId" />
@@ -153,8 +152,7 @@
         <field id="13" type="uint16" name="gatewayId" />
         <field id="14" type="uint16" name="routerId" />
         <field id="15" type="uint32" name="internalId" />
-        <field id="17" type="uint8" name="tacticType" />
-        <field id="18" type="uint16" name="tacticIndex" />
+        <field id="18" type="uint32" name="tacticId" />
         
         <field id="19" type="uint8" name="positionEffect" />
         <field id="20" type="uint8" name="timeInForce" />
