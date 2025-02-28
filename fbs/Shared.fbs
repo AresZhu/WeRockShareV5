@@ -218,8 +218,10 @@ table Node(fs_serializer) {
     id: long;
     last_updated: long;
     
+    type: NodeType;
     name: string(required);
     enabled: bool;
+    deployment_hostname: string;
     settings: string(required);
 }
 

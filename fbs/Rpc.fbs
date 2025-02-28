@@ -300,11 +300,14 @@ table BasketHistoryEx(fs_serializer) {
 }
 
 
-table NodeLogin(fs_serializer) {
+table NodeLoginRequest(fs_serializer) {
     node_id: int;
     node_type: NodeType;
-    node_name: string;
-    node_ip: string;
-    node_port: int;
-    node_status: NodeStatus;
+    host_name: string;
+    host_ip: string;
+}
+
+table RequestResponse(fs_serializer) {
+    code: ErrorCode;
+    data: [ubyte];
 }
