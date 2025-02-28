@@ -558,3 +558,11 @@ enum Entitlement: uint16 {
     None = 0,
     Connect = 1,
 }
+
+enum NodeType : uint8 {
+    Unknown = 0,
+    DataHub,
+    ExecutionGateway,
+    MarketDataCast,
+    Trading,
+}

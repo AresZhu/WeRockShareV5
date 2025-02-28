@@ -298,3 +298,13 @@ table BasketHistoryEx(fs_serializer) {
     cashes: [BasketCash];
     constituents: [BasketEntry];
 }
+
+
+table NodeLogin(fs_serializer) {
+    node_id: int;
+    node_type: NodeType;
+    node_name: string;
+    node_ip: string;
+    node_port: int;
+    node_status: NodeStatus;
+}
