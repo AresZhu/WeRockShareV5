@@ -311,3 +311,8 @@ table RequestResponse(fs_serializer) {
     code: ErrorCode;
     data: [ubyte];
 }
+
+table MarketDataSubscriptionRequest(fs_serializer) {
+    listing_id: int;
+    subscription_types: int;
+}
