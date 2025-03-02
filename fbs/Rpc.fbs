@@ -304,7 +304,7 @@ table NodeLoginRequest(fs_serializer) {
     node_id: int;
     node_type: NodeType;
     host_name: string;
-    host_ip: string;
+    host_ips: string;
 }
 
 table RequestResponse(fs_serializer) {
