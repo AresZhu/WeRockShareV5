@@ -528,6 +528,10 @@ table Position(fs_serializer) {
     pnl_total: double;
 }
 
+table PositionList(fs_serializer) {
+    items: [Position];
+}
+
 table StrategyPosition(fs_serializer) {
     id: long;
     version: int;
