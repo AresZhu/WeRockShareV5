@@ -1,0 +1,28 @@
+include "Enum.fbs";
+
+namespace WeRock.Share;
+
+attribute "fs_serializer";
+
+table StrategyStateDto(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    state: StrategyState;
+    
+    first_session_startted: int;
+    last_session_stopped: int;
+}
+
+table Exposure(fs_serializer) {
+    security_id: long;
+    notional_user: double;
+}
+
+table StrategyExposureDto(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    notional_usd: double;
+    exposures: [Exposure];
+}

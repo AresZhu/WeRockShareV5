@@ -19,6 +19,8 @@
         <FlatSharpSchema Include="fbs\Enum.fbs" />
         <FlatSharpSchema Include="fbs\Shared.fbs" />
         <FlatSharpSchema Include="fbs\Rpc.fbs" />
+        <None Remove="fbs\Strategies.fbs" />
+        <FlatSharpSchema Include="fbs\Strategies.fbs" />
     </ItemGroup>
     
     <ItemGroup>

@@ -1128,3 +1128,35 @@ table StrategyDataCounterStringList(fs_serializer) {
 table EntitlementList(fs_serializer) {
     items: [Entitlement];
 }
+
+
+table MarketPriceDto(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    last: int32;
+    iap: int32;
+    iav: uint32;
+    price_scale: uint32;
+    quantity_scale: uint32;
+    status: TradingStatus;
+    levels: [PriceLevel];
+}
+
+table MarketDataGatewayDto(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    type: GatewayType;
+    name: string(required);
+    state: ConnectionState;
+}
+
+table ExecutionGatewayDto(fs_serializer) {
+    id: long;
+    last_updated: long;
+    
+    type: GatewayType;
+    name: string(required);
+    state: ConnectionState;
+}
