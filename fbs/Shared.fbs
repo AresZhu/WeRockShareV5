@@ -1160,3 +1160,16 @@ table ExecutionGatewayDto(fs_serializer) {
     name: string(required);
     state: ConnectionState;
 }
+
+table NodeStateDto(fs_serializer) {
+    id: long;
+    last_heartbeat: long;
+    
+    type: NodeType;
+    name: string(required);
+}
+
+table PlatformEvent(fs_serializer) {
+    event_type: PlatformEventType;
+    data: [ubyte];
+}

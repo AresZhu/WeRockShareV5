@@ -567,3 +567,11 @@ enum NodeType : uint8 {
     MarketDataCast,
     Trading,
 }
+
+enum PlatformEventType: uint8 {
+    None = 0,
+    DataHubStarting,
+    DataHubStarted,
+    DataHubStopping,
+    DataHubStopped,
+}
