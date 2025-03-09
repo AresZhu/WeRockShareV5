@@ -4,8 +4,15 @@ namespace WeRock.Share;
 
 attribute "fs_serializer";
 
+enum StrategyDtoType: byte {
+    Unknown = 0,
+    StrategyState,
+    StrategyExposure
+}
+
 table StrategyStateDto(fs_serializer) {
     id: long;
+    type: StrategyDtoType;
     last_updated: long;
     state: StrategyState;
     first_session_startted: int;
@@ -19,6 +26,7 @@ table Exposure(fs_serializer) {
 
 table StrategyExposureDto(fs_serializer) {
     id: long;
+    type: StrategyDtoType;
     last_updated: long;
     
     notional_usd: double;
