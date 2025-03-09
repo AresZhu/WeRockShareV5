@@ -7,9 +7,7 @@ attribute "fs_serializer";
 table StrategyStateDto(fs_serializer) {
     id: long;
     last_updated: long;
-    
     state: StrategyState;
-    
     first_session_startted: int;
     last_session_stopped: int;
 }
