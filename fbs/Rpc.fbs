@@ -319,6 +319,5 @@ table MarketDataSubscriptionRequest(fs_serializer) {
 
 table LoadSnapshotRequest(fs_serializer) {
     table_name: string(required);
-    where: string;
     reply_subject: string;
 }
