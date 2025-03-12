@@ -303,8 +303,8 @@ table BasketHistoryEx(fs_serializer) {
 table NodeLoginRequest(fs_serializer) {
     node_id: int;
     node_type: NodeType;
-    host_name: string;
-    host_ips: string;
+    environment: string(required);
+    hostname: string(required);
 }
 
 table RequestResponse(fs_serializer) {
