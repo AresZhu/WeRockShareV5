@@ -322,3 +322,9 @@ table LoadSnapshotRequest(fs_serializer) {
     reply_subject: string;
     strategy_id: long;
 }
+
+table EntityEvent(fs_serializer) {
+    event_type: EntityEventType;
+    entity_id: long;
+    data: [ubyte];
+}
