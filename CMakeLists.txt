@@ -1,6 +1,30 @@
 cmake_minimum_required(VERSION 3.21)
 
-project(werock_codecs LANGUAGES CXX)
+project(werock_codecs VERSION 1.0.0
+        DESCRIPTION "WeRock Share Library"
+        LANGUAGES CXX)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# Not ideal to use this global variable, but necessary to make sure that tooling and projects use
+# the same version
+set(CMAKE_CXX_STANDARD 23)
+set(CXX_STANDARD_REQUIRED ON)
+
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+    message(STATUS "Performing Debug build with optimizations off (-O0) and additional args: -g -fsanitize=address")
+    add_compile_options(-g -fsanitize=address -O0)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+    set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=address")
+    set(QUILL_COMPILE_ACTIVE_LOG_LEVEL QUILL_COMPILE_ACTIVE_LOG_LEVEL_DEBUG)
+endif()
+
+if (${CMAKE_BUILD_TYPE} STREQUAL "Release")
+    message(STATUS "Performing Release build with optimizations on (-O3)")
+    add_compile_options(-O3)
+    set(QUILL_COMPILE_ACTIVE_LOG_LEVEL QUILL_COMPILE_ACTIVE_LOG_LEVEL_WARNING)
+endif()
+
 
 message(STATUS "Build werockshare...")
 
