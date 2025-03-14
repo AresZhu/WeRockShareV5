@@ -4,55 +4,48 @@
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, CMakeDeps
 import os
-import subprocess
+import shutil
+from conan.tools.cmake import cmake_layout
+from conan.tools.files import copy
 
 class ConanApplication(ConanFile):
     name = "werock_share"
     version = "1.0.0"
-    exports_sources = "CMakeLists.txt"
 
     settings = "os", "compiler", "build_type", "arch"
 
-    #def __init__(self, *args, **kwargs):
-        #script_path = os.path.join(self.source_folder, "sbe/schema.xml")
-        #output_path = self.build_folder
-        #jar_path = os.path.join(self.source_folder, "sbe/sbe-all-1.34.1.jar")
-        #output_file = os.path.join(output_path, "sbe.stub")
-        #subprocess.run["java" "-Dsbe.target.language=Cpp -Dsbe.errorLog=yes -Dsbe.output.dir=%s -jar %s %s" % (output_path, jar_path, script_path), "--output", output_file]
-
-        # output_path = os.path.join(self.build_folder, "include")
-        # fbs_files = os.path.join(self.source_folder, "fbs/*.fbs")
-        # output_file = os.path.join(output_path, "flatbuffers.stub")
-        # subprocess.run["flatc" "--cpp -o %s %s" % (output_path, fbs_files), "--output", output_file]
+    exports_sources = "include/*", "fbs/*", "sbe/*", "CMakeLists.txt"
+    no_copy_source = True
 
     def generate(self):
-        script_path = os.path.join(self.source_folder, "sbe/schema.xml")
-        output_path = self.build_folder
-        jar_path = os.path.join(self.source_folder, "sbe/sbe-all-1.34.1.jar")
-        output_file = os.path.join(output_path, "sbe.stub")
-        subprocess.run("java -Dsbe.target.language=Cpp -Dsbe.output.dir=%s -jar %s %s" % (output_path, jar_path, script_path), shell=True, check=True)
-
         tc = CMakeToolchain(self)
         tc.generate()
-        deps = CMakeDeps(self)
-        deps.generate()
-
-    def requirements(self):
-        self.requires("flatbuffers/24.12.23")
-
-    def build_requirements(self):
-        self.tool_requires("cmake/3.31.6")
 
     def build(self):
-
         script_path = os.path.join(self.source_folder, "sbe/schema.xml")
+        include_path = os.path.join(self.source_folder, "include")
+        shutil.rmtree(include_path, ignore_errors=True)
+        jar_path = os.path.join(self.source_folder, "sbe/sbe-all-1.34.1.jar")
+        self.run("java -Dsbe.target.language=Cpp -Dsbe.output.dir=%s -jar %s %s" % (include_path, jar_path, script_path))
+
+        source = os.path.join(include_path, 'WeRock_Share_Sbe')
+        parent = os.path.dirname(source)
+        for f in os.listdir(source):
+            shutil.move(os.path.join(source, f), parent)
+        os.rmdir(source)
+
+        scheme_files = [os.path.join(self.source_folder, "fbs/Enum.fbs"),
+                        os.path.join(self.source_folder, "fbs/Shared.fbs"),
+                        os.path.join(self.source_folder, "fbs/Rpc.fbs"),
+                        os.path.join(self.source_folder, "fbs/Strategies.fbs")]
+        self.run("flatc --cpp -o %s %s" % (include_path, " ".join(scheme_files)))
+
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
 
-    def package(self):
-        cmake = CMake(self)
-        cmake.install()
-
     def package_info(self):
-        self.cpp_info.includedirs  = [os.path.join(self.build_folder, "WeRock_Share_Sbe")]
+        self.cpp_info.bindirs = []
+        self.cpp_info.libdirs = []
+    def layout(self):
+        cmake_layout(self)
