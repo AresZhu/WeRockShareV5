@@ -563,7 +563,7 @@ enum NodeType : uint8 {
     Unknown = 0,
     AeronMediaDriver,
     DataHub,
-    ExecutionGateway,
+    Gateway,
     MarketDataCast,
     Trading,
 }
