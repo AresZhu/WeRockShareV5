@@ -123,6 +123,12 @@
         <field id="1" type="uint64" name="ephemeralId" />
         <field id="2" type="uint16" name="strategyId" />
     </sbe:message>
+    <sbe:message name="AmendOrderSbe" id="22">
+        <field id="1" type="uint64" name="ephemeralId" />
+        <field id="3" type="uint16" name="strategyId" />
+        <field id="4" type="int32" name="price" />
+        <field id="5" type="uint32" name="quantity" />
+    </sbe:message>
     <sbe:message name="ReplaceOrderSbe" id="16">
         <field id="1" type="uint64" name="ephemeralId" />
         <field id="2" type="uint64" name="parentEphemeralId" />
