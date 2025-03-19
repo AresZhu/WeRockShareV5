@@ -328,3 +328,8 @@ table EntityEvent(fs_serializer) {
     entity_id: long;
     data: [ubyte];
 }
+
+table WarmupInstrumentRequest(fs_serializer) {
+    gateway_id: long;
+    instrument_id: long;
+}

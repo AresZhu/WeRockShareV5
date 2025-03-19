@@ -164,7 +164,6 @@ table Instrument(fs_serializer) {
     short_sell_exempted: bool;
     primary_identifier: string(required);
     description: string(required);
-    ticker: string;
     market: Market;
     is_primary: bool;
     trading_symbol: string(required);
