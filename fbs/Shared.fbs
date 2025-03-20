@@ -1163,6 +1163,8 @@ table ExecutionGatewayDto(fs_serializer) {
 
 table NodeStateDto(fs_serializer) {
     id: long;
+    type: NodeType;
+    hostname: string(required);
     last_heartbeat: long;
 }
 
