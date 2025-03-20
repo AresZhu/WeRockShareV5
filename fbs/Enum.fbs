@@ -566,6 +566,8 @@ enum NodeType : uint8 {
     Gateway,
     MarketDataCast,
     Trading,
+    TradingClient,
+    DataForge,
 }
 
 enum PlatformEventType: uint8 {
