@@ -1172,3 +1172,9 @@ table PlatformEvent(fs_serializer) {
     event_type: PlatformEventType;
     data: [ubyte];
 }
+
+table StrategyOrderDetail(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;   
+}
