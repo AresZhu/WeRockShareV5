@@ -70,6 +70,10 @@ table SizeRule(fs_serializer) {
     step: double;
 }
 
+table SizeRuleList(fs_serializer) {
+    items: [SizeRule];
+}
+
 table TickSizeTable(fs_serializer) {
     id: long;
     rules: [SizeRule];
@@ -156,7 +160,6 @@ table SecurityListingList(fs_serializer) {
 table Instrument(fs_serializer) {
     id: long;
     
-    resolving_flags: int;
     security_id: long;
     security_type: SecurityType;
     expired_date: int;
@@ -176,15 +179,12 @@ table Instrument(fs_serializer) {
     exchange: string(required);
     contract_size: double;
     lot_size: double;
-    tick_size: double;
-    tick_size_table_id: ushort;
-    tick_size_description: string;
-    tick_size_table_name: string;
-    lot_size_table_name: string;
-    price_scale: uint32;
-    quantity_scale: uint32;
-    normalised_lot_size: uint32;
-    normalised_tick_size: int32;
+    tick_size_table: SizeRuleList;
+    tradingdate: int;
+    prev_tradingdate: int;
+    reference_price: double;
+    price_limit_up: double;
+    price_limit_down: double;
 }
 
 table InstrumentList(fs_serializer) {
@@ -1177,4 +1177,37 @@ table StrategyOrderDetail(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;   
+}
+
+table Exchange(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    market: Market;
+    mic: string(required);
+    name: string(required);
+    timezone: string(required);
+    description: string(required);
+}
+
+table ExchangeSchedule(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    exchange_id: long;
+    name: string(required);
+    schedules: string(required);
+}
+
+table ExchangeHoliday(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    exchange_id: long;
+    trading_date: int;
+    name: string(required);
+    schedule_name: string(required);
 }
