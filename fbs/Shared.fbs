@@ -104,6 +104,7 @@ table Security(fs_serializer) {
     market: Market;
     contract_size: double;
     expired_date: int;
+    deleted: bool;
 }
 
 table SecurityList(fs_serializer) {
@@ -141,6 +142,7 @@ table SecurityListing(fs_serializer) {
     currency: Currency;
     tick_size_table_name: string;
     lot_size_table_name: string;
+    deleted: bool;
 }
 
 table SecurityListingList(fs_serializer) {
