@@ -37,10 +37,8 @@ table TickSizeRule(fs_serializer) {
     version: int;
     last_updated: long;
     
+    exchange_mic: string(required);
     name: string(required);
-    security_type: SecurityType;
-    exchange: string(required);
-    primary_identifier_regex: string(required);
     rules: string(required);
 }
 
@@ -53,10 +51,8 @@ table LotSizeRule(fs_serializer) {
     version: int;
     last_updated: long;
     
+    exchange_mic: string(required);
     name: string(required);
-    security_type: SecurityType;
-    exchange: string(required);
-    primary_identifier_regex: string(required);
     lot_size: double;
 }
 
@@ -70,9 +66,6 @@ table SizeRule(fs_serializer) {
     step: double;
 }
 
-table SizeRuleList(fs_serializer) {
-    items: [SizeRule];
-}
 
 table TickSizeTable(fs_serializer) {
     id: long;
@@ -104,7 +97,6 @@ table Security(fs_serializer) {
     last_updated: long;
     
     primary_identifier: string(required);
-    ticker: string;
     description: string;
     sedol: string;
     isin: string;
@@ -112,10 +104,6 @@ table Security(fs_serializer) {
     market: Market;
     contract_size: double;
     expired_date: int;
-    intraday_sell_prohibited: bool;
-    short_sell_exempted: bool;
-    tick_size_table_name: string;
-    lot_size_table_name: string;
 }
 
 table SecurityList(fs_serializer) {
@@ -145,16 +133,24 @@ table SecurityListing(fs_serializer) {
     
     security_id: long;
     is_primary: bool;
-    exchange: string(required);
-    trading_symbol: string(required);
+    exchange_mic: string(required);
+    exchange_symbol: string(required);
     ric: string;
     bbg: string;
     bbg_for_sub: string;
     currency: Currency;
+    tick_size_table_name: string;
+    lot_size_table_name: string;
 }
 
 table SecurityListingList(fs_serializer) {
     items: [SecurityListing];
+}
+
+table ExchangeSession(fs_serializer) {
+    start: int32;
+    end: int32;
+    trading_status: TradingStatus;
 }
 
 table Instrument(fs_serializer) {
@@ -163,28 +159,31 @@ table Instrument(fs_serializer) {
     security_id: long;
     security_type: SecurityType;
     expired_date: int;
-    intraday_sell_prohibited: bool;
-    short_sell_exempted: bool;
     primary_identifier: string(required);
     description: string(required);
     market: Market;
     is_primary: bool;
-    trading_symbol: string(required);
+    exchange_symbol: string(required);
     bbg: string;
     bbg_for_sub: string;
     isin: string;
     sedol: string;
     ric: string;
-    trading_currency: Currency;
-    exchange: string(required);
+    currency: Currency;
+    exchange_mic: string(required);
+    exchange_acronym: string;
     contract_size: double;
+    tick_size_table_name: string(required);
+    lot_size_table_name: string(required);
     lot_size: double;
-    tick_size_table: SizeRuleList;
-    tradingdate: int;
-    prev_tradingdate: int;
+    tick_size_table: [SizeRule];
+    exchange_schedule:[ExchangeSession];
+    trading_date: int;
+    prev_trading_date: int;
     reference_price: double;
     price_limit_up: double;
     price_limit_down: double;
+    tradable: bool;
 }
 
 table InstrumentList(fs_serializer) {
@@ -1186,9 +1185,10 @@ table Exchange(fs_serializer) {
     
     market: Market;
     mic: string(required);
+    trading_day_end_time: int;
+    acronym: string;
     name: string(required);
-    timezone: string(required);
-    description: string(required);
+    time_zone: string(required);
 }
 
 table ExchangeSchedule(fs_serializer) {
@@ -1201,7 +1201,7 @@ table ExchangeSchedule(fs_serializer) {
     schedules: string(required);
 }
 
-table ExchangeHoliday(fs_serializer) {
+table ExchangeCalendar(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -1209,5 +1209,7 @@ table ExchangeHoliday(fs_serializer) {
     exchange_id: long;
     trading_date: int;
     name: string(required);
+    is_open: bool;
+    has_settlement: bool;
     schedule_name: string(required);
 }
