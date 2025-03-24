@@ -394,11 +394,7 @@ table StrategyOrder(fs_serializer) {
     security_id: long;
     listing_id: long;
     strategy_id: long;
-    
-    primary_identifier: string(required);
-    trading_symbol: string(required);
-    exchange: string(required);
-    
+  
     tactic_type: TacticType;
     tactic_code: ushort;
     
@@ -426,6 +422,7 @@ table StrategyOrder(fs_serializer) {
     internal_id_on_market: uint32;
     external_id: string;
     
+    gateway_id: uint32;
     router_id: uint32;
 }
 
@@ -617,7 +614,8 @@ table StartupStrategy(fs_serializer) {
     
     type: StrategyType;
     tag: string;
-    display_name: string(required);
+    name: string(required);
+    full_name: string(required);
     auto_start: bool;
     schedules: string(required);
     terminated: bool;
@@ -1185,7 +1183,6 @@ table Exchange(fs_serializer) {
     version: int;
     last_updated: long;
     
-    market: Market;
     mic: string(required);
     trading_day_end_time: int;
     acronym: string;
@@ -1198,7 +1195,7 @@ table ExchangeSchedule(fs_serializer) {
     version: int;
     last_updated: long;
     
-    exchange_id: long;
+    exchange_mic: string(required);
     name: string(required);
     schedules: string(required);
 }
@@ -1208,7 +1205,7 @@ table ExchangeCalendar(fs_serializer) {
     version: int;
     last_updated: long;
     
-    exchange_id: long;
+    exchange_mic: string(required);
     trading_date: int;
     name: string(required);
     is_open: bool;
