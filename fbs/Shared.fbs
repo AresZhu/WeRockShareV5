@@ -316,9 +316,6 @@ table MarketPrice(fs_serializer) {
     id: long;
     last_updated: long;
     
-    last: int64;
-    iap: int64;
-    iav: uint64;
     trading_status: TradingStatus;
     connection_state: ConnectionState;
     price_scalar: int64;
