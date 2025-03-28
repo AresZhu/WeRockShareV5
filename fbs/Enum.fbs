@@ -178,11 +178,12 @@ enum TradeType : byte {
 }
 
 enum ConnectionState : byte {
-    UNKNOWN = 0,
-    CONNECTING,
-    CONNECTED,
-    DISCONNECTED,
-    ERROR
+    Unknown = 0,
+    Connecting,
+    Connected,
+    Disconnected,
+    Timeout,
+    Error
 }
 
 enum InstrumentResolvingFlags : int {
