@@ -328,3 +328,8 @@ table EntityEvent(fs_serializer) {
     entity_id: long;
     data: [ubyte];
 }
+
+table LoadStartUpStrategiesRequest(fs_serializer) {
+    node_id: int;
+    reply_subject: string;
+}
