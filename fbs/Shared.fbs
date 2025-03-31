@@ -32,7 +32,7 @@ table ExecutionGatewayList(fs_serializer) {
     items: [ExecutionGateway];
 }
 
-table TickSizeRule(fs_serializer) {
+table TickSizeTable(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -42,11 +42,11 @@ table TickSizeRule(fs_serializer) {
     rules: string(required);
 }
 
-table TickSizeRuleList(fs_serializer) {
-    items: [TickSizeRule];
+table TickSizeTableList(fs_serializer) {
+    items: [TickSizeTable];
 }
 
-table LotSizeRule(fs_serializer) {
+table LotSizeTable(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -56,8 +56,8 @@ table LotSizeRule(fs_serializer) {
     lot_size: double;
 }
 
-table LotSizeRuleList(fs_serializer) {
-    items: [LotSizeRule];
+table LotSizeTableList(fs_serializer) {
+    items: [LotSizeTable];
 }
 
 table SizeRule(fs_serializer) {
@@ -67,13 +67,9 @@ table SizeRule(fs_serializer) {
 }
 
 
-table TickSizeTable(fs_serializer) {
+table SizeRuleTable(fs_serializer) {
     id: long;
     rules: [SizeRule];
-}
-
-table TickSizeTableList(fs_serializer) {
-    items: [TickSizeTable];
 }
 
 table TradingCalendar(fs_serializer) {
