@@ -181,6 +181,8 @@ table Instrument(fs_serializer) {
     reference_price: double;
     price_limit_up: double;
     price_limit_down: double;
+    price_scalar: int64;
+    quantity_scalar: uint64;
     tradable: bool;
 }
 
@@ -1075,7 +1077,7 @@ table StrategyComponentStatusList(fs_serializer) {
 }
 
 table ScheduleSession {
-    start_time: uint32;
+    start: uint32;
     duration: uint32;
 }
 
