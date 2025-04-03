@@ -61,9 +61,9 @@ table LotSizeTableList(fs_serializer) {
 }
 
 table SizeRule(fs_serializer) {
-    from: double;
-    to: double;
-    step: double;
+    from: long;
+    to: long;
+    step: long;
 }
 
 
@@ -173,14 +173,14 @@ table Instrument(fs_serializer) {
     contract_size: double;
     tick_size_table_name: string(required);
     lot_size_table_name: string(required);
-    lot_size: double;
+    lot_size: ulong;
     tick_size_table: [SizeRule];
     exchange_schedule:[ExchangeSession];
     trading_date: int;
     prev_trading_date: int;
-    reference_price: double;
-    price_limit_up: double;
-    price_limit_down: double;
+    reference_price: long;
+    price_limit_up: long;
+    price_limit_down: long;
     price_scalar: int64;
     quantity_scalar: uint64;
     tradable: bool;
