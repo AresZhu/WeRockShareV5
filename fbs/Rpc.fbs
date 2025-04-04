@@ -172,11 +172,11 @@ table StringValueList(fs_serializer) {
 }
 
 table NewOrder(fs_serializer) {
-    router_id: ushort;
+    router_id: long;
     order_ephemeral_id: long;
     instrument_internal_id: uint;
-    instrument_id: uint;
-    strategy_id: uint;
+    instrument_id: long;
+    strategy_id: long;
     order_type: OrderType;
     side: Side;
     raw_price: double;
