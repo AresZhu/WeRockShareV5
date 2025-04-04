@@ -172,6 +172,7 @@ table StringValueList(fs_serializer) {
 }
 
 table NewOrder(fs_serializer) {
+    gateway_id: long;
     router_id: long;
     order_ephemeral_id: long;
     instrument_internal_id: uint;
