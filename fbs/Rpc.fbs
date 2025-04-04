@@ -177,6 +177,7 @@ table NewOrder(fs_serializer) {
     instrument_internal_id: uint;
     instrument_id: uint;
     strategy_id: uint;
+    order_type: OrderType;
     side: Side;
     raw_price: double;
     raw_quantity: double;

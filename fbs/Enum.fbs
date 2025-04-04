@@ -229,12 +229,7 @@ enum GatewayType : byte {
 }
 
 enum StrategyType: byte {
-    MANUAL = 0,
-    MARKET_MAKING,
-    CRYPTO_MARKET_MAKING,
-    FUTURES_HEDGING,
-    HEDGING,
-    TEST,
+    Manual = 0,
     DeltaOne,
     DeltaHedger,
 }
