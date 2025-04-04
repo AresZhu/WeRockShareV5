@@ -163,18 +163,19 @@ enum OrderStatus: byte {
  }
 
 enum TradingStatus : byte {
-    UNKNOWN = 0,
-    PRE_OPEN_AUCTION,
-    PRE_OPEN_CLOSING_AUCTION,
-    OPEN,
-    PRE_CLOSE_AUCTION,
-    PRE_CLOSE_CLOSING_AUCTION,
-    CLOSE
+    Unknown = 0,
+    PreOpenAuction,
+    PreOpenClosingAuction,
+    Open,
+    PreCloseAuction,
+    PreCloseClosingAuction,
+    Close,
+    Halt
 }
 
 enum TradeType : byte {
-    MARKET = 0,
-    BOOKING = 1
+    Market = 0,
+    Booking = 1
 }
 
 enum ConnectionState : byte {
