@@ -110,28 +110,25 @@ enum Side : byte {
 }
 
 enum OrderType : byte {
-    UNKNOWN = 0,
-    MARKET,
-    LIMIT,
-    STOP,
-    MIDPOINT_PEG
+    Limit = 0,
+    Market
 }
 
 enum PositionEffect : byte {
-    OPEN = 0,
-    CLOSE,
-    CLOSE_TODAY,
-    CLOSE_YESTERDAY,
+    Open = 0,
+    Close,
+    CloseToday,
+    CloseYesterday,
 
-    AUTO,
-    NOT_CLOSE_TODAY,
-    CLOSE_TODAY_FIRST
+    Auto,
+    NotCloseToday,
+    CloseTodayFirst
 }
 
 enum TimeInForce : byte {
-    DAY = 0,
-    IMMEDIATE_OR_CANCEL,
-    FILL_OR_KILL
+    Day = 0,
+    IOC,
+    KOK
 }
 
 enum OrderMessageType : byte {
