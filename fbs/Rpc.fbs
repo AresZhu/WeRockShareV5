@@ -172,18 +172,18 @@ table StringValueList(fs_serializer) {
 }
 
 table NewOrder(fs_serializer) {
-    ephemeral_id: ulong;
-    listing_id: long;
-    strategy_id: long;
-    strategy_type: StrategyType;
+    router_id: ushort;
+    order_ephemeral_id: long;
+    instrument_internal_id: uint;
+    instrument_id: uint;
+    strategy_id: uint;
     side: Side;
-    position_effect: PositionEffect;
-    time_in_force: TimeInForce;
     raw_price: double;
     raw_quantity: double;
-    price: int;
-    quantity: uint;
-    route_id: long;
+    position_effect: PositionEffect;
+    time_in_force: TimeInForce;
+    tactic_id: uint;
+    correlation_id: long;
 }
 
 table ReplaceOrder(fs_serializer) {
