@@ -369,11 +369,11 @@ enum RiskRuleType: byte {
 }
 
 enum RejectLevel: byte {
-    NONE = 0,
-    BENIGN,
-    KNOWN,
-    CRITICAL,
-    FATAL    
+    None = 0,
+    Benign,
+    Known,
+    Critical,
+    Fatal, 
 }
 
 enum BasketPricingMethod: byte {
