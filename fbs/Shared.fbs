@@ -804,21 +804,6 @@ table AlertEventList(fs_serializer) {
     items: [AlertEvent];
 }
 
-table RiskRule(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    order_router_id: int;
-    name: string(required);
-    type: RiskRuleType;
-    parameters: string(required);
-}
-
-table RiskRuleList(fs_serializer) {
-    items: [RiskRule];
-}
-
 table OrderRouter(fs_serializer) {
     id: long;
     version: int;
@@ -830,6 +815,7 @@ table OrderRouter(fs_serializer) {
     precedent: int;
     primary_identifier_regex: string(required);
     exchange_regex: string(required);
+    risk_settings: string(required);
 }
 
 table OrderRouterList(fs_serializer) {
