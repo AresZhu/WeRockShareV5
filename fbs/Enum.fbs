@@ -132,31 +132,30 @@ enum TimeInForce : byte {
 }
 
 enum OrderMessageType : byte {
-    UNKNOWN = 0,
-    NEW,
-    NEW_ACCEPT,
-    NEW_REJECT,
-    CANCEL,
-    CANCELLED,
-    CANCEL_REJECT,
-    REJECT,
-    REPLACE,
-    REPLACED,
-    REPLACE_REJECT,
-    FILL,
-    FILLED,
-    CLOSED,
+    New,
+    NewAccept,
+    NewReject,
+    Cancel,
+    Cancelled,
+    CancelReject,
+    Reject,
+    Amend,
+    AmendAccept,
+    AmendReject,
+    Fill,
+    Filled,
+    Closed,
 }
 
 enum OrderStatus: byte {
-   UNKNOWN = 0,
-   NEW,
-   REJECTED,
-   OPEN,
-   PARTIALLY_FILLED,
-   FILLED,
-   CANCELLED,
-   CLOSED
+   Unknown = 0,
+   New,
+   Rejected,
+   Open,
+   PartiallyFilled,
+   Filled,
+   Cancelled,
+   Closed
  }
 
 enum TradingStatus : byte {
