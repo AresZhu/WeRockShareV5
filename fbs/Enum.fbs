@@ -2,36 +2,6 @@ namespace WeRock.Share;
 
 attribute "fs_serializer";
 
-enum ThreadingMode : byte {
-    SHARED = 0,
-    DEDICATED
-}
-
-enum Direction : byte {
-    UP = 0,
-    DOWN = 1,
-}
-
-enum ExchangeMic: byte {
-    ALL = 0,
-    XDCE,
-    XZCE,
-    XSGE,
-    XSHG,
-    XSHE
-}
-
-enum PublicationType : byte {
-    UNKNOWN = 0,
-    DATA_HUB,
-    DATA_NODE,
-    MARKET_DATA,
-    MARKET_SUBSCRIPTION,
-    ORDER_INSTRUCTION,
-    ORDER_MESSAGE,
-    INTER_STRATEGY_MESSAGE
-}
-
 enum Currency : byte {
     NONE = 0,
     AED,
@@ -90,23 +60,17 @@ enum Market : byte {
 }
 
 enum SecurityType : byte {
-    ALL = 0,
-    CURRENCY_PAIR,
-    INDEX,
-    STOCK,
+    All = 0,
+    CurrencyPair,
+    Index,
+    Stock,
     ETF,
-    FUTURES,
-    CRYPTO_SPOT,
-    CRYPTO_FUTURES,
-    INDEX_FUTURES,
-    STOCK_FUTURES,
-    ETF_FUTURES
+    Futures
 }
 
 enum Side : byte {
-    UNKNOWN = 0,
-    BUY,
-    SELL
+    Buy,
+    Sell
 }
 
 enum OrderType : byte {
@@ -183,48 +147,11 @@ enum ConnectionState : byte {
     Error
 }
 
-enum InstrumentResolvingFlags : int {
-    SUCCESS = 0,
-    FAILED_GET_TICK_SIZE_TABLE = 1,
-    FAILED_GET_LOT_SIZE_TABLE = 2
-}
-
-enum OrderState : short {
-    NONE = 0,
-    ACCEPTED = 1,
-    PENDING_CANCEL = 2,
-    PENDING_REPLACE = 4,
-    REPLACED = 8,
-    REJECTED = 16,
-    CANCELLED = 32,
-    PARTIALLY_FILLED = 64,
-    FILLED = 128,
-    RESERVED1 = 256,
-    RESERVED2 = 512,
-    TERMINATED = 1024
-}
-
-enum InstrumentFlags : int {
-    NONE = 0,
-    TOPIX_500 = 1
-}
-
 enum EvaluationMode : byte {
-    DEFAULT = 0,
-    IMBALANCE = 1,
-    MID_PRICE,
-    BID_OFFER
-}
-
-enum GatewayType : byte {
-    UNKNOWN = 0,
-    SIM,
-    CTP,
-    FIX42,
-    OES,
-    GTP,
-    BBG,
-    TEST,
+    Default = 0,
+    Imbalance = 1,
+    MidPrice,
+    BidOffer
 }
 
 enum StrategyType: byte {
@@ -234,49 +161,37 @@ enum StrategyType: byte {
 }
 
 enum StrategyState : byte {
-    UNKNOWN = 0,
-    INITIALIZING,
-    WAITING,
-    STARTED,
-    STOPPING,
-    STOPPED,
-    RISK,
-    TERMINATED
+    Unknown = 0,
+    Initializing,
+    Waiting,
+    Started,
+    Stopping,
+    Stopped,
+    Risk,
+    Terminated
 }
 
 enum StrategyActionType : byte {
-    UNKNOWN = 0,
-    START,
-    STOP,
-    PUT_ON_RISK,
-    REINITIALIZE,
-    TERMINATE,
-    TERMINATE_ORDERS,
-    CANCEL_ORDERS,
-}
-
-enum MarginMode : byte {
-    AUTO = 0,
-    MANUAL = 1
-}
-
-enum CorporateActionType: byte {
-    UNKNOWN = 0,
+    None = 0,
+    Start,
+    Stop,
+    PutOnRisk,
+    Reinitialize,
+    Terminate
 }
 
 enum TaskStatus : byte {
-    UNKNOWN = 0,
-    RUNNING,
-    SUCCESS,
-    FAILED
+    Unknkown = 0,
+    Running,
+    Success,
+    Failed,
 }
 
 enum BasketType : byte {
-    UNKNOWN = 0,
-    CREATION,
-    REDEMPTION,
-    TRACKING,
-    CUSTOM,
+    Custom = 0,
+    Creation,
+    Redemption,
+    Tracking
 }
 
 enum Region: byte {
@@ -296,27 +211,22 @@ enum ReferencePriceType: byte {
 }
 
 enum EntityEventType: byte {
-    SNAPSHOT = 0,
-    ADDED,
-    UPDATED,
-    REMOVED,
-    PURGED
+    Snapshot = 0,
+    Added,
+    Updated,
+    Removed,
+    Purged
 }
 
 enum PriceInputMode: byte {
-    IMBALANCE = 0,
-    BID_OFFER,
-    MID_PRICE
+    Imbalance = 0,
+    BidOffer,
+    MidPrice
 }
 
 enum TaskRunType: byte {
-    SCHEDULED = 0,
-    MANUAL
-}
-
-enum TickSizeType: byte {
-    CONST = 0,
-    DYNAMIC = 1,
+    Scheduled = 0,
+    Manual
 }
 
 enum StrategyFlags: int {
@@ -355,7 +265,7 @@ enum AlertClassification: byte {
 }
 
 enum RiskRuleType: byte {
-    NONE = 0,
+    None = 0,
     MaxOrderValue = 1,
     MessageRate = 2,
     Covot = 3,
@@ -569,4 +479,13 @@ enum PlatformEventType: uint8 {
     DataHubStarted,
     DataHubStopping,
     DataHubStopped,
+}
+
+enum GatewayType: uint {
+    Unknown = 0,
+    CTP,
+}
+
+enum CorporateActionType : uint {
+
 }
