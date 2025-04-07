@@ -462,7 +462,7 @@ enum Entitlement: uint16 {
     Connect = 1,
 }
 
-enum NodeType : uint8 {
+enum NodeType : byte {
     Unknown = 0,
     AeronMediaDriver,
     DataHub,
@@ -473,7 +473,7 @@ enum NodeType : uint8 {
     DataForge,
 }
 
-enum PlatformEventType: uint8 {
+enum PlatformEventType: byte {
     None = 0,
     DataHubStarting,
     DataHubStarted,
@@ -481,11 +481,13 @@ enum PlatformEventType: uint8 {
     DataHubStopped,
 }
 
-enum GatewayType: uint {
+enum GatewayType: byte {
     Unknown = 0,
     CTP,
+    FIX42,
+    OES
 }
 
-enum CorporateActionType : uint {
+enum CorporateActionType : byte {
 
 }
