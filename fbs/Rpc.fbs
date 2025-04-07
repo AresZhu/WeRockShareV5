@@ -181,8 +181,8 @@ table NewOrder(fs_serializer) {
     strategy_id: long;
     order_type: OrderType;
     side: Side;
-    raw_price: double;
-    raw_quantity: double;
+    price: double;
+    quantity: double;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
     tactic_id: uint;
