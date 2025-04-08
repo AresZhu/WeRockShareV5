@@ -156,10 +156,11 @@
         <field id="13" type="uint16" name="gatewayId" />
         <field id="14" type="uint16" name="routerIndex" />
         <field id="18" type="uint32" name="tacticId" />
-        
-        <field id="19" type="uint8" name="positionEffect" />
-        <field id="20" type="uint8" name="timeInForce" />
-        <field id="21" type="int64" name="exchangeSequenceNumber" />
+
+        <field id="19" type="uint8" name="orderType" />
+        <field id="20" type="uint8" name="positionEffect" />
+        <field id="21" type="uint8" name="timeInForce" />
+        <field id="22" type="int64" name="exchangeSequenceNumber" />
         <field id="23" type="string16" name="externalId" /> 
     </sbe:message>
     <sbe:message name="ExecutionGatewayStateSbe" id="20">
