@@ -108,42 +108,42 @@
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
-        <field id="1" type="uint16" name="router_index" />
-        <field id="2" type="int64" name="client_order_id" />
-        <field id="3" type="uint32" name="instrument_internal_id" />
-        <field id="4" type="uint32" name="instrument_id" />
-        <field id="5" type="uint32" name="strategy_id" />
+        <field id="1" type="uint16" name="routerIndex" />
+        <field id="2" type="int64" name="clientOrderId" />
+        <field id="3" type="uint32" name="internalInstrumentId" />
+        <field id="4" type="uint32" name="instrumentId" />
+        <field id="5" type="uint32" name="strategyId" />
         <field id="6" type="uint8" name="side" />
         <field id="7" type="double" name="price" />
         <field id="8" type="double" name="quantity" />        
-        <field id="9" type="uint8" name="position_effect" />
-        <field id="10" type="uint8" name="time_in_force" />
-        <field id="11" type="uint32" name="tactic_id" />
-        <field id="12" type="int64" name="correlation_id" />
+        <field id="9" type="uint8" name="positionEffect" />
+        <field id="10" type="uint8" name="timeInForce" />
+        <field id="11" type="uint32" name="tacticId" />
+        <field id="12" type="int64" name="correlationId" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
-        <field id="1" type="uint16" name="router_index" />
-        <field id="2" type="int64" name="client_order_id" />
-        <field id="3" type="int64" name="orig_client_order_id" />
+        <field id="1" type="uint16" name="routerIndex" />
+        <field id="2" type="int64" name="origClientOrderId" />
+        <field id="3" type="int64" name="clientOrderId" />
     </sbe:message>
     <sbe:message name="AmendOrderSbe" id="22">
-        <field id="1" type="uint16" name="router_index" />
-        <field id="2" type="int64" name="client_order_id" />
-        <field id="3" type="int64" name="orig_client_order_id" />
+        <field id="1" type="uint16" name="routerIndex" />
+        <field id="2" type="int64" name="origClientOrderId" />
+        <field id="3" type="int64" name="clientOrderId" />
         <field id="4" type="double" name="price" />
         <field id="5" type="double" name="quantity" />
     </sbe:message>
-    <sbe:message name="CloseOrderSbe" id="17">
-        <field id="1" type="uint16" name="router_index" />
-        <field id="2" type="int64" name="client_order_id" />
+    <sbe:message name="TerminateOrderSbe" id="17">
+        <field id="1" type="uint16" name="routerIndex" />
+        <field id="2" type="int64" name="clientOrderId" />
     </sbe:message>
     <sbe:message name="CheckConnectionStateSbe" id="18" />
     <sbe:message name="OrderMessageSbe" id="19">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint8" name="rejectLevel" />
         <field id="3" type="uint16" name="strategyId" />
-        <field id="4" type="uint64" name="client_order_id" />
-        <field id="5" type="uint64" name="orig_client_order_id" />
+        <field id="4" type="uint64" name="origClientOrderId" />
+        <field id="5" type="uint64" name="clientOrderId" />
         <field id="6" type="uint32" name="securityId" />
         <field id="7" type="uint32" name="instrumentId" />
         <field id="8" type="uint8" name="side" />
@@ -158,7 +158,8 @@
         
         <field id="19" type="uint8" name="positionEffect" />
         <field id="20" type="uint8" name="timeInForce" />
-        <field id="23" type="string16" name="externalId" />        
+        <field id="21" type="int64" name="exchangeSequenceNumber" />
+        <field id="23" type="string16" name="externalId" /> 
     </sbe:message>
     <sbe:message name="ExecutionGatewayStateSbe" id="20">
         <field id="1" type="uint16" name="gatewayId" />
