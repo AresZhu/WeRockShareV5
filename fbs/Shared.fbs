@@ -387,7 +387,7 @@ table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    ephemeral_id: ulong;
+    ephemeral_id: long;
     security_id: long;
     listing_id: long;
     strategy_id: long;
@@ -407,20 +407,21 @@ table StrategyOrder(fs_serializer) {
     price: double;
     quantity: double;
     side: Side;
+    order_type: OrderType;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
             
-    filled_size: double;
-    remaining_size: double;
+    cum_filled_qty: double;
+    remaining_qty: double;
     
-    average_price: double;
+    average_fill_price: double;
     
-    internal_id: uint32;
-    internal_id_on_market: uint32;
+    original_client_order_id: uint64;
+    client_order_id: uint64;
     external_id: string;
     
     gateway_id: uint32;
-    router_id: uint32;
+    router_index: uint32;
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -480,6 +481,7 @@ table Trade(fs_serializer) {
     listing_id: long;
     order_id: long;
     strategy_id: long;
+    client_order_id: uint64;
     exec_id: string; 
     
     position_effect: PositionEffect;
