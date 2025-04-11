@@ -323,7 +323,6 @@ table MarketDataSubscriptionRequest(fs_serializer) {
 table LoadSnapshotRequest(fs_serializer) {
     table_name: string(required);
     reply_subject: string;
-    strategy_id: long;
 }
 
 table EntityEvent(fs_serializer) {

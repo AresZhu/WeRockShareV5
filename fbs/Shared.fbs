@@ -1149,6 +1149,13 @@ table Exchange(fs_serializer) {
     time_zone: string(required);
 }
 
+table TradingSession(fs_serializer) {
+    day_of_week: int32;
+    start: int32;
+    duration: int32;
+    end_of_daily_session: bool;
+}
+
 table ExchangeSchedule(fs_serializer) {
     id: long;
     version: int;
