@@ -27,6 +27,10 @@
       <None Remove="CMakeLists.txt" />
     </ItemGroup>
     
+    <ItemGroup>
+      <Folder Include="WeRock\Share\" />
+    </ItemGroup>
+    
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
       <Exec Command="java -Dsbe.target.language=uk.co.real_logic.sbe.generation.csharp.CSharp -Dsbe.errorLog=yes -Dsbe.output.dir=. -jar sbe\sbe-all-1.34.1.jar sbe\schema.xml" />
     </Target>

@@ -338,39 +338,12 @@ table FuturesBasisList(fs_serializer) {
     items: [FuturesBasis];
 }
 
-table StrategyOrderMessage(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    trading_date: int;
-    
-    submitted_time: long;
-    
+table StrategyOrderUpdateMessage(fs_serializer) {
+    order_id: long;
     type: OrderMessageType;
     reject_level: RejectLevel;
     source: OrderMessageSource;
-    strategy_id: long;
-    ephemeral_id: ulong;
-    parent_ephemeral_id: ulong;
-    security_id: long;
-    listing_id: long;
-    side: Side;
-    price: double;
-    quantity: double;
-    
-    gateway_id: uint;
-    router_id: uint;
-    internal_id: uint;
-    tactic_type: TacticType;
-    tactic_code: ushort;
-    position_effect: PositionEffect;
-    time_in_force: TimeInForce;
-    external_id: string;
-}
-
-table StrategyOrderMessageList(fs_serializer) {
-    items: [StrategyOrderMessage];
+    submitted_time: long;
 }
 
 table OrderNotification {
