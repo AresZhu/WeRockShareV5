@@ -389,8 +389,8 @@ table StrategyOrder(fs_serializer) {
     
     average_fill_price: double;
     
-    original_client_order_id: uint64;
-    client_order_id: uint64;
+    original_client_order_id: int64;
+    client_order_id: int64;
     external_id: string;
     
     gateway_id: uint32;
@@ -454,7 +454,7 @@ table Trade(fs_serializer) {
     listing_id: long;
     order_id: long;
     strategy_id: long;
-    client_order_id: uint64;
+    client_order_id: int64;
     exec_id: string; 
     
     position_effect: PositionEffect;
