@@ -325,5 +325,10 @@ table EntityEvent(fs_serializer) {
 
 table LoadStartUpStrategiesRequest(fs_serializer) {
     node_id: int;
-    reply_subject: string;
+    reply_subject: string(required);
+}
+
+table LoadGatewayLiveOrdersRequest(fs_serializer) {
+    gateway_id: long;
+    reply_subject: string(required);
 }
