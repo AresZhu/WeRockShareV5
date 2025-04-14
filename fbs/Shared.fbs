@@ -26,6 +26,8 @@ table ExecutionGateway(fs_serializer) {
     type: GatewayType;
     name: string(required);
     settings: string(required);
+    default_risk_settings: string(required);
+    is_deleted: bool;
 }
 
 table ExecutionGatewayList(fs_serializer) {
@@ -784,13 +786,13 @@ table OrderRouter(fs_serializer) {
     version: int;
     last_updated: long;
     
+    index: uint;
     name: string(required);
     execution_gateway_id: int;
     
     precedent: int;
     primary_identifier_regex: string(required);
     exchange_regex: string(required);
-    index_at_gateway: uint;
     risk_settings: string(required);
 }
 
