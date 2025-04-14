@@ -386,10 +386,9 @@ table StrategyOrder(fs_serializer) {
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
             
-    cum_filled_qty: double;
-    remaining_qty: double;
-    
-    average_fill_price: double;
+    cum_qty: double;
+    leaves_qty: double;    
+    avg_px: double;
     
     original_client_order_id: int64;
     client_order_id: int64;
