@@ -155,7 +155,7 @@ enum EvaluationMode : byte {
 }
 
 enum StrategyType: byte {
-    Unknown = 0,
+    All = 0,
     Manual = 1,
     DeltaOne,
     DeltaHedger,
