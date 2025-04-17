@@ -325,6 +325,7 @@ table EntityEvent(fs_serializer) {
 
 table LoadStartUpStrategiesRequest(fs_serializer) {
     node_id: int;
+    strategy_type: StrategyType;
     reply_subject: string(required);
 }
 
