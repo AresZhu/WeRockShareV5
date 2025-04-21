@@ -1039,7 +1039,7 @@ table StrategyComponentStatusList(fs_serializer) {
 
 table ScheduleSession {
     start: uint32;
-    duration: uint32;
+    end: uint32;
 }
 
 table StrategyDataCounterDouble(fs_serializer) {
