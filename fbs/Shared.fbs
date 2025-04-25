@@ -636,7 +636,7 @@ table BasketHistoryList(fs_serializer) {
 }
 
 table BasketEntry(fs_serializer) {
-    securityt_id: long;
+    security_id: long;
     listing_id: long;
     ticker: string;
     exchange_symbol: string;
@@ -658,24 +658,29 @@ table PricingEntry(fs_serializer) {
     quantity: double;
 }
 
-table PricingBasket(fs_serializer) {
+table CashLine(fs_serializer) {
+    currency: Currency;
+    amount: double;
+}
+
+table EntryLine(fs_serializer) {
+    listing_id: long;
+    quantity: double;
+}
+
+table ResolvedBasket(fs_serializer) {
     id: long;
-    version: int;
     last_updated: long;
     
+    security_id: long;
+    basket_name: string(required);
     validation_result: BasketValidationResult;
     
-    display_name: string(required);
-    security_id: long;
     valuation_date: int;
     trading_date: int;
     
-    cashes: [BasketCash];
-    entries: [PricingEntry];
-}
-
-table PricingBasketList(fs_serializer) {
-    items: [PricingBasket];
+    cashes: [CashLine];
+        entries: [EntryLine];
 }
 
 table HistoricalPrice {
