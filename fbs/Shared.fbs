@@ -636,10 +636,10 @@ table BasketHistoryList(fs_serializer) {
 }
 
 table BasketEntry(fs_serializer) {
-    resolved_securityt_id: long;
-    resolved_listing_id: long;
-    resolved_primary_identifier: string;
-    trading_symbol: string;
+    securityt_id: long;
+    listing_id: long;
+    ticker: string;
+    exchange_symbol: string;
     exchange: string;
     security_type: SecurityType;
     sedol: string;
@@ -649,7 +649,8 @@ table BasketEntry(fs_serializer) {
 
 table BasketCash(fs_serializer) {
     currency: Currency;
-    estimated_amount: double;
+    total: double;
+    estimated: double;
 }
 
 table PricingEntry(fs_serializer) {
