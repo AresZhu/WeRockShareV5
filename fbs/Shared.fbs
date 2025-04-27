@@ -935,12 +935,10 @@ table BasketValidation(fs_serializer) {
     last_updated: long;
     
     identifier: string(required);
-    name: string(required);
-    primary_identifier_stem: string(required);
-    region: string(required);   
-    
+    stem: string(required);
+    region: Region;
+    type: FutureProductType;
     underlying_security_id: long;
-    current_contract_security_id: long;
 
     deleted: bool;
 }

@@ -491,3 +491,19 @@ enum GatewayType: byte {
 enum CorporateActionType : byte {
 
 }
+
+enum FutureProductType : byte {    
+    Commodity = 0,
+    Crypto,
+    Currency,
+    Equity,
+    EquityIndex,
+    FixedInterest,
+}
+
+enum Region : byte {
+    Global = 0,
+    Asia,
+    EMEA,
+    Americas
+}
