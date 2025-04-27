@@ -194,13 +194,6 @@ enum BasketType : byte {
     Tracking
 }
 
-enum Region: byte {
-    GLOBAL,
-    ASIA,
-    EMEA,
-    AMERICAS
-}
-
 enum ReferencePriceType: byte {
     PnlDailyMarkPrice,
     USCashClose,
