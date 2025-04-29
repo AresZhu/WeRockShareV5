@@ -39,6 +39,7 @@ table TickSizeTable(fs_serializer) {
     version: int;
     last_updated: long;
     
+    exchange_mic: string(required);
     name: string(required);
     rules: string(required);
 }
