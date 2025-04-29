@@ -48,19 +48,6 @@ table TickSizeTableList(fs_serializer) {
     items: [TickSizeTable];
 }
 
-table LotSizeTable(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    name: string(required);
-    lot_size: double;
-}
-
-table LotSizeTableList(fs_serializer) {
-    items: [LotSizeTable];
-}
-
 table SizeRule(fs_serializer) {
     from: long;
     to: long;
@@ -137,8 +124,8 @@ table SecurityListing(fs_serializer) {
     bbg: string;
     bbg_for_sub: string;
     currency: Currency;
+    lot_size: double;
     tick_size_table_name: string;
-    lot_size_table_name: string;
     deleted: bool;
 }
 
@@ -173,7 +160,6 @@ table Instrument(fs_serializer) {
     exchange_acronym: string;
     contract_size: double;
     tick_size_table_name: string(required);
-    lot_size_table_name: string(required);
     lot_size: ulong;
     tick_size_table: [SizeRule];
     exchange_schedule:[ExchangeSession];
