@@ -679,7 +679,7 @@ table ResolvedBasket(fs_serializer) {
     trading_date: int;
     
     cashes: [CashLine];
-        entries: [EntryLine];
+    entries: [EntryLine];
 }
 
 table HistoricalPrice {
