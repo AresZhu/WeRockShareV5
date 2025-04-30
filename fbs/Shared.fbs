@@ -86,13 +86,25 @@ table Security(fs_serializer) {
     isin: string;
     type: SecurityType;
     market: Market;
-    contract_size: double;
-    expired_date: int;
     deleted: bool;
 }
 
 table SecurityList(fs_serializer) {
     items: [Security];
+}
+
+table FutureSecurity(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    security_id: long;
+    contract_size: double;
+    expired_date: int;
+}
+
+table FutureSecurityList(fs_serializer) {
+    items: [FutureSecurity];
 }
 
 table EtfPerformance(fs_serializer) {
