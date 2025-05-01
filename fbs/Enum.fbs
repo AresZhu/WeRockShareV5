@@ -175,7 +175,6 @@ enum StrategyActionType : byte {
     Start,
     Stop,
     PutOnRisk,
-    Reinitialize,
     Terminate
 }
 

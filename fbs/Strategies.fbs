@@ -13,10 +13,7 @@ enum StrategyDtoType: byte {
 table StrategyStateDto(fs_serializer) {
     id: long;
     type: StrategyDtoType;
-    last_updated: long;
     state: StrategyState;
-    first_session_startted: int;
-    last_session_stopped: int;
 }
 
 table Exposure(fs_serializer) {
