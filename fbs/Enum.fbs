@@ -162,7 +162,7 @@ enum StrategyType: byte {
 
 enum StrategyState : byte {
     Initializing = 0,
-    RiskWariting,
+    RiskWaiting,
     StartWaiting,
     Started,
     Stopping,
