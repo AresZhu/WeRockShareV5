@@ -334,7 +334,7 @@ table LoadGatewayLiveOrdersRequest(fs_serializer) {
     reply_subject: string(required);
 }
 
-table StrategyAction {
+table StrategyAction(fs_serializer) {
     strategy_id: long;
     action_type: StrategyActionType;
 }
