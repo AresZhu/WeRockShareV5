@@ -338,3 +338,13 @@ table StrategyAction(fs_serializer) {
     strategy_id: long;
     action_type: StrategyActionType;
 }
+
+table UpdateStrategyParametersRequest(fs_serializer) {
+    strategy_id: long;
+    parameters: string(required);
+}
+
+table SaveStrategyParametersRequest(fs_serializer) {
+    strategy_id: long;
+    parameters: string(required);
+}
