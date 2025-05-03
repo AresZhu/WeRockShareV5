@@ -342,6 +342,7 @@ table StrategyAction(fs_serializer) {
 table UpdateStrategyParametersRequest(fs_serializer) {
     strategy_id: long;
     parameters: string(required);
+    strategy_name: string(required);
 }
 
 table SaveStrategyParametersRequest(fs_serializer) {
