@@ -171,6 +171,11 @@ enum StrategyState : byte {
     Terminated
 }
 
+enum StrategyMode : byte {
+    MarketMaking,
+    Risk
+}
+
 enum StrategyActionType : byte {
     None = 0,
     Start,
