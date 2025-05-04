@@ -11,6 +11,13 @@ table StrategyStateDto(fs_serializer) {
     state: StrategyState;
 }
 
+table TheoDto(fs_serializer) {
+    strategy_id: long;
+    listing_id: long;
+    bid_theo: double;
+    ask_theo: double;
+}
+
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
