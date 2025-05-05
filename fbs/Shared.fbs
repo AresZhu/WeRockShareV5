@@ -677,6 +677,10 @@ table ResolvedBasket(fs_serializer) {
     entries: [EntryLine];
 }
 
+table ResolvedBasketList(fs_serializer) {
+    items: [ResolvedBasket];
+}
+
 table HistoricalPrice {
     pre_close: double;
     close: double;
