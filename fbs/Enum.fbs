@@ -284,10 +284,8 @@ enum RejectLevel: byte {
 }
 
 enum BasketPricingMethod: byte {
-    DEFAULT = 0, // Default is vanilla pricing
-    NSP,
-    MID,
-    BID_OFFER
+    Default = 0, // Default is vanilla pricing
+    NSP
 }
 
 enum NodeCommandType : byte {
