@@ -22,7 +22,7 @@ table MarginDto(fs_serializer) {
     strategy_id: long;
     active_sentiment_index: int;
     base_skew_bps: double;
-    base_wideness_bps: double;
+    wideness_bps: double;
     bid_sentiment_bps: double;
     ask_sentiment_bps: double;
     bid_pos_skew_bps: double;
