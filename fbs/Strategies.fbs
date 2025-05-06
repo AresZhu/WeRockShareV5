@@ -18,6 +18,20 @@ table TheoDto(fs_serializer) {
     ask_theo: double;
 }
 
+table MarginDto(fs_serializer) {
+    strategy_id: long;
+    base_skew_bps: double;
+    base_wideness_bps: double;
+    bid_sentiment_bps: double;
+    ask_sentiment_bps: double;
+    bid_pos_skew_bps: double;
+    ask_pos_skew_bps: double;
+    bid_delta_skew_bps: double;
+    ask_delta_skew_bps: double;
+    bid_margin_bps: double;
+    ask_margin_bps: double;    
+}
+
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
