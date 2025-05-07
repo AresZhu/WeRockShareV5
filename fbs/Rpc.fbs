@@ -351,3 +351,23 @@ table SaveStrategyParametersRequest(fs_serializer) {
     parameters: string(required);
     strategy_name: string(required);
 }
+
+table DeltaOnePositionDto(fs_serializer) {
+    strategy_id: long;
+    security_id: long;
+    
+    strategy_position: double;
+    strategy_position_notional_usd: double;
+    consolidated_position: double;
+    consolidated_position_notional_usd: double;
+    manual_strategy_position: double;
+    manual_strategy_position_notional_usd: double;
+}
+
+table DeltaHedgerPositionDto(fs_serializer) {
+    strategy_id: long;
+    security_id: long;
+    
+    strategy_position: double;
+    strategy_position_notional_usd: double;
+}
