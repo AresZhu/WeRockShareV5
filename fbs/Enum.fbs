@@ -183,7 +183,9 @@ enum StrategyActionType : byte {
     PutOnRisk,
     Terminate,
     ActivateSentiment,
-    UpdateParameters
+    UpdateParameters,
+    PublishDtos,
+    RefreshPositions,
 }
 
 enum TaskStatus : byte {
