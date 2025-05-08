@@ -487,10 +487,6 @@ enum GatewayType: byte {
     OES
 }
 
-enum CorporateActionType : byte {
-
-}
-
 enum FutureProductType : byte {    
     Commodity = 0,
     Crypto,
@@ -505,4 +501,27 @@ enum Region : byte {
     Asia,
     EMEA,
     Americas
+}
+
+enum DividendType : byte {
+    Cash,
+    Rights,
+    SpinOff,
+    Split,
+    Bonus,
+    Omitted,
+}
+
+
+enum PriceType: byte {
+    Default,
+    OfficialClose,
+    SettlementPrice,
+    MarkPrice,
+    SpotTheo,
+    USCashClose,
+    CNCashClose,
+    HKCashClose,
+    JPCashClose,
+    AUCashClose
 }

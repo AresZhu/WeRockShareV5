@@ -189,26 +189,24 @@ table InstrumentList(fs_serializer) {
     items: [Instrument];
 }
 
-table CorporateAction(fs_serializer) {
+table Dividend(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
     
     security_id: long;
-    type: CorporateActionType;
+    type: DividendType;
     announcement_id: long;
-    announcement_notes: string;
     announcement_date: int;
-    currency: string;
-    dividend_ex_date: int;
-    dividend_pay_date: int;
-    dividend_rate: double;
+    currency: Currency;
+    ex_date: int;
+    pay_date: int;
+    rate: double;
     adjustment_factor: double;
-    actual_adjustment_factor: double;
 }
 
-table CorporateActionList(fs_serializer) {
-    items: [CorporateAction];
+table DividendList(fs_serializer) {
+    items: [Dividend];
 }
 
 table Node(fs_serializer) {
@@ -689,53 +687,6 @@ table ResolvedBasketList(fs_serializer) {
     items: [ResolvedBasket];
 }
 
-table HistoricalPrice {
-    pre_close: double;
-    close: double;
-    mid: double;
-    fair_value: double;
-}
-
-table PriceHistory(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-
-    trading_date: int;
-    utc_time: int;
-    security_id: long;
-    listing_id: long;
-    reference_name: string;
-    price: double;
-    source: string;
-}
-
-table PriceHistoryList(fs_serializer) {
-    items: [PriceHistory];
-}
-
-table ReferencePricePoint(fs_serializer) {
-    utc_time: int;
-    reference_name: string;
-    price: double;
-}
-
-table SecurityPriceHistory(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-        
-    trading_date: int;
-    security_id: long;
-    listing_id: long;
-    price_points: [ReferencePricePoint];  
-}
-
-table SecurityPriceHistoryList(fs_serializer) {
-    items: [SecurityPriceHistory];
-}
-
-
 table ScheduleTask(fs_serializer) {
     id: long;
     version: int;
@@ -1188,4 +1139,19 @@ table ExchangeCalendar(fs_serializer) {
     is_open: bool;
     has_settlement: bool;
     schedule_name: string(required);
+}
+
+table HistoricalPrice(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    listing_id: long;
+    type: PriceType;
+    price: double;
+}
+
+table HistoricalPriceList(fs_serializer) {
+    items: [HistoricalPrice];
 }
