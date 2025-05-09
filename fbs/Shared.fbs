@@ -1147,7 +1147,7 @@ table HistoricalPrice(fs_serializer) {
     last_updated: long;
     
     trading_date: int;
-    listing_id: long;
+    security_id: long;
     type: PriceType;
     price: double;
 }
