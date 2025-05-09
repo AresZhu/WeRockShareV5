@@ -505,11 +505,11 @@ enum Region : byte {
 
 enum DividendType : byte {
     Cash,
-    Rights,
+    Stock,
     SpinOff,
     Split,
-    Bonus,
-    Omitted,
+    Rights,
+    CapitalChange,
 }
 
 
