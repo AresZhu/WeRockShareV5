@@ -203,7 +203,7 @@ table Dividend(fs_serializer) {
     currency: Currency;
     amount: double;
     gross_amount: double;
-    description: string;
+    notes: string;
 }
 
 table DividendList(fs_serializer) {
