@@ -196,13 +196,14 @@ table Dividend(fs_serializer) {
     
     security_id: long;
     type: DividendType;
-    announcement_id: long;
-    announcement_date: int;
-    currency: Currency;
+    declaration_date: int;
     ex_date: int;
-    pay_date: int;
-    rate: double;
-    adjustment_factor: double;
+    record_date: int;
+    payable_date: int;
+    currency: Currency;
+    amount: double;
+    gross_amount: double;
+    description: string;
 }
 
 table DividendList(fs_serializer) {
