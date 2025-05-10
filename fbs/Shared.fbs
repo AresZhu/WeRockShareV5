@@ -326,16 +326,17 @@ table MarketPriceList(fs_serializer) {
     items: [MarketPrice];
 }
 
-table FuturesBasis(fs_serializer) {
+table FutureBasis(fs_serializer) {
     id: long;
+    version: int;
     last_updated: long;
     listing_id: long;
     basis: double;
     effective_date: int;
 }
 
-table FuturesBasisList(fs_serializer) {
-    items: [FuturesBasis];
+table FutureBasisList(fs_serializer) {
+    items: [FutureBasis];
 }
 
 table StrategyOrderUpdateMessage(fs_serializer) {
