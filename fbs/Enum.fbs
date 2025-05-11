@@ -529,4 +529,5 @@ enum PriceType: byte {
 enum PnlType: byte {
     Trading = 0,
     Dividend,
+    Adjustment,
 }
