@@ -525,3 +525,8 @@ enum PriceType: byte {
     JPCashClose,
     AUCashClose
 }
+
+enum PnlType: byte {
+    Trading = 0,
+    Dividend,
+}

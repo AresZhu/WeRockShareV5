@@ -496,15 +496,30 @@ table Position(fs_serializer) {
     yst_mark_price: double;
     mark_price: double;
     contract_size: double;
-    div_per_share: double;
-    pnl_daily: double;
-    pnl_mtd: double;
-    pnl_ytd: double;
-    pnl_total: double;
 }
 
 table PositionList(fs_serializer) {
     items: [Position];
+}
+
+table StrategyPnl(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int;
+    strategy_id: long;
+    security_id: long;
+    currency: Currency;
+    type: PnlType;    
+    daily: double;
+    mtd: double;
+    ytd: double;
+    total: double;
+}
+
+table StrategyPnlList(fs_serializer) {
+    items: [StrategyPnl];
 }
 
 table LivePosition(fs_serializer) {
