@@ -469,35 +469,6 @@ table TradeList(fs_serializer) {
     items: [Trade];
 }
 
-table TradeDetail(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    trading_date: int;
-    settlement_date: int;
-    type: TradeType;
-        
-    security_id: long;
-    listing_id: long;
-    order_id: long;
-    strategy_id: long;
-    client_order_id: int64;
-    exec_id: string; 
-    
-    position_effect: PositionEffect;
-    
-    side: Side;
-    price: double;
-    quantity: double;
-    
-    primary_identifier: string;
-    exchange_symbol: string;
-    exchange_mic: string;
-    strategy_name: string;
-    strategy_full_name: string;
-}
-
 table Position(fs_serializer) {
     id: long;
     version: int;
