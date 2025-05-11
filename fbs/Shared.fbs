@@ -1110,12 +1110,6 @@ table PlatformEvent(fs_serializer) {
     data: [ubyte];
 }
 
-table StrategyOrderDetail(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;   
-}
-
 table Exchange(fs_serializer) {
     id: long;
     version: int;
