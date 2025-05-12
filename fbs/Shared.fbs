@@ -422,6 +422,7 @@ table Trade(fs_serializer) {
     side: Side;
     price: double;
     quantity: double;
+    notes: string;
 }
 
 table TradeList(fs_serializer) {
@@ -448,13 +449,10 @@ table Position(fs_serializer) {
     day_buy_avg: double;
     day_sell: double;
     day_sell_avg: double;
-    yst_inventory: double;
-    inventory: double;
     yst_booking: double;
     booking: double;
     yst_mark_price: double;
     mark_price: double;
-    contract_size: double;
 }
 
 table PositionList(fs_serializer) {
@@ -480,33 +478,6 @@ table DailyPnl(fs_serializer) {
 
 table DailyPnlList(fs_serializer) {
     items: [DailyPnl];
-}
-
-table LivePosition(fs_serializer) {
-    id: long;
-        
-    security_id: long;
-    strategy_id: long;
-    
-    yst_long_open: double;
-    yst_short_open: double;
-    yst_long_close: double;
-    yst_short_close: double;
-    intraday_long_open: double;
-    intraday_long_close: double;
-    intraday_short_open: double;
-    intraday_short_close: double;
-    
-    consolidated: double;
-    inventory: double;
-    contract_size: double;
-    div_per_share: double;
-    
-    booking: double;
-}
-
-table LivePositionList(fs_serializer) {
-    items: [LivePosition];
 }
 
 table OpenOrderSummary(fs_serializer) {
