@@ -371,3 +371,5 @@ table DeltaHedgerPositionDto(fs_serializer) {
     strategy_position: double;
     strategy_position_notional_usd: double;
 }
+
+

@@ -531,3 +531,10 @@ enum PnlType: byte {
     Dividend,
     Adjustment,
 }
+
+enum ClientRequestType: byte {
+    Ping,
+    NodeLogin,
+    LoadSnapshot,
+    CreateTrades,    
+}
