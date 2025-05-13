@@ -536,5 +536,8 @@ enum ClientRequestType: byte {
     Ping,
     NodeLogin,
     LoadSnapshot,
-    CreateTrades,    
+    CreateTrades,
+    CreateStrategy,
+    SaveStrategyParameters,
+    RunScheduleTask,
 }
