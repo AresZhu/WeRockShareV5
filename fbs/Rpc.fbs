@@ -70,6 +70,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     SUCCESS = 0,
+    DatabaseError = 1,
     ACCOUNT_DISABLED,
     START_SNAPSHOT,
     LOADING_SNAPSHOT,
