@@ -69,8 +69,10 @@ enum CmdType: byte {
 }
 
 enum ErrorCode: short {
-    SUCCESS = 0,
-    DatabaseError = 1,
+    Success = 0,
+    NoResponder,
+    DatabaseError,
+    
     ACCOUNT_DISABLED,
     START_SNAPSHOT,
     LOADING_SNAPSHOT,
@@ -315,6 +317,7 @@ table MarketDataSubscriptionRequest(fs_serializer) {
 
 table LoadSnapshotRequest(fs_serializer) {
     table_name: string(required);
+    filter: string;
     reply_subject: string;
 }
 
@@ -372,5 +375,3 @@ table DeltaHedgerPositionDto(fs_serializer) {
     strategy_position: double;
     strategy_position_notional_usd: double;
 }
-
-
