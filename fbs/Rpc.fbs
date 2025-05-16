@@ -72,6 +72,8 @@ enum ErrorCode: short {
     Success = 0,
     NoResponder,
     DatabaseError,
+    SnapshotLoading,
+    SnapshotLoaded,
     
     ACCOUNT_DISABLED,
     START_SNAPSHOT,
