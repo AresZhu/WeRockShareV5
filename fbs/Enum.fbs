@@ -216,7 +216,7 @@ enum EntityEventType: byte {
     Added,
     Updated,
     Removed,
-    Purged
+    Refreshed,
 }
 
 enum PriceInputMode: byte {
