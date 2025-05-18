@@ -534,6 +534,9 @@ enum PnlType: byte {
 
 enum ClientRequestType: byte {
     Ping,
+    UserLogin,
+    ChangeUserPassword,
+    SetUserPassword,
     NodeLogin,
     LoadSnapshot,
     CreateTrades,

@@ -260,7 +260,7 @@ table User(fs_serializer) {
     last_updated: long;
     
     account: string;
-    password: string;
+    password_hashed: string;
     fullname: string;
     enabled: bool;
     role: Role;

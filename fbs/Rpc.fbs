@@ -70,27 +70,17 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     Success = 0,
+    UnknownError,
+    InvalidRequest,
+    RequestTimeout,
     MsgBusServerNotAvailable,
     NoResponder,
     DatabaseError,
     SnapshotLoading,
     SnapshotLoaded,
-    
-    ACCOUNT_DISABLED,
-    START_SNAPSHOT,
-    LOADING_SNAPSHOT,
-    REQUEST_TIMEOUT,
-    SNAPSHOT_LOADED,
-    INVALID_REQUEST,
-    INVALID_USER,
-    NOT_FOUND,
-    DUPLICATE_SECURITY,
-    FAILED_TO_ROUTE_ORDER,
-    GATEWAY_NOT_CONNECTED,
-    NODE_IS_OFFLINE,
-    DUPLICATE_STRATEGY_NAME,
-    DUPLICATE_STRATEGY_SCHEDULE_NAME,
-    UNKNOWN_ERROR,
+    AuthenticationFailed,
+    AccountDisabled,    
+    StrategyNameDuplicated,
 }
 
 enum EntityType : byte {
@@ -316,6 +306,23 @@ table RequestResponse(fs_serializer) {
 table MarketDataSubscriptionRequest(fs_serializer) {
     listing_id: int;
     subscription_types: int;
+}
+
+table UserLoginRequest(fs_serializer) {
+    account: string;
+    password_hashed: string;
+    client_version: string;
+}
+
+table ChangeUserPasswordRequest(fs_serializer) {
+    user_id: int;
+    old_password_hashed: string;
+    new_password_hashed: string;
+}
+
+table SetUserPasswordRequest(fs_serializer) {
+    user_id: int;
+    new_password_hashed: string;
 }
 
 table LoadSnapshotRequest(fs_serializer) {
