@@ -543,4 +543,5 @@ enum ClientRequestType: byte {
     CreateStrategy,
     SaveStrategyParameters,
     RunScheduleTask,
+    SubscribeMarketData,
 }
