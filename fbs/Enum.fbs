@@ -544,4 +544,8 @@ enum ClientRequestType: byte {
     SaveStrategyParameters,
     RunScheduleTask,
     SubscribeMarketData,
+    UpdateExchange,
+    DeleteExchange,
+    UpdateTickSizeTables,
+    
 }

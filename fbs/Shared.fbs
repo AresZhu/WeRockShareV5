@@ -1053,6 +1053,10 @@ table Exchange(fs_serializer) {
     time_zone: string(required);
 }
 
+table ExchangeList(fs_serializer) {
+    items: [Exchange];
+}
+
 table TradingSession(fs_serializer) {
     day_of_week: int32;
     start: int32;

@@ -75,12 +75,14 @@ enum ErrorCode: short {
     RequestTimeout,
     MsgBusServerNotAvailable,
     NoResponder,
+    RecordNotFound,
     DatabaseError,
     SnapshotLoading,
     SnapshotLoaded,
     AuthenticationFailed,
     AccountDisabled,    
     StrategyNameDuplicated,
+    ExchangeMicAlreadyExists
 }
 
 enum SubType : byte {
@@ -323,4 +325,9 @@ table DeltaHedgerPositionDto(fs_serializer) {
     
     strategy_position: double;
     strategy_position_notional_usd: double;
+}
+
+table UpdateTickSizeTablesRequest(fs_serializer) {
+    exchange_mic: string(required);
+    tables: [TickSizeTable];
 }
