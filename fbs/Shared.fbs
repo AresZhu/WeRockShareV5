@@ -153,6 +153,8 @@ table ExchangeSession(fs_serializer) {
 
 table Instrument(fs_serializer) {
     id: long;
+    version: int;
+    last_updated: long;
     
     security_id: long;
     security_type: SecurityType;

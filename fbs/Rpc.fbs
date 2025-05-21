@@ -331,3 +331,9 @@ table UpdateTickSizeTablesRequest(fs_serializer) {
     exchange_mic: string(required);
     tables: [TickSizeTable];
 }
+
+table UpdateSecurityRequest(fs_serializer) {
+    security: Security;
+    future_security: FutureSecurity;
+    security_listings: [SecurityListing];
+}

@@ -547,5 +547,6 @@ enum ClientRequestType: byte {
     UpdateExchange,
     DeleteExchange,
     UpdateTickSizeTables,
+    UpdateSecurity,
     
 }
