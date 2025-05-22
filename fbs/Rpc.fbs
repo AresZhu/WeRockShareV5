@@ -337,3 +337,14 @@ table UpdateSecurityRequest(fs_serializer) {
     future_security: FutureSecurity;
     security_listings: [SecurityListing];
 }
+
+table HistoricalPriceEntry(fs_serializer) {
+    type: PriceType;
+    price: double;
+}
+
+table UpdateHistoricalPricesRequest(fs_serializer) {
+    security_id: long;
+    trading_date: int;
+    prices: [HistoricalPriceEntry];
+}

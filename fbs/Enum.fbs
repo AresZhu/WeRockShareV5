@@ -551,5 +551,5 @@ enum ClientRequestType: byte {
     DeleteSecurity,
     UpdateSecurityListing,
     DeleteSecurityListing,
-    
+    UpdateHistoricalPrices,    
 }
