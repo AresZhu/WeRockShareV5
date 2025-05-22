@@ -554,4 +554,6 @@ enum ClientRequestType: byte {
     UpdateHistoricalPrices,
     UpdateDividend,
     DeleteDividend,
+    RepopulateInstruments,
+    RepopulateAllInstruments,
 }
