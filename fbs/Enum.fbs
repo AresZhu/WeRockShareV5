@@ -556,4 +556,8 @@ enum ClientRequestType: byte {
     DeleteDividend,
     RepopulateInstruments,
     RepopulateAllInstruments,
+    UpdateExecutionGateway,
+    DeleteExecutionGateway,
+    UpdateOrderRouter,
+    DeleteOrderRouter,
 }

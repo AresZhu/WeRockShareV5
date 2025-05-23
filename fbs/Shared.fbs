@@ -27,7 +27,7 @@ table ExecutionGateway(fs_serializer) {
     name: string(required);
     settings: string(required);
     default_risk_settings: string(required);
-    is_deleted: bool;
+    deleted: bool;
 }
 
 table ExecutionGatewayList(fs_serializer) {
