@@ -348,3 +348,8 @@ table UpdateHistoricalPricesRequest(fs_serializer) {
     trading_date: int;
     prices: [HistoricalPriceEntry];
 }
+
+table UpdateBasketReqauest(fs_serializer) {
+    basket: Basket(required);
+    history: BasketHistory(required);
+}

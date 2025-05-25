@@ -560,4 +560,5 @@ enum ClientRequestType: byte {
     DeleteExecutionGateway,
     UpdateOrderRouter,
     DeleteOrderRouter,
+    UpdateBasket,
 }
