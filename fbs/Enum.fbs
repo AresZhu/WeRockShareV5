@@ -564,4 +564,6 @@ enum ClientRequestType: byte {
     UpdateFutureBasis,
     UpdateBetaModel,
     DeleteBetaModel,
+    UpdateFutureProduct,
+    DeleteFutureProduct,
 }
