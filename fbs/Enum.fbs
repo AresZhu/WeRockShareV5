@@ -561,4 +561,7 @@ enum ClientRequestType: byte {
     UpdateOrderRouter,
     DeleteOrderRouter,
     UpdateBasket,
+    UpdateFutureBasis,
+    UpdateBetaModel,
+    DeleteBetaModel,
 }

@@ -353,3 +353,8 @@ table UpdateBasketReqauest(fs_serializer) {
     basket: Basket(required);
     history: BasketHistory(required);
 }
+
+table UpdateBetaModelRequest(fs_serializer) {
+    beta_model: BetaModel(required);
+    entries: [BetaModelEntry];
+}

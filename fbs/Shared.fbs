@@ -334,7 +334,7 @@ table FutureBasis(fs_serializer) {
     last_updated: long;
     listing_id: long;
     basis: double;
-    effective_date: int;
+    trading_date: int;
 }
 
 table FutureBasisList(fs_serializer) {
@@ -876,6 +876,7 @@ table BetaModelEntry(fs_serializer) {
     beta_model_id: long;
     future_product_id: long;
     beta: double;
+    deleted: bool;
 }
 
 table BetaModelEntryList(fs_serializer) {
