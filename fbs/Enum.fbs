@@ -571,4 +571,5 @@ enum ClientRequestType: byte {
     DeleteFutureProduct,
     GetGatewayByName,
     GetOrderRouterForInstrument,
+    LoadLiveOrdersForGateway,
 }
