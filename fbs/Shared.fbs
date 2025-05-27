@@ -335,6 +335,7 @@ table FutureBasis(fs_serializer) {
     listing_id: long;
     basis: double;
     trading_date: int;
+    deleted: bool;
 }
 
 table FutureBasisList(fs_serializer) {
