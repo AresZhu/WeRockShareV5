@@ -569,4 +569,6 @@ enum ClientRequestType: byte {
     DeleteBetaModel,
     UpdateFutureProduct,
     DeleteFutureProduct,
+    GetGatewayByName,
+    GetOrderRouterForInstrument,
 }

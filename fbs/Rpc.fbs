@@ -82,7 +82,8 @@ enum ErrorCode: short {
     AuthenticationFailed,
     AccountDisabled,    
     StrategyNameDuplicated,
-    ExchangeMicAlreadyExists
+    ExchangeMicAlreadyExists,
+    FailedToRouterOrder,
 }
 
 enum SubType : byte {
