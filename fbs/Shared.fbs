@@ -563,6 +563,7 @@ table Basket(fs_serializer) {
     type: BasketType;
     tag: string;
     display_name: string(required);
+    deleted: bool;
 }
 
 table BasketList(fs_serializer) {
@@ -650,6 +651,7 @@ table ScheduleTask(fs_serializer) {
     last_run_time: long;
     last_run_status: TaskStatus;
     last_run_message: string;
+    deleted: bool;
 }
 
 table ScheduleTaskList(fs_serializer) {
