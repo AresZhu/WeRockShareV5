@@ -542,7 +542,6 @@ enum ClientRequestType: byte {
     CreateTrades,
     CreateStrategy,
     SaveStrategyParameters,
-    RunScheduleTask,
     SubscribeMarketData,
     UpdateExchange,
     DeleteExchange,
@@ -572,4 +571,9 @@ enum ClientRequestType: byte {
     GetGatewayByName,
     GetOrderRouterForInstrument,
     LoadLiveOrdersForGateway,
+    UpdateScheduleTask,
+    DeleteScheduleTask,
+    EnableScheduleTask,
+    DisableScheduleTask,
+    RunScheduleTask,
 }
