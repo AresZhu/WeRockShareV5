@@ -11,11 +11,19 @@ table StrategyStateDto(fs_serializer) {
     state: StrategyState;
 }
 
+table StrategyStateDtoList(fs_serializer) {
+    states: [StrategyStateDto];
+}
+
 table TheoDto(fs_serializer) {
     strategy_id: long;
     listing_id: long;
     bid_theo: double;
     ask_theo: double;
+}
+
+table TheoDtoList(fs_serializer) {
+    theos: [TheoDto];
 }
 
 table MarginDto(fs_serializer) {
@@ -33,6 +41,10 @@ table MarginDto(fs_serializer) {
     ask_margin_bps: double;    
 }
 
+table MarginDtoList(fs_serializer) {
+    margins: [MarginDto];
+}
+
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
@@ -43,4 +55,8 @@ table StrategyExposureDto(fs_serializer) {
         
     notional_usd: double;
     exposures: [Exposure];
+}
+
+table StrategyExposureDtoList(fs_serializer) {
+    strategy_exposures: [StrategyExposureDto];
 }

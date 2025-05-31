@@ -544,10 +544,13 @@ table StartupStrategy(fs_serializer) {
     type: StrategyType;
     name: string(required);
     full_name: string(required);
+    owner: string(required);
+    group: string(required);
+    notes: string;
     terminated: bool;
     parameters: string(required);
-    node_id: short;
-    group_id: short;
+    exec_node_id: short;
+    exec_group_id: short;
 }
 
 table StartupStrategyList(fs_serializer) {
