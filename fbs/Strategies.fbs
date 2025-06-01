@@ -6,8 +6,8 @@ attribute "fs_serializer";
 
 
 table StrategyStateDto(fs_serializer) {
-    id: long;
-    type: StrategyType;
+    strategy_id: long;
+    strategy_type: StrategyType;
     state: StrategyState;
 }
 
@@ -17,6 +17,7 @@ table StrategyStateDtoList(fs_serializer) {
 
 table TheoDto(fs_serializer) {
     strategy_id: long;
+    strategy_type: StrategyType;
     listing_id: long;
     bid_theo: double;
     ask_theo: double;
@@ -28,6 +29,7 @@ table TheoDtoList(fs_serializer) {
 
 table MarginDto(fs_serializer) {
     strategy_id: long;
+    strategy_type: StrategyType;
     active_sentiment_index: int;
     base_skew_bps: double;
     wideness_bps: double;
@@ -51,7 +53,8 @@ table Exposure(fs_serializer) {
 }
 
 table StrategyExposureDto(fs_serializer) {
-    id: long;
+    strategy_id: long;
+    strategy_type: StrategyType;
         
     notional_usd: double;
     exposures: [Exposure];
