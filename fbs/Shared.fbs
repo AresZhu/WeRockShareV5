@@ -706,7 +706,7 @@ table OrderRouter(fs_serializer) {
     
     index: uint;
     name: string(required);
-    execution_gateway_id: long;
+    gateway_id: long;
     
     precedent: int;
     primary_identifier_regex: string(required);
