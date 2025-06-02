@@ -703,8 +703,7 @@ table OrderRouter(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    
-    index: uint;
+
     name: string(required);
     gateway_id: long;
     
