@@ -576,4 +576,6 @@ enum ClientRequestType: byte {
     EnableScheduleTask,
     DisableScheduleTask,
     RunScheduleTask,
+    UpdateStrategySchedule,
+    DeleteStrategySchedule,
 }
