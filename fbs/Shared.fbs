@@ -214,6 +214,7 @@ table DividendList(fs_serializer) {
 
 table Node(fs_serializer) {
     id: long;
+    version: int;
     last_updated: long;
     
     name: string(required);

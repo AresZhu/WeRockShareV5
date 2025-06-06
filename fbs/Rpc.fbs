@@ -70,6 +70,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     Success = 0,
+    UpdateFailed,
     UnknownError,
     InvalidRequest,
     RequestTimeout,
@@ -251,20 +252,15 @@ table MarketDataSubscriptionRequest(fs_serializer) {
 }
 
 table UserLoginRequest(fs_serializer) {
-    account: string;
-    password_hashed: string;
-    client_version: string;
-}
-
-table ChangeUserPasswordRequest(fs_serializer) {
-    user_id: int;
-    old_password_hashed: string;
-    new_password_hashed: string;
+    account: string(required);
+    password_hashed: string(required);
+    client_version: string(required);
 }
 
 table SetUserPasswordRequest(fs_serializer) {
     user_id: int;
-    new_password_hashed: string;
+        account: string(required);
+        password_hashed: string(required);
 }
 
 table LoadSnapshotRequest(fs_serializer) {

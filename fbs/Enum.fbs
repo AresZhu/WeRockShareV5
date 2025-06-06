@@ -535,7 +535,6 @@ enum PnlType: byte {
 enum ClientRequestType: byte {
     Ping,
     UserLogin,
-    ChangeUserPassword,
     SetUserPassword,
     NodeLogin,
     LoadSnapshot,
@@ -570,7 +569,6 @@ enum ClientRequestType: byte {
     DeleteFutureProduct,
     GetGatewayByName,
     GetOrderRouterForInstrument,
-    LoadLiveOrdersForGateway,
     UpdateScheduleTask,
     DeleteScheduleTask,
     EnableScheduleTask,
@@ -578,4 +576,11 @@ enum ClientRequestType: byte {
     RunScheduleTask,
     UpdateStrategySchedule,
     DeleteStrategySchedule,
+    UpdateUser,
+    DeleteUser,
+    UpdateNode,
+    DeleteNode,
+    UpdateSetting,
+    DeleteSetting,
+    
 }
