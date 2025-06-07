@@ -630,7 +630,7 @@ table ResolvedBasket(fs_serializer) {
     
     security_id: long;
     basket_name: string(required);
-    validation_result: BasketValidationResult;
+    resolved_result: BasketResolvedResult;
     
     valuation_date: int;
     trading_date: int;
@@ -800,23 +800,23 @@ table PricingCheckStatisticList(fs_serializer) {
     items: [PricingCheckStatistic];
 }
 
-table BasketValidation(fs_serializer) {
+table BasketResolution(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
     
-    result: BasketValidationResult;
+    result: BasketResolvedResult;
     message: string;
     effective_date: int;
     nav_date: int;
     official_nav: double;
  }
  
- table BasketValidationList(fs_serializer) {
-    items: [BasketValidation];
+ table BasketResolutionList(fs_serializer) {
+    items: [BasketResolution];
  }
  
- table BasketValidationRule(fs_serializer) {
+ table BasketResolutionRule(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
@@ -826,8 +826,8 @@ table BasketValidation(fs_serializer) {
     parameters: string(required);
  }
  
- table BasketValidationRuleList(fs_serializer) {
-    items: [BasketValidationRule];
+ table BasketResolutionRuleList(fs_serializer) {
+    items: [BasketResolutionRule];
  }
  
  table NavHistory(fs_serializer) {

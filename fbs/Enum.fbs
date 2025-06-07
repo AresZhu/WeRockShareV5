@@ -347,10 +347,13 @@ enum PositionSource: byte {
     ConsolidatedExcludeManual = 2
 }
 
-enum BasketValidationResult: byte {
-    Success = 0,
-    Invalid = 1,
-    Accepted = 2
+enum BasketResolvedResult: byte {
+    ResolutionError = 0,
+    EmptyBasket,
+    FullyResolvedAndValidated,
+    PartiallyResolved,
+    FullyResolved,
+    ValidationFailed,
 }
 
 enum IntradayHedgingMethod: byte {
