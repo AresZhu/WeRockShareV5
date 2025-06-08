@@ -29,6 +29,7 @@ table TheoDtoList(fs_serializer) {
 
 table StrategyPricingDto(fs_serializer) {
     strategy_id: long;
+    strategy_type: StrategyType;
     listing_id: long;
     bid_theo: double;
     ask_theo: double;
