@@ -27,6 +27,22 @@ table TheoDtoList(fs_serializer) {
     theos: [TheoDto];
 }
 
+table StrategyPricingDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    listing_id: long;
+    bid_theo: double;
+    ask_theo: double;
+    bid_margin_bps: double;
+    ask_margin_bps: double;
+    target_bid: double;
+    target_ask: double;
+}
+
+table StrategyPricingDtoList(fs_serializer) {
+    strategy_pricings: [StrategyPricingDto];
+}
+
 table MarginDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
