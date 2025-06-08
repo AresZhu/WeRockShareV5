@@ -549,6 +549,7 @@ table StartupStrategy(fs_serializer) {
     group: string(required);
     notes: string;
     terminated: bool;
+    schedule: string(required);
     parameters: string(required);
     exec_node_id: short;
     exec_group_id: short;
