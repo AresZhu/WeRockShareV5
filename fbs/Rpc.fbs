@@ -298,10 +298,11 @@ table UpdateStrategyParametersRequest(fs_serializer) {
     strategy_name: string(required);
 }
 
-table SaveStrategyParametersRequest(fs_serializer) {
+table SaveStrategyRequest(fs_serializer) {
     strategy_id: long;
+    schedule: string(required);
     parameters: string(required);
-    strategy_name: string(required);
+    name: string(required);
 }
 
 table DeltaOnePositionDto(fs_serializer) {
