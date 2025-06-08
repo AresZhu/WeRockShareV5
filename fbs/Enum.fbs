@@ -543,7 +543,7 @@ enum ClientRequestType: byte {
     LoadSnapshot,
     CreateTrades,
     CreateStrategy,
-    SaveStrategyParameters,
+    SaveStrategy,
     SubscribeMarketData,
     UpdateExchange,
     DeleteExchange,
@@ -585,5 +585,4 @@ enum ClientRequestType: byte {
     DeleteNode,
     UpdateSetting,
     DeleteSetting,
-    
 }
