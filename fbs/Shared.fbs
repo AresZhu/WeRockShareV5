@@ -635,6 +635,7 @@ table ResolvedBasket(fs_serializer) {
     
     valuation_date: int;
     trading_date: int;
+    nav: double;
     
     cashes: [CashLine];
     entries: [EntryLine];
