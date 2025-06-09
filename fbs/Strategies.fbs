@@ -20,6 +20,7 @@ table StrategyPricingDto(fs_serializer) {
     strategy_type: StrategyType;
     listing_id: long;
     basket_nav_date: int;
+    basket_nav: double;
     bid_theo: double;
     ask_theo: double;
     bid_margin_bps: double;
