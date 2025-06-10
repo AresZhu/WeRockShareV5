@@ -777,6 +777,7 @@ table PricingCheckResult(fs_serializer) {
     
     trading_date: int;
     rule_id: long;
+    type: PricingCheckType;
     strategy_id: long;
     breaching_type: BreachingType;
     message: string;
