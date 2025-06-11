@@ -52,14 +52,14 @@
         <field id="2" type="int32" name="last" />
         <field id="3" type="int32" name="iap" />
         <field id="4" type="uint32" name="iav" />
-        <field id="5" type="uint32" name="priceScale" />
-        <field id="6" type="uint32" name="quantityScale" />
+        <field id="5" type="int64" name="priceScale" />
+        <field id="6" type="uint64" name="quantityScale" />
         <field id="7" type="uint8" name="status" />
         <group id="8" name="levels" dimensionType="groupSizeEncoding">
-            <field name="bidVol" id="9" type="uint32" />
-            <field name="bid" id="10" type="int32" />
-            <field name="ask" id="11" type="int32" />
-            <field name="askVol" id="12" type="uint32" />
+            <field name="bidSize" id="9" type="uint64" />
+            <field name="bid" id="10" type="int64" />
+            <field name="ask" id="11" type="int64" />
+            <field name="askSize" id="12" type="uint64" />
         </group>
     </sbe:message>
 
@@ -91,7 +91,7 @@
     <sbe:message name="HedgingRequestSbe" id="12">
         <field id="1" type="uint64" name="hedgingId" />
         <field id="2" type="uint32" name="strategyId" />
-        <field id="3" type="uint8" name="hedgingStrategyId" />
+        <field id="3" type="uint32" name="hedgingStrategyId" />
         <field id="4" type="uint32" name="listingId" />
         <field id="5" type="double" name="notional_usd" />
     </sbe:message>
@@ -108,9 +108,9 @@
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
-        <field id="1" type="uint16" name="routerIndex" />
+        <field id="1" type="int16" name="routerIndex" />
         <field id="2" type="int64" name="clientOrderId" />
-        <field id="3" type="uint32" name="gatewayInstrumentIndex"/>
+        <field id="3" type="int32" name="gatewayInstrumentIndex"/>
         <field id="4" type="uint32" name="instrumentId" />
         <field id="5" type="uint32" name="strategyId" />
         <field id="6" type="uint8" name="side" />
@@ -124,13 +124,13 @@
         <field id="14" type="int64" name="correlationId" />
     </sbe:message>
     <sbe:message name="CancelOrderSbe" id="15">
-        <field id="1" type="uint16" name="routerIndex" />
+        <field id="1" type="int16" name="routerIndex" />
         <field id="3" type="int64" name="clientOrderId" />
     </sbe:message>
     <sbe:message name="AmendOrderSbe" id="22">
-        <field id="1" type="uint16" name="routerIndex" />
-        <field id="2" type="int64" name="origClientOrderId" />
-        <field id="3" type="int64" name="clientOrderId" />
+        <field id="1" type="int16" name="routerIndex" />
+        <field id="2" type="int64" name="clientOrderId" />
+        <field id="3" type="int64" name="origClientOrderId" />
         <field id="4" type="double" name="price" />
         <field id="5" type="double" name="quantity" />
         <field id="6" type="int64" name="correlationId" />
@@ -143,7 +143,7 @@
     <sbe:message name="OrderMessageSbe" id="19">
         <field id="1" type="uint8" name="type" />
         <field id="2" type="uint8" name="rejectLevel" />
-        <field id="3" type="uint16" name="strategyId" />
+        <field id="3" type="uint32" name="strategyId" />
         <field id="4" type="int64" name="origClientOrderId" />
         <field id="5" type="int64" name="clientOrderId" />
         <field id="6" type="uint32" name="securityId" />
@@ -157,9 +157,10 @@
         <field id="13" type="uint64" name="timestamp" />
 
         <field id="14" type="uint16" name="gatewayId" />
-        <field id="15" type="uint16" name="routerIndex" />
-        <field id="16" type="uint8" name="tacticType" />
-        <field id="17" type="uint8" name="tacticCode" />
+        <field id="15" type="uint16" name="routerId" />
+        <field id="16" type="uint16" name="routerIndex" />
+        <field id="17" type="uint8" name="tacticType" />
+        <field id="18" type="uint8" name="tacticCode" />
 
         <field id="19" type="uint8" name="orderType" />
         <field id="20" type="uint8" name="positionEffect" />
@@ -207,7 +208,7 @@
     
     <sbe:message name="AlertEventSbe" id="90">
         <field id="1" type="uint8" name="nodeId" />
-        <field id="2" type="int32" name="strategyId" />
+        <field id="2" type="uint32" name="strategyId" />
         <field id="3" type="uint8" name="classification" />
         <field id="4" type="uint8" name="severity" />
         <field id="5" type="string16" name="hostname" />

@@ -305,10 +305,10 @@ table MarketStatisticList(fs_serializer) {
 }
 
 table PriceLevel(fs_serializer) {
-    bid_vol: uint64;
+    bid_size: ulong;
     bid: int64;
     ask: int64;
-    ask_vol: uint64;
+    ask_size: ulong;
 }
 
 table MarketPrice(fs_serializer) {
@@ -397,8 +397,9 @@ table StrategyOrder(fs_serializer) {
     client_order_id: int64;
     external_id: string;
     
-    gateway_id: uint32;
-    router_index: uint32;
+    gateway_id: long;
+    router_index: int;
+    router_id: long;
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -1016,11 +1017,11 @@ table MarketPriceDto(fs_serializer) {
     id: long;
     last_updated: long;
     
-    last: int32;
-    iap: int32;
-    iav: uint32;
-    price_scale: uint32;
-    quantity_scale: uint32;
+    last: long;
+    iap: long;
+    iav: ulong;
+    price_scale: long;
+    quantity_scale: ulong;
     status: TradingStatus;
     levels: [PriceLevel];
 }
