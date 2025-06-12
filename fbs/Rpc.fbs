@@ -70,6 +70,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     Success = 0,
+    NoReplyRequired,
     UpdateFailed,
     UnknownError,
     InvalidRequest,
