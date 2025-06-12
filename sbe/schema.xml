@@ -137,7 +137,8 @@
     </sbe:message>
     <sbe:message name="TerminateOrderSbe" id="17">
         <field id="1" type="uint16" name="gatewayId" />
-        <field id="2" type="int64" name="clientOrderId" />
+        <field id="2" type="uint32" name="strategyId" />
+        <field id="3" type="int64" name="clientOrderId" />
     </sbe:message>
     <sbe:message name="CheckConnectionStateSbe" id="18" />
     <sbe:message name="OrderMessageSbe" id="19">
