@@ -182,8 +182,8 @@ table Instrument(fs_serializer) {
     reference_price: long;
     price_limit_up: long;
     price_limit_down: long;
-    price_scalar: int64;
-    quantity_scalar: uint64;
+    price_scale: int64;
+    quantity_scale: uint64;
     tradable: bool;
 }
 
@@ -317,8 +317,8 @@ table MarketPrice(fs_serializer) {
     
     trading_status: TradingStatus;
     connection_state: ConnectionState;
-    price_scalar: int64;
-    quantity_scalar: uint64;
+    price_scale: int64;
+    quantity_scale: uint64;
     levels: [PriceLevel];
     last_price: int64;
     iap: int64;
