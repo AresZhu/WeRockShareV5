@@ -1116,3 +1116,8 @@ table HistoricalPrice(fs_serializer) {
 table HistoricalPriceList(fs_serializer) {
     items: [HistoricalPrice];
 }
+
+table GatewayState(fs_serializer) {
+    id: uint;
+    state: ConnectionState;
+}

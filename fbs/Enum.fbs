@@ -541,6 +541,7 @@ enum ClientRequestType: byte {
     SetUserPassword,
     NodeLogin,
     LoadSnapshot,
+    GetInstrument,
     CreateTrades,
     CreateStrategy,
     SaveStrategy,
