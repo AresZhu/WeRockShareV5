@@ -74,7 +74,7 @@ table StrategyExposureDtoList(fs_serializer) {
     strategy_exposures: [StrategyExposureDto];
 }
 
-table StrategyInstrumentDto(fs_serializer) {
+table InstrumentDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
     security_id: long;
@@ -84,5 +84,7 @@ table StrategyInstrumentDto(fs_serializer) {
     quantity_scale: uint64;
     price_limit_up: double;
     price_limit_down: double;
+    order_router_name: string;
+    lot_size: double;
     tick_size_table: [SizeRule];
 }
