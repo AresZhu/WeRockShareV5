@@ -1,4 +1,5 @@
 include "Enum.fbs";
+include "Shared.fbs";
 
 namespace WeRock.Share;
 
@@ -15,26 +16,29 @@ table StrategyStateDtoList(fs_serializer) {
     states: [StrategyStateDto];
 }
 
-table StrategyPricingDto(fs_serializer) {
+table NavDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    pricing_method: BasketPricingMethod;
+    basket_name: string;
+    nav_date: int;
+    nav: double;
+}
+
+table TheoDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
     listing_id: long;
-    basket_nav_date: int;
-    basket_nav: double;
     bid_theo: double;
     ask_theo: double;
-    bid_margin_bps: double;
-    ask_margin_bps: double;
-    target_bid_price: double;
-    target_ask_price: double;
-    our_bid_price: double;
-    our_ask_price: double;
-    our_bid_quantity: double;
-    our_ask_quantity: double;
 }
 
-table StrategyPricingDtoList(fs_serializer) {
-    strategy_pricings: [StrategyPricingDto];
+table StrategyPricingDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    target_bid_price: double;
+    target_ask_price: double;
+    to_usd_rate: double;
 }
 
 table MarginDto(fs_serializer) {
@@ -53,10 +57,6 @@ table MarginDto(fs_serializer) {
     ask_margin_bps: double;    
 }
 
-table MarginDtoList(fs_serializer) {
-    margins: [MarginDto];
-}
-
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
@@ -72,4 +72,17 @@ table StrategyExposureDto(fs_serializer) {
 
 table StrategyExposureDtoList(fs_serializer) {
     strategy_exposures: [StrategyExposureDto];
+}
+
+table StrategyInstrumentDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    security_id: long;
+    instrument_id: long;
+    currency: Currency;
+    price_scale: int64;
+    quantity_scale: uint64;
+    price_limit_up: double;
+    price_limit_down: double;
+    tick_size_table: [SizeRule];
 }
