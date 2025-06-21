@@ -12,10 +12,6 @@ table StrategyStateDto(fs_serializer) {
     state: StrategyState;
 }
 
-table StrategyStateDtoList(fs_serializer) {
-    states: [StrategyStateDto];
-}
-
 table NavDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
@@ -23,6 +19,8 @@ table NavDto(fs_serializer) {
     basket_name: string;
     nav_date: int;
     nav: double;
+    gearing: double;
+    to_usd_rate: double;
 }
 
 table TheoDto(fs_serializer) {
@@ -33,20 +31,12 @@ table TheoDto(fs_serializer) {
     ask_theo: double;
 }
 
-table StrategyPricingDto(fs_serializer) {
-    strategy_id: long;
-    strategy_type: StrategyType;
-    target_bid_price: double;
-    target_ask_price: double;
-    to_usd_rate: double;
-}
-
 table MarginDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
     active_sentiment_index: int;
     base_skew_bps: double;
-    wideness_bps: double;
+    base_spread_bps: double;
     bid_sentiment_bps: double;
     ask_sentiment_bps: double;
     bid_pos_skew_bps: double;
