@@ -57,6 +57,30 @@ table MarginDto(fs_serializer) {
     ask_margin_bps: double;    
 }
 
+table TacticBasePriceDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    listing_id: long;
+    base_bid_price: double;
+    base_ask_price: double;
+}
+
+table TacticPricingDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    tactic_type: TacticType;
+    tactic_code: uint16;
+    widness_bps: double;
+    target_bid_price: double;
+    borderline_bid_price: double;
+    target_ask_price: double;
+    borderline_ask_price: double;
+    desired_bid_price: double;
+    desired_ask_price: double;
+    quote_bid_price: double;
+    quote_ask_price: double;
+}
+
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
