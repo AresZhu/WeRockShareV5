@@ -20,7 +20,6 @@ table NavDto(fs_serializer) {
     nav_date: int;
     nav: double;
     gearing: double;
-    to_usd_rate: double;
 }
 
 table TheoDto(fs_serializer) {
