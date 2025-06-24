@@ -102,9 +102,9 @@ table InstrumentDto(fs_serializer) {
     tick_size_table: [SizeRule];
 }
 
-table DeltaDetail(fs_serializer) {
+table ExposureDetail(fs_serializer) {
     security_id: long;
-    quantity: double;
+    position: double;
     notional_usd: double;
     exposure_usd: double;
     delta_usd: double;
@@ -115,10 +115,10 @@ table DeltaDto(fs_serializer) {
     strategy_type: StrategyType;
     primary_notional_usd: double; // Primary Notional in USD
     gearing: double; // Gearing
-    delta_usd: double; // Delta Notioanl in USD = abs(primary_notional_usd * gearing + effective_exposure_usd) + abs(foreign_exposure_usd)
+    delta_usd: double; // Delta Notioanl in USD = abs(primary_notional_usd * gearing + effective_exposure_usd) + abs(unknown_exposure_usd)
     effective_exposure_usd: double; // Effective Exposure in USD
-    foreign_exposure_usd: double; // Unknown Exposure in USD
+    unknown_exposure_usd: double; // Unknown Exposure in USD
     
-    delta_details: [DeltaDetail];
-    foreign_details: [DeltaDetail];    
+    effective_exposure_details: [ExposureDetail];
+    unknown_exposure_details: [ExposureDetail];    
 }
