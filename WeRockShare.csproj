@@ -32,6 +32,6 @@
     </ItemGroup>
     
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-      <Exec Command="java -Dsbe.target.language=uk.co.real_logic.sbe.generation.csharp.CSharp -Dsbe.errorLog=yes -Dsbe.output.dir=. -jar sbe\sbe-all-1.35.0.jar sbe\schema.xml" />
+      <Exec Command="java -Dsbe.target.language=uk.co.real_logic.sbe.generation.csharp.CSharp -Dsbe.errorLog=yes -Dsbe.output.dir=. -jar sbe\sbe-all-1.35.5.jar sbe\schema.xml" />
     </Target>
 </Project>
