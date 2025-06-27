@@ -1123,7 +1123,7 @@ table GatewayState(fs_serializer) {
 }
 
 table HedgingStrategyLocation(fs_serializer) {    
-    strategy_id: long;
+    strategy_id: uint32;
     security_id: uint32;
     listing_id: uint32;
     strategy_state: StrategyState;
