@@ -12,6 +12,12 @@ table StrategyStateDto(fs_serializer) {
     state: StrategyState;
 }
 
+table HedgingLocationDto(fs_serializer) {
+    listing_id: uint32;
+    strategy_id: uint32;
+    strategy_state: StrategyState;
+}
+
 table NavDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
