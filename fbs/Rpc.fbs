@@ -362,5 +362,4 @@ table GatewayProfile(fs_serializer) {
     gateway_id: long;
     support_amend: bool;
     support_amend_qty_up: bool;
-    support_new_without_cancel_ack: bool;
 }
