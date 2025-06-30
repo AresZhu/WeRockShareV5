@@ -108,13 +108,12 @@ table StrategyInstrumentDto(fs_serializer) {
     currency: Currency;
     price_scale: int64;
     quantity_scale: uint64;
+    contract_size: double;
     price_limit_up: double;
     price_limit_down: double;
     order_router_name: string;
     gateway_instrument_index: int32;
     lot_size: double;
-    tick_size: double;
-    market_price_precision: int32;
     tick_size_table: [SizeRule];
 }
 
