@@ -142,7 +142,6 @@ table StrategyPositionDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
     security_id: uint32;
-    listing_id: uint32;
 
     yst_long_open: double;
     yst_short_open: double;
