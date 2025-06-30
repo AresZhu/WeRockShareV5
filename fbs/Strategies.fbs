@@ -114,7 +114,7 @@ table StrategyInstrumentDto(fs_serializer) {
     order_router_name: string;
     gateway_instrument_index: int32;
     lot_size: double;
-    tick_size_table: [SizeRule];
+    tick_size_rules: [SizeRule];
 }
 
 table ExposureDetail(fs_serializer) {
