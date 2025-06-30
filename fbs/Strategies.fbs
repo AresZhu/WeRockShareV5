@@ -75,6 +75,14 @@ table TacticPricingDto(fs_serializer) {
     quote_ask_price: double;
 }
 
+table DeltaHedgerExposureDto(fs_serializer) {
+    strategy_id: long;
+    exposure_contracts: double;
+    exposure_notional_usd: double;
+    exposure_target_contracts: double;
+    exposure_target_notional_usd:  double;  
+}
+
 table Exposure(fs_serializer) {
     security_id: long;
     notional_user: double;
