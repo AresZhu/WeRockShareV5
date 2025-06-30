@@ -137,3 +137,20 @@ table DeltaDto(fs_serializer) {
     effective_exposure_details: [ExposureDetail];
     unknown_exposure_details: [ExposureDetail];    
 }
+
+table StrategyPositionDto(fs_serializer) {
+    strategy_id: long;
+    strategy_type: StrategyType;
+    security_id: uint32;
+    listing_id: uint32;
+
+    yst_long_open: double;
+    yst_short_open: double;
+    yst_long_close: double;
+    yst_short_close: double;
+    intraday_long_open: double;
+    intraday_long_close: double;
+    intraday_short_open: double;
+    intraday_short_close: double;
+    booking: double;
+}
