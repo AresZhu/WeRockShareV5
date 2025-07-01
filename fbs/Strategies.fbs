@@ -148,8 +148,8 @@ table StrategyPositionDto(fs_serializer) {
     yst_long_close: double;
     yst_short_close: double;
     intraday_long_open: double;
-    intraday_long_close: double;
     intraday_short_open: double;
+    intraday_long_close: double;
     intraday_short_close: double;
     booking: double;
 }
