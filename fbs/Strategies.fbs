@@ -119,10 +119,17 @@ table StrategyInstrumentDto(fs_serializer) {
 
 table ExposureDetail(fs_serializer) {
     security_id: long;
-    position: double;
+    listing_id: long;
+    hedging_strategy_id: long;
+    hedging_strategy_state: StrategyState;
+    quantity_required: double;
+    quantity_hedged: double;
+    quantity_pending: double;
+    exposure_usd_required: double;
     notional_usd: double;
-    exposure_usd: double;
     delta_usd: double;
+    currency: Currency;
+    to_use_rate: double;
 }
 
 table DeltaDto(fs_serializer) {
