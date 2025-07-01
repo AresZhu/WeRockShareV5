@@ -122,7 +122,7 @@ table ExposureDetail(fs_serializer) {
     listing_id: long;
     hedging_strategy_id: long;
     hedging_strategy_state: StrategyState;
-    quantity_required: double;
+    quantity_target: double;
     quantity_hedged: double;
     quantity_pending: double;
     exposure_usd_required: double;
