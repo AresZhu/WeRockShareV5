@@ -126,8 +126,6 @@ table ExposureDetail(fs_serializer) {
     quantity_target: double;
     quantity_hedged: double;
     quantity_pending: double;
-    exposure_usd_required: double;
-    notional_usd: double;
     delta_usd: double;
     currency: Currency;
     to_use_rate: double;
