@@ -130,6 +130,7 @@ table ExposureDetail(fs_serializer) {
     delta_usd: double;
     currency: Currency;
     to_use_rate: double;
+    reference_price: double;
 }
 
 table DeltaDto(fs_serializer) {
