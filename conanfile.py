@@ -25,7 +25,7 @@ class ConanApplication(ConanFile):
         script_path = os.path.join(self.source_folder, "sbe/schema.xml")
         include_path = os.path.join(self.source_folder, "include")
         shutil.rmtree(include_path, ignore_errors=True)
-        jar_path = os.path.join(self.source_folder, "sbe/sbe-all-1.35.5.jar")
+        jar_path = os.path.join(self.source_folder, "sbe/sbe-all-1.35.6.jar")
         self.run("java -Dsbe.target.language=Cpp -Dsbe.output.dir=%s -jar %s %s" % (include_path, jar_path, script_path))
 
         source = os.path.join(include_path, 'WeRock_Share_Sbe')
