@@ -137,6 +137,7 @@ table ExposureDetail(fs_serializer) {
 table DeltaDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
+    hedging_method: IntradayHedgingMethod;
     primary_notional_usd: double; // Primary Notional in USD
     gearing: double; // Gearing
     delta_usd: double; // Delta Notioanl in USD = abs(primary_notional_usd * gearing + effective_exposure_usd) + abs(unknown_exposure_usd)
