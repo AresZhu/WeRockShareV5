@@ -118,8 +118,8 @@ table StrategyInstrumentDto(fs_serializer) {
 }
 
 table ExposureDetail(fs_serializer) {
-    security_id: long;
     listing_id: long;
+    primary_identifier: string;
     hedging_strategy_id: long;
     hedging_strategy_state: StrategyState;
     factor: double;
