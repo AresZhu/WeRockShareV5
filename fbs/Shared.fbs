@@ -170,6 +170,7 @@ table Instrument(fs_serializer) {
     isin: string;
     sedol: string;
     ric: string;
+    position_account_type: PositionAccountType;
     currency: Currency;
     exchange_mic: string(required);
     exchange_acronym: string;
