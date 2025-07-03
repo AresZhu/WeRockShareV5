@@ -535,6 +535,12 @@ enum PnlType: byte {
     Adjustment,
 }
 
+enum PositionAccountType: byte {
+    Net,    
+    Gross,
+    SplitGross,
+}
+
 enum ClientRequestType: byte {
     Ping,
     UserLogin,
