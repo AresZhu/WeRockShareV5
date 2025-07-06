@@ -90,8 +90,9 @@ enum PositionEffect : byte {
 
 enum TimeInForce : byte {
     Day = 0,
+    GTC,
     IOC,
-    KOK
+    FOK
 }
 
 enum OrderMessageType : byte {
@@ -101,7 +102,6 @@ enum OrderMessageType : byte {
     Cancel,
     Cancelled,
     CancelReject,
-    Reject,
     Amend,
     AmendAccept,
     AmendReject,
@@ -245,24 +245,21 @@ enum QuotingInstructionType: byte {
 
 
 enum AlertSeverity : byte {
-    INFO = 0,
-    WARNING,
-    CRITICAL,
+    Info = 0,
+    Warning,
+    Critical,
 }
 
 enum AlertClassification: byte {
-    UNKNOWN = 0,
-    SYSTEM,
-    STRATEGY,
-    MARKET,
-    ORDER,
-    RISK,
-    CONNECTION,
-    DATA,
-    ACCOUNT,
-    INSTRUMENT,
-    BASKET,
-    TASK
+    Platform = 0,
+    Strategy,
+    MarketData,
+    Gateway,
+    RiskEngine,
+    Connectivity,
+    StaticData,
+    Pricing,
+    ScheduleTask
 }
 
 enum RiskRuleType: byte {
@@ -284,7 +281,6 @@ enum RejectLevel: byte {
     Benign,
     Known,
     Critical,
-    Fatal, 
 }
 
 enum BasketPricingMethod: byte {
