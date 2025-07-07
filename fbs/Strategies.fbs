@@ -166,10 +166,8 @@ table StrategyPositionDto(fs_serializer) {
 table StrategyAlertDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
-    node_id: short;
+    timestamp: int64;
     event_id: long;
-    classification: AlertClassification;
     severity: AlertSeverity;
     message: string(required);
-    hostname: string(required);
 }
