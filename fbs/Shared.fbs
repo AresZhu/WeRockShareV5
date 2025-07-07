@@ -691,6 +691,7 @@ table AlertEvent(fs_serializer) {
 
     trading_date: int;
     node_id: short;
+    event_id: long;
     classification: AlertClassification;
     severity: AlertSeverity;
     message: string(required);
