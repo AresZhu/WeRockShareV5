@@ -1124,3 +1124,13 @@ table GatewayState(fs_serializer) {
     id: uint;
     state: ConnectionState;
 }
+
+table AlertEventDto(fs_serializer) {
+    node_id: short;
+    event_id: long;
+    classification: AlertClassification;
+    severity: AlertSeverity;
+    message: string(required);
+    hostname: string(required);
+    strategy_id: long;
+}
