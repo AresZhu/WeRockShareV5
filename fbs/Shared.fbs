@@ -397,6 +397,7 @@ table StrategyOrder(fs_serializer) {
     
     original_client_order_id: int64;
     client_order_id: int64;
+    gateway_internal_id: int32;
     external_id: string;
     
     gateway_id: long;
