@@ -589,5 +589,6 @@ enum ClientRequestType: byte {
     UpdateSetting,
     DeleteSetting,
     TerminateOrder,
-    GatewayState
+    GatewayState,
+    GetClientOrderIdSequence,
 }
