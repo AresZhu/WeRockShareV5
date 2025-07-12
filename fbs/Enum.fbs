@@ -550,7 +550,7 @@ enum ClientRequestType: byte {
     SubscribeMarketData,
     UpdateExchange,
     DeleteExchange,
-    UpdateTickSizeTables,
+    UpdateTickSizeTable,
     UpdateSecurity,
     DeleteSecurity,
     UpdateSecurityListing,
@@ -591,4 +591,5 @@ enum ClientRequestType: byte {
     TerminateOrder,
     GatewayState,
     GetClientOrderIdSequence,
+    DeleteTickSizeTable,
 }

@@ -70,6 +70,7 @@ enum CmdType: byte {
 
 enum ErrorCode: short {
     Success = 0,
+    NoChange,
     NoReplyRequired,
     UpdateFailed,
     UnknownError,
@@ -86,6 +87,7 @@ enum ErrorCode: short {
     StrategyNameDuplicated,
     ExchangeMicAlreadyExists,
     FailedToRouterOrder,
+    TickSizeTableAlreadyExists,
 }
 
 enum SubType : byte {
