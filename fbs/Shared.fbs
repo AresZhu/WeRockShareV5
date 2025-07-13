@@ -130,6 +130,7 @@ table SecurityListing(fs_serializer) {
     
     security_id: long;
     is_primary: bool;
+    order_book_id: int;
     exchange_mic: string(required);
     exchange_symbol: string(required);
     ric: string;
@@ -171,6 +172,7 @@ table Instrument(fs_serializer) {
     ric: string;
     position_account_type: PositionAccountType;
     currency: Currency;
+    order_book_id: int;
     exchange_mic: string(required);
     exchange_acronym: string;
     contract_size: double;
