@@ -659,9 +659,6 @@ table ScheduleTask(fs_serializer) {
     cron: string;
     enabled: bool;
     parameters: string(required);
-    last_run_time: long;
-    last_run_status: TaskStatus;
-    last_run_message: string;
     deleted: bool;
 }
 
@@ -679,6 +676,8 @@ table ScheduleTaskHistory(fs_serializer) {
     end_time: long;
     run_type: TaskRunType;
     status: TaskStatus;
+    name: string(required);
+    parameters: string(required);
     message: string;
 }
 
