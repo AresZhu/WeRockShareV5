@@ -1126,3 +1126,17 @@ table GatewayState(fs_serializer) {
     state: ConnectionState;
 }
 
+table PriceSnapshot(fs_serializer) {
+    id: long;
+    last_updated: long;    
+    security_id: long;    
+    status: TradingStatus;
+    prev_close: double;
+    last_price: double;
+    bid_size: double;
+    bid: double;
+    ask: double;
+    ask_size: double;
+    theo: double;    
+}
+
