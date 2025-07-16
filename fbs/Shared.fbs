@@ -477,7 +477,7 @@ table DailyPnl(fs_serializer) {
     strategy_id: long;
     security_id: long;
     currency: Currency;
-    type: PnlType;    
+    type: PnlType;
     daily: double;
     mtd: double;
     ytd: double;
@@ -487,6 +487,16 @@ table DailyPnl(fs_serializer) {
 
 table DailyPnlList(fs_serializer) {
     items: [DailyPnl];
+}
+
+table LiveTradingPnlDto(fs_serializer) {
+    id: long;
+    reference_listing_id: long;
+    currency: Currency;    
+    native_pnl: double;
+    to_usd: double;
+    live_price: double;
+    mark_price: double;
 }
 
 table OpenOrderSummary(fs_serializer) {
