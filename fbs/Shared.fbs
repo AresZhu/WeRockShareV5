@@ -515,9 +515,12 @@ table TradingPnlList(fs_serializer) {
 table LiveTradingPnlDto(fs_serializer) {
     id: long;
     native_pnl: double;
-    to_usd: double;
     live_price: double;
     mark_price: double;
+}
+
+table LiveTradingPnlDtoList(fs_serializer) {
+    items: [LiveTradingPnlDto];
 }
 
 table OpenOrderSummary(fs_serializer) {
