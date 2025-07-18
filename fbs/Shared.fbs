@@ -277,10 +277,7 @@ table UserList(fs_serializer) {
     items: [User];
 }
 
-table CurrencyRate(fs_serializer) {
-    id: long;
-    last_updated: long;
-    
+table CurrencyRate(fs_serializer) {    
     base_currency: Currency;
     rate: double;
 }
