@@ -97,6 +97,7 @@
         <field id="6" type="uint32" name="listingId" />
         <field id="7" type="double" name="quantity" />
         <field id="8" type="double" name="price" />
+        <field id="9" type="uint8" name="currency" />
     </sbe:message>
 
     <sbe:message name="HedgingResponseSbe" id="13">
@@ -109,7 +110,8 @@
         <field id="7" type="uint32" name="listingId" />
         <field id="8" type="double" name="quantity" />
         <field id="9" type="double" name="price" />
-        <field id="10" type="uint8" name="success" />
+        <field id="10" type="uint8" name="currency" />
+        <field id="11" type="uint8" name="success" />
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
