@@ -91,22 +91,25 @@
     <sbe:message name="HedgingRequestSbe" id="12">
         <field id="1" type="uint32" name="hedgingStrategyId" />
         <field id="2" type="uint32" name="requestStrategyId" />
-        <field id="3" type="int64" name="requestId" />
-        <field id="4" type="uint32" name="securityId" />
-        <field id="5" type="uint32" name="listingId" />
-        <field id="6" type="double" name="quantity" />
-        <field id="7" type="double" name="price" />
+        <field id="3" type="uint8" name="requestStrategyType" />
+        <field id="4" type="int64" name="requestId" />
+        <field id="5" type="uint32" name="securityId" />
+        <field id="6" type="uint32" name="listingId" />
+        <field id="7" type="double" name="quantity" />
+        <field id="8" type="double" name="price" />
     </sbe:message>
 
     <sbe:message name="HedgingResponseSbe" id="13">
         <field id="1" type="uint32" name="hedgingStrategyId" />
-        <field id="2" type="uint32" name="requestStrategyId" />
-        <field id="3" type="int64" name="requestId" />
-        <field id="4" type="uint32" name="securityId" />
-        <field id="5" type="uint32" name="listingId" />
-        <field id="6" type="double" name="quantity" />
-        <field id="7" type="double" name="price" />
-        <field id="8" type="uint8" name="success" />
+        <field id="2" type="uint8" name="hedgingStrategyType" />
+        <field id="3" type="uint32" name="requestStrategyId" />
+        <field id="4" type="uint8" name="requestStrategyType" />
+        <field id="5" type="int64" name="requestId" />
+        <field id="6" type="uint32" name="securityId" />
+        <field id="7" type="uint32" name="listingId" />
+        <field id="8" type="double" name="quantity" />
+        <field id="9" type="double" name="price" />
+        <field id="10" type="uint8" name="success" />
     </sbe:message>
 
     <sbe:message name="NewOrderSbe" id="14">
