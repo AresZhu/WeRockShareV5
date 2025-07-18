@@ -386,6 +386,7 @@ table StrategyOrder(fs_serializer) {
     price: double;
     quantity: double;
     side: Side;
+    currency: Currency;
     order_type: OrderType;
     position_effect: PositionEffect;
     time_in_force: TimeInForce;
@@ -428,6 +429,7 @@ table Trade(fs_serializer) {
     position_effect: PositionEffect;
     
     side: Side;
+    currency: Currency;
     price: double;
     quantity: double;
     notes: string;
