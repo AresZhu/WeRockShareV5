@@ -498,6 +498,7 @@ table TradingPnl(fs_serializer) {
     strategy_id: long;
     security_id: long;
     reference_listing_id: long;
+    strategy_type: StrategyType;
     currency: Currency;
     yst_mark_price: double;
     open: double;
