@@ -18,12 +18,10 @@ enum Currency : byte {
     EGP,
     EUR,
     GBP,
-    GBp,
     HKD,
     HUF,
     IDR,
     ILS,
-    ILa,
     INR,
     JPY,
     KRW,
@@ -45,7 +43,6 @@ enum Currency : byte {
     TWD,
     USD,
     ZAR,
-    ZAc
 }
 
 enum Market : byte {
@@ -591,4 +588,5 @@ enum ClientRequestType: byte {
     GatewayState,
     GetClientOrderIdSequence,
     DeleteTickSizeTable,
+    GetDefaultToUsdRates,
 }
