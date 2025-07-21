@@ -26,7 +26,6 @@ enum Currency : byte {
     JPY,
     KRW,
     KWD,
-    KWf,
     MXN,
     MYR,
     NOK,
