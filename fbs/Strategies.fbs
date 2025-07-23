@@ -128,7 +128,7 @@ table ExposureDetail(fs_serializer) {
     quantity_pending: double;
     delta_usd: double;
     currency: Currency;
-    to_use_rate: double;
+    to_usd_rate: double;
     reference_price: double;
 }
 
