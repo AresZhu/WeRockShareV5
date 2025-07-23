@@ -113,6 +113,7 @@ table StrategyInstrumentDto(fs_serializer) {
     price_limit_down: double;
     order_router_name: string;
     gateway_instrument_index: int32;
+    price_precision: int32;
     lot_size: double;
     tick_size_rules: [SizeRule];
 }
@@ -170,17 +171,4 @@ table StrategyAlertDto(fs_serializer) {
     event_id: long;
     severity: AlertSeverity;
     message: string(required);
-}
-
-table TacticSummaryDto(fs_serializer) {
-    strategy_id: long;
-    strategy_type: StrategyType;
-    
-    desired_bid_price: double;
-    desired_ask_price: double;    
-    quote_bid_price: double;
-    quote_ask_price: double;
-    
-    quote_bid_order_num: int;
-    quote_ask_order_num: int;    
 }
