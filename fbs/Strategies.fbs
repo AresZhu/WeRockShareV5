@@ -51,14 +51,6 @@ table MarginDto(fs_serializer) {
     ask_margin_bps: double;    
 }
 
-table TacticBasePriceDto(fs_serializer) {
-    strategy_id: long;
-    strategy_type: StrategyType;
-    listing_id: long;
-    base_bid_price: double;
-    base_ask_price: double;
-}
-
 table TacticPricingDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
