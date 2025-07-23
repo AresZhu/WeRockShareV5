@@ -113,7 +113,6 @@ table StrategyInstrumentDto(fs_serializer) {
     price_limit_down: double;
     order_router_name: string;
     gateway_instrument_index: int32;
-    price_precision: int32;
     lot_size: double;
     tick_size_rules: [SizeRule];
 }
