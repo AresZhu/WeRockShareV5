@@ -177,7 +177,7 @@ table TacticSummaryDto(fs_serializer) {
     strategy_type: StrategyType;
     
     desired_bid_price: double;
-    desired_bid_price: double;    
+    desired_ask_price: double;    
     quote_bid_price: double;
     quote_ask_price: double;
     
