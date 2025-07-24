@@ -1175,3 +1175,10 @@ table PriceSnapshot(fs_serializer) {
     theo: double;    
 }
 
+table OpenOrderNotionalSummary(fs_serializer) {
+    gateway_id: long;
+    order_router_id: long;
+    open_buy_notional_usd: double;
+    open_sell_notional_usd: double;
+}
+
