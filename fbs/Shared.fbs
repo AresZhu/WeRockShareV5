@@ -468,25 +468,40 @@ table PositionList(fs_serializer) {
     items: [Position];
 }
 
-table PnlSummary(fs_serializer) {
+table DailyPnlSummary(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    
+        
     trading_date: int;
     strategy_id: long;
     security_id: long;
     strategy_type: StrategyType;
     currency: Currency;    
     type: PnlType; 
-    daily: double;
-    mtd: double;
-    ytd: double;
-    total: double;
+    pnl: double;
 }
 
-table PnlSummaryList(fs_serializer) {
-    items: [PnlSummary];
+table DailyPnlSummaryList(fs_serializer) {
+    items: [DailyPnlSummary];
+}
+
+table MonthlyPnlSummary(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    
+    trading_date: int; // first day of the month
+    strategy_id: long;
+    security_id: long;
+    strategy_type: StrategyType;
+    currency: Currency;    
+    type: PnlType; 
+    pnl: double;
+}
+
+table MonthlyPnlSummaryList(fs_serializer) {
+    items: [MonthlyPnlSummary];
 }
 
 table TradingPnl(fs_serializer) {
