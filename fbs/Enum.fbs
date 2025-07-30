@@ -588,4 +588,5 @@ enum ClientRequestType: byte {
     GetClientOrderIdSequence,
     DeleteTickSizeTable,
     GetDefaultToUsdRates,
+    ClearGatewayInstrumentIndices,
 }

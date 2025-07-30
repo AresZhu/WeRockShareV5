@@ -265,12 +265,11 @@ table User(fs_serializer) {
     version: int;
     last_updated: long;
     
-    account: string;
-    password_hashed: string;
-    fullname: string;
+    account: string(required);
+    password_hashed: string(required);
+    fullname: string(required);
+    email: string;
     enabled: bool;
-    role: Role;
-    entitlements: string;
 }
 
 table UserList(fs_serializer) {
