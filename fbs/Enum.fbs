@@ -479,7 +479,8 @@ enum GatewayType: byte {
     Unknown = 0,
     CTP,
     FIX42,
-    OES
+    OES,
+    TEST
 }
 
 enum FutureProductType : byte {    
