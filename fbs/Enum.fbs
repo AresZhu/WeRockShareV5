@@ -52,7 +52,7 @@ enum Market : byte {
     HK,
     JP,
     EU,
-    KR
+    KR,
 }
 
 enum SecurityType : byte {
@@ -590,4 +590,5 @@ enum ClientRequestType: byte {
     DeleteTickSizeTable,
     GetDefaultToUsdRates,
     ClearGatewayInstrumentIndices,
+    GetScheduleTaskTypes,
 }
