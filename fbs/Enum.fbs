@@ -459,6 +459,7 @@ enum Entitlement: uint16 {
 enum NodeType : byte {
     Unknown = 0,
     AeronMediaDriver,
+    AeronRelay,
     DataHub,
     Gateway,
     MarketDataCast,
