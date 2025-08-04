@@ -1002,16 +1002,6 @@ table ScheduleTaskTypeList(fs_serializer) {
 }
 
 
-table HedgingResponse {
-    id: long;
-    strategy_id: long;
-    hedging_strategy_id: long;
-    security_id: long;
-    listing_id: long;
-    quantity: double;
-    price: double;
-}
-
 table StrategyComponentStatus(fs_serializer) {
     id: long;
     version: int;
@@ -1195,4 +1185,3 @@ table OpenOrderNotionalSummary(fs_serializer) {
     open_buy_notional_usd: double;
     open_sell_notional_usd: double;
 }
-
