@@ -371,7 +371,7 @@ table QueryHistoricalOrdersRequest(fs_serializer) {
     strategy_id: long;
     start_date: int;
     end_date: int;
-    reply_subject: string;
+    reply_subject: string(required);
 }
 
 table QueryTradesRequest(fs_serializer) {
@@ -379,5 +379,5 @@ table QueryTradesRequest(fs_serializer) {
     strategy_id: long;
     start_date: int;
     end_date: int;
-    reply_subject: string;
+    reply_subject: string(required);
 }
