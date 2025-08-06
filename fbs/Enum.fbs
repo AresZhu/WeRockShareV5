@@ -592,4 +592,6 @@ enum ClientRequestType: byte {
     GetDefaultToUsdRates,
     ClearGatewayInstrumentIndices,
     GetScheduleTaskTypes,
+    QueryHistoricalOrders,
+    QueryTrades,
 }

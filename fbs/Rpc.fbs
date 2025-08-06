@@ -365,3 +365,17 @@ table GatewayProfile(fs_serializer) {
     support_amend: bool;
     support_amend_qty_up: bool;
 }
+
+table QueryHistoricalOrdersRequest(fs_serializer) {
+    listing_id: long;
+    strategy_id: long;
+    start_date: int;
+    end_date: int;
+}
+
+table QueryTradesRequest(fs_serializer) {
+    security_id: long;
+    strategy_id: long;
+    start_date: int;
+    end_date: int;
+}
