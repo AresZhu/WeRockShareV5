@@ -364,7 +364,6 @@ table StrategyOrder(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    ephemeral_id: long;
     security_id: long;
     listing_id: long;
     strategy_id: long;
@@ -422,6 +421,10 @@ table Trade(fs_serializer) {
     order_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
+    
+    tactic_type: TacticType;
+    tactic_code: ushort;
+    
     client_order_id: int64;
     exec_id: string; 
     
