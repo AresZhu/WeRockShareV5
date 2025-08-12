@@ -1188,3 +1188,16 @@ table OpenOrderNotionalSummary(fs_serializer) {
     open_buy_notional_usd: double;
     open_sell_notional_usd: double;
 }
+
+table BorrowInventory(fs_serializer) {
+    id: long;
+    version: int;
+    last_updated: long;
+    trading_date: int;
+    security_id: long;
+    inventory: double;
+}
+
+table BorrowInventoryList(fs_serializer) {
+    items: [BorrowInventory];
+}

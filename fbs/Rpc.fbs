@@ -381,3 +381,12 @@ table QueryTradesRequest(fs_serializer) {
     end_date: int;
     reply_subject: string(required);
 }
+
+table BorrowInventoryItem(fs_serializer) {
+    security_id: long;
+    inventory: double;
+}
+
+table UploadBorrowInventoryRequest(fs_serializer) {
+    items: [BorrowInventoryItem];
+}

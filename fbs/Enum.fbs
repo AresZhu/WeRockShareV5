@@ -595,4 +595,7 @@ enum ClientRequestType: byte {
     GetScheduleTaskTypes,
     QueryHistoricalOrders,
     QueryTrades,
+    UploadBorrowInventories,
+    ClearBorrowInventories,
+    DeleteBorrowInventories,
 }
