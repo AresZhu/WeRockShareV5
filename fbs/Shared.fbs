@@ -86,6 +86,7 @@ table Security(fs_serializer) {
     type: SecurityType;
     market: Market;
     position_account_type: PositionAccountType;
+    same_day_sell_allowed: bool = true;
     deleted: bool;
 }
 
