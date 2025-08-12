@@ -160,6 +160,7 @@ table Instrument(fs_serializer) {
     
     security_id: long;
     security_type: SecurityType;
+    same_day_sell_allowed: bool = true;
     expired_date: int;
     primary_identifier: string(required);
     description: string(required);
