@@ -598,4 +598,5 @@ enum ClientRequestType: byte {
     UploadBorrowInventories,
     ClearBorrowInventories,
     DeleteBorrowInventories,
+    TerminateStrategy
 }
