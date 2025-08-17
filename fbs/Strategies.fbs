@@ -38,6 +38,7 @@ table TheoDto(fs_serializer) {
 table MarginDto(fs_serializer) {
     strategy_id: long;
     strategy_type: StrategyType;
+    delta_exposure_usd: double;
     active_sentiment_index: int;
     base_skew_bps: double;
     base_spread_bps: double;
