@@ -317,6 +317,8 @@ enum TacticType : byte {
     Taker = 2,
     Sniper = 3,
     Dimer = 4,
+    Obligator = 5,
+    Quoter = 6,
 }
 
 enum PricingCheckType : byte {
