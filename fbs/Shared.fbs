@@ -958,6 +958,7 @@ table BetaModelEntry(fs_serializer) {
     beta_model_id: long;
     future_product_id: long;
     beta: double;
+    delta_skew: double;
     deleted: bool;
 }
 
