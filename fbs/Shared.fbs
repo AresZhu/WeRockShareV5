@@ -967,19 +967,10 @@ table BetaModelEntryList(fs_serializer) {
 }
 
 table ResolvedBetaModelEntry(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    beta_model_id: long;
-    future_product_id: long;
-    future_product_identifier: string;
-    beta: double;
-    delta_skew: double;
-    
     security_id: long;
     listing_id: long;
-    security_primary_identifier: string;
+    beta: double;
+    delta_skew: double;
 }
 
 table ResolvedBetaModel(fs_serializer) {
