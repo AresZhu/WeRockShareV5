@@ -230,7 +230,7 @@ table BasketHistoryEx(fs_serializer) {
     basket_type: BasketType;
     basket_tag: string;
     creation_redemption_unit: int;
-    trading_date: int;
+    trade_date: int;
     valuation_date: int;
     cashes: [BasketCash];
     constituents: [BasketEntry];
@@ -346,7 +346,7 @@ table HistoricalPriceEntry(fs_serializer) {
 
 table UpdateHistoricalPricesRequest(fs_serializer) {
     security_id: long;
-    trading_date: int;
+    trade_date: int;
     prices: [HistoricalPriceEntry];
 }
 

@@ -10,7 +10,7 @@ table ReferencePrice(fs_serializer) {
     
     security_listing_id: long;
     type: ReferencePriceType;
-    trading_date: int;
+    trade_date: int;
     price: double;
 }
 
@@ -182,8 +182,8 @@ table Instrument(fs_serializer) {
     lot_size: ulong;
     tick_size_table: [SizeRule];
     exchange_schedule:[ExchangeSession];
-    trading_date: int;
-    prev_trading_date: int;
+    trade_date: int;
+    prev_trade_date: int;
     reference_price: long;
     price_limit_up: long;
     price_limit_down: long;
@@ -336,7 +336,7 @@ table FutureBasis(fs_serializer) {
     last_updated: long;
     listing_id: long;
     basis: double;
-    trading_date: int;
+    trade_date: int;
     deleted: bool;
 }
 
@@ -374,7 +374,7 @@ table StrategyOrder(fs_serializer) {
     tactic_type: TacticType;
     tactic_code: ushort;
     
-    trading_date: int;
+    trade_date: int;
     
     submit_time: long;
     end_time: long;
@@ -414,7 +414,7 @@ table Trade(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
+    trade_date: int;
     settlement_date: int;
     type: TradeType;
         
@@ -448,7 +448,7 @@ table Position(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
+    trade_date: int;
     security_id: long;
     strategy_id: long;
     strategy_type: StrategyType;
@@ -477,7 +477,7 @@ table DailyPnlSummary(fs_serializer) {
     version: int;
     last_updated: long;
         
-    trading_date: int;
+    trade_date: int;
     strategy_id: long;
     security_id: long;
     strategy_type: StrategyType;
@@ -495,7 +495,7 @@ table MonthlyPnlSummary(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int; // first day of the month
+    trade_date: int; // first day of the month
     strategy_id: long;
     security_id: long;
     strategy_type: StrategyType;
@@ -513,7 +513,7 @@ table TradingPnl(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
+    trade_date: int;
     strategy_id: long;
     security_id: long;
     reference_listing_id: long;
@@ -654,7 +654,7 @@ table BasketHistory(fs_serializer) {
     
     basket_id: long;
     creation_redemption_unit: int;
-    trading_date: int;
+    trade_date: int;
     valuation_date: int;
     cashes: string;
     constituents: string;
@@ -706,7 +706,7 @@ table ResolvedBasket(fs_serializer) {
     resolved_result: BasketResolvedResult;
     
     valuation_date: int;
-    trading_date: int;
+    trade_date: int;
     nav: double;
     
     cashes: [CashLine];
@@ -757,7 +757,7 @@ table AlertEvent(fs_serializer) {
     version: int;
     last_updated: long;
 
-    trading_date: int;
+    trade_date: int;
     node_id: short;
     event_id: long;
     classification: AlertClassification;
@@ -847,7 +847,7 @@ table PricingCheckResult(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
+    trade_date: int;
     rule_id: long;
     type: PricingCheckType;
     strategy_id: long;
@@ -865,7 +865,7 @@ table PricingCheckStatistic(fs_serializer) {
     last_updated: long;
     
     rule_id: long;
-    trading_date: int;
+    trade_date: int;
     strategy_id: long;
     soft_breached_count: int;
     hard_breached_count: int;
@@ -1136,7 +1136,7 @@ table ExchangeCalendar(fs_serializer) {
     last_updated: long;
     
     exchange_mic: string(required);
-    trading_date: int;
+    trade_date: int;
     name: string(required);
     is_open: bool;
     has_settlement: bool;
@@ -1148,7 +1148,7 @@ table HistoricalPrice(fs_serializer) {
     version: int;
     last_updated: long;
     
-    trading_date: int;
+    trade_date: int;
     security_id: long;
     type: PriceType;
     price: double;
@@ -1188,7 +1188,7 @@ table BorrowInventory(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    trading_date: int;
+    trade_date: int;
     security_id: long;
     inventory: double;
 }
