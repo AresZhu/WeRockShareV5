@@ -385,6 +385,7 @@ table QueryTradesRequest(fs_serializer) {
 table BorrowInventoryItem(fs_serializer) {
     security_id: long;
     inventory: double;
+    valid_until: int;
 }
 
 table UploadBorrowInventoryRequest(fs_serializer) {

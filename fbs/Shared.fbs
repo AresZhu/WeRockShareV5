@@ -1188,7 +1188,7 @@ table BorrowInventory(fs_serializer) {
     id: long;
     version: int;
     last_updated: long;
-    trade_date: int;
+    valid_until: int;
     security_id: long;
     inventory: double;
 }
