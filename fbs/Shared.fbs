@@ -140,6 +140,7 @@ table SecurityListing(fs_serializer) {
     currency: Currency;
     lot_size: double;
     tick_size_table_name: string;
+    supports_margin: bool;
     deleted: bool;
 }
 
@@ -189,6 +190,7 @@ table Instrument(fs_serializer) {
     price_limit_down: long;
     price_scale: int64;
     quantity_scale: uint64;
+    supports_margin: bool;
     tradable: bool;
 }
 
