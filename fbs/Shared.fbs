@@ -18,6 +18,12 @@ table ReferencePriceList(fs_serializer) {
     items: [ReferencePrice];
 }
 
+table RoutingConfig(fs_serializer) {
+    precedent: int;
+    primary_identifier_regex: string(required);
+    exchange_regex: string(required);
+}
+
 table ExecutionGateway(fs_serializer) {
     id: long;
     version: int;
@@ -26,7 +32,8 @@ table ExecutionGateway(fs_serializer) {
     type: GatewayType;
     name: string(required);
     settings: string(required);
-    default_risk_settings: string(required);
+    risk_config: string(required);
+    routing_config: string(required);
     deleted: bool;
 }
 
@@ -403,8 +410,6 @@ table StrategyOrder(fs_serializer) {
     external_id: string;
     
     gateway_id: long;
-    router_index: int;
-    router_id: long;
 }
 
 table StrategyOrderList(fs_serializer) {
@@ -776,41 +781,6 @@ table AlertEventList(fs_serializer) {
     items: [AlertEvent];
 }
 
-table OrderRouter(fs_serializer) {
-    id: long;
-    version: int;
-    last_updated: long;
-    
-    index: int;
-    name: string(required);
-    gateway_id: long;
-    
-    precedent: int;
-    primary_identifier_regex: string(required);
-    exchange_regex: string(required);
-    risk_settings: string(required);
-    deleted: bool;
-}
-
-table OrderRouterList(fs_serializer) {
-    items: [OrderRouter];
-}
-
-
-table OrderRouterState(fs_serializer) {
-    id: long;
-    last_updated: long;
-   
-    name: string(required);
-    state: ConnectionState;
-    execution_gateway_id: int;
-    execution_gateway_name: string;
-}
-
-table OrderRouterStateList(fs_serializer) {
-    items: [OrderRouterState];
-}
-
 table NodeCommand(fs_serializer) {
     id: long;
     last_updated: long;
@@ -1078,13 +1048,17 @@ table MarketDataGatewayDto(fs_serializer) {
     state: ConnectionState;
 }
 
-table ExecutionGatewayDto(fs_serializer) {
+table ExecutionGatewayStateDto(fs_serializer) {
     id: long;
     last_updated: long;
     
     type: GatewayType;
     name: string(required);
     state: ConnectionState;
+}
+
+table ExecutionGatewayStateDtoList(fs_serializer) {
+    items: [ExecutionGatewayStateDto];
 }
 
 table NodeStateDto(fs_serializer) {
