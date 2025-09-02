@@ -571,10 +571,13 @@ table OpenOrderSummary(fs_serializer) {
     strategy_id: long;
     security_id: long;
     
-    open_buy: double;
-    open_sell: double;
+    open_buy_orders: int;
+    open_sell_orders: int;
+    open_buy_quantity: double;
+    open_sell_quantity: double;
     open_buy_notional: double;
     open_sell_notional: double;
+    to_usd_rate: double;
 }
 
 table OpenOrderSummaryList(fs_serializer) {
@@ -1151,13 +1154,6 @@ table PriceSnapshot(fs_serializer) {
     ask: double;
     ask_size: double;
     theo: double;    
-}
-
-table OpenOrderNotionalSummary(fs_serializer) {
-    gateway_id: long;
-    order_router_id: long;
-    open_buy_notional_usd: double;
-    open_sell_notional_usd: double;
 }
 
 table BorrowInventory(fs_serializer) {
