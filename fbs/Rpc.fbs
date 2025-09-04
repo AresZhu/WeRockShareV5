@@ -389,3 +389,8 @@ table BorrowInventoryItem(fs_serializer) {
 table UploadBorrowInventoryRequest(fs_serializer) {
     items: [BorrowInventoryItem];
 }
+
+table FireKillSwitch(fs_serializer) {
+    strategy_id: long;
+    fired:  bool;
+}
